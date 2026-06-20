@@ -52,11 +52,13 @@ def _render_html(markdown: str, *, base_dir: Path, html_dir: Path, relative_imag
         relative_images=relative_images,
         embed_assets=embed_assets,
     )
+    favicon = _favicon_link(html_dir=html_dir)
     brand = _brand_header(html_dir=html_dir)
     return f"""<!doctype html>
 <html>
 <head>
   <meta charset="utf-8">
+  {favicon}
   <style>
     @page {{ size: A4; margin: 18mm 14mm; }}
     body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans CJK SC", "PingFang SC", sans-serif; color: #111827; font-size: 10.5pt; line-height: 1.55; }}
@@ -99,6 +101,14 @@ def _brand_header(*, html_dir: Path) -> str:
         "<span>prompt-cache-bench · reproducible inference benchmark artifact</span>"
         "</div>"
     )
+
+
+def _favicon_link(*, html_dir: Path) -> str:
+    logo = _find_brand_logo(html_dir)
+    if not logo:
+        return ""
+    data_uri = html.escape(_data_uri(logo))
+    return f'<link rel="icon" type="image/png" href="{data_uri}"><link rel="apple-touch-icon" href="{data_uri}">'
 
 
 def _find_brand_logo(start: Path) -> Path | None:

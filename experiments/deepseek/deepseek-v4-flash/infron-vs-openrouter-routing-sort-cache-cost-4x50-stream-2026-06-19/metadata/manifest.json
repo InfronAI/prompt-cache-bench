@@ -24,8 +24,8 @@
     },
     {
       "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.en.html",
-      "bytes": 307335,
-      "sha256": "1628cb45da5066a6b236aeccf9d3452c465ae574105068832832c5b5105d565c"
+      "bytes": 320917,
+      "sha256": "976ad0c8cd9e382ea27b1d4c41f68a53dd320e2cddf7d0c31584bb9b388f058f"
     },
     {
       "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.en.md",
@@ -34,8 +34,8 @@
     },
     {
       "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.html",
-      "bytes": 321131,
-      "sha256": "8d1de536c6b1d59ab3875a805ea3fb688f2151f52422a6a1bfec9caddcf7dc68"
+      "bytes": 334713,
+      "sha256": "c3b51c1103c776c5ccb5544e77a6fd25716af09043ec26eaa76a202a8ba0aa73"
     },
     {
       "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.md",
@@ -249,8 +249,8 @@
     },
     {
       "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/code/export_routing_report_pdf.py",
-      "bytes": 8883,
-      "sha256": "f13c817c0fef4fb2c009b2e630c6ec8094dabb8e2d20ff13419f1e40a6f14d4c"
+      "bytes": 9220,
+      "sha256": "440a93c7732f400d8fc41ec54e3279ee5ea6a2a5bc3b971f2dc53d354a9d0a86"
     },
     {
       "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/code/rerun_routing_sort_cache_cost_ab.py",
