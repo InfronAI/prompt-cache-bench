@@ -3,18 +3,8 @@
   "short_name": "PCB",
   "icons": [
     {
-      "src": "assets/brand/favicon-32x32.png",
-      "sizes": "32x32",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/brand/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/brand/infron-icon-512.png",
-      "sizes": "512x512",
+      "src": "https://framerusercontent.com/images/jYZGKXX6mcMkU1qAXZQeevZRY.png",
+      "sizes": "1827x1827",
       "type": "image/png",
       "purpose": "any maskable"
     }
