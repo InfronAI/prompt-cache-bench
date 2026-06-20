@@ -1,29 +1,31 @@
 # Online Report Preview
 
-GitHub supports direct online preview for Markdown files. For this repository, the recommended online report entry is:
+GitHub Pages is enabled for this repository. The recommended online entry is:
 
-[DeepSeek V4 Flash Infron vs OpenRouter report](../experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.md)
+<https://infronai.github.io/prompt-cache-bench/>
 
-The self-contained `.html` report is useful for local viewing, but GitHub's normal file viewer displays HTML files as source code.
+The full self-contained HTML report is available at:
+
+<https://infronai.github.io/prompt-cache-bench/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.html>
 
 ## Option A: Markdown Preview
 
-Use the `.md` report as the public preview URL. Figures are referenced as repository files and render inside GitHub's Markdown viewer.
+GitHub supports direct online preview for Markdown files. Use this URL when reviewing source diffs or Markdown rendering:
+
+[DeepSeek V4 Flash Infron vs OpenRouter Markdown report](../experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.md)
 
 ## Option B: GitHub Pages
 
-To make the `.html` report open as a normal web page:
+Use GitHub Pages when readers should open the report as a normal web page. The repository root contains `index.html`, which links to the latest published experiment, raw dataset, code snapshot, reusable runner, and manifest.
 
-1. Go to repository `Settings`.
-2. Open `Pages`.
-3. Set source to `Deploy from a branch`.
-4. Select branch `main`.
-5. Select folder `/ (root)`.
-6. Save.
+Recommended Pages settings:
 
-After GitHub Pages is enabled, the HTML report URL will follow this pattern:
+- Source: `Deploy from a branch`
+- Branch: `main`
+- Folder: `/ (root)`
+
+With this configuration, report URLs follow this pattern:
 
 ```text
 https://infronai.github.io/prompt-cache-bench/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.html
 ```
-

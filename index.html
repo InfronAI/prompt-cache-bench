@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>prompt-cache-bench</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fb;
+      --panel: #ffffff;
+      --ink: #17202a;
+      --muted: #5f6b7a;
+      --line: #dfe5ee;
+      --accent: #0f766e;
+      --accent-2: #1d4ed8;
+      --soft: #e9f7f5;
+      --shadow: 0 18px 45px rgba(23, 32, 42, 0.09);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 48px 24px 56px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr);
+      gap: 28px;
+      align-items: stretch;
+      margin-bottom: 28px;
+    }
+
+    .intro,
+    .panel,
+    .experiment-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .intro {
+      padding: 34px;
+      border-radius: 10px;
+    }
+
+    .kicker {
+      margin: 0 0 14px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 750;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+
+    .summary {
+      max-width: 780px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    a {
+      color: var(--accent-2);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border-radius: 7px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .button:hover {
+      text-decoration: none;
+      filter: brightness(0.98);
+    }
+
+    .panel {
+      border-radius: 10px;
+      padding: 24px;
+    }
+
+    .panel h2,
+    .experiment-card h2 {
+      margin: 0 0 14px;
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .metric {
+      padding: 13px 14px;
+      border-radius: 8px;
+      background: var(--soft);
+      border: 1px solid #c9ebe6;
+    }
+
+    .metric strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 14px;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .experiment-card {
+      border-radius: 10px;
+      padding: 26px;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0 22px;
+    }
+
+    .meta div {
+      min-width: 0;
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: #fbfcfe;
+    }
+
+    .meta dt {
+      margin: 0 0 4px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .meta dd {
+      margin: 0;
+      overflow-wrap: anywhere;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .link-card {
+      min-height: 96px;
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .link-card strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--ink);
+    }
+
+    .link-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer {
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 860px) {
+      main {
+        padding: 24px 14px 40px;
+      }
+
+      .hero,
+      .meta,
+      .link-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .intro,
+      .panel,
+      .experiment-card {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="intro">
+        <p class="kicker">Open Benchmark Artifact</p>
+        <h1 id="page-title">prompt-cache-bench</h1>
+        <p class="summary">
+          可复现的 LLM prompt caching 与 provider-routing A/B testing 实验仓库，包含原始数据集、实验代码、图表、校验清单和可在线阅读的完整报告。
+        </p>
+        <div class="actions">
+          <a class="button primary" href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.html">打开完整 HTML 报告</a>
+          <a class="button" href="https://github.com/InfronAI/prompt-cache-bench">查看 GitHub 仓库</a>
+        </div>
+      </div>
+
+      <aside class="panel" aria-labelledby="metrics-title">
+        <h2 id="metrics-title">当前发布实验</h2>
+        <div class="metric-grid">
+          <div class="metric">
+            <strong>Model</strong>
+            <span>deepseek/deepseek-v4-flash</span>
+          </div>
+          <div class="metric">
+            <strong>A/B Pair</strong>
+            <span>Infron vs OpenRouter</span>
+          </div>
+          <div class="metric">
+            <strong>Design</strong>
+            <span>4 groups x 50 rounds, streaming</span>
+          </div>
+          <div class="metric">
+            <strong>Routing Sort</strong>
+            <span>throughput, price, latency</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="experiment-card" aria-labelledby="experiment-title">
+      <h2 id="experiment-title">DeepSeek V4 Flash: Infron vs OpenRouter Routing Sort Cache Cost Study</h2>
+      <p>
+        该实验以严格配对的方式对比两套 OpenAI-compatible inference 平台在 prompt cache hit rate、actual cost、throughput、latency、TTFT 和 provider routing 行为上的表现。报告中的图表和结论均可从仓库内的原始数据与复现实验代码回溯。
+      </p>
+
+      <dl class="meta">
+        <div>
+          <dt>Report Date</dt>
+          <dd>2026-06-19</dd>
+        </div>
+        <div>
+          <dt>Language</dt>
+          <dd>Chinese</dd>
+        </div>
+        <div>
+          <dt>Dataset</dt>
+          <dd>business_representative</dd>
+        </div>
+        <div>
+          <dt>License</dt>
+          <dd>MIT</dd>
+        </div>
+      </dl>
+
+      <div class="link-grid" aria-label="Experiment links">
+        <a class="link-card" href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.html">
+          <strong>Self-contained HTML</strong>
+          <span>适合 GitHub Pages 在线阅读，图表已内嵌。</span>
+        </a>
+        <a class="link-card" href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.md">
+          <strong>Markdown Report</strong>
+          <span>适合在 GitHub 文件预览中阅读和审阅 diff。</span>
+        </a>
+        <a class="link-card" href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/">
+          <strong>Raw Dataset</strong>
+          <span>完整 benchmark records、pairing dataset 和 summary。</span>
+        </a>
+        <a class="link-card" href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/code/rerun_routing_sort_cache_cost_ab.py">
+          <strong>Experiment Code Snapshot</strong>
+          <span>本次实验对应的 A/B testing 脚本快照。</span>
+        </a>
+        <a class="link-card" href="scripts/rerun_routing_sort_cache_cost_ab.py">
+          <strong>Reusable Runner</strong>
+          <span>仓库级可复用 benchmark runner。</span>
+        </a>
+        <a class="link-card" href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/metadata/manifest.json">
+          <strong>Manifest</strong>
+          <span>实验文件列表、大小和 SHA-256 checksum。</span>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      GitHub Pages 入口页。报告数据与代码均来自仓库内已提交文件，不包含 API key 或 bearer token。
+    </footer>
+  </main>
+</body>
+</html>
