@@ -33,35 +33,50 @@
 
 #### Throughput First
 
-| 指标 | Infron / OpenRouter 并列对比 | 胜出方 |
-| --- | --- | --- |
-| 缓存命中率 | <span class="provider-label">Infron</span>**████████ 92.38%**<br><span class="provider-label">OpenRouter</span>██████░░ 67.24% | **Infron**（高 37.39%） |
-| 实际成本 | <span class="provider-label">Infron</span>████████ $0.05493100<br><span class="provider-label">OpenRouter</span>**███████░ $0.04656992** | **OpenRouter**（低 15.22%） |
-| Throughput | <span class="provider-label">Infron</span>███████░ 36.52 tok/s<br><span class="provider-label">OpenRouter</span>**████████ 40.06 tok/s** | **OpenRouter**（高 9.70%） |
-| Latency | <span class="provider-label">Infron</span>████████ 7391.44 ms<br><span class="provider-label">OpenRouter</span>**███░░░░░ 3020.63 ms** | **OpenRouter**（低 59.13%） |
-| TTFT | <span class="provider-label">Infron</span>████████ 3443.99 ms<br><span class="provider-label">OpenRouter</span>**████░░░░ 1580.62 ms** | **OpenRouter**（低 54.10%） |
+| 指标 | 平台 | 柱条与数值 | 胜出方 |
+| --- | --- | --- | --- |
+| 缓存命中率 | Infron | **████████ 92.38%** | **Infron**（高 37.39%） |
+|  | OpenRouter | ██████░░ 67.24% |  |
+| 实际成本 | Infron | ████████ $0.05493100 | **OpenRouter**（低 15.22%） |
+|  | OpenRouter | **███████░ $0.04656992** |  |
+| Throughput | Infron | ███████░ 36.52 tok/s | **OpenRouter**（高 9.70%） |
+|  | OpenRouter | **████████ 40.06 tok/s** |  |
+| Latency | Infron | ████████ 7391.44 ms | **OpenRouter**（低 59.13%） |
+|  | OpenRouter | **███░░░░░ 3020.63 ms** |  |
+| TTFT | Infron | ████████ 3443.99 ms | **OpenRouter**（低 54.10%） |
+|  | OpenRouter | **████░░░░ 1580.62 ms** |  |
 
 #### Price First
 
-| 指标 | Infron / OpenRouter 并列对比 | 胜出方 |
-| --- | --- | --- |
-| 缓存命中率 | <span class="provider-label">Infron</span>**████████ 82.67%**<br><span class="provider-label">OpenRouter</span>███████░ 75.95% | **Infron**（高 8.85%） |
-| 实际成本 | <span class="provider-label">Infron</span>**████████ $0.01059100**<br><span class="provider-label">OpenRouter</span>████████ $0.01103342 | **Infron**（低 4.01%） |
-| Throughput | <span class="provider-label">Infron</span>██████░░ 23.03 tok/s<br><span class="provider-label">OpenRouter</span>**████████ 32.87 tok/s** | **OpenRouter**（高 42.72%） |
-| Latency | <span class="provider-label">Infron</span>████████ 8802.77 ms<br><span class="provider-label">OpenRouter</span>**█████░░░ 5532.32 ms** | **OpenRouter**（低 37.15%） |
-| TTFT | <span class="provider-label">Infron</span>████████ 6419.29 ms<br><span class="provider-label">OpenRouter</span>**█████░░░ 3783.70 ms** | **OpenRouter**（低 41.06%） |
+| 指标 | 平台 | 柱条与数值 | 胜出方 |
+| --- | --- | --- | --- |
+| 缓存命中率 | Infron | **████████ 82.67%** | **Infron**（高 8.85%） |
+|  | OpenRouter | ███████░ 75.95% |  |
+| 实际成本 | Infron | **████████ $0.01059100** | **Infron**（低 4.01%） |
+|  | OpenRouter | ████████ $0.01103342 |  |
+| Throughput | Infron | ██████░░ 23.03 tok/s | **OpenRouter**（高 42.72%） |
+|  | OpenRouter | **████████ 32.87 tok/s** |  |
+| Latency | Infron | ████████ 8802.77 ms | **OpenRouter**（低 37.15%） |
+|  | OpenRouter | **█████░░░ 5532.32 ms** |  |
+| TTFT | Infron | ████████ 6419.29 ms | **OpenRouter**（低 41.06%） |
+|  | OpenRouter | **█████░░░ 3783.70 ms** |  |
 
 #### Latency First
 
-| 指标 | Infron / OpenRouter 并列对比 | 胜出方 |
-| --- | --- | --- |
-| 缓存命中率 | <span class="provider-label">Infron</span>**████████ 93.55%**<br><span class="provider-label">OpenRouter</span>███░░░░░ 33.19% | **Infron**（高 181.90%） |
-| 实际成本 | <span class="provider-label">Infron</span>**█░░░░░░░ $0.00555800**<br><span class="provider-label">OpenRouter</span>████████ $0.03762893 | **Infron**（低 85.23%） |
-| Throughput | <span class="provider-label">Infron</span>█████░░░ 8.66 tok/s<br><span class="provider-label">OpenRouter</span>**████████ 15.21 tok/s** | **OpenRouter**（高 75.62%） |
-| Latency | <span class="provider-label">Infron</span>**███░░░░░ 1847.59 ms**<br><span class="provider-label">OpenRouter</span>████████ 4587.12 ms | **Infron**（低 59.72%） |
-| TTFT | <span class="provider-label">Infron</span>**████░░░░ 1536.19 ms**<br><span class="provider-label">OpenRouter</span>████████ 3476.52 ms | **Infron**（低 55.81%） |
+| 指标 | 平台 | 柱条与数值 | 胜出方 |
+| --- | --- | --- | --- |
+| 缓存命中率 | Infron | **████████ 93.55%** | **Infron**（高 181.90%） |
+|  | OpenRouter | ███░░░░░ 33.19% |  |
+| 实际成本 | Infron | **█░░░░░░░ $0.00555800** | **Infron**（低 85.23%） |
+|  | OpenRouter | ████████ $0.03762893 |  |
+| Throughput | Infron | █████░░░ 8.66 tok/s | **OpenRouter**（高 75.62%） |
+|  | OpenRouter | **████████ 15.21 tok/s** |  |
+| Latency | Infron | **███░░░░░ 1847.59 ms** | **Infron**（低 59.72%） |
+|  | OpenRouter | ████████ 4587.12 ms |  |
+| TTFT | Infron | **████░░░░ 1536.19 ms** | **Infron**（低 55.81%） |
+|  | OpenRouter | ████████ 3476.52 ms |  |
 
-说明：每个区块对应一种路由模式；同一指标行内的 Infron 与 OpenRouter 柱条按两者最大值归一化。缓存命中率和 throughput 越高越好，实际成本、latency 和 TTFT 越低越好。
+说明：每个区块对应一种路由模式；同一指标的 Infron 与 OpenRouter 分成上下两行，柱条统一从“柱条与数值”列左侧开始，避免依赖 GitHub 会过滤的 HTML/CSS。缓存命中率和 throughput 越高越好，实际成本、latency 和 TTFT 越低越好。
 
 ## 1. 引言：背景、研究问题与贡献
 
