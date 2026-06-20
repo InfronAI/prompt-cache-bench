@@ -132,7 +132,7 @@
 
     .language-tabs {
       display: inline-flex;
-      gap: 26px;
+      gap: 18px;
       align-items: center;
       padding-left: 30px;
       border-left: 1px solid var(--line);
@@ -141,9 +141,9 @@
 
     .language-tabs button {
       position: relative;
-      min-width: auto;
+      min-width: 72px;
       min-height: 38px;
-      padding: 0 0 2px;
+      padding: 0 8px 2px;
       border: 0;
       background: transparent;
       color: var(--ink);
@@ -151,7 +151,18 @@
       font-family: Georgia, "Times New Roman", serif;
       font-size: 15px;
       font-weight: 600;
+      text-align: center;
       cursor: pointer;
+    }
+
+    .language-tabs button:hover,
+    .language-tabs button:focus-visible {
+      color: var(--accent);
+    }
+
+    .language-tabs button:focus-visible {
+      outline: 1px solid var(--accent);
+      outline-offset: 4px;
     }
 
     .language-tabs button[aria-selected="true"] {
@@ -664,8 +675,13 @@
       .language-tabs {
         width: 100%;
         justify-content: space-between;
+        gap: 12px;
         padding-left: 0;
         border-left: 0;
+      }
+
+      .language-tabs button {
+        flex: 1 1 0;
       }
 
       .hero {
