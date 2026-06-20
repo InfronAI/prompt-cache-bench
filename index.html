@@ -3,21 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>prompt-cache-bench | Open LLM Prompt Caching Benchmark</title>
+  <title>prompt-cache-bench | Open LLM Inference Benchmark Registry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       color-scheme: light;
-      --paper: #fbfaf7;
-      --ink: #171717;
-      --muted: #62615d;
-      --line: #d8d3c7;
-      --panel: #ffffff;
-      --soft: #f2eee5;
-      --accent: #0f6b5f;
-      --accent-dark: #0a4f47;
-      --gold: #a06718;
-      --blue: #2456a6;
-      --shadow: 0 20px 48px rgba(42, 38, 30, 0.08);
+      --bg: #f6f5f1;
+      --paper: #ffffff;
+      --ink: #121212;
+      --muted: #5f625f;
+      --faint: #858883;
+      --line: #d8d8d2;
+      --soft: #ebe9df;
+      --soft-2: #f9f8f4;
+      --accent: #0b5d56;
+      --accent-2: #174ea6;
+      --amber: #9b6416;
+      --green-soft: #e6f2ee;
+      --blue-soft: #e8eef9;
+      --amber-soft: #f4ebdc;
+      --shadow: 0 24px 70px rgba(25, 24, 20, 0.08);
     }
 
     * {
@@ -31,43 +38,45 @@
     body {
       margin: 0;
       min-height: 100vh;
-      background: var(--paper);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.64), rgba(246, 245, 241, 0.86)),
+        var(--bg);
       color: var(--ink);
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
-      line-height: 1.58;
+      font-family: "IBM Plex Sans", sans-serif;
+      line-height: 1.56;
     }
 
     body::before {
       content: "";
       position: fixed;
       inset: 0;
+      z-index: -1;
       pointer-events: none;
       background-image:
-        linear-gradient(rgba(23, 23, 23, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(23, 23, 23, 0.035) 1px, transparent 1px);
-      background-size: 36px 36px;
-      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.72), transparent 76%);
+        linear-gradient(rgba(18, 18, 18, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(18, 18, 18, 0.035) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 82%);
     }
 
     a {
-      color: var(--blue);
+      color: var(--accent-2);
       text-decoration-thickness: 1px;
       text-underline-offset: 3px;
     }
 
     .shell {
-      width: min(1180px, calc(100% - 40px));
+      width: min(1240px, calc(100% - 44px));
       margin: 0 auto;
-      padding: 28px 0 52px;
-      position: relative;
+      padding: 24px 0 56px;
     }
 
     .topbar {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto auto;
+      gap: 18px;
       align-items: center;
-      padding: 12px 0 22px;
+      padding: 10px 0 20px;
       border-bottom: 1px solid var(--line);
     }
 
@@ -79,19 +88,19 @@
     }
 
     .mark {
-      width: 34px;
-      height: 34px;
-      border: 1px solid var(--ink);
+      width: 36px;
+      height: 36px;
       display: grid;
       place-items: center;
-      font-family: ui-serif, Georgia, "Times New Roman", serif;
-      font-size: 17px;
-      font-weight: 700;
-      background: var(--panel);
+      border: 1px solid var(--ink);
+      background: var(--paper);
+      font-weight: 800;
+      box-shadow: 4px 4px 0 var(--soft);
     }
 
     .brand-title {
       display: block;
+      font-size: 15px;
       font-weight: 800;
       letter-spacing: 0;
       white-space: nowrap;
@@ -104,18 +113,35 @@
       white-space: nowrap;
     }
 
+    .nav {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .nav a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .nav a:hover {
+      color: var(--ink);
+      text-decoration: underline;
+    }
+
     .language-tabs {
       display: inline-flex;
       gap: 4px;
       padding: 4px;
       border: 1px solid var(--line);
-      background: var(--panel);
       border-radius: 999px;
-      box-shadow: 0 8px 24px rgba(42, 38, 30, 0.06);
+      background: var(--paper);
     }
 
     .language-tabs button {
-      min-width: 94px;
+      min-width: 86px;
       min-height: 34px;
       border: 0;
       border-radius: 999px;
@@ -134,34 +160,34 @@
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+      grid-template-columns: minmax(0, 1.02fr) minmax(390px, 0.98fr);
       gap: 34px;
-      padding: 54px 0 34px;
+      padding: 56px 0 34px;
       align-items: start;
     }
 
     .kicker {
-      margin: 0 0 18px;
-      color: var(--accent-dark);
+      margin: 0 0 16px;
+      color: var(--accent);
       font-size: 12px;
-      font-weight: 900;
+      font-weight: 800;
       letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
     h1 {
       margin: 0;
-      max-width: 780px;
-      font-family: ui-serif, Georgia, "Times New Roman", serif;
-      font-size: clamp(42px, 6vw, 78px);
-      line-height: 0.98;
+      max-width: 830px;
+      font-size: clamp(42px, 6.2vw, 82px);
+      line-height: 0.96;
       letter-spacing: 0;
+      font-weight: 800;
     }
 
     .lead {
-      max-width: 760px;
+      max-width: 810px;
       margin: 22px 0 0;
-      color: #383735;
+      color: #373936;
       font-size: 18px;
     }
 
@@ -180,11 +206,12 @@
       padding: 0 16px;
       border: 1px solid var(--ink);
       border-radius: 4px;
-      background: var(--panel);
+      background: var(--paper);
       color: var(--ink);
       font-size: 14px;
       font-weight: 800;
       text-decoration: none;
+      white-space: nowrap;
     }
 
     .button.primary {
@@ -194,50 +221,109 @@
 
     .button.secondary {
       border-color: var(--line);
-      color: var(--accent-dark);
+      color: var(--accent);
     }
 
-    .figure-panel {
-      background: var(--panel);
+    .registry-card {
       border: 1px solid var(--line);
+      background: var(--paper);
       box-shadow: var(--shadow);
+    }
+
+    .registry-card header {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
       padding: 18px;
+      border-bottom: 1px solid var(--line);
+      background: var(--soft-2);
     }
 
-    .figure-panel img {
+    .registry-card h2,
+    .section h2 {
+      margin: 0;
+      font-size: clamp(24px, 3vw, 38px);
+      line-height: 1.08;
+      letter-spacing: 0;
+      font-weight: 800;
+    }
+
+    .registry-card p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 10px;
+      border: 1px solid #b9d7ce;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .scope-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 0;
+    }
+
+    .scope-item {
+      min-height: 126px;
+      padding: 18px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .scope-item:nth-child(2n) {
+      border-right: 0;
+    }
+
+    .scope-item:nth-last-child(-n + 2) {
+      border-bottom: 0;
+    }
+
+    .scope-item strong {
       display: block;
-      width: 100%;
-      height: auto;
-      border: 1px solid var(--line);
-      background: #fff;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
     }
 
-    .caption {
-      margin: 12px 2px 0;
+    .scope-item b {
+      display: block;
+      margin-top: 8px;
+      font-size: 24px;
+      line-height: 1.1;
+    }
+
+    .scope-item span {
+      display: block;
+      margin-top: 8px;
       color: var(--muted);
       font-size: 12px;
     }
 
     .section {
-      margin-top: 30px;
-      padding-top: 30px;
+      margin-top: 34px;
+      padding-top: 32px;
       border-top: 1px solid var(--line);
     }
 
     .section-head {
       display: grid;
-      grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+      grid-template-columns: minmax(260px, 0.62fr) minmax(0, 1.38fr);
       gap: 28px;
       align-items: start;
       margin-bottom: 20px;
-    }
-
-    .section h2 {
-      margin: 0;
-      font-family: ui-serif, Georgia, "Times New Roman", serif;
-      font-size: clamp(24px, 3vw, 34px);
-      line-height: 1.08;
-      letter-spacing: 0;
     }
 
     .section-note {
@@ -246,67 +332,133 @@
       font-size: 15px;
     }
 
-    .metrics {
+    .coverage {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 12px;
     }
 
-    .metric {
-      min-height: 132px;
+    .coverage-card {
+      min-height: 150px;
       padding: 16px;
       border: 1px solid var(--line);
-      background: var(--panel);
+      background: var(--paper);
     }
 
-    .metric dt {
-      margin: 0 0 10px;
+    .coverage-card strong {
+      display: block;
       color: var(--muted);
       font-size: 12px;
-      font-weight: 900;
+      font-weight: 800;
       text-transform: uppercase;
     }
 
-    .metric dd {
-      margin: 0;
-      color: var(--ink);
-      font-size: 18px;
-      font-weight: 900;
-      line-height: 1.25;
+    .coverage-card b {
+      display: block;
+      margin-top: 10px;
+      font-size: 22px;
+      line-height: 1.15;
     }
 
-    .metric span {
+    .coverage-card span {
       display: block;
-      margin-top: 8px;
+      margin-top: 10px;
       color: var(--muted);
       font-size: 12px;
-      font-weight: 600;
     }
 
-    .experiment {
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 930px;
+      font-size: 13px;
+    }
+
+    th,
+    td {
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--soft-2);
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    td code {
+      font-family: "IBM Plex Sans", sans-serif;
+      font-weight: 700;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 22px;
+      padding: 0 8px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--soft-2);
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .tag.live {
+      border-color: #b9d7ce;
+      background: var(--green-soft);
+      color: var(--accent);
+    }
+
+    .tag.planned {
+      border-color: #d7c39b;
+      background: var(--amber-soft);
+      color: var(--amber);
+    }
+
+    .featured {
       display: grid;
-      grid-template-columns: minmax(300px, 0.82fr) minmax(0, 1.18fr);
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
       gap: 22px;
       align-items: stretch;
     }
 
     .paper-card,
-    .artifact-card {
+    .artifact-card,
+    .roadmap-card {
       border: 1px solid var(--line);
-      background: var(--panel);
+      background: var(--paper);
       box-shadow: var(--shadow);
     }
 
-    .paper-card {
-      padding: 24px;
+    .paper-card,
+    .artifact-card {
+      padding: 22px;
     }
 
     .paper-card h3,
-    .artifact-card h3 {
+    .artifact-card h3,
+    .roadmap-card h3 {
       margin: 0 0 12px;
-      font-family: ui-serif, Georgia, "Times New Roman", serif;
-      font-size: 24px;
-      line-height: 1.16;
+      font-size: 23px;
+      line-height: 1.18;
       letter-spacing: 0;
     }
 
@@ -333,6 +485,7 @@
       display: block;
       color: var(--muted);
       font-size: 11px;
+      font-weight: 800;
       text-transform: uppercase;
     }
 
@@ -342,10 +495,6 @@
       font-size: 13px;
       font-weight: 800;
       overflow-wrap: anywhere;
-    }
-
-    .artifact-card {
-      padding: 20px;
     }
 
     .artifact-grid {
@@ -382,14 +531,14 @@
 
     .method {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       border: 1px solid var(--line);
-      background: var(--panel);
+      background: var(--paper);
     }
 
     .method-step {
-      min-height: 152px;
-      padding: 20px;
+      min-height: 164px;
+      padding: 18px;
       border-right: 1px solid var(--line);
     }
 
@@ -405,8 +554,8 @@
       height: 30px;
       margin-bottom: 14px;
       border: 1px solid var(--ink);
-      font-family: ui-serif, Georgia, "Times New Roman", serif;
-      font-size: 15px;
+      font-size: 14px;
+      font-weight: 800;
     }
 
     .method-step h3 {
@@ -415,6 +564,23 @@
     }
 
     .method-step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .roadmap {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .roadmap-card {
+      min-height: 170px;
+      padding: 18px;
+    }
+
+    .roadmap-card p {
       margin: 0;
       color: var(--muted);
       font-size: 13px;
@@ -439,53 +605,36 @@
       display: block;
     }
 
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
+    @media (max-width: 1060px) {
+      .topbar {
+        grid-template-columns: 1fr auto;
+      }
 
-    @media (max-width: 980px) {
+      .nav {
+        display: none;
+      }
+
       .hero,
       .section-head,
-      .experiment {
+      .featured {
         grid-template-columns: 1fr;
       }
 
-      .metrics {
+      .coverage,
+      .method,
+      .roadmap {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .method {
-        grid-template-columns: 1fr;
-      }
-
-      .method-step,
-      .method-step:last-child {
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .method-step:last-child {
-        border-bottom: 0;
       }
     }
 
-    @media (max-width: 680px) {
+    @media (max-width: 720px) {
       .shell {
-        width: min(100% - 24px, 1180px);
+        width: min(100% - 24px, 1240px);
         padding-top: 14px;
       }
 
       .topbar {
-        align-items: flex-start;
-        flex-direction: column;
+        grid-template-columns: 1fr;
       }
 
       .language-tabs {
@@ -500,16 +649,27 @@
         padding-top: 34px;
       }
 
-      .metrics,
+      .scope-grid,
+      .coverage,
       .facts,
-      .artifact-grid {
+      .artifact-grid,
+      .method,
+      .roadmap {
         grid-template-columns: 1fr;
       }
 
-      .figure-panel,
-      .paper-card,
-      .artifact-card {
-        padding: 14px;
+      .scope-item,
+      .scope-item:nth-child(2n),
+      .scope-item:nth-last-child(-n + 2),
+      .method-step,
+      .method-step:last-child {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .scope-item:last-child,
+      .method-step:last-child {
+        border-bottom: 0;
       }
 
       footer {
@@ -522,12 +682,18 @@
   <div class="shell">
     <header class="topbar">
       <div class="brand" aria-label="prompt-cache-bench">
-        <div class="mark">π</div>
+        <div class="mark">PCB</div>
         <div>
           <span class="brand-title">prompt-cache-bench</span>
-          <span class="brand-subtitle">Open benchmark artefacts for LLM inference systems</span>
+          <span class="brand-subtitle">Longitudinal benchmark registry for LLM inference systems</span>
         </div>
       </div>
+      <nav class="nav" aria-label="Primary">
+        <a href="#registry-en">Registry</a>
+        <a href="#featured-en">Latest Study</a>
+        <a href="#protocol-en">Protocol</a>
+        <a href="https://github.com/InfronAI/prompt-cache-bench">GitHub</a>
+      </nav>
       <div class="language-tabs" role="tablist" aria-label="Language">
         <button type="button" id="tab-en" role="tab" aria-controls="panel-en" aria-selected="true" data-lang-tab="en">English</button>
         <button type="button" id="tab-zh" role="tab" aria-controls="panel-zh" aria-selected="false" data-lang-tab="zh">中文</button>
@@ -538,77 +704,149 @@
       <section id="panel-en" data-lang-panel="en" class="active" role="tabpanel" aria-labelledby="tab-en">
         <section class="hero" aria-labelledby="title-en">
           <div>
-            <p class="kicker">Open Research Artifact</p>
-            <h1 id="title-en">A reproducible benchmark for prompt caching and provider routing.</h1>
+            <p class="kicker">Open Longitudinal Benchmark Registry</p>
+            <h1 id="title-en">Tracking prompt caching and provider routing across models, providers, and time.</h1>
             <p class="lead">
-              This repository publishes raw datasets, figures, report pages, checksums, and runnable experiment code for evaluating OpenAI-compatible inference platforms across cache hit rate, observed cost, throughput, latency, TTFT, and provider behavior.
+              prompt-cache-bench is designed as a long-running, reproducible registry for LLM inference systems. It will accumulate hundreds of model/provider A/B comparisons, raw datasets, report pages, figures, and runnable experiment code under a consistent methodology.
             </p>
             <div class="hero-actions">
-              <a class="button primary" href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.en.html">Read English Report</a>
-              <a class="button secondary" href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/">Inspect Dataset</a>
+              <a class="button primary" href="#registry-en">Browse Registry</a>
+              <a class="button secondary" href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.en.html">Latest English Report</a>
               <a class="button secondary" href="https://github.com/InfronAI/prompt-cache-bench">GitHub Repository</a>
             </div>
           </div>
-          <figure class="figure-panel">
-            <img src="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/figures/conclusion_overview.en.svg" alt="Conclusion overview chart for the benchmark">
-            <figcaption class="caption">Conclusion overview from the published DeepSeek V4 Flash A/B study.</figcaption>
-          </figure>
+
+          <aside class="registry-card" aria-labelledby="scope-en">
+            <header>
+              <div>
+                <h2 id="scope-en">Benchmark Scope</h2>
+                <p>Registry dimensions for current and future experiments.</p>
+              </div>
+              <span class="status-pill">Active project</span>
+            </header>
+            <div class="scope-grid">
+              <div class="scope-item"><strong>Models</strong><b>100s planned</b><span>DeepSeek, Qwen, Claude, GPT, Llama, Mistral, Gemini, and more.</span></div>
+              <div class="scope-item"><strong>Provider pairs</strong><b>100s planned</b><span>Cross-platform and upstream-provider comparisons.</span></div>
+              <div class="scope-item"><strong>Core metrics</strong><b>6+ axes</b><span>Cache hit rate, cost, throughput, latency, TTFT, provider behavior.</span></div>
+              <div class="scope-item"><strong>Artifacts</strong><b>Reproducible</b><span>Raw records, pair datasets, scripts, figures, manifests, reports.</span></div>
+            </div>
+          </aside>
         </section>
 
-        <section class="section" aria-labelledby="metrics-en">
+        <section class="section" id="registry-en" aria-labelledby="registry-title-en">
           <div class="section-head">
-            <h2 id="metrics-en">Published Study</h2>
+            <h2 id="registry-title-en">Experiment Registry</h2>
             <p class="section-note">
-              The current release evaluates `deepseek/deepseek-v4-flash` under strict paired A/B controls. Included samples require equal response-side `usage.prompt_tokens` across Infron and OpenRouter.
+              Each row represents a versioned benchmark artifact. Future experiments should be appended here with stable report URLs, raw datasets, reproducible scripts, and manifest checksums.
             </p>
           </div>
-          <dl class="metrics">
-            <div class="metric"><dt>Model</dt><dd>deepseek/deepseek-v4-flash</dd><span>OpenAI-compatible chat completions</span></div>
-            <div class="metric"><dt>Design</dt><dd>4 x 50</dd><span>Four groups, fifty rounds, streaming</span></div>
-            <div class="metric"><dt>Routing Modes</dt><dd>3</dd><span>throughput, price, latency</span></div>
-            <div class="metric"><dt>Valid Pairs</dt><dd>364</dd><span>Strictly controlled A/B pairs</span></div>
-            <div class="metric"><dt>Requests</dt><dd>1,456</dd><span>Request-level observations retained</span></div>
-          </dl>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Status</th>
+                  <th>Model</th>
+                  <th>A/B Pair</th>
+                  <th>Design</th>
+                  <th>Reports</th>
+                  <th>Data</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="tag live">Published</span></td>
+                  <td><code>deepseek/deepseek-v4-flash</code></td>
+                  <td>Infron vs OpenRouter</td>
+                  <td>4 x 50, streaming, routing sort: throughput / price / latency</td>
+                  <td>
+                    <a href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.en.html">EN HTML</a>
+                    ·
+                    <a href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.html">ZH HTML</a>
+                    ·
+                    <a href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/">Reports</a>
+                  </td>
+                  <td><a href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/">Dataset</a></td>
+                </tr>
+                <tr>
+                  <td><span class="tag planned">Planned</span></td>
+                  <td><code>qwen/*</code>, <code>llama/*</code>, <code>claude/*</code>, <code>gpt/*</code></td>
+                  <td>Provider matrix expansion</td>
+                  <td>Matched-payload A/B, streaming TTFT, provider attribution, cost breakdown</td>
+                  <td>To be published</td>
+                  <td>To be published</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </section>
 
-        <section class="section" aria-labelledby="artifact-en">
-          <div class="experiment">
+        <section class="section" aria-labelledby="coverage-en">
+          <div class="section-head">
+            <h2 id="coverage-en">Coverage Model</h2>
+            <p class="section-note">The homepage is organized around the registry dimensions that will scale as the benchmark grows.</p>
+          </div>
+          <div class="coverage">
+            <div class="coverage-card"><strong>Model Families</strong><b>Multi-vendor</b><span>One directory per provider/model id, preserving canonical model naming.</span></div>
+            <div class="coverage-card"><strong>A/B Pairs</strong><b>Versioned</b><span>Each comparison has its own report, data, figures, code snapshot, and manifest.</span></div>
+            <div class="coverage-card"><strong>Metrics</strong><b>Comparable</b><span>Strict input-token controls keep cache, cost, throughput, latency, and TTFT comparable.</span></div>
+            <div class="coverage-card"><strong>Time Series</strong><b>Repeatable</b><span>Repeated runs can track provider drift, cache stability, and routing changes over time.</span></div>
+          </div>
+        </section>
+
+        <section class="section" id="featured-en" aria-labelledby="featured-title-en">
+          <div class="section-head">
+            <h2 id="featured-title-en">Latest Featured Study</h2>
+            <p class="section-note">The first published artifact demonstrates the methodology and directory structure for future model/provider entries.</p>
+          </div>
+          <div class="featured">
             <article class="paper-card">
-              <h3 id="artifact-en">DeepSeek V4 Flash: Infron vs OpenRouter Routing Sort Cache Cost Study</h3>
+              <h3>DeepSeek V4 Flash: Infron vs OpenRouter Routing Sort Cache Cost Study</h3>
               <p>
-                A bilingual, self-contained report with matched-token controls, provider attribution, cache-hit analysis, cost accounting, latency/TTFT measurements, radar charts, routing-mode comparisons, and a reproducibility appendix.
+                A bilingual, self-contained report with matched-token controls, provider attribution, cache-hit analysis, observed cost accounting, latency/TTFT measurements, radar charts, routing-mode comparisons, and reproducibility appendices.
               </p>
               <div class="facts">
                 <div class="fact"><strong>Date</strong><span>2026-06-19</span></div>
                 <div class="fact"><strong>License</strong><span>MIT</span></div>
                 <div class="fact"><strong>Dataset</strong><span>business_representative</span></div>
-                <div class="fact"><strong>A/B Pair</strong><span>Infron vs OpenRouter</span></div>
+                <div class="fact"><strong>Valid Pairs</strong><span>364 strict A/B pairs</span></div>
               </div>
             </article>
-
             <aside class="artifact-card">
-              <h3>Research Artefacts</h3>
+              <h3>Study Artifacts</h3>
               <div class="artifact-grid">
                 <a class="artifact-link" href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.en.html"><strong>English HTML Report</strong><span>Self-contained page with embedded English figures.</span></a>
                 <a class="artifact-link" href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.en.md"><strong>English Markdown</strong><span>Source report for GitHub preview and diff review.</span></a>
-                <a class="artifact-link" href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.html"><strong>Chinese HTML Report</strong><span>中文版完整网页报告，图表已内嵌。</span></a>
+                <a class="artifact-link" href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.html"><strong>Chinese HTML Report</strong><span>Self-contained Chinese report page.</span></a>
                 <a class="artifact-link" href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/"><strong>Raw Dataset</strong><span>Pairs, request logs, summaries, and exclusions.</span></a>
-                <a class="artifact-link" href="scripts/rerun_routing_sort_cache_cost_ab.py"><strong>Benchmark Runner</strong><span>Reusable 4x50 streaming A/B test script.</span></a>
+                <a class="artifact-link" href="scripts/rerun_routing_sort_cache_cost_ab.py"><strong>Benchmark Runner</strong><span>Reusable streaming A/B benchmark script.</span></a>
                 <a class="artifact-link" href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/metadata/manifest.json"><strong>Manifest</strong><span>File sizes and SHA-256 checksums.</span></a>
               </div>
             </aside>
           </div>
         </section>
 
-        <section class="section" aria-labelledby="method-en">
+        <section class="section" id="protocol-en" aria-labelledby="protocol-title-en">
           <div class="section-head">
-            <h2 id="method-en">Reproducibility Protocol</h2>
-            <p class="section-note">The benchmark is designed as a controlled artefact, not a one-off dashboard snapshot.</p>
+            <h2 id="protocol-title-en">Reproducibility Protocol</h2>
+            <p class="section-note">The project treats every benchmark as a controlled research artifact, not a one-off dashboard snapshot.</p>
           </div>
           <div class="method">
-            <div class="method-step"><b>1</b><h3>Fixed payloads</h3><p>Each routing mode uses a stable payload SHA256 and sends two identical prompts per round.</p></div>
+            <div class="method-step"><b>1</b><h3>Fixed payloads</h3><p>Each routing mode uses stable payload SHA256 values and sends two identical prompts per round.</p></div>
             <div class="method-step"><b>2</b><h3>Strict pairing</h3><p>Only `sort/group/round` pairs with equal response-side prompt tokens are retained.</p></div>
-            <div class="method-step"><b>3</b><h3>Auditable output</h3><p>Every aggregate can be traced to checked-in request-level records, pair CSV files, and checksums.</p></div>
+            <div class="method-step"><b>3</b><h3>Observable telemetry</h3><p>Usage, cost, TTFT, latency, provider identifiers, and cache tokens are preserved when returned.</p></div>
+            <div class="method-step"><b>4</b><h3>Auditable release</h3><p>Reports, raw data, code snapshots, and checksums are committed together.</p></div>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="roadmap-en">
+          <div class="section-head">
+            <h2 id="roadmap-en">Expansion Roadmap</h2>
+            <p class="section-note">The registry is ready for broader model/provider coverage while preserving the same evidence standard.</p>
+          </div>
+          <div class="roadmap">
+            <article class="roadmap-card"><h3>Model matrix</h3><p>Add Qwen, Llama, Claude, GPT, Gemini, Mistral, and domain-specific model families under the same directory convention.</p></article>
+            <article class="roadmap-card"><h3>Provider matrix</h3><p>Track cross-platform comparisons and upstream provider behavior, including routing drift over repeated runs.</p></article>
+            <article class="roadmap-card"><h3>Longitudinal runs</h3><p>Repeat experiments over time to observe cache TTL, provider fallback, price movement, latency tails, and throughput stability.</p></article>
           </div>
         </section>
       </section>
@@ -616,54 +854,113 @@
       <section id="panel-zh" data-lang-panel="zh" role="tabpanel" aria-labelledby="tab-zh" lang="zh-CN">
         <section class="hero" aria-labelledby="title-zh">
           <div>
-            <p class="kicker">开放研究工件</p>
-            <h1 id="title-zh">面向 Prompt Caching 与 Provider Routing 的可复现基准。</h1>
+            <p class="kicker">长期开放 Benchmark Registry</p>
+            <h1 id="title-zh">持续追踪模型、Provider 与时间维度下的 Prompt Caching 和路由表现。</h1>
             <p class="lead">
-              本仓库发布原始数据集、图表、报告页面、校验清单和可运行实验代码，用于评估 OpenAI-compatible 推理平台在缓存命中率、实际成本、吞吐量、时延、TTFT 与 provider 行为上的表现。
+              prompt-cache-bench 是一个长期、可复现的 LLM 推理系统 benchmark registry。它会持续沉淀数百个模型与 provider 之间的 A/B 对比，统一保存原始数据、报告、图表、实验代码与校验清单。
             </p>
             <div class="hero-actions">
-              <a class="button primary" href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.html">阅读中文报告</a>
-              <a class="button secondary" href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/">查看数据集</a>
+              <a class="button primary" href="#registry-zh">浏览实验注册表</a>
+              <a class="button secondary" href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.html">最新中文报告</a>
               <a class="button secondary" href="https://github.com/InfronAI/prompt-cache-bench">GitHub 仓库</a>
             </div>
           </div>
-          <figure class="figure-panel">
-            <img src="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/figures/conclusion_overview.svg" alt="实验结论总览图">
-            <figcaption class="caption">已发布 DeepSeek V4 Flash A/B 实验的结论总览。</figcaption>
-          </figure>
+
+          <aside class="registry-card" aria-labelledby="scope-zh">
+            <header>
+              <div>
+                <h2 id="scope-zh">Benchmark 范围</h2>
+                <p>当前与未来实验都会按照这些维度组织。</p>
+              </div>
+              <span class="status-pill">长期维护</span>
+            </header>
+            <div class="scope-grid">
+              <div class="scope-item"><strong>Models</strong><b>计划覆盖数百个</b><span>DeepSeek、Qwen、Claude、GPT、Llama、Mistral、Gemini 等。</span></div>
+              <div class="scope-item"><strong>Provider pairs</strong><b>计划覆盖数百组</b><span>跨平台、跨上游 provider 的 A/B 对比。</span></div>
+              <div class="scope-item"><strong>Core metrics</strong><b>6+ 维度</b><span>缓存命中、成本、吞吐、时延、TTFT、provider 行为。</span></div>
+              <div class="scope-item"><strong>Artifacts</strong><b>完全可复现</b><span>原始记录、配对数据集、脚本、图表、manifest、报告。</span></div>
+            </div>
+          </aside>
         </section>
 
-        <section class="section" aria-labelledby="metrics-zh">
+        <section class="section" id="registry-zh" aria-labelledby="registry-title-zh">
           <div class="section-head">
-            <h2 id="metrics-zh">已发布实验</h2>
+            <h2 id="registry-title-zh">实验注册表</h2>
             <p class="section-note">
-              当前版本评估 `deepseek/deepseek-v4-flash`，使用严格配对 A/B 控制。进入统计的样本要求 Infron 与 OpenRouter 的响应侧 `usage.prompt_tokens` 完全一致。
+              每一行代表一个带版本的 benchmark 工件。未来实验会继续追加稳定报告 URL、原始数据集、复现实验代码和 manifest checksum。
             </p>
           </div>
-          <dl class="metrics">
-            <div class="metric"><dt>Model</dt><dd>deepseek/deepseek-v4-flash</dd><span>OpenAI-compatible chat completions</span></div>
-            <div class="metric"><dt>Design</dt><dd>4 x 50</dd><span>4 组，每组 50 轮，streaming</span></div>
-            <div class="metric"><dt>Routing Modes</dt><dd>3</dd><span>throughput、price、latency</span></div>
-            <div class="metric"><dt>Valid Pairs</dt><dd>364</dd><span>严格控制变量后的 A/B 配对</span></div>
-            <div class="metric"><dt>Requests</dt><dd>1,456</dd><span>保留的请求级观测记录</span></div>
-          </dl>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>状态</th>
+                  <th>模型</th>
+                  <th>A/B Pair</th>
+                  <th>实验设计</th>
+                  <th>报告</th>
+                  <th>数据</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="tag live">已发布</span></td>
+                  <td><code>deepseek/deepseek-v4-flash</code></td>
+                  <td>Infron vs OpenRouter</td>
+                  <td>4 x 50，streaming，routing sort: throughput / price / latency</td>
+                  <td>
+                    <a href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.html">中文 HTML</a>
+                    ·
+                    <a href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.en.html">EN HTML</a>
+                    ·
+                    <a href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/">Reports</a>
+                  </td>
+                  <td><a href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/">Dataset</a></td>
+                </tr>
+                <tr>
+                  <td><span class="tag planned">规划中</span></td>
+                  <td><code>qwen/*</code>, <code>llama/*</code>, <code>claude/*</code>, <code>gpt/*</code></td>
+                  <td>Provider matrix expansion</td>
+                  <td>Matched-payload A/B、streaming TTFT、provider attribution、cost breakdown</td>
+                  <td>待发布</td>
+                  <td>待发布</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </section>
 
-        <section class="section" aria-labelledby="artifact-zh">
-          <div class="experiment">
+        <section class="section" aria-labelledby="coverage-zh">
+          <div class="section-head">
+            <h2 id="coverage-zh">覆盖模型</h2>
+            <p class="section-note">首页按照 registry 的长期维度组织，后续实验数量增长时仍能保持清晰结构。</p>
+          </div>
+          <div class="coverage">
+            <div class="coverage-card"><strong>Model Families</strong><b>多模型族</b><span>每个 provider/model id 使用独立目录，保留规范模型命名。</span></div>
+            <div class="coverage-card"><strong>A/B Pairs</strong><b>版本化</b><span>每个对比都包含报告、数据、图表、代码快照和 manifest。</span></div>
+            <div class="coverage-card"><strong>Metrics</strong><b>可比较</b><span>严格 input-token 控制，使缓存、成本、吞吐、时延和 TTFT 可比。</span></div>
+            <div class="coverage-card"><strong>Time Series</strong><b>可重复</b><span>重复实验可追踪 provider 漂移、缓存稳定性和路由变化。</span></div>
+          </div>
+        </section>
+
+        <section class="section" id="featured-zh" aria-labelledby="featured-title-zh">
+          <div class="section-head">
+            <h2 id="featured-title-zh">最新重点实验</h2>
+            <p class="section-note">第一份已发布工件展示了后续模型和 provider 对比会沿用的方法与目录结构。</p>
+          </div>
+          <div class="featured">
             <article class="paper-card">
-              <h3 id="artifact-zh">DeepSeek V4 Flash：Infron vs OpenRouter Routing Sort Cache Cost Study</h3>
+              <h3>DeepSeek V4 Flash：Infron vs OpenRouter Routing Sort Cache Cost Study</h3>
               <p>
-                这是一份双语、可独立打开的实验报告，包含 input token 控制、provider 归因、缓存命中分析、成本统计、latency/TTFT 测量、雷达图、路由模式对比和可复现性附录。
+                这是一份双语、可独立打开的实验报告，包含 input token 控制、provider 归因、缓存命中分析、实际成本统计、latency/TTFT 测量、雷达图、路由模式对比和可复现性附录。
               </p>
               <div class="facts">
                 <div class="fact"><strong>Date</strong><span>2026-06-19</span></div>
                 <div class="fact"><strong>License</strong><span>MIT</span></div>
                 <div class="fact"><strong>Dataset</strong><span>business_representative</span></div>
-                <div class="fact"><strong>A/B Pair</strong><span>Infron vs OpenRouter</span></div>
+                <div class="fact"><strong>Valid Pairs</strong><span>364 strict A/B pairs</span></div>
               </div>
             </article>
-
             <aside class="artifact-card">
               <h3>研究工件</h3>
               <div class="artifact-grid">
@@ -671,29 +968,42 @@
                 <a class="artifact-link" href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.md"><strong>中文 Markdown</strong><span>适合 GitHub 文件预览和 diff 审阅。</span></a>
                 <a class="artifact-link" href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.en.html"><strong>English HTML Report</strong><span>英文版完整网页报告，图表已英文化。</span></a>
                 <a class="artifact-link" href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/"><strong>原始数据集</strong><span>配对数据、请求日志、summary 与剔除样本。</span></a>
-                <a class="artifact-link" href="scripts/rerun_routing_sort_cache_cost_ab.py"><strong>Benchmark Runner</strong><span>可复用的 4x50 streaming A/B testing 脚本。</span></a>
+                <a class="artifact-link" href="scripts/rerun_routing_sort_cache_cost_ab.py"><strong>Benchmark Runner</strong><span>可复用的 streaming A/B testing 脚本。</span></a>
                 <a class="artifact-link" href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/metadata/manifest.json"><strong>Manifest</strong><span>实验文件大小与 SHA-256 checksum。</span></a>
               </div>
             </aside>
           </div>
         </section>
 
-        <section class="section" aria-labelledby="method-zh">
+        <section class="section" id="protocol-zh" aria-labelledby="protocol-title-zh">
           <div class="section-head">
-            <h2 id="method-zh">可复现协议</h2>
-            <p class="section-note">这个 benchmark 被组织为可审计研究工件，而不是一次性的 dashboard 截图。</p>
+            <h2 id="protocol-title-zh">可复现协议</h2>
+            <p class="section-note">本项目把每一次 benchmark 都组织为可审计研究工件，而不是一次性的 dashboard 截图。</p>
           </div>
           <div class="method">
             <div class="method-step"><b>1</b><h3>固定 Payload</h3><p>每一种 routing mode 都使用稳定 payload SHA256，每轮发送两次完全相同的 prompt。</p></div>
             <div class="method-step"><b>2</b><h3>严格配对</h3><p>只有 `sort/group/round` 下响应侧 prompt tokens 完全一致的 A/B 样本进入统计。</p></div>
-            <div class="method-step"><b>3</b><h3>可审计输出</h3><p>所有聚合结论都能回溯到仓库中的请求级记录、配对 CSV 与 checksum。</p></div>
+            <div class="method-step"><b>3</b><h3>可观测 Telemetry</h3><p>保留 usage、cost、TTFT、latency、provider 标识和 cache tokens 等响应字段。</p></div>
+            <div class="method-step"><b>4</b><h3>可审计发布</h3><p>报告、原始数据、代码快照和 checksum 一起提交。</p></div>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="roadmap-zh">
+          <div class="section-head">
+            <h2 id="roadmap-zh">扩展路线</h2>
+            <p class="section-note">Registry 已经为更大规模的模型与 provider 覆盖做好结构准备，同时保持同一证据标准。</p>
+          </div>
+          <div class="roadmap">
+            <article class="roadmap-card"><h3>模型矩阵</h3><p>继续加入 Qwen、Llama、Claude、GPT、Gemini、Mistral 以及垂直领域模型族。</p></article>
+            <article class="roadmap-card"><h3>Provider 矩阵</h3><p>追踪跨平台对比与上游 provider 行为，包括多轮重复实验中的 routing drift。</p></article>
+            <article class="roadmap-card"><h3>长期时间序列</h3><p>重复实验以观察 cache TTL、provider fallback、价格变化、尾延迟和吞吐稳定性。</p></article>
           </div>
         </section>
       </section>
     </main>
 
     <footer>
-      <span>prompt-cache-bench · MIT License · GitHub Pages static research index</span>
+      <span>prompt-cache-bench · MIT License · GitHub Pages static benchmark registry</span>
       <span>No API keys or bearer tokens are included in this site.</span>
     </footer>
   </div>
@@ -701,6 +1011,7 @@
   <script>
     const tabs = Array.from(document.querySelectorAll("[data-lang-tab]"));
     const panels = Array.from(document.querySelectorAll("[data-lang-panel]"));
+    const navLinks = Array.from(document.querySelectorAll(".nav a[href^='#']"));
 
     function setLanguage(language) {
       tabs.forEach((tab) => {
@@ -711,6 +1022,10 @@
         panel.classList.toggle("active", panel.dataset.langPanel === language);
       });
       document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
+      navLinks.forEach((link) => {
+        const base = link.getAttribute("href").replace(/-(en|zh)$/, "");
+        link.setAttribute("href", `${base}-${language}`);
+      });
       const url = new URL(window.location.href);
       url.searchParams.set("lang", language);
       history.replaceState(null, "", url);
