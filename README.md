@@ -30,10 +30,33 @@ This repository publishes reproducible experiment code, raw benchmark datasets, 
 
 ## Published Experiment
 
-| Model | A/B Pair | Language | HTML Report | Markdown Report | Data |
-| --- | --- | --- | --- | --- | --- |
-| `deepseek/deepseek-v4-flash` | Infron vs OpenRouter, routing sort `throughput/price/latency`, 4x50 streaming run | Chinese | [GitHub Pages HTML](https://infronai.github.io/prompt-cache-bench/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.html) | [GitHub Markdown preview](experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.md) | [data directory](experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/) |
-| `deepseek/deepseek-v4-flash` | Infron vs OpenRouter, routing sort `throughput/price/latency`, 4x50 streaming run | English | [GitHub Pages HTML](https://infronai.github.io/prompt-cache-bench/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.en.html) | [GitHub Markdown preview](experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.en.md) | [data directory](experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/) |
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>A/B Pair</th>
+      <th>Language</th>
+      <th>HTML Report</th>
+      <th>Markdown Report</th>
+      <th>Data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2"><code>deepseek/deepseek-v4-flash</code></td>
+      <td rowspan="2">Infron vs OpenRouter, routing sort <code>throughput</code>/<code>price</code>/<code>latency</code>, 4x50 streaming run</td>
+      <td>Chinese</td>
+      <td><a href="https://infronai.github.io/prompt-cache-bench/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.html">GitHub Pages HTML</a></td>
+      <td><a href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.md">GitHub Markdown preview</a></td>
+      <td rowspan="2"><a href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/">data directory</a></td>
+    </tr>
+    <tr>
+      <td>English</td>
+      <td><a href="https://infronai.github.io/prompt-cache-bench/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.en.html">GitHub Pages HTML</a></td>
+      <td><a href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.en.md">GitHub Markdown preview</a></td>
+    </tr>
+  </tbody>
+</table>
 
 ## Online Preview
 
