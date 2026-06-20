@@ -4,8 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>prompt-cache-bench | Open LLM Inference Benchmark Registry</title>
-  <link rel="icon" type="image/png" href="assets/brand/infron-logo.png">
-  <link rel="apple-touch-icon" href="assets/brand/infron-logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/brand/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/brand/infron-icon-512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/brand/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -280,20 +283,6 @@
       margin: 8px 0 0;
       color: var(--muted);
       font-size: 14px;
-    }
-
-    .status-pill {
-      display: inline-flex;
-      align-items: center;
-      min-height: 30px;
-      padding: 0 11px;
-      border: 1px solid var(--accent);
-      border-radius: 0;
-      background: transparent;
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 700;
-      white-space: nowrap;
     }
 
     .scope-grid {
@@ -730,7 +719,7 @@
   <div class="shell">
     <header class="topbar">
       <div class="brand" aria-label="prompt-cache-bench">
-        <img class="brand-logo" src="assets/brand/infron-logo.png" alt="Infron">
+        <img class="brand-logo" src="assets/brand/infron-icon-512.png" alt="Infron">
         <div>
           <span class="brand-title">prompt-cache-bench</span>
           <span class="brand-subtitle">Longitudinal benchmark registry for LLM inference systems</span>
@@ -770,7 +759,6 @@
                 <h2 id="scope-en">Benchmark Scope</h2>
                 <p>Registry dimensions for current and future experiments.</p>
               </div>
-              <span class="status-pill">Active project</span>
             </header>
             <div class="scope-grid">
               <div class="scope-item"><strong>Models</strong><b>1 published</b><span>Current release: <code>deepseek/deepseek-v4-flash</code>.</span></div>
@@ -920,7 +908,6 @@
                 <h2 id="scope-zh">Benchmark 范围</h2>
                 <p>当前与未来实验都会按照这些维度组织。</p>
               </div>
-              <span class="status-pill">长期维护</span>
             </header>
             <div class="scope-grid">
               <div class="scope-item"><strong>Models</strong><b>已发布 1 个</b><span>当前版本：<code>deepseek/deepseek-v4-flash</code>。</span></div>
@@ -1061,7 +1048,7 @@
     const panels = Array.from(document.querySelectorAll("[data-lang-panel]"));
     const navLinks = Array.from(document.querySelectorAll(".nav a[href^='#']"));
 
-    function setLanguage(language) {
+    function setLanguage(language, options = {}) {
       tabs.forEach((tab) => {
         const selected = tab.dataset.langTab === language;
         tab.setAttribute("aria-selected", selected ? "true" : "false");
@@ -1074,20 +1061,24 @@
         const base = link.getAttribute("href").replace(/-(en|zh)$/, "");
         link.setAttribute("href", `${base}-${language}`);
       });
-      const url = new URL(window.location.href);
-      url.searchParams.set("lang", language);
-      history.replaceState(null, "", url);
-      localStorage.setItem("prompt-cache-bench-language", language);
+      if (options.updateUrl) {
+        const url = new URL(window.location.href);
+        if (language === "zh") {
+          url.searchParams.set("lang", "zh");
+        } else {
+          url.searchParams.delete("lang");
+        }
+        history.replaceState(null, "", url);
+      }
     }
 
     tabs.forEach((tab) => {
-      tab.addEventListener("click", () => setLanguage(tab.dataset.langTab));
+      tab.addEventListener("click", () => setLanguage(tab.dataset.langTab, { updateUrl: true }));
     });
 
     const params = new URLSearchParams(window.location.search);
     const requested = params.get("lang");
-    const stored = localStorage.getItem("prompt-cache-bench-language");
-    const initial = requested === "zh" || requested === "en" ? requested : stored === "zh" ? "zh" : "en";
+    const initial = requested === "zh" ? "zh" : "en";
     setLanguage(initial);
   </script>
 </body>

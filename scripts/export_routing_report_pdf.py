@@ -104,16 +104,20 @@ def _brand_header(*, html_dir: Path) -> str:
 
 
 def _favicon_link(*, html_dir: Path) -> str:
-    logo = _find_brand_logo(html_dir)
-    if not logo:
+    icon = _find_brand_asset(html_dir, "infron-icon-512.png")
+    if not icon:
         return ""
-    data_uri = html.escape(_data_uri(logo))
+    data_uri = html.escape(_data_uri(icon))
     return f'<link rel="icon" type="image/png" href="{data_uri}"><link rel="apple-touch-icon" href="{data_uri}">'
 
 
 def _find_brand_logo(start: Path) -> Path | None:
+    return _find_brand_asset(start, "infron-logo.png")
+
+
+def _find_brand_asset(start: Path, filename: str) -> Path | None:
     for directory in [start, *start.parents]:
-        candidate = directory / "assets" / "brand" / "infron-logo.png"
+        candidate = directory / "assets" / "brand" / filename
         if candidate.exists():
             return candidate
     return None
