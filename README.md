@@ -32,7 +32,7 @@ This repository publishes reproducible experiment code, raw benchmark datasets, 
 
 | Model | A/B Pair | Report | Data |
 | --- | --- | --- | --- |
-| `deepseek/deepseek-v4-flash` | Infron vs OpenRouter, routing sort `throughput/price/latency`, 4x50 streaming run | [HTML report](experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.html) | [data directory](experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/) |
+| `deepseek/deepseek-v4-flash` | Infron vs OpenRouter, routing sort `throughput/price/latency`, 4x50 streaming run | [GitHub Markdown preview](experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.md) / [self-contained HTML](experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.html) | [data directory](experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/) |
 
 ## Install
 
@@ -79,7 +79,13 @@ Do not commit `.env`. It is ignored by Git.
 
 You do not need API keys to inspect the published experiment. The raw dataset, charts, and report are already checked in.
 
-Open the self-contained HTML report:
+Open the GitHub-rendered Markdown report online:
+
+[prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.md](experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.md)
+
+GitHub does not render repository `.html` files as normal web pages in the file viewer. Use the Markdown report for online preview.
+
+To open the self-contained HTML report locally:
 
 ```bash
 open experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.html

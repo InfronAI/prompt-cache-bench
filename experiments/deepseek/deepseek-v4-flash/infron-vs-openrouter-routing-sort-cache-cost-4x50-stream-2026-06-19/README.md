@@ -10,8 +10,10 @@ The experiment uses a 4x50 streaming design. Each `sort/group/round` pair is sen
 
 ## Report
 
+- [GitHub Markdown preview](reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.md)
 - [Self-contained HTML report](reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.html)
-- [Markdown report](reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.md)
+
+Use the Markdown report for online preview in GitHub. GitHub displays `.html` files as source code unless GitHub Pages is enabled.
 
 Report filename convention:
 
@@ -46,4 +48,3 @@ PYTHONPATH=. python3 scripts/rerun_routing_sort_cache_cost_ab.py \
   --out-dir export/routing_sort_cache_cost_ab_4x50_stream_academic_1781889000 \
   --report export/routing_sort_cache_cost_ab_4x50_stream_academic_1781889000-report-zh.md
 ```
-
