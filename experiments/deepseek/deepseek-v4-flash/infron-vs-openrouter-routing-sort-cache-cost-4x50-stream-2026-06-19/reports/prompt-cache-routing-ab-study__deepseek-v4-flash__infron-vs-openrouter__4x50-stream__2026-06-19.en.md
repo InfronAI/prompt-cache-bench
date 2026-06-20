@@ -12,11 +12,11 @@ The benchmark used 4 experiment groups and 50 rounds per group. Each round sent 
 
 The core finding is that, among samples with exactly matched `usage.prompt_tokens`, Infron achieved a higher token-level cache hit rate in every routing mode. Infron had lower observed cost in `price` and `latency` modes, while OpenRouter had lower observed cost in `throughput` mode. OpenRouter delivered higher response throughput in all three routing modes. Infron delivered lower latency and lower TTFT in `latency` mode, while OpenRouter delivered lower latency and lower TTFT in `throughput` and `price` modes. Overall, Infron's advantage is concentrated in cache reuse, cost control, and the low-latency path under Latency First. OpenRouter's advantage is concentrated in throughput, TTFT, and latency in two of the three modes. Platform selection should therefore be driven by business objectives rather than a single metric.
 
-![Inference platform impossible triangle](../figures/inference_impossible_triangle.svg)
+![Inference platform impossible triangle](../figures/inference_impossible_triangle.en.svg)
 
 Figure 0: The inference platform "impossible triangle". Throughput, price, and latency are difficult to optimize simultaneously. Routing strategies normally choose a position along this trade-off surface.
 
-![Conclusion overview](../figures/conclusion_overview.svg)
+![Conclusion overview](../figures/conclusion_overview.en.svg)
 
 Figure A: Conclusion overview. The upper cards summarize cross-mode winners, while the matrix shows the A/B outcome for cache hit rate, cost, throughput, latency, and TTFT under each routing mode.
 
@@ -123,11 +123,11 @@ Total Input Tokens in this report are computed from response-returned `usage.pro
 
 ### 2.3 Experimental Flow and Request Example
 
-![Experiment flow](../figures/experiment_flow.svg)
+![Experiment flow](../figures/experiment_flow.en.svg)
 
 Figure 1: Experiment flow. The same payload is sent to Infron and OpenRouter under each routing mode. Each platform receives two identical requests per round, and final analysis is performed on strict `sort/group/round` pairs.
 
-![A/B pairing filter](../figures/ab_pairing.svg)
+![A/B pairing filter](../figures/ab_pairing.en.svg)
 
 Figure 2: A/B pairing filter. Abnormal usage, HTTP failures, incomplete pairs, and unequal input-token pairs are removed before aggregation.
 
@@ -231,43 +231,43 @@ Throughput, latency, and TTFT are response-level metrics. If response usage incl
 
 ### Latency First
 
-![Latency First core metric A/B comparison](../figures/latency_first.svg)
+![Latency First core metric A/B comparison](../figures/latency_first.en.svg)
 
 Figure 3: Core metrics under Latency First routing.
 
-![Latency First radar chart](../figures/latency_first_radar.svg)
+![Latency First radar chart](../figures/latency_first_radar.en.svg)
 
 Figure 4: Normalized radar chart under Latency First. All axes are oriented so the outer direction is better.
 
-![Latency First metric curves](../figures/latency_first_curves.svg)
+![Latency First metric curves](../figures/latency_first_curves.en.svg)
 
 Figure 5: Metric generation curves by group/round under Latency First.
 
 ### Throughput First
 
-![Throughput First core metric A/B comparison](../figures/throughput_first.svg)
+![Throughput First core metric A/B comparison](../figures/throughput_first.en.svg)
 
 Figure 6: Core metrics under Throughput First routing.
 
-![Throughput First radar chart](../figures/throughput_first_radar.svg)
+![Throughput First radar chart](../figures/throughput_first_radar.en.svg)
 
 Figure 7: Normalized radar chart under Throughput First.
 
-![Throughput First metric curves](../figures/throughput_first_curves.svg)
+![Throughput First metric curves](../figures/throughput_first_curves.en.svg)
 
 Figure 8: Metric generation curves by group/round under Throughput First.
 
 ### Price First
 
-![Price First core metric A/B comparison](../figures/price_first.svg)
+![Price First core metric A/B comparison](../figures/price_first.en.svg)
 
 Figure 9: Core metrics under Price First routing.
 
-![Price First radar chart](../figures/price_first_radar.svg)
+![Price First radar chart](../figures/price_first_radar.en.svg)
 
 Figure 10: Normalized radar chart under Price First.
 
-![Price First metric curves](../figures/price_first_curves.svg)
+![Price First metric curves](../figures/price_first_curves.en.svg)
 
 Figure 11: Metric generation curves by group/round under Price First.
 
@@ -275,7 +275,7 @@ Figure 11: Metric generation curves by group/round under Price First.
 
 This section interprets the observed results through a multi-provider routing architecture. The benchmark does not contain private Infron routing trace; therefore, the explanation below distinguishes observable evidence from mechanism interpretation.
 
-![Infron multi-provider routing architecture](../figures/infron_architecture.svg)
+![Infron multi-provider routing architecture](../figures/infron_architecture.en.svg)
 
 Figure 12: Infron multi-provider routing and cache control plane.
 
@@ -285,13 +285,13 @@ Infron exposes an OpenAI-compatible API at the edge while routing internally acr
 
 Provider stick is a cache-affinity strategy in a multi-provider gateway. When requests share a stable prompt prefix, the router tends to send them to the same healthy provider or cache domain, reducing cache fragmentation. It is not equivalent to pinning forever; fallback remains necessary when health, rate limit, or SLA conditions change.
 
-![Provider stick and cache affinity](../figures/provider_stick_cache_affinity.svg)
+![Provider stick and cache affinity](../figures/provider_stick_cache_affinity.en.svg)
 
 Figure 13: Provider stick and cache affinity. Keeping similar requests within the same cache domain increases the probability that the second request can reuse cache produced by the first request.
 
 ### 6.2 Cost Control Path
 
-![Infron cost control path](../figures/infron_cost_control.svg)
+![Infron cost control path](../figures/infron_cost_control.en.svg)
 
 Figure 14: Cost control path. Cache hit rate and provider choice jointly shape observed cost.
 
