@@ -2,6 +2,14 @@
 
 Open benchmark artifacts for LLM prompt caching and provider-routing A/B testing.
 
+## Research Motivation
+
+LLM inference is no longer a single-model serving problem. Production systems increasingly depend on multi-provider routing, prompt caching, streaming responses, and cost-aware fallback policies. These mechanisms materially affect user experience and unit economics, yet they are often evaluated with opaque dashboards, unmatched prompts, vendor-specific telemetry, or short-lived ad hoc tests.
+
+`prompt-cache-bench` studies this layer as an empirical systems problem. The project publishes controlled A/B experiments that keep request payloads, input tokens, routing modes, and measurement code reproducible while preserving raw logs, derived datasets, figures, and full reports. This makes it possible to inspect not only which platform performs better, but also why the result emerges from cache behavior, provider selection, latency, throughput, TTFT, and observed cost.
+
+The broader goal is to provide a public evidence base for LLM infrastructure decisions. For application teams, these benchmarks help quantify the tradeoffs between speed, cost, and reliability before committing traffic to a routing platform. For inference providers, they create a more transparent standard for cache efficiency, provider orchestration, and pricing claims. For the industry, a longitudinal benchmark registry can make model/provider performance comparable over time instead of treating every benchmark as a one-off snapshot.
+
 This repository publishes reproducible experiment code, raw benchmark datasets, figures, and report pages for evaluating inference platforms across:
 
 - prompt cache hit rate
