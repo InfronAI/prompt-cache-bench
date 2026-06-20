@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: "prompt-cache-bench"
+message: "If you use this benchmark dataset or report, please cite this repository."
+type: software
+authors:
+  - name: "InfronAI"
+repository-code: "https://github.com/InfronAI/prompt-cache-bench"
+license: "MIT"
+version: "0.1.0"

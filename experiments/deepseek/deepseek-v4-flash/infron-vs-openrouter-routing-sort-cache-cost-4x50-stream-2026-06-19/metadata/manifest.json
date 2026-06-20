@@ -1,0 +1,171 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19",
+  "model": "deepseek/deepseek-v4-flash",
+  "providers": [
+    "Infron",
+    "OpenRouter"
+  ],
+  "routing_modes": [
+    "throughput",
+    "price",
+    "latency"
+  ],
+  "groups": 4,
+  "rounds_per_group": 50,
+  "streaming": true,
+  "dataset_name": "business_representative",
+  "pairing_method": "strict sort/group/round pair with equal first/second usage.prompt_tokens",
+  "files": [
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/README.md",
+      "bytes": 269,
+      "sha256": "5b563311c0494a4f44a2b819d5e641a84c948ead9ca137e92253a043fefaa776"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.html",
+      "bytes": 314188,
+      "sha256": "c1bf06f8448dda2d70564407a4a7799269280bdbc6b7fb0bdcd8758924e05f71"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.md",
+      "bytes": 50068,
+      "sha256": "9bae3b03333e46b6e711bc2c1a4328767c531d272843bf2d3c9d02e048bbe946"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/README.md",
+      "bytes": 894,
+      "sha256": "791ae328e0add6d0cd4a67b4c5ab7cef049a90dabf6bce3168e95081cd6c2bc4"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/benchmark_pairs.csv",
+      "bytes": 115644,
+      "sha256": "7643b7306b5b7df722e3f39568e2e9a513eb1ee60a5fc18300249ed7005044d5"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/benchmark_requests.jsonl",
+      "bytes": 2060087,
+      "sha256": "44dff2126aabf640d63c01e28715a4ae3d7fdcd6250506a67a32e102143735ae"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/records.json",
+      "bytes": 3375480,
+      "sha256": "869ba4afbb00bd8cbe71e63d2bd30e17157a4110775a95c3526169dc85b4660e"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/records_anomalous_usage.json",
+      "bytes": 19,
+      "sha256": "a4e17ae4dae862aae9f36cf63d5e892e9bfb67264b917b1febd1c786ddedef7b"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/records_excluded.json",
+      "bytes": 2176045,
+      "sha256": "95d1b231048893611cc09f6c677a46703827d01739657c79ae5b161a50cf7e23"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/records_incomplete.json",
+      "bytes": 19,
+      "sha256": "a4e17ae4dae862aae9f36cf63d5e892e9bfb67264b917b1febd1c786ddedef7b"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/records_unequal_input_tokens.json",
+      "bytes": 2176045,
+      "sha256": "95d1b231048893611cc09f6c677a46703827d01739657c79ae5b161a50cf7e23"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/summary.json",
+      "bytes": 76948,
+      "sha256": "d38826bf42af42001a46a270756cdffc6d825449943fb3f0f502a1d0d8d225f5"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/figures/ab_pairing.svg",
+      "bytes": 2358,
+      "sha256": "e986d82ea084e7d18719488b9c81e418eefca40e3bad8fb65a41c9e49cd27acb"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/figures/conclusion_overview.svg",
+      "bytes": 9156,
+      "sha256": "9b6747af5bf0c5e0eb227530330a49beaa1909c432be703cf322846c2c8a12e8"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/figures/experiment_flow.svg",
+      "bytes": 3048,
+      "sha256": "e27fa78142b5c045733087cad3d33371d24587f77b3838237bcf8a6f20f0d230"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/figures/inference_impossible_triangle.svg",
+      "bytes": 2717,
+      "sha256": "89baaf44a58ea451a554765ce5aa7155735c13ef81d35fd075f23425ea167066"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/figures/infron_architecture.svg",
+      "bytes": 4681,
+      "sha256": "eb2e314f683d654ba94595c82e5732bd1ff027e8cc725fb88107145e373a29c8"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/figures/infron_cost_control.svg",
+      "bytes": 3572,
+      "sha256": "4518ff3a95b6c133ac1895bc3e0a1aa981a555de315c03b34a28267e61d85d81"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/figures/latency_first.svg",
+      "bytes": 9154,
+      "sha256": "ddf63150752300c3b78471a193c48738abd671d964d4e3fc6b12346957305559"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/figures/latency_first_curves.svg",
+      "bytes": 36986,
+      "sha256": "b76d85b84275b06888278efe80fb52261cf903c84bb72f2d3d372e76a693e4d4"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/figures/latency_first_radar.svg",
+      "bytes": 4578,
+      "sha256": "6e0815898a275ca698229271ea53031c4030ea026c904a39f440bc68a3102ecb"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/figures/price_first.svg",
+      "bytes": 9164,
+      "sha256": "4faf0d00b61127e53c3951057d921f300af0a3c1c536aea16ba034dce1f11496"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/figures/price_first_curves.svg",
+      "bytes": 29430,
+      "sha256": "829eaae249c850ffe317dc9f2ee42ddc371812f531c30d2e4fb60bc2fa4ee1e8"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/figures/price_first_radar.svg",
+      "bytes": 4577,
+      "sha256": "7447de7368458baf67d6ab24d48cd9d17da673e6406c48dd164701547a5dd4e4"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/figures/provider_stick_cache_affinity.svg",
+      "bytes": 3661,
+      "sha256": "47a031b1926022c25a16d81273d0672adf9ce72dd709e76bb9fc2c20a9469975"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/figures/throughput_first.svg",
+      "bytes": 9173,
+      "sha256": "1ef3dea60ec11d053fbbce573fd1d62887fc4a579a81b403c862a2949efcbf7c"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/figures/throughput_first_curves.svg",
+      "bytes": 49744,
+      "sha256": "e7f17a858dc8e3f442757ee3dbb04ae9ab94b61e03a3c53141ea8df1fa3bc429"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/figures/throughput_first_radar.svg",
+      "bytes": 4582,
+      "sha256": "a6c3450750efab2b7ac4ed299bc1b74b8ae3dc18953e60dfadc4966f0312a199"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/code/export_routing_report_pdf.py",
+      "bytes": 7914,
+      "sha256": "ff68dc7cd4008cb084ac33f3e0710ae3a2ab7293ccc9fb2c655d7521f861bceb"
+    },
+    {
+      "path": "experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/code/rerun_routing_sort_cache_cost_ab.py",
+      "bytes": 208447,
+      "sha256": "30eb09fece5356d2ade086fb939e5f753793a6aaf2f54251914c0616ae0474de"
+    }
+  ]
+}

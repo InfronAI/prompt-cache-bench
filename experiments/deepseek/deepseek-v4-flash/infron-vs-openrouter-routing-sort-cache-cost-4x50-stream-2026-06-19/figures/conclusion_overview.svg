@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="700" viewBox="0 0 1120 700"><style>text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;fill:#111827}.title{font-size:22px;font-weight:700}.label{font-size:13px;fill:#374151}.tick{font-size:12px;fill:#6b7280}.value{font-size:12px;fill:#111827}</style><rect width="100%" height="100%" fill="#ffffff"/>
+<text x="48" y="38" class="title">结论总览：核心指标与路由模式胜出方</text>
+<text x="48" y="64" class="label">基于严格 A/B 配对样本；每个单元格显示同一 routing sort 下表现更好的一方。</text>
+<rect x="48" y="96" width="196" height="118" rx="10" fill="#f8fafc" stroke="#dbe3ef"/>
+<text x="66" y="124" class="label" font-weight="800">缓存命中率</text>
+<text x="66" y="148" class="value" font-size="11" font-weight="800" fill="#2563eb">Infron 3/3 胜</text>
+<text x="66" y="168" class="value" font-size="11" font-weight="800" fill="#2563eb">最大优势 181.90%</text>
+<text x="66" y="200" class="tick">越高越好</text>
+<rect x="259" y="96" width="196" height="118" rx="10" fill="#f8fafc" stroke="#dbe3ef"/>
+<text x="277" y="124" class="label" font-weight="800">实际成本</text>
+<text x="277" y="148" class="value" font-size="11" font-weight="800" fill="#2563eb">Infron 2/3 胜</text>
+<text x="277" y="168" class="value" font-size="11" font-weight="800" fill="#2563eb">最大优势 85.23%</text>
+<text x="277" y="200" class="tick">越低越好</text>
+<rect x="470" y="96" width="196" height="118" rx="10" fill="#f8fafc" stroke="#dbe3ef"/>
+<text x="488" y="124" class="label" font-weight="800">吞吐量</text>
+<text x="488" y="148" class="value" font-size="11" font-weight="800" fill="#f97316">OpenRouter 3/3 胜</text>
+<text x="488" y="168" class="value" font-size="11" font-weight="800" fill="#f97316">最大优势 75.62%</text>
+<text x="488" y="200" class="tick">越高越好</text>
+<rect x="681" y="96" width="196" height="118" rx="10" fill="#f8fafc" stroke="#dbe3ef"/>
+<text x="699" y="124" class="label" font-weight="800">时延</text>
+<text x="699" y="148" class="value" font-size="11" font-weight="800" fill="#f97316">OpenRouter 2/3 胜</text>
+<text x="699" y="168" class="value" font-size="11" font-weight="800" fill="#f97316">最大优势 59.13%</text>
+<text x="699" y="200" class="tick">越低越好</text>
+<rect x="892" y="96" width="196" height="118" rx="10" fill="#f8fafc" stroke="#dbe3ef"/>
+<text x="910" y="124" class="label" font-weight="800">TTFT</text>
+<text x="910" y="148" class="value" font-size="11" font-weight="800" fill="#f97316">OpenRouter 2/3 胜</text>
+<text x="910" y="168" class="value" font-size="11" font-weight="800" fill="#f97316">最大优势 54.10%</text>
+<text x="910" y="200" class="tick">越低越好</text>
+<rect x="72" y="284" width="150" height="58" fill="#eef2ff" stroke="#c7d2fe"/>
+<text x="147.0" y="320" class="label" font-weight="800" text-anchor="middle">路由模式</text>
+<rect x="222" y="284" width="170" height="58" fill="#eef2ff" stroke="#c7d2fe"/>
+<text x="307.0" y="320" class="label" font-weight="800" text-anchor="middle">缓存命中</text>
+<rect x="392" y="284" width="170" height="58" fill="#eef2ff" stroke="#c7d2fe"/>
+<text x="477.0" y="320" class="label" font-weight="800" text-anchor="middle">成本</text>
+<rect x="562" y="284" width="170" height="58" fill="#eef2ff" stroke="#c7d2fe"/>
+<text x="647.0" y="320" class="label" font-weight="800" text-anchor="middle">吞吐</text>
+<rect x="732" y="284" width="170" height="58" fill="#eef2ff" stroke="#c7d2fe"/>
+<text x="817.0" y="320" class="label" font-weight="800" text-anchor="middle">时延</text>
+<rect x="902" y="284" width="170" height="58" fill="#eef2ff" stroke="#c7d2fe"/>
+<text x="987.0" y="320" class="label" font-weight="800" text-anchor="middle">TTFT</text>
+<rect x="72" y="342" width="150" height="58" fill="#ffffff" stroke="#e5e7eb"/>
+<text x="90" y="377" class="label" font-weight="800">Throughput First</text>
+<rect x="222" y="342" width="170" height="58" fill="#eff6ff" stroke="#93c5fd"/>
+<text x="307.0" y="367" class="label" font-weight="900" text-anchor="middle" fill="#2563eb">Infron</text>
+<text x="307.0" y="386" class="tick" font-weight="800" text-anchor="middle" fill="#2563eb">高 37.39%</text>
+<rect x="392" y="342" width="170" height="58" fill="#fff7ed" stroke="#fdba74"/>
+<text x="477.0" y="367" class="label" font-weight="900" text-anchor="middle" fill="#f97316">OpenRouter</text>
+<text x="477.0" y="386" class="tick" font-weight="800" text-anchor="middle" fill="#f97316">低 15.22%</text>
+<rect x="562" y="342" width="170" height="58" fill="#fff7ed" stroke="#fdba74"/>
+<text x="647.0" y="367" class="label" font-weight="900" text-anchor="middle" fill="#f97316">OpenRouter</text>
+<text x="647.0" y="386" class="tick" font-weight="800" text-anchor="middle" fill="#f97316">高 9.70%</text>
+<rect x="732" y="342" width="170" height="58" fill="#fff7ed" stroke="#fdba74"/>
+<text x="817.0" y="367" class="label" font-weight="900" text-anchor="middle" fill="#f97316">OpenRouter</text>
+<text x="817.0" y="386" class="tick" font-weight="800" text-anchor="middle" fill="#f97316">低 59.13%</text>
+<rect x="902" y="342" width="170" height="58" fill="#fff7ed" stroke="#fdba74"/>
+<text x="987.0" y="367" class="label" font-weight="900" text-anchor="middle" fill="#f97316">OpenRouter</text>
+<text x="987.0" y="386" class="tick" font-weight="800" text-anchor="middle" fill="#f97316">低 54.10%</text>
+<rect x="72" y="400" width="150" height="58" fill="#ffffff" stroke="#e5e7eb"/>
+<text x="90" y="435" class="label" font-weight="800">Price First</text>
+<rect x="222" y="400" width="170" height="58" fill="#eff6ff" stroke="#93c5fd"/>
+<text x="307.0" y="425" class="label" font-weight="900" text-anchor="middle" fill="#2563eb">Infron</text>
+<text x="307.0" y="444" class="tick" font-weight="800" text-anchor="middle" fill="#2563eb">高 8.85%</text>
+<rect x="392" y="400" width="170" height="58" fill="#eff6ff" stroke="#93c5fd"/>
+<text x="477.0" y="425" class="label" font-weight="900" text-anchor="middle" fill="#2563eb">Infron</text>
+<text x="477.0" y="444" class="tick" font-weight="800" text-anchor="middle" fill="#2563eb">低 4.01%</text>
+<rect x="562" y="400" width="170" height="58" fill="#fff7ed" stroke="#fdba74"/>
+<text x="647.0" y="425" class="label" font-weight="900" text-anchor="middle" fill="#f97316">OpenRouter</text>
+<text x="647.0" y="444" class="tick" font-weight="800" text-anchor="middle" fill="#f97316">高 42.72%</text>
+<rect x="732" y="400" width="170" height="58" fill="#fff7ed" stroke="#fdba74"/>
+<text x="817.0" y="425" class="label" font-weight="900" text-anchor="middle" fill="#f97316">OpenRouter</text>
+<text x="817.0" y="444" class="tick" font-weight="800" text-anchor="middle" fill="#f97316">低 37.15%</text>
+<rect x="902" y="400" width="170" height="58" fill="#fff7ed" stroke="#fdba74"/>
+<text x="987.0" y="425" class="label" font-weight="900" text-anchor="middle" fill="#f97316">OpenRouter</text>
+<text x="987.0" y="444" class="tick" font-weight="800" text-anchor="middle" fill="#f97316">低 41.06%</text>
+<rect x="72" y="458" width="150" height="58" fill="#ffffff" stroke="#e5e7eb"/>
+<text x="90" y="493" class="label" font-weight="800">Latency First</text>
+<rect x="222" y="458" width="170" height="58" fill="#eff6ff" stroke="#93c5fd"/>
+<text x="307.0" y="483" class="label" font-weight="900" text-anchor="middle" fill="#2563eb">Infron</text>
+<text x="307.0" y="502" class="tick" font-weight="800" text-anchor="middle" fill="#2563eb">高 181.90%</text>
+<rect x="392" y="458" width="170" height="58" fill="#eff6ff" stroke="#93c5fd"/>
+<text x="477.0" y="483" class="label" font-weight="900" text-anchor="middle" fill="#2563eb">Infron</text>
+<text x="477.0" y="502" class="tick" font-weight="800" text-anchor="middle" fill="#2563eb">低 85.23%</text>
+<rect x="562" y="458" width="170" height="58" fill="#fff7ed" stroke="#fdba74"/>
+<text x="647.0" y="483" class="label" font-weight="900" text-anchor="middle" fill="#f97316">OpenRouter</text>
+<text x="647.0" y="502" class="tick" font-weight="800" text-anchor="middle" fill="#f97316">高 75.62%</text>
+<rect x="732" y="458" width="170" height="58" fill="#eff6ff" stroke="#93c5fd"/>
+<text x="817.0" y="483" class="label" font-weight="900" text-anchor="middle" fill="#2563eb">Infron</text>
+<text x="817.0" y="502" class="tick" font-weight="800" text-anchor="middle" fill="#2563eb">低 59.72%</text>
+<rect x="902" y="458" width="170" height="58" fill="#eff6ff" stroke="#93c5fd"/>
+<text x="987.0" y="483" class="label" font-weight="900" text-anchor="middle" fill="#2563eb">Infron</text>
+<text x="987.0" y="502" class="tick" font-weight="800" text-anchor="middle" fill="#2563eb">低 55.81%</text>
+<text x="72" y="600" class="label">读法：同一行展示一种路由模式下的指标胜出方；缓存和吞吐越高越好，成本、时延和 TTFT 越低越好。</text>
+<rect x="820" y="618" width="14" height="14" rx="3" fill="#2563eb"/>
+<text x="842" y="630" class="label">Infron</text>
+<rect x="820" y="642" width="14" height="14" rx="3" fill="#f97316"/>
+<text x="842" y="654" class="label">OpenRouter</text>
+</svg>

@@ -1,0 +1,12 @@
+[project]
+name = "prompt-cache-bench"
+version = "0.1.0"
+description = "Open benchmark artifacts for LLM prompt caching, provider routing, cost, latency, TTFT, and throughput A/B testing."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "InfronAI" }]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"

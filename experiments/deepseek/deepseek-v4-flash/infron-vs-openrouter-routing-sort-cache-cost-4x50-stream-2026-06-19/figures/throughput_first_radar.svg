@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="620" viewBox="0 0 960 620"><style>text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;fill:#111827}.title{font-size:22px;font-weight:700}.label{font-size:13px;fill:#374151}.tick{font-size:12px;fill:#6b7280}.value{font-size:12px;fill:#111827}</style><rect width="100%" height="100%" fill="#ffffff"/>
+<text x="48" y="34" class="title">Throughput First 路由模式：综合雷达图</text>
+<text x="48" y="58" class="label">所有轴都归一化为“越外圈越好”：成本、时延、TTFT 已做反向评分。</text>
+<polygon points="360.00,276.00 399.94,305.02 384.69,351.98 335.31,351.98 320.06,305.02" fill="none" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="366" y="280.00" class="tick">20</text>
+<polygon points="360.00,234.00 439.89,292.04 409.37,385.96 310.63,385.96 280.11,292.04" fill="none" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="366" y="238.00" class="tick">40</text>
+<polygon points="360.00,192.00 479.83,279.06 434.06,419.94 285.94,419.94 240.17,279.06" fill="none" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="366" y="196.00" class="tick">60</text>
+<polygon points="360.00,150.00 519.78,266.09 458.75,453.91 261.25,453.91 200.22,266.09" fill="none" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="366" y="154.00" class="tick">80</text>
+<polygon points="360.00,108.00 559.72,253.11 483.43,487.89 236.57,487.89 160.28,253.11" fill="none" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="366" y="112.00" class="tick">100</text>
+<line x1="360" y1="318" x2="360.00" y2="108.00" stroke="#cbd5e1"/>
+<text x="360.00" y="70.00" class="label" font-weight="700" text-anchor="middle">缓存命中率</text>
+<line x1="360" y1="318" x2="559.72" y2="253.11" stroke="#cbd5e1"/>
+<text x="595.86" y="241.36" class="label" font-weight="700" text-anchor="start">成本效率</text>
+<line x1="360" y1="318" x2="483.43" y2="487.89" stroke="#cbd5e1"/>
+<text x="505.77" y="518.64" class="label" font-weight="700" text-anchor="start">吞吐量</text>
+<line x1="360" y1="318" x2="236.57" y2="487.89" stroke="#cbd5e1"/>
+<text x="214.23" y="518.64" class="label" font-weight="700" text-anchor="end">平均时延</text>
+<line x1="360" y1="318" x2="160.28" y2="253.11" stroke="#cbd5e1"/>
+<text x="124.14" y="241.36" class="label" font-weight="700" text-anchor="end">TTFT</text>
+<polygon points="360.00,108.00 360.00,318.00 360.00,318.00 360.00,318.00 360.00,318.00" fill="#2563eb" fill-opacity="0.20" stroke="#2563eb" stroke-width="3"/>
+<circle cx="360.00" cy="108.00" r="4" fill="#2563eb"/>
+<circle cx="360.00" cy="318.00" r="4" fill="#2563eb"/>
+<circle cx="360.00" cy="318.00" r="4" fill="#2563eb"/>
+<circle cx="360.00" cy="318.00" r="4" fill="#2563eb"/>
+<circle cx="360.00" cy="318.00" r="4" fill="#2563eb"/>
+<polygon points="360.00,318.00 559.72,253.11 483.43,487.89 236.57,487.89 160.28,253.11" fill="#f97316" fill-opacity="0.20" stroke="#f97316" stroke-width="3"/>
+<circle cx="360.00" cy="318.00" r="4" fill="#f97316"/>
+<circle cx="559.72" cy="253.11" r="4" fill="#f97316"/>
+<circle cx="483.43" cy="487.89" r="4" fill="#f97316"/>
+<circle cx="236.57" cy="487.89" r="4" fill="#f97316"/>
+<circle cx="160.28" cy="253.11" r="4" fill="#f97316"/>
+<rect x="620" y="82" width="280" height="390" rx="10" fill="#f8fafc" stroke="#dbe3ef"/>
+<text x="640" y="110" class="label" font-weight="800">原始指标值</text>
+<rect x="640" y="130" width="14" height="14" rx="3" fill="#2563eb"/>
+<text x="662" y="142" class="label">Infron</text>
+<rect x="640" y="154" width="14" height="14" rx="3" fill="#f97316"/>
+<text x="662" y="166" class="label">OpenRouter</text>
+<text x="640" y="200" class="tick" font-weight="700">缓存命中率</text>
+<text x="640" y="220" class="tick">Infron: 92.4%</text>
+<text x="640" y="238" class="tick">OpenRouter: 67.2%</text>
+<text x="640" y="258" class="tick" font-weight="700">成本效率</text>
+<text x="640" y="278" class="tick">Infron: $0.05493</text>
+<text x="640" y="296" class="tick">OpenRouter: $0.04657</text>
+<text x="640" y="316" class="tick" font-weight="700">吞吐量</text>
+<text x="640" y="336" class="tick">Infron: 36.5</text>
+<text x="640" y="354" class="tick">OpenRouter: 40.1</text>
+<text x="640" y="374" class="tick" font-weight="700">平均时延</text>
+<text x="640" y="394" class="tick">Infron: 7391ms</text>
+<text x="640" y="412" class="tick">OpenRouter: 3021ms</text>
+<text x="640" y="432" class="tick" font-weight="700">TTFT</text>
+<text x="640" y="452" class="tick">Infron: 3444ms</text>
+<text x="640" y="470" class="tick">OpenRouter: 1581ms</text>
+</svg>

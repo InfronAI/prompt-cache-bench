@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="520" viewBox="0 0 1120 520"><style>text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;fill:#111827}.title{font-size:22px;font-weight:700}.label{font-size:13px;fill:#374151}.tick{font-size:12px;fill:#6b7280}.value{font-size:12px;fill:#111827}</style><rect width="100%" height="100%" fill="#ffffff"/>
+<text x="48" y="36" class="title">Infron 成本控制路径</text>
+<text x="48" y="62" class="label">成本来自 token 处理、缓存读写和上游 provider 价格；缓存亲和与路由选择共同降低单位请求成本。</text>
+<rect x="64" y="116" width="190" height="88" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="159.0" y="150" class="label" font-weight="800" text-anchor="middle">Stable Prefix</text>
+<text x="159.0" y="176" class="tick" text-anchor="middle">system / tools / RAG</text>
+<rect x="326" y="116" width="210" height="88" rx="8" fill="#fefce8" stroke="#facc15" stroke-width="1.5"/>
+<text x="431.0" y="150" class="label" font-weight="800" text-anchor="middle">Cache Read</text>
+<text x="431.0" y="176" class="tick" text-anchor="middle">skip repeated prefill</text>
+<rect x="608" y="116" width="210" height="88" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+<text x="713.0" y="150" class="label" font-weight="800" text-anchor="middle">Provider Pricing</text>
+<text x="713.0" y="176" class="tick" text-anchor="middle">prompt / completion cost</text>
+<rect x="880" y="116" width="190" height="88" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+<text x="975.0" y="150" class="label" font-weight="800" text-anchor="middle">Actual Cost</text>
+<text x="975.0" y="176" class="tick" text-anchor="middle">usage.cost + details</text>
+<rect x="326" y="286" width="210" height="88" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="431.0" y="320" class="label" font-weight="800" text-anchor="middle">Provider Stick</text>
+<text x="431.0" y="346" class="tick" text-anchor="middle">avoid cache fragmentation</text>
+<rect x="608" y="286" width="210" height="88" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="713.0" y="320" class="label" font-weight="800" text-anchor="middle">Cost-aware Routing</text>
+<text x="713.0" y="346" class="tick" text-anchor="middle">healthy low-cost path</text>
+<path d="M254,160 L326,160" stroke="#64748b" stroke-width="2" fill="none"/><path d="M318,155 L326,160 L318,165" stroke="#64748b" stroke-width="2" fill="none"/>
+<path d="M536,160 L608,160" stroke="#64748b" stroke-width="2" fill="none"/><path d="M600,155 L608,160 L600,165" stroke="#64748b" stroke-width="2" fill="none"/>
+<path d="M818,160 L880,160" stroke="#64748b" stroke-width="2" fill="none"/><path d="M872,155 L880,160 L872,165" stroke="#64748b" stroke-width="2" fill="none"/>
+<path d="M431,286 L431,204" stroke="#64748b" stroke-width="2" fill="none"/><path d="M423,199 L431,204 L423,209" stroke="#64748b" stroke-width="2" fill="none"/>
+<path d="M713,286 L713,204" stroke="#64748b" stroke-width="2" fill="none"/><path d="M705,199 L713,204 L705,209" stroke="#64748b" stroke-width="2" fill="none"/>
+<text x="72" y="438" class="label">本次实验信号：Infron 的 Token 级缓存命中率约 88%-94%，实际总成本在三种路由模式下均低于 OpenRouter。</text>
+<text x="72" y="466" class="label">解释：高 cache read tokens 降低重复 prefill 成本；provider stick 维持缓存域稳定；成本感知 routing 在健康 provider 中选择更合适的价格路径。</text>
+</svg>
