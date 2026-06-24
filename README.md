@@ -39,6 +39,7 @@ This repository publishes reproducible experiment code, raw benchmark datasets, 
 ## Documentation
 
 - [Methodology](docs/methodology.md)
+- [Benchmark operations playbook](docs/benchmark-operations.md)
 - [Online preview notes](docs/online-preview.md)
 - [Report release runbook](docs/report-release-runbook.md)
 
@@ -103,7 +104,7 @@ source .venv/bin/activate
 
 ## Configure API Keys
 
-The repository includes `.env.example` with empty API key placeholders. Before running live benchmark requests, copy it to `.env` and fill in your own keys.
+The repository includes `.env.example` with API key placeholders and reusable benchmark/release defaults. Before running live benchmark requests, copy it to `.env` and fill in your own keys.
 
 ```bash
 cp .env.example .env
@@ -120,6 +121,8 @@ OPENROUTER_API_KEY=your_openrouter_api_key_here
 OPENROUTER_HTTP_REFERER=https://github.com/InfronAI/prompt-cache-bench
 OPENROUTER_APP_TITLE=prompt-cache-bench
 ```
+
+The same file also stores non-secret defaults such as `PROMPT_CACHE_BENCH_MODEL`, `PROMPT_CACHE_BENCH_GROUPS`, `PROMPT_CACHE_BENCH_ROUNDS`, `PROMPT_CACHE_BENCH_REPO_URL`, and `PROMPT_CACHE_BENCH_DEFAULT_EXPERIMENT`. Scripts should prefer these environment variables for configurable project defaults.
 
 Do not commit `.env`. It is ignored by Git.
 
@@ -208,3 +211,12 @@ Use `--html-only` when you only need a browser-readable report. PDF generation i
 ## Security
 
 No API keys or bearer tokens are committed. Raw request/response telemetry is retained only for benchmark observability fields such as usage, cost, provider metadata, TTFT, latency, and cache tokens.
+
+Before publishing report updates, run the release validator:
+
+```bash
+python3 scripts/validate_release.py
+```
+
+The validator checks the experiment directory shape, reproducibility appendix links, required report basics, and common secret patterns.
+It reads release defaults from `.env.example`, `.env`, and `PROMPT_CACHE_BENCH_*` environment variables.

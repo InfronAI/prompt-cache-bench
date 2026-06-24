@@ -144,6 +144,23 @@ If hashes are shown in the report, recompute them before release:
 shasum -a 256 <file>
 ```
 
+Run the repository validator before committing:
+
+```bash
+python3 scripts/validate_release.py
+```
+
+The validator reads release defaults from `.env.example`, local `.env`, and `PROMPT_CACHE_BENCH_*` environment variables. Use `PROMPT_CACHE_BENCH_DEFAULT_EXPERIMENT` when validating a newly published run directory, or pass `--experiment <path>`.
+
+The validator checks:
+
+- required experiment directories and files;
+- Chinese/English HTML and Markdown report presence;
+- Infron HTML report header and embedded figure basics;
+- GitHub `blob/main` and `tree/main` links in reproducibility appendices;
+- unrendered Markdown links inside HTML reports;
+- common secret and API key patterns.
+
 ## 8. Commit And Push
 
 Commit only after the diff and scans are clean:
