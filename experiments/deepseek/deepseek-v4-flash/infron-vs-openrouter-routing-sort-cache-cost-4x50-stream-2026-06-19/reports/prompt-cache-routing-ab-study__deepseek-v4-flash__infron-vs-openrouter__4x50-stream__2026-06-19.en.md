@@ -414,12 +414,28 @@ The experiment supports a trade-off view rather than a universal platform rankin
 
 ## 12. Reproducibility Appendix: Benchmark Dataset
 
-The checked-in dataset is sufficient to reproduce the aggregate tables and figures without making new API calls. The paired CSV is the direct input to the summary tables and core metric figures. The request-level JSONL preserves per-request telemetry for auditing usage, cost, provider, E2E latency, Streaming TTFT, and cache fields.
+The checked-in dataset is sufficient to reproduce the aggregate tables and figures without making new API calls. The paired CSV is the direct input to the summary tables and core metric figures. The request-level JSONL preserves per-request telemetry for auditing usage, cost, provider, E2E latency, Streaming TTFT, and cache fields. Click each path to open the corresponding GitHub file or directory.
 
 | Data file | Granularity | Rows | SHA256 | Purpose |
 | --- | ---: | ---: | --- | --- |
 | [`benchmark_pairs.csv`](https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/benchmark_pairs.csv) | A/B pair | 364 | `7643b7306b5b7df722e3f39568e2e9a513eb1ee60a5fc18300249ed7005044d5` | Reproduce aggregate tables and figures |
 | [`benchmark_requests.jsonl`](https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/benchmark_requests.jsonl) | Request | 1456 | `44dff2126aabf640d63c01e28715a4ae3d7fdcd6250506a67a32e102143735ae` | Audit per-request telemetry |
+| [`records.json`](https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/records.json) | Filtered record | - | `869ba4afbb00bd8cbe71e63d2bd30e17157a4110775a95c3526169dc85b4660e` | Audit filtered structured records |
+| [`records_excluded.json`](https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/records_excluded.json) | Excluded record | - | `95d1b231048893611cc09f6c677a46703827d01739657c79ae5b161a50cf7e23` | Audit excluded samples |
+| [`records_anomalous_usage.json`](https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/records_anomalous_usage.json) | Anomalous usage record | - | `-` | Audit anomalous usage samples |
+| [`records_unequal_input_tokens.json`](https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/records_unequal_input_tokens.json) | Unequal input-token record | - | `-` | Audit pairs removed by input-token control |
+| [`summary.json`](https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/summary.json) | Summary | - | `-` | Machine-readable aggregate summary |
+
+Directory shortcuts:
+
+| Directory | Link |
+| --- | --- |
+| Experiment root | [`experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19`](https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19) |
+| Data directory | [`experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data`](https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data) |
+| Code directory | [`experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/code`](https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/code) |
+| Reports directory | [`experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports`](https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports) |
+| Figures directory | [`experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/figures`](https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/figures) |
+| Metadata directory | [`experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/metadata`](https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/metadata) |
 
 Field dictionary:
 
@@ -434,15 +450,14 @@ Field dictionary:
 | `*_second_cache_hit_rate` | Second-request cache read tokens / second-request prompt tokens |
 | `*_provider` | Observable upstream provider identifier |
 
-## 13. Reproducible Code Index
+## 13. Reproducibility Appendix: Experiment Code
 
-| File | Size | SHA256 |
-| --- | ---: | --- |
-| [`scripts/rerun_routing_sort_cache_cost_ab.py`](https://github.com/InfronAI/prompt-cache-bench/blob/main/scripts/rerun_routing_sort_cache_cost_ab.py) | 208447 bytes | `30eb09fece5356d2ade086fb939e5f753793a6aaf2f54251914c0616ae0474de` |
-| [`benchmark_pairs.csv`](https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/benchmark_pairs.csv) | 115644 bytes | `7643b7306b5b7df722e3f39568e2e9a513eb1ee60a5fc18300249ed7005044d5` |
-| [`benchmark_requests.jsonl`](https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/benchmark_requests.jsonl) | 2060087 bytes | `44dff2126aabf640d63c01e28715a4ae3d7fdcd6250506a67a32e102143735ae` |
-| [`records.json`](https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/records.json) | 3375480 bytes | `869ba4afbb00bd8cbe71e63d2bd30e17157a4110775a95c3526169dc85b4660e` |
-| [`records_excluded.json`](https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/records_excluded.json) | 2176045 bytes | `95d1b231048893611cc09f6c677a46703827d01739657c79ae5b161a50cf7e23` |
+| File | Size | SHA256 | Purpose |
+| --- | ---: | --- | --- |
+| [`scripts/rerun_routing_sort_cache_cost_ab.py`](https://github.com/InfronAI/prompt-cache-bench/blob/main/scripts/rerun_routing_sort_cache_cost_ab.py) | 208447 bytes | `30eb09fece5356d2ade086fb939e5f753793a6aaf2f54251914c0616ae0474de` | A/B testing runner |
+| [`scripts/export_routing_report_pdf.py`](https://github.com/InfronAI/prompt-cache-bench/blob/main/scripts/export_routing_report_pdf.py) | 9358 bytes | `-` | PDF export helper |
+| [`experiment-local rerun script copy`](https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/code/rerun_routing_sort_cache_cost_ab.py) | 208447 bytes | `30eb09fece5356d2ade086fb939e5f753793a6aaf2f54251914c0616ae0474de` | Experiment-local runner copy |
+| [`experiment-local PDF export copy`](https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/code/export_routing_report_pdf.py) | 9358 bytes | `-` | Experiment-local PDF helper copy |
 
 Reproduce the live experiment:
 
@@ -458,3 +473,14 @@ PYTHONPATH=. python3 scripts/rerun_routing_sort_cache_cost_ab.py \
   --out-dir export/routing_sort_cache_cost_ab_4x50_stream_academic_1781889000 \
   --report export/routing_sort_cache_cost_ab_4x50_stream_academic_1781889000-report-en.md
 ```
+
+## 14. Reproducibility Appendix: Reports and Figures
+
+| Asset | Link |
+| --- | --- |
+| Chinese HTML report | [`experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.html`](https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.html) |
+| Chinese Markdown report | [`experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.md`](https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.md) |
+| English HTML report | [`experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.en.html`](https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.en.html) |
+| English Markdown report | [`experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.en.md`](https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.en.md) |
+| Experiment manifest | [`experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/metadata/manifest.json`](https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/metadata/manifest.json) |
+| Figures directory | [`experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/figures`](https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/figures) |

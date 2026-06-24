@@ -170,33 +170,53 @@
 <table><thead><tr><th>缺失或不足</th><th>对结论的影响</th><th>后续补充方式</th><th>当前处理方式</th></tr></thead><tbody><tr><td>上游完整 路由轨迹</td><td>无法逐跳证明每次请求的服务商选择、回退和重试路径</td><td><code>待补充：服务商路由 trace / decision log / 回退原因</code></td><td>仅使用响应中真实返回的服务商字段和 服务商分布做归因</td></tr><tr><td>服务商成本明细 全量字段</td><td>无法进一步拆分平台费、服务商 费、缓存读写 成本</td><td><code>待补充：服务商成本明细 明细、缓存读写计费项</code></td><td>只统计响应明确返回的 cost/cost_details</td></tr><tr><td>显著性检验</td><td>已补充 bootstrap 95% CI 与 配对符号翻转置换检验；尚未给出 标准化效应量</td><td><code>待补充：Cohen d / Cliff delta 等 效应量</code></td><td>使用严格 A/B 配对和 输入 token 相等过滤降低混杂偏差</td></tr><tr><td>P95/P99 latency</td><td>已补充 P50/P95/P99 端到端E2E时延与流式TTFT；尚未计算 IQR 和 尾部放大</td><td><code>待补充：IQR、max、尾部放大 ratio</code></td><td>当前展示均值、P50/P95/P99 和过程曲线</td></tr><tr><td>多模型泛化</td><td>单模型实验不能直接外推到所有模型</td><td><code>待补充：DeepSeek、Qwen、Claude、GPT 系列跨模型实验</code></td><td>结论限定于 <code>deepseek/deepseek-v4-flash</code> 本轮样本</td></tr><tr><td>真实业务语料</td><td>本轮使用内置代表性业务模板，不等同于客户生产语料</td><td><code>待补充：脱敏真实 RAG、Agent、客服、代码生成、长文摘要业务数据集</code></td><td>脚本已支持 <code>--数据集-file</code> JSONL 输入</td></tr><tr><td>并发压力与长期运行</td><td>本轮使用 <code>并发 并发 worker</code> 并发执行，但不是长时间 长稳测试</td><td><code>待补充：并发阶梯压测、24h 长稳测试、cache TTL/eviction 观测</code></td><td>当前解释 4*50 并发执行窗口内的 A/B 结果</td></tr></tbody></table>
 <p>后续实验可以继续沿用核心 A/B 配对方法：保持 请求载荷 SHA256、<code>usage.prompt_tokens</code> 相等过滤和 请求-level 遥测数据，同时增加 路由轨迹、服务商成本明细、尾延迟分位数和业务语料分层。这样可以把本报告扩展为更完整的生产决策评估框架。</p>
 <h2>12. 可复现性附录：Benchmark 数据集路径</h2>
-<p>本节仅保留复现实验所需的数据文件路径引用。原始 benchmark 数据不在报告正文中展开展示。</p>
-<table><thead><tr><th>数据文件</th><th>路径</th></tr></thead><tbody>
-<tr><td>配对级 benchmark 数据集 CSV</td><td><code>experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-路由-sort-cache-cost-4x50-stream-2026-06-19/data/benchmark_pairs.csv</code></td></tr>
-<tr><td>请求级 benchmark 数据集 JSONL</td><td><code>experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-路由-sort-cache-cost-4x50-stream-2026-06-19/data/benchmark_请求s.jsonl</code></td></tr>
-<tr><td>过滤后结构化记录</td><td><code>experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-路由-sort-cache-cost-4x50-stream-2026-06-19/data/records.json</code></td></tr>
-<tr><td>剔除样本审计记录</td><td><code>experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-路由-sort-cache-cost-4x50-stream-2026-06-19/data/records_excluded.json</code></td></tr>
-<tr><td>异常 usage 记录</td><td><code>experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-路由-sort-cache-cost-4x50-stream-2026-06-19/data/records_anomalous_usage.json</code></td></tr>
-<tr><td>输入 Tokens 不一致记录</td><td><code>experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-路由-sort-cache-cost-4x50-stream-2026-06-19/data/records_unequal_input_tokens.json</code></td></tr>
-<tr><td>实验摘要 JSON</td><td><code>experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-路由-sort-cache-cost-4x50-stream-2026-06-19/data/摘要文件.json</code></td></tr>
-</tbody></table>
-
-<h2>13. 可复现性附录：实验代码路径</h2>
-<p>本节仅保留复现实验和报告导出的代码路径引用。实验脚本源码不在报告正文中展开展示。</p>
-<table><thead><tr><th>代码文件</th><th>路径</th></tr></thead><tbody>
-<tr><td>A/B 测试 实验脚本</td><td><code>scripts/rerun_路由_sort_cache_cost_ab.py</code></td></tr>
-<tr><td>报告 PDF 导出脚本</td><td><code>scripts/export_路由_报告_pdf.py</code></td></tr>
-<tr><td>实验目录内脚本副本</td><td><code>experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-路由-sort-cache-cost-4x50-stream-2026-06-19/code/rerun_路由_sort_cache_cost_ab.py</code></td></tr>
-<tr><td>实验目录内导出脚本副本</td><td><code>experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-路由-sort-cache-cost-4x50-stream-2026-06-19/code/export_路由_报告_pdf.py</code></td></tr>
-</tbody></table>
-
-<h2>14. 可复现性附录：报告与图表路径</h2>
-<p>本节仅保留报告、图表和 清单文件 的路径引用，便于在 GitHub 仓库中定位完整实验资产。</p>
-<table><thead><tr><th>资产</th><th>路径</th></tr></thead><tbody>
-<tr><td>中文 HTML 报告</td><td><code>experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-路由-sort-cache-cost-4x50-stream-2026-06-19/报告s/提示词-cache-路由-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.html</code></td></tr>
-<tr><td>中文 Markdown 报告</td><td><code>experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-路由-sort-cache-cost-4x50-stream-2026-06-19/报告s/提示词-cache-路由-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.md</code></td></tr>
-<tr><td>实验 清单文件</td><td><code>experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-路由-sort-cache-cost-4x50-stream-2026-06-19/metadata/清单文件.json</code></td></tr>
-<tr><td>图表目录</td><td><code>experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-路由-sort-cache-cost-4x50-stream-2026-06-19/figures/</code></td></tr>
-</tbody></table>
+<p>本节仅保留复现实验所需的数据文件路径引用。原始 benchmark 数据不在报告正文中展开展示。点击路径可直接跳转到 GitHub 中对应的文件或目录。</p>
+<table><thead><tr><th>数据文件</th><th>粒度</th><th>行数</th><th>SHA256</th><th>用途</th></tr></thead><tbody>
+<tr><td><a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/benchmark_pairs.csv"><code>配对级 benchmark 数据集 CSV</code></a></td><td>A/B 配对</td><td>364</td><td><code>7643b7306b5b7df722e3f39568e2e9a513eb1ee60a5fc18300249ed7005044d5</code></td><td>复现聚合表和核心图表</td></tr>
+<tr><td><a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/benchmark_requests.jsonl"><code>请求级 benchmark 数据集 JSONL</code></a></td><td>请求</td><td>1456</td><td><code>44dff2126aabf640d63c01e28715a4ae3d7fdcd6250506a67a32e102143735ae</code></td><td>审计单次请求遥测数据</td></tr>
+<tr><td><a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/records.json"><code>过滤后结构化记录</code></a></td><td>过滤后记录</td><td>-</td><td><code>869ba4afbb00bd8cbe71e63d2bd30e17157a4110775a95c3526169dc85b4660e</code></td><td>审计过滤后结构化记录</td></tr>
+<tr><td><a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/records_excluded.json"><code>剔除样本审计记录</code></a></td><td>剔除记录</td><td>-</td><td><code>95d1b231048893611cc09f6c677a46703827d01739657c79ae5b161a50cf7e23</code></td><td>审计剔除样本</td></tr>
+<tr><td><a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/records_anomalous_usage.json"><code>异常 usage 记录</code></a></td><td>异常 usage 记录</td><td>-</td><td><code>-</code></td><td>审计异常 usage 样本</td></tr>
+<tr><td><a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/records_unequal_input_tokens.json"><code>输入 Tokens 不一致记录</code></a></td><td>输入 Tokens 不一致记录</td><td>-</td><td><code>-</code></td><td>审计因输入 token 控制被剔除的样本</td></tr>
+<tr><td><a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/summary.json"><code>实验摘要 JSON</code></a></td><td>摘要</td><td>-</td><td><code>-</code></td><td>机器可读聚合摘要</td></tr>
+</tbody></table><p>目录快捷入口：</p><table><thead><tr><th>目录</th><th>链接</th></tr></thead><tbody>
+<tr><td>实验根目录</td><td><a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19"><code>experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19</code></a></td></tr>
+<tr><td>数据目录</td><td><a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data"><code>experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data</code></a></td></tr>
+<tr><td>代码目录</td><td><a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/code"><code>experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/code</code></a></td></tr>
+<tr><td>报告目录</td><td><a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports"><code>experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports</code></a></td></tr>
+<tr><td>图表目录</td><td><a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/figures"><code>experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/figures</code></a></td></tr>
+<tr><td>元数据目录</td><td><a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/metadata"><code>experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/metadata</code></a></td></tr>
+</tbody></table><p>字段字典：</p><table><thead><tr><th>字段</th><th>含义</th></tr></thead><tbody>
+<tr><td><code>sort/group/round</code></td><td>A/B 配对键；同一键下 Infron 与 OpenRouter 输入 token 完全一致</td></tr>
+<tr><td><code>*_pair_cost_usd</code></td><td>first + second 两次请求的真实响应成本</td></tr>
+<tr><td><code>*_avg_latency_ms</code></td><td>第一次/第二次两次请求端到端 E2E 时延均值</td></tr>
+<tr><td><code>*_avg_ttft_ms</code></td><td>第一次/第二次两次请求流式 TTFT 均值</td></tr>
+<tr><td><code>*_response_throughput_tps</code></td><td>两次请求 completion tokens / 两次请求总端到端 E2E 耗时 seconds</td></tr>
+<tr><td><code>*_second_cache_read_tokens</code></td><td>第二次请求读取缓存的 token 数</td></tr>
+<tr><td><code>*_second_cache_hit_rate</code></td><td>第二次请求缓存读取 tokens / 第二次请求 prompt tokens</td></tr>
+<tr><td><code>*_provider</code></td><td>响应中可观测的上游 provider 标识</td></tr>
+</tbody></table><h2>13. 可复现性附录：实验代码路径</h2><p>本节仅保留复现实验和报告导出的代码路径引用。实验脚本源码不在报告正文中展开展示。</p><table><thead><tr><th>代码文件</th><th>大小</th><th>SHA256</th><th>用途</th></tr></thead><tbody>
+<tr><td><a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/scripts/rerun_routing_sort_cache_cost_ab.py"><code>A/B 测试实验脚本</code></a></td><td>208447 bytes</td><td><code>30eb09fece5356d2ade086fb939e5f753793a6aaf2f54251914c0616ae0474de</code></td><td>A/B 测试实验脚本</td></tr>
+<tr><td><a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/scripts/export_routing_report_pdf.py"><code>PDF 报告导出脚本</code></a></td><td>9358 bytes</td><td><code>-</code></td><td>PDF 报告导出脚本</td></tr>
+<tr><td><a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/code/rerun_routing_sort_cache_cost_ab.py"><code>实验目录内脚本副本</code></a></td><td>208447 bytes</td><td><code>30eb09fece5356d2ade086fb939e5f753793a6aaf2f54251914c0616ae0474de</code></td><td>实验目录内脚本副本</td></tr>
+<tr><td><a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/code/export_routing_report_pdf.py"><code>实验目录内导出脚本副本</code></a></td><td>9358 bytes</td><td><code>-</code></td><td>实验目录内导出脚本副本</td></tr>
+</tbody></table><p>复现实验命令：</p>
+<pre class="code bash"><code>PYTHONPATH=. python3 scripts/rerun_routing_sort_cache_cost_ab.py \
+  --groups 4 \
+  --rounds 50 \
+  --timeout 120 \
+  --workers 8 \
+  --stream \
+  --dataset-name business_representative \
+  --soak-duration-seconds 0 \
+  --out-dir export/routing_sort_cache_cost_ab_4x50_stream_academic_1781889000 \
+  --report export/routing_sort_cache_cost_ab_4x50_stream_academic_1781889000-report-zh.md</code></pre>
+<h2>14. 可复现性附录：报告与图表路径</h2><p>本节仅保留报告、图表和清单文件的路径引用，便于在 GitHub 仓库中定位完整实验资产。</p><table><thead><tr><th>资产</th><th>链接</th></tr></thead><tbody>
+<tr><td>中文 HTML 报告</td><td><a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.html"><code>experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.html</code></a></td></tr>
+<tr><td>中文 Markdown 报告</td><td><a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.md"><code>experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.md</code></a></td></tr>
+<tr><td>英文 HTML 报告</td><td><a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.en.html"><code>experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.en.html</code></a></td></tr>
+<tr><td>英文 Markdown 报告</td><td><a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.en.md"><code>experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.en.md</code></a></td></tr>
+<tr><td>实验清单文件</td><td><a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/metadata/manifest.json"><code>experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/metadata/manifest.json</code></a></td></tr>
+<tr><td>图表目录</td><td><a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/figures"><code>experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/figures</code></a></td></tr></tbody></table>
 </body>
 </html>
