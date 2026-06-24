@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="620" viewBox="0 0 960 620"><style>text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;fill:#111827}.title{font-size:22px;font-weight:700}.label{font-size:13px;fill:#374151}.tick{font-size:12px;fill:#6b7280}.value{font-size:12px;fill:#111827}</style><rect width="100%" height="100%" fill="#ffffff"/>
-<text x="48" y="34" class="title">Throughput First 路由模式：综合雷达图</text>
+<text x="48" y="34" class="title">吞吐优先 路由模式：综合雷达图</text>
 <text x="48" y="58" class="label">所有轴都归一化为“越外圈越好”：成本、端到端E2E时延、流式TTFT 已做反向评分。</text>
 <polygon points="360.00,276.00 399.94,305.02 384.69,351.98 335.31,351.98 320.06,305.02" fill="none" stroke="#cbd5e1" stroke-width="0.8"/>
 <text x="366" y="280.00" class="tick">20</text>

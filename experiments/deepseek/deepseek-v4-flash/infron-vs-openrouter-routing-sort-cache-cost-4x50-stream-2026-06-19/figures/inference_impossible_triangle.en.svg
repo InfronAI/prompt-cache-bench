@@ -2,7 +2,7 @@
 <style>text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;fill:#111827}.title{font-size:22px;font-weight:700}.label{font-size:13px;fill:#374151}.tick{font-size:12px;fill:#6b7280}.value{font-size:12px;fill:#111827}</style>
 <rect width="100%" height="100%" fill="#ffffff"/>
 <text x="48" y="38" class="title">Inference Platform Impossible Quadrilateral: Routing-Mode Positions</text>
-<text x="48" y="64" class="label">同一四角坐标内展示 Infron 与 OpenRouter 在 Throughput / Price / Latency First 下的移动；坐标做非线性缩放以增强区分度。</text>
+<text x="48" y="64" class="label">The same quadrilateral shows Infron and OpenRouter under Throughput / Price / Latency First; nonlinear scaling improves separation.</text>
 <polygon points="560,102 900,300 560,498 220,300" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
 <polygon points="560,152 815,300 560,448 305,300" fill="none" stroke="#e2e8f0" stroke-width="1"/>
 <polygon points="560,202 730,300 560,398 390,300" fill="none" stroke="#e2e8f0" stroke-width="1"/>
@@ -36,14 +36,14 @@
 <circle cx="575" cy="185" r="12" fill="#f97316" stroke="#ffffff" stroke-width="3"/><text x="575" y="188.5" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="10" font-weight="900" text-anchor="middle" fill="#ffffff">L</text>
 <circle cx="600" cy="312" r="15" fill="#2563eb" stroke="#ffffff" stroke-width="3"/><text x="600" y="315.5" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="10" font-weight="900" text-anchor="middle" fill="#ffffff">Avg</text>
 <circle cx="513" cy="297" r="15" fill="#f97316" stroke="#ffffff" stroke-width="3"/><text x="513" y="300.5" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="10" font-weight="900" text-anchor="middle" fill="#ffffff">Avg</text>
-<text x="704" y="236" class="label" text-anchor="start" fill="#2563eb" font-weight="900">Infron</text><text x="704" y="256" class="tick" text-anchor="start" fill="#2563eb">Price / E2E 侧突出</text>
+<text x="704" y="236" class="label" text-anchor="start" fill="#2563eb" font-weight="900">Infron</text><text x="704" y="256" class="tick" text-anchor="start" fill="#2563eb">Price / E2E-side advantage</text>
 <text x="380" y="210" class="label" text-anchor="end" fill="#f97316" font-weight="900">OpenRouter</text><text x="380" y="230" class="tick" text-anchor="end" fill="#f97316">throughput / TTFT advantage</text>
 <text x="560" y="338" class="tick" text-anchor="middle" fill="#7c3aed" font-weight="850">overlap zone</text>
 <rect x="96" y="604" width="928" height="92" rx="8" fill="#ffffff" stroke="#dbe3ef"/>
 <text x="118" y="632" class="label" font-weight="900">How to read</text>
 <circle cx="122" cy="660" r="5" fill="#2563eb"/><text x="136" y="664" class="tick">Infron: blue points and blue movement area</text>
 <circle cx="374" cy="660" r="5" fill="#f97316"/><text x="388" y="664" class="tick">OpenRouter: orange points and orange movement area</text>
-<text x="636" y="664" class="tick">点内标记：T=Throughput First，P=Price First，L=Latency First，Avg=加权综合。</text>
-<text x="118" y="686" class="tick">坐标使用非线性视觉缩放，保留中间overlap zone并拉开优势方向；原始统计值和胜负结论不变。</text>
-<text x="48" y="724" class="label">注：Price、E2E Latency、Streaming TTFT Avg已转换为“越低越好”的效率方向；Throughput为越高越好。</text>
+<text x="636" y="664" class="tick">Point labels: T=Throughput First, P=Price First, L=Latency First, Avg=weighted aggregate.</text>
+<text x="118" y="686" class="tick">Coordinates use nonlinear visual scaling, preserve the central overlap zone, and separate advantage directions; source statistics and winner conclusions are unchanged.</text>
+<text x="48" y="724" class="label">Note: Price, E2E Latency, and Streaming TTFT are converted to lower-is-better efficiency directions; Throughput remains higher-is-better.</text>
 </svg>
