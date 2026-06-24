@@ -2,7 +2,7 @@
 <text x="48" y="34" class="title">Throughput First 路由模式：指标生成过程对比曲线</text>
 <text x="48" y="58" class="label">按 group/round 顺序绘制每轮指标；曲线展示汇总均值背后的波动过程。</text>
 <rect x="48" y="76" width="472" height="245" rx="8" fill="#ffffff" stroke="#dbe3ef"/>
-<text x="66" y="104" class="label" font-weight="700">Latency / 请求（含 reasoning）</text>
+<text x="66" y="104" class="label" font-weight="700">端到端E2E时延 / 请求（含 reasoning）</text>
 <rect x="366" y="88" width="136" height="26" rx="13" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.4"/>
 <text x="434" y="106" class="tick" font-weight="800" text-anchor="middle" fill="#92400e">均值胜出: OpenRouter</text>
 <line x1="106" y1="281.00" x2="496" y2="281.00" stroke="#e5e7eb"/>
@@ -55,7 +55,7 @@
 <circle cx="494.04" cy="259.26" r="3.0" fill="#f97316" fill-opacity="1"/>
 <text x="496" y="306" class="tick" text-anchor="end">Round 序列；越低越好</text>
 <rect x="560" y="76" width="472" height="245" rx="8" fill="#ffffff" stroke="#dbe3ef"/>
-<text x="578" y="104" class="label" font-weight="700">TTFT / 首包响应</text>
+<text x="578" y="104" class="label" font-weight="700">流式TTFT / 首包响应</text>
 <rect x="878" y="88" width="136" height="26" rx="13" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.4"/>
 <text x="946" y="106" class="tick" font-weight="800" text-anchor="middle" fill="#92400e">均值胜出: OpenRouter</text>
 <line x1="618" y1="281.00" x2="1008" y2="281.00" stroke="#e5e7eb"/>

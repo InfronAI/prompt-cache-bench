@@ -2,7 +2,7 @@
 <text x="48" y="34" class="title">Price First Routing Mode: Metric Generation Curves</text>
 <text x="48" y="58" class="label">Metrics are plotted by group/round order to show variation behind aggregate means.</text>
 <rect x="48" y="76" width="472" height="245" rx="8" fill="#ffffff" stroke="#dbe3ef"/>
-<text x="66" y="104" class="label" font-weight="700">Latency / request (incl. reasoning)</text>
+<text x="66" y="104" class="label" font-weight="700">E2E latency / request (incl. reasoning)</text>
 <rect x="366" y="88" width="136" height="26" rx="13" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.4"/>
 <text x="434" y="106" class="tick" font-weight="800" text-anchor="middle" fill="#92400e">Mean winner: OpenRouter</text>
 <line x1="106" y1="281.00" x2="496" y2="281.00" stroke="#e5e7eb"/>
@@ -55,7 +55,7 @@
 <circle cx="496.00" cy="263.63" r="3.0" fill="#f97316" fill-opacity="1"/>
 <text x="496" y="306" class="tick" text-anchor="end">Round sequence; lower is better</text>
 <rect x="560" y="76" width="472" height="245" rx="8" fill="#ffffff" stroke="#dbe3ef"/>
-<text x="578" y="104" class="label" font-weight="700">TTFT / first response</text>
+<text x="578" y="104" class="label" font-weight="700">Streaming TTFT / first response</text>
 <rect x="878" y="88" width="136" height="26" rx="13" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.4"/>
 <text x="946" y="106" class="tick" font-weight="800" text-anchor="middle" fill="#92400e">Mean winner: OpenRouter</text>
 <line x1="618" y1="281.00" x2="1008" y2="281.00" stroke="#e5e7eb"/>

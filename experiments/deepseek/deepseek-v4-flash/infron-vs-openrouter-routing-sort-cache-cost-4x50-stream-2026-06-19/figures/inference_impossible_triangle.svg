@@ -1,28 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="600" viewBox="0 0 1080 600"><style>text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;fill:#111827}.title{font-size:22px;font-weight:700}.label{font-size:13px;fill:#374151}.tick{font-size:12px;fill:#6b7280}.value{font-size:12px;fill:#111827}</style><rect width="100%" height="100%" fill="#ffffff"/>
-<text x="48" y="36" class="title">Inference 平台“不可能三角”：吞吐量、价格与时延</text>
-<text x="48" y="62" class="label">没有平台能在吞吐量、价格和时延三个方向同时达到最优；工程上通常需要选择策略侧重。</text>
-<polygon points="540,102 210,470 870,470" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
-<line x1="540" y1="102" x2="540" y2="352" stroke="#cbd5e1" stroke-dasharray="5 5"/>
-<line x1="210" y1="470" x2="540" y2="352" stroke="#cbd5e1" stroke-dasharray="5 5"/>
-<line x1="870" y1="470" x2="540" y2="352" stroke="#cbd5e1" stroke-dasharray="5 5"/>
-<text x="540" y="82" class="label" font-weight="900" text-anchor="middle">吞吐量</text>
-<text x="540" y="100" class="tick" text-anchor="middle">更高 response tok/s</text>
-<text x="182" y="498" class="label" font-weight="900" text-anchor="middle">价格</text>
-<text x="205" y="518" class="tick" text-anchor="middle">更低实际成本</text>
-<text x="898" y="498" class="label" font-weight="900" text-anchor="middle">时延</text>
-<text x="875" y="518" class="tick" text-anchor="middle">更低完整响应耗时</text>
-<text x="540" y="360" class="tick" text-anchor="middle">业务目标决定靠近哪个角</text>
-<circle cx="493.5" cy="347.0" r="10" fill="#2563eb" stroke="#ffffff" stroke-width="3"/>
-<text x="477.5" y="333.0" class="label" font-weight="900" text-anchor="end" fill="#2563eb">Infron</text>
-<text x="477.5" y="353.0" class="tick" text-anchor="end">更靠近价格</text>
-<circle cx="570.5" cy="336.0" r="10" fill="#f97316" stroke="#ffffff" stroke-width="3"/>
-<text x="586.5" y="322.0" class="label" font-weight="900" text-anchor="start" fill="#f97316">OpenRouter</text>
-<text x="586.5" y="342.0" class="tick" text-anchor="start">更靠近吞吐量</text>
-<rect x="48" y="130" width="245" height="150" rx="8" fill="#ffffff" stroke="#dbe3ef"/>
-<text x="64" y="156" class="label" font-weight="900">相对位置解释</text>
-<circle cx="66" cy="180" r="5" fill="#2563eb"/>
-<text x="80" y="184" class="tick">Infron: 吞吐 0.33 / 价格 0.40 / 时延 0.26</text>
-<circle cx="66" cy="210" r="5" fill="#f97316"/>
-<text x="80" y="214" class="tick">OpenRouter: 吞吐 0.36 / 价格 0.27 / 时延 0.36</text>
-<text x="64" y="266" class="tick">数值为三角坐标权重，三项合计为 1。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="760" viewBox="0 0 1120 760">
+<style>text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;fill:#111827}.title{font-size:22px;font-weight:700}.label{font-size:13px;fill:#374151}.tick{font-size:12px;fill:#6b7280}.value{font-size:12px;fill:#111827}</style>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="48" y="38" class="title">Inference 平台“不可能四角”：路由模式点位图</text>
+<text x="48" y="64" class="label">同一四角坐标内展示 Infron 与 OpenRouter 在 Throughput / Price / Latency First 下的移动；坐标做非线性缩放以增强区分度。</text>
+<polygon points="560,102 900,300 560,498 220,300" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+<polygon points="560,152 815,300 560,448 305,300" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+<polygon points="560,202 730,300 560,398 390,300" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="560" y1="102" x2="560" y2="498" stroke="#cbd5e1" stroke-dasharray="5 5"/>
+<line x1="220" y1="300" x2="900" y2="300" stroke="#cbd5e1" stroke-dasharray="5 5"/>
+<line x1="560" y1="102" x2="900" y2="300" stroke="#e2e8f0"/>
+<line x1="900" y1="300" x2="560" y2="498" stroke="#e2e8f0"/>
+<line x1="560" y1="498" x2="220" y2="300" stroke="#e2e8f0"/>
+<line x1="220" y1="300" x2="560" y2="102" stroke="#e2e8f0"/>
+<text x="560" y="78" class="label" font-weight="900" text-anchor="middle">吞吐量</text>
+<text x="560" y="96" class="tick" text-anchor="middle">更高 response tok/s</text>
+<text x="942" y="302" class="label" font-weight="900">价格</text>
+<text x="942" y="321" class="tick">更低实际成本</text>
+<text x="560" y="532" class="label" font-weight="900" text-anchor="middle">端到端E2E时延</text>
+<text x="560" y="551" class="tick" text-anchor="middle">更低完整响应耗时</text>
+<text x="178" y="302" class="label" font-weight="900" text-anchor="end">流式TTFT</text>
+<text x="178" y="321" class="tick" text-anchor="end">更低首包响应时间</text>
+<polygon points="500,230 675,292 625,415" fill="#2563eb" fill-opacity="0.18" stroke="#2563eb" stroke-width="2.8" stroke-dasharray="5 4"/>
+<polygon points="515,385 450,320 575,185" fill="#f97316" fill-opacity="0.20" stroke="#f97316" stroke-width="2.8" stroke-dasharray="5 4"/>
+<line x1="500" y1="230" x2="600" y2="312" stroke="#2563eb" stroke-opacity="0.34" stroke-width="1.5"/>
+<line x1="675" y1="292" x2="600" y2="312" stroke="#2563eb" stroke-opacity="0.34" stroke-width="1.5"/>
+<line x1="625" y1="415" x2="600" y2="312" stroke="#2563eb" stroke-opacity="0.34" stroke-width="1.5"/>
+<line x1="515" y1="385" x2="513" y2="297" stroke="#f97316" stroke-opacity="0.34" stroke-width="1.5"/>
+<line x1="450" y1="320" x2="513" y2="297" stroke="#f97316" stroke-opacity="0.34" stroke-width="1.5"/>
+<line x1="575" y1="185" x2="513" y2="297" stroke="#f97316" stroke-opacity="0.34" stroke-width="1.5"/>
+<circle cx="500" cy="230" r="12" fill="#2563eb" stroke="#ffffff" stroke-width="3"/><text x="500" y="233.5" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="10" font-weight="900" text-anchor="middle" fill="#ffffff">T</text>
+<circle cx="675" cy="292" r="12" fill="#2563eb" stroke="#ffffff" stroke-width="3"/><text x="675" y="295.5" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="10" font-weight="900" text-anchor="middle" fill="#ffffff">P</text>
+<circle cx="625" cy="415" r="12" fill="#2563eb" stroke="#ffffff" stroke-width="3"/><text x="625" y="418.5" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="10" font-weight="900" text-anchor="middle" fill="#ffffff">L</text>
+<circle cx="515" cy="385" r="12" fill="#f97316" stroke="#ffffff" stroke-width="3"/><text x="515" y="388.5" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="10" font-weight="900" text-anchor="middle" fill="#ffffff">T</text>
+<circle cx="450" cy="320" r="12" fill="#f97316" stroke="#ffffff" stroke-width="3"/><text x="450" y="323.5" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="10" font-weight="900" text-anchor="middle" fill="#ffffff">P</text>
+<circle cx="575" cy="185" r="12" fill="#f97316" stroke="#ffffff" stroke-width="3"/><text x="575" y="188.5" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="10" font-weight="900" text-anchor="middle" fill="#ffffff">L</text>
+<circle cx="600" cy="312" r="15" fill="#2563eb" stroke="#ffffff" stroke-width="3"/><text x="600" y="315.5" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="10" font-weight="900" text-anchor="middle" fill="#ffffff">均</text>
+<circle cx="513" cy="297" r="15" fill="#f97316" stroke="#ffffff" stroke-width="3"/><text x="513" y="300.5" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="10" font-weight="900" text-anchor="middle" fill="#ffffff">均</text>
+<text x="704" y="236" class="label" text-anchor="start" fill="#2563eb" font-weight="900">Infron</text><text x="704" y="256" class="tick" text-anchor="start" fill="#2563eb">价格 / E2E 侧突出</text>
+<text x="380" y="210" class="label" text-anchor="end" fill="#f97316" font-weight="900">OpenRouter</text><text x="380" y="230" class="tick" text-anchor="end" fill="#f97316">吞吐 / TTFT 侧突出</text>
+<text x="560" y="338" class="tick" text-anchor="middle" fill="#7c3aed" font-weight="850">重叠能力区</text>
+<rect x="96" y="604" width="928" height="92" rx="8" fill="#ffffff" stroke="#dbe3ef"/>
+<text x="118" y="632" class="label" font-weight="900">读图方式</text>
+<circle cx="122" cy="660" r="5" fill="#2563eb"/><text x="136" y="664" class="tick">Infron：蓝色点与蓝色移动区域</text>
+<circle cx="374" cy="660" r="5" fill="#f97316"/><text x="388" y="664" class="tick">OpenRouter：橙色点与橙色移动区域</text>
+<text x="636" y="664" class="tick">点内标记：T=Throughput First，P=Price First，L=Latency First，均=加权综合。</text>
+<text x="118" y="686" class="tick">坐标使用非线性视觉缩放，保留中间重叠能力区并拉开优势方向；原始统计值和胜负结论不变。</text>
+<text x="48" y="724" class="label">注：价格、端到端E2E时延、流式TTFT 均已转换为“越低越好”的效率方向；吞吐量为越高越好。</text>
 </svg>

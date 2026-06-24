@@ -2,7 +2,7 @@
 <text x="48" y="34" class="title">Throughput First Routing Mode: Core Metric A/B Comparison</text>
 <text x="48" y="58" class="label">Each panel compares Infron and OpenRouter; the winner is highlighted with a light background, bold border, and top-right label.</text>
 <rect x="48" y="76" width="472" height="230" rx="8" fill="#f8fafc" stroke="#dbe3ef"/>
-<text x="66" y="104" class="label" font-weight="700">Latency / request (incl. reasoning)</text>
+<text x="66" y="104" class="label" font-weight="700">E2E latency / request (incl. reasoning)</text>
 <rect x="366" y="88" width="136" height="26" rx="13" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.4"/>
 <text x="434" y="106" class="tick" font-weight="800" text-anchor="middle" fill="#92400e">Winner: OpenRouter</text>
 <line x1="106" y1="264.00" x2="494" y2="264.00" stroke="#e5e7eb"/>
@@ -59,7 +59,7 @@
 <text x="364.67" y="439.41" class="value" font-weight="800" text-anchor="middle">$0.04656992</text>
 <text x="364.67" y="572.00" class="tick" text-anchor="middle">OpenRouter</text>
 <rect x="560" y="360" width="472" height="230" rx="8" fill="#f8fafc" stroke="#dbe3ef"/>
-<text x="578" y="388" class="label" font-weight="700">TTFT / first response</text>
+<text x="578" y="388" class="label" font-weight="700">Streaming TTFT / first response</text>
 <rect x="878" y="372" width="136" height="26" rx="13" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.4"/>
 <text x="946" y="390" class="tick" font-weight="800" text-anchor="middle" fill="#92400e">Winner: OpenRouter</text>
 <line x1="618" y1="548.00" x2="1006" y2="548.00" stroke="#e5e7eb"/>

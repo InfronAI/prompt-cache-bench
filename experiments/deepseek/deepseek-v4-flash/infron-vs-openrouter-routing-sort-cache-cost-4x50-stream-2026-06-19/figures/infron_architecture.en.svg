@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1120" height="520" viewBox="0 0 1120 520"><style>text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;fill:#111827}.title{font-size:22px;font-weight:700}.label{font-size:13px;fill:#374151}.tick{font-size:12px;fill:#6b7280}.value{font-size:12px;fill:#111827}</style><rect width="100%" height="100%" fill="#ffffff"/>
 <text x="48" y="36" class="title">Infron Multi-Provider Routing and Cache Control Plane</text>
-<text x="48" y="62" class="label">The OpenAI-compatible API normalizes requests, then routes across health, cost, throughput, latency, and cache affinity.</text>
+<text x="48" y="62" class="label">The OpenAI-compatible API normalizes requests, then routes across health, cost, throughput, E2E latency, Streaming TTFT, and cache affinity.</text>
 <rect x="48" y="120" width="170" height="78" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
 <text x="133.0" y="151" class="label" font-weight="800" text-anchor="middle">Client / SDK</text>
 <text x="133.0" y="176" class="tick" text-anchor="middle">chat.completions</text>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="620" viewBox="0 0 960 620"><style>text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;fill:#111827}.title{font-size:22px;font-weight:700}.label{font-size:13px;fill:#374151}.tick{font-size:12px;fill:#6b7280}.value{font-size:12px;fill:#111827}</style><rect width="100%" height="100%" fill="#ffffff"/>
 <text x="48" y="34" class="title">Price First Routing Mode: Composite Radar Chart</text>
-<text x="48" y="58" class="label">All axes are normalized so farther outward is better; cost, latency, and TTFT are reverse-scored.</text>
+<text x="48" y="58" class="label">All axes are normalized so farther outward is better; cost, E2E latency, and Streaming TTFT are reverse-scored.</text>
 <polygon points="360.00,276.00 399.94,305.02 384.69,351.98 335.31,351.98 320.06,305.02" fill="none" stroke="#cbd5e1" stroke-width="0.8"/>
 <text x="366" y="280.00" class="tick">20</text>
 <polygon points="360.00,234.00 439.89,292.04 409.37,385.96 310.63,385.96 280.11,292.04" fill="none" stroke="#cbd5e1" stroke-width="0.8"/>
@@ -18,9 +18,9 @@
 <line x1="360" y1="318" x2="483.43" y2="487.89" stroke="#cbd5e1"/>
 <text x="505.77" y="518.64" class="label" font-weight="700" text-anchor="start">Throughput</text>
 <line x1="360" y1="318" x2="236.57" y2="487.89" stroke="#cbd5e1"/>
-<text x="214.23" y="518.64" class="label" font-weight="700" text-anchor="end">Avg latency</text>
+<text x="214.23" y="518.64" class="label" font-weight="700" text-anchor="end">Avg E2E latency</text>
 <line x1="360" y1="318" x2="160.28" y2="253.11" stroke="#cbd5e1"/>
-<text x="124.14" y="241.36" class="label" font-weight="700" text-anchor="end">TTFT</text>
+<text x="124.14" y="241.36" class="label" font-weight="700" text-anchor="end">Streaming TTFT</text>
 <polygon points="360.00,108.00 559.72,253.11 360.00,318.00 360.00,318.00 360.00,318.00" fill="#2563eb" fill-opacity="0.20" stroke="#2563eb" stroke-width="3"/>
 <circle cx="360.00" cy="108.00" r="4" fill="#2563eb"/>
 <circle cx="559.72" cy="253.11" r="4" fill="#2563eb"/>
@@ -48,10 +48,10 @@
 <text x="640" y="316" class="tick" font-weight="700">Throughput</text>
 <text x="640" y="336" class="tick">Infron: 23.0</text>
 <text x="640" y="354" class="tick">OpenRouter: 32.9</text>
-<text x="640" y="374" class="tick" font-weight="700">Avg latency</text>
+<text x="640" y="374" class="tick" font-weight="700">Avg E2E latency</text>
 <text x="640" y="394" class="tick">Infron: 8803ms</text>
 <text x="640" y="412" class="tick">OpenRouter: 5532ms</text>
-<text x="640" y="432" class="tick" font-weight="700">TTFT</text>
+<text x="640" y="432" class="tick" font-weight="700">Streaming TTFT</text>
 <text x="640" y="452" class="tick">Infron: 6419ms</text>
 <text x="640" y="470" class="tick">OpenRouter: 3784ms</text>
 </svg>

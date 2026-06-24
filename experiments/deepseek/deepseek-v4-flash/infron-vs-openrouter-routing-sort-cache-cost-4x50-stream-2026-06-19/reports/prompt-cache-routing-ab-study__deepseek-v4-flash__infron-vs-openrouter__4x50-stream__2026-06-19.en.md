@@ -2,23 +2,23 @@
 
 ## Abstract and Executive Outline
 
-**Keywords**: Prompt Caching; A/B Testing; Provider Routing; Cache Affinity; Latency; Throughput; Cost Attribution; DeepSeek V4 Flash
+**Keywords**: Prompt Caching; A/B Testing; Provider Routing; Cache Affinity; E2E Latency; Streaming TTFT; Throughput; Cost Attribution; DeepSeek V4 Flash
 
 ### Abstract
 
-This report evaluates `deepseek/deepseek-v4-flash` on two OpenAI-compatible inference platforms, Infron and OpenRouter, under prompt caching workloads. The experiment compares provider routing behavior, token-level cache hit rate, observed cost, response throughput, TTFT, and end-to-end latency across three routing sort strategies: `throughput`, `price`, and `latency`.
+This report evaluates `deepseek/deepseek-v4-flash` on two OpenAI-compatible inference platforms, Infron and OpenRouter, under prompt caching workloads. The experiment compares provider routing behavior, token-level cache hit rate, observed cost, response throughput, Streaming TTFT, and E2E latency across three routing sort strategies: `throughput`, `price`, and `latency`.
 
 The benchmark used 4 experiment groups and 50 rounds per group. Each round sent two identical streaming Chat Completions requests to each platform. After excluding abnormal usage records, non-successful records, and A/B pairs whose first/second `usage.prompt_tokens` were not exactly equal, the final analysis retained 364 strict A/B pairs and 1,456 request-level observations. A total of 472 records were excluded by the data quality rules.
 
-The core finding is that, among samples with exactly matched `usage.prompt_tokens`, Infron achieved a higher token-level cache hit rate in every routing mode. Infron had lower observed cost in `price` and `latency` modes, while OpenRouter had lower observed cost in `throughput` mode. OpenRouter delivered higher response throughput in all three routing modes. Infron delivered lower latency and lower TTFT in `latency` mode, while OpenRouter delivered lower latency and lower TTFT in `throughput` and `price` modes. Overall, Infron's advantage is concentrated in cache reuse, cost control, and the low-latency path under Latency First. OpenRouter's advantage is concentrated in throughput, TTFT, and latency in two of the three modes. Platform selection should therefore be driven by business objectives rather than a single metric.
+The core finding is that, among samples with exactly matched `usage.prompt_tokens`, Infron achieved a higher token-level cache hit rate in every routing mode. Infron had lower observed cost in `price` and `latency` modes, while OpenRouter had lower observed cost in `throughput` mode. OpenRouter delivered higher response throughput in all three routing modes. Infron delivered lower E2E latency and lower Streaming TTFT in `latency` mode, while OpenRouter delivered lower E2E latency and lower Streaming TTFT in `throughput` and `price` modes. Overall, Infron's advantage is concentrated in cache reuse, cost control, and the low-E2E-latency path under Latency First. OpenRouter's advantage is concentrated in throughput, Streaming TTFT, and E2E latency in two of the three modes. Platform selection should therefore be driven by business objectives rather than a single metric.
 
-![Inference platform impossible triangle](../figures/inference_impossible_triangle.en.svg)
+![Inference platform impossible quadrilateral](../figures/inference_impossible_triangle.en.svg)
 
-Figure 0: The inference platform "impossible triangle". Throughput, price, and latency are difficult to optimize simultaneously. Routing strategies normally choose a position along this trade-off surface.
+Figure 0: The inference platform "impossible quadrilateral" routing-mode position chart. The chart shows Infron and OpenRouter under Throughput First, Price First, and Latency First, plus each weighted aggregate position. Coordinates use nonlinear visual scaling to preserve the overlap zone while separating advantage directions; source metrics and winner conclusions are unchanged.
 
 ![Conclusion overview](../figures/conclusion_overview.en.svg)
 
-Figure A: Conclusion overview. The upper cards summarize cross-mode winners, while the matrix shows the A/B outcome for cache hit rate, cost, throughput, latency, and TTFT under each routing mode.
+Figure A: Conclusion overview. The upper cards summarize cross-mode winners, while the matrix shows the A/B outcome for cache hit rate, cost, throughput, E2E latency, and Streaming TTFT under each routing mode.
 
 ### Executive Outline
 
@@ -27,9 +27,9 @@ Figure A: Conclusion overview. The upper cards summarize cross-mode winners, whi
 | Controlled variables | Included A/B samples have exactly equal first/second `usage.prompt_tokens` for the same `sort/group/round`; input token totals are `throughput`=657312/657312, `price`=181436/181436, and `latency`=357916/357916 | Methodology and data quality sections |
 | Cache reuse | Infron has higher token-level cache hit rate in all routing modes, consistent with stronger provider stick/cache affinity for repeated long prefixes | Results and mechanism analysis |
 | Observed cost | Infron is cheaper in `price` and `latency`; OpenRouter is cheaper in `throughput`; the cost pattern moves with cache read tokens and provider selection | Results sections |
-| Performance | OpenRouter has higher throughput in all routing modes; Infron has lower latency and TTFT in `latency`; OpenRouter has lower latency and TTFT in `throughput` and `price` | Visualization and conclusion sections |
-| Attribution boundary | The report uses only observable telemetry: provider fields, usage, cost breakdown, TTFT, latency, and cache tokens. It does not treat private routing trace as observed evidence | Mechanism and drill-down sections |
-| Business implication | Stable long-context prompts, RAG prefixes, agent tool instructions, and batch workloads benefit most from cache hit rate and cost predictability. Real-time products should still constrain latency independently | Discussion section |
+| Performance | OpenRouter has higher throughput in all routing modes; Infron has lower E2E latency and Streaming TTFT in `latency`; OpenRouter has lower E2E latency and Streaming TTFT in `throughput` and `price` | Visualization and conclusion sections |
+| Attribution boundary | The report uses only observable telemetry: provider fields, usage, cost breakdown, Streaming TTFT, E2E latency, and cache tokens. It does not treat private routing trace as observed evidence | Mechanism and drill-down sections |
+| Business implication | Stable long-context prompts, RAG prefixes, agent tool instructions, and batch workloads benefit most from cache hit rate and cost predictability. Real-time products should still constrain E2E latency independently | Discussion section |
 
 ### Routing-Mode Conclusions
 
@@ -43,9 +43,9 @@ Figure A: Conclusion overview. The upper cards summarize cross-mode winners, whi
 |  | OpenRouter | **███████░ $0.04656992** |  |
 | Throughput | Infron | ███████░ 36.52 tok/s | **OpenRouter** (9.70% higher) |
 |  | OpenRouter | **████████ 40.06 tok/s** |  |
-| Latency | Infron | ████████ 7391.44 ms | **OpenRouter** (59.13% lower) |
+| E2E Latency | Infron | ████████ 7391.44 ms | **OpenRouter** (59.13% lower) |
 |  | OpenRouter | **███░░░░░ 3020.63 ms** |  |
-| TTFT | Infron | ████████ 3443.99 ms | **OpenRouter** (54.10% lower) |
+| Streaming TTFT | Infron | ████████ 3443.99 ms | **OpenRouter** (54.10% lower) |
 |  | OpenRouter | **████░░░░ 1580.62 ms** |  |
 
 #### Price First
@@ -58,9 +58,9 @@ Figure A: Conclusion overview. The upper cards summarize cross-mode winners, whi
 |  | OpenRouter | ████████ $0.01103342 |  |
 | Throughput | Infron | ██████░░ 23.03 tok/s | **OpenRouter** (42.72% higher) |
 |  | OpenRouter | **████████ 32.87 tok/s** |  |
-| Latency | Infron | ████████ 8802.77 ms | **OpenRouter** (37.15% lower) |
+| E2E Latency | Infron | ████████ 8802.77 ms | **OpenRouter** (37.15% lower) |
 |  | OpenRouter | **█████░░░ 5532.32 ms** |  |
-| TTFT | Infron | ████████ 6419.29 ms | **OpenRouter** (41.06% lower) |
+| Streaming TTFT | Infron | ████████ 6419.29 ms | **OpenRouter** (41.06% lower) |
 |  | OpenRouter | **█████░░░ 3783.70 ms** |  |
 
 #### Latency First
@@ -73,16 +73,16 @@ Figure A: Conclusion overview. The upper cards summarize cross-mode winners, whi
 |  | OpenRouter | ████████ $0.03762893 |  |
 | Throughput | Infron | █████░░░ 8.66 tok/s | **OpenRouter** (75.62% higher) |
 |  | OpenRouter | **████████ 15.21 tok/s** |  |
-| Latency | Infron | **███░░░░░ 1847.59 ms** | **Infron** (59.72% lower) |
+| E2E Latency | Infron | **███░░░░░ 1847.59 ms** | **Infron** (59.72% lower) |
 |  | OpenRouter | ████████ 4587.12 ms |  |
-| TTFT | Infron | **████░░░░ 1536.19 ms** | **Infron** (55.81% lower) |
+| Streaming TTFT | Infron | **████░░░░ 1536.19 ms** | **Infron** (55.81% lower) |
 |  | OpenRouter | ████████ 3476.52 ms |  |
 
-Note: Each block corresponds to one routing mode. For each metric, Infron and OpenRouter are split into two rows so the bars start from the left edge of the same column in GitHub Markdown and GitHub Pages rendering. Higher is better for cache hit rate and throughput. Lower is better for observed cost, latency, and TTFT.
+Note: Each block corresponds to one routing mode. For each metric, Infron and OpenRouter are split into two rows so the bars start from the left edge of the same column in GitHub Markdown and GitHub Pages rendering. Higher is better for cache hit rate and throughput. Lower is better for observed cost, E2E latency, and Streaming TTFT.
 
 ## 1. Introduction
 
-This study evaluates prompt caching behavior for the same OpenAI-compatible Chat Completions workload on Infron and OpenRouter. The focus is how routing sort strategies affect cache reuse, cost, throughput, TTFT, and end-to-end latency when input size is strictly controlled.
+This study evaluates prompt caching behavior for the same OpenAI-compatible Chat Completions workload on Infron and OpenRouter. The focus is how routing sort strategies affect cache reuse, cost, throughput, Streaming TTFT, and E2E latency when input size is strictly controlled.
 
 Prompt caching matters in production because many LLM workloads contain stable system prompts, long context templates, RAG prefixes, tool descriptions, or workflow instructions. When the prefix is repeated, later requests can reuse cached prefill work and reduce marginal cost. This benchmark models that pattern by issuing two identical requests per round and using the second request's cache read tokens as the primary cache reuse signal.
 
@@ -97,13 +97,13 @@ The report addresses three questions:
 | Hypothesis | Statement | Validation metrics |
 | --- | --- | --- |
 | H1 | Stronger provider/cache affinity improves token-level cache hit rate for repeated stable long-prefix requests | Second-request cache read tokens; token-level cache hit rate |
-| H2 | Higher cache hit rate can reduce observed cost, but it does not necessarily reduce TTFT or end-to-end latency | Observed cost; average TTFT; average request latency |
-| H3 | Different routing sort strategies change provider selection and therefore create different Pareto frontiers | Provider distribution; throughput; latency; cost |
+| H2 | Higher cache hit rate can reduce observed cost, but it does not necessarily reduce Streaming TTFT or E2E latency | Observed cost; average Streaming TTFT; average request E2E latency |
+| H3 | Different routing sort strategies change provider selection and therefore create different Pareto frontiers | Provider distribution; throughput; E2E latency; cost |
 
 ### 1.2 Contributions
 
 - A strict paired A/B benchmark method that uses response-side `usage.prompt_tokens` as the true input-token control variable.
-- A prompt caching evaluation framework that includes cache hit rate, observed cost, throughput, latency, TTFT, provider distribution, and reproducible datasets.
+- A prompt caching evaluation framework that includes cache hit rate, observed cost, throughput, E2E latency, Streaming TTFT, provider distribution, and reproducible datasets.
 - A provider-routing analysis based only on observable telemetry, with explicit attribution boundaries when private routing trace is unavailable.
 - A full open artifact: paired CSV, request-level JSONL, figures, report pages, checksums, and benchmark runner code.
 
@@ -157,9 +157,9 @@ Core payload shape:
 | Call-level hit rate | Share of rounds whose second request returned positive cache read tokens | Higher is better |
 | Token-level hit rate | Second-request cache read tokens / second-request prompt tokens | Higher is better |
 | Observed cost | Response-returned cost or cost breakdown; missing cost is not counted as zero | Lower is better |
-| Response throughput | Completion tokens divided by total response latency seconds; reasoning tokens are included when present in response usage | Higher is better |
-| Latency | End-to-end streaming response time | Lower is better |
-| TTFT | Time to first streamed chunk/token | Lower is better |
+| Response throughput | Completion tokens divided by total response E2E-latency seconds; reasoning tokens are included when present in response usage | Higher is better |
+| E2E Latency | End-to-end streaming response time | Lower is better |
+| Streaming TTFT | Time to first streamed chunk/token | Lower is better |
 
 ## 3. Experimental Environment and Data Quality
 
@@ -187,9 +187,9 @@ Core payload shape:
 
 ## 4. Results: Aggregate Metrics
 
-Throughput, latency, and TTFT are response-level metrics. If response usage includes reasoning tokens in `completion_tokens` or related usage fields, reasoning is included in throughput. Request latency covers the complete streamed response and therefore includes reasoning time. TTFT captures first streamed output timing and represents first-response experience.
+Throughput, E2E latency, and Streaming TTFT are response-level metrics. If response usage includes reasoning tokens in `completion_tokens` or related usage fields, reasoning is included in throughput. Request E2E latency covers the complete streamed response and therefore includes reasoning time. Streaming TTFT captures first streamed output timing and represents first-response experience.
 
-| Routing mode | Platform | Rounds | Successful rounds | Total Input Tokens (`usage.prompt_tokens`) | Call hit rate | Token hit rate | Observed total cost | Avg cost / pair | Avg response throughput | Avg latency / request | Avg TTFT | HTTP status |
+| Routing mode | Platform | Rounds | Successful rounds | Total Input Tokens (`usage.prompt_tokens`) | Call hit rate | Token hit rate | Observed total cost | Avg cost / pair | Avg response throughput | Avg E2E latency / request | Avg Streaming TTFT | HTTP status |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
 | `throughput` | Infron | **200** | **200** | **657312** | **100.00%** | **92.38%** | $0.05493100 | $0.00027466 | 36.52 response tok/s | 7391.44 ms | 3443.99 ms | **200** |
 | `throughput` | OpenRouter | **200** | **200** | **657312** | 95.00% | 67.24% | **$0.04656992** | **$0.00023285** | **40.06 response tok/s** | **3020.63 ms** | **1580.62 ms** | **200** |
@@ -304,7 +304,7 @@ Figure 14: Cost control path. Cache hit rate and provider choice jointly shape o
 
 ## 7. Provider and Route Drill-Down
 
-| Routing mode | Platform | Valid rounds | Input Tokens | Token hit rate | Observed cost | Cost / 1K Input | Response throughput | TTFT | Latency / request | Observable route profile |
+| Routing mode | Platform | Valid rounds | Input Tokens | Token hit rate | Observed cost | Cost / 1K Input | Response throughput | Streaming TTFT | E2E latency / request | Observable route profile |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
 | `throughput` | Infron | **200** | **657312** | **92.38%** | $0.05493100 | $0.000084 | 36.52 response tok/s | 3443.99 ms | 7391.44 ms | Balanced, no single extreme |
 | `throughput` | OpenRouter | **200** | **657312** | 67.24% | **$0.04656992** | **$0.000071** | **40.06 response tok/s** | **1580.62 ms** | **3020.63 ms** | Aggressive speed path |
@@ -324,7 +324,7 @@ Figure 14: Cost control path. Cache hit rate and provider choice jointly shape o
 | `latency` | Infron | 218 | 218 | 100.00% | deepseek: 218 (100.00%) | 218 |
 | `latency` | OpenRouter | 218 | 218 | 100.00% | WandB: 129 (59.17%), GMICloud: 89 (40.83%) | 218 |
 
-| Routing mode | Platform | Upstream provider | Requests | Share | first/second | Covered rounds | Avg TTFT | Avg latency | Prompt Tokens | Completion Tokens | Reasoning Tokens | Cache Read Tokens | Observed cost | Cost breakdown requests |
+| Routing mode | Platform | Upstream provider | Requests | Share | first/second | Covered rounds | Avg Streaming TTFT | Avg E2E latency | Prompt Tokens | Completion Tokens | Reasoning Tokens | Cache Read Tokens | Observed cost | Cost breakdown requests |
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | `throughput` | Infron | `alibaba/cn` | 400 | 100.00% | 200/200 | 200 | 3443.99 ms | 7391.44 ms | 657312 | 107979 | 102289 | 601600 | $0.05493100 | 400 |
 | `throughput` | OpenRouter | `StreamLake` | 226 | 56.50% | 112/114 | 118 | 2039.63 ms | 4438.01 ms | 371438 | 45568 | 43910 | 315776 | $0.02792378 | 226 |
@@ -385,21 +385,21 @@ The three routing modes correspond to different business goals:
 
 | Routing mode | Primary business goal | Observed result | Suitable scenarios | Caveats |
 | --- | --- | --- | --- | --- |
-| `throughput` | Maximize output capacity per unit time | Infron wins cache; OpenRouter wins cost, throughput, latency, and TTFT | Batch generation, offline summarization, background data processing | Validate cache stability if cost predictability matters |
-| `price` | Minimize unit request/token cost | Infron wins cache and cost; OpenRouter wins throughput, latency, and TTFT | High-frequency templated calls, support automation, marketing workflows | Check throughput and latency against SLA |
-| `latency` | Minimize user-visible waiting time | Infron wins cache, cost, latency, and TTFT; OpenRouter wins throughput | Chat, agent tool chains, IDE/writing assistance, real-time operations tools | Throughput may not be optimal |
+| `throughput` | Maximize output capacity per unit time | Infron wins cache; OpenRouter wins cost, throughput, E2E latency, and Streaming TTFT | Batch generation, offline summarization, background data processing | Validate cache stability if cost predictability matters |
+| `price` | Minimize unit request/token cost | Infron wins cache and cost; OpenRouter wins throughput, E2E latency, and Streaming TTFT | High-frequency templated calls, support automation, marketing workflows | Check throughput and latency against SLA |
+| `latency` | Minimize user-visible waiting time | Infron wins cache, cost, E2E latency, and Streaming TTFT; OpenRouter wins throughput | Chat, agent tool chains, IDE/writing assistance, real-time operations tools | Throughput may not be optimal |
 
-Prompt caching value is not only single-request savings. Its larger impact is reducing marginal cost for repeated long-context requests. If a workload is highly templated, token-level cache hit rate and observed cost should be primary metrics. If the workload is user-facing, latency and TTFT should be constrained separately. If the workload is offline batch generation, throughput can be the dominant objective.
+Prompt caching value is not only single-request savings. Its larger impact is reducing marginal cost for repeated long-context requests. If a workload is highly templated, token-level cache hit rate and observed cost should be primary metrics. If the workload is user-facing, E2E latency and Streaming TTFT should be constrained separately. If the workload is offline batch generation, throughput can be the dominant objective.
 
 ## 10. Conclusion
 
-| Routing mode | Better cache hit | Lower cost | Higher throughput | Lower latency | Lower TTFT | Integrated interpretation |
+| Routing mode | Better cache hit | Lower cost | Higher throughput | Lower E2E latency | Lower Streaming TTFT | Integrated interpretation |
 | --- | --- | --- | --- | --- | --- | --- |
 | `throughput` | **Infron** | **OpenRouter** | **OpenRouter** | **OpenRouter** | **OpenRouter** | OpenRouter leads on 4/5 comparable metrics |
 | `price` | **Infron** | **Infron** | **OpenRouter** | **OpenRouter** | **OpenRouter** | OpenRouter leads on 3/5 comparable metrics |
 | `latency` | **Infron** | **Infron** | **OpenRouter** | **Infron** | **Infron** | Infron leads on 4/5 comparable metrics |
 
-The experiment supports a trade-off view rather than a universal platform ranking. Infron is stronger when cache affinity, cost control, and latency-mode response experience matter. OpenRouter is stronger when throughput and fast TTFT/latency in throughput or price mode are the primary objectives.
+The experiment supports a trade-off view rather than a universal platform ranking. Infron is stronger when cache affinity, cost control, and E2E-latency-mode response experience matter. OpenRouter is stronger when throughput and fast Streaming TTFT/E2E latency in throughput or price mode are the primary objectives.
 
 ## 11. Limitations and Future Work
 
@@ -414,7 +414,7 @@ The experiment supports a trade-off view rather than a universal platform rankin
 
 ## 12. Reproducibility Appendix: Benchmark Dataset
 
-The checked-in dataset is sufficient to reproduce the aggregate tables and figures without making new API calls. The paired CSV is the direct input to the summary tables and core metric figures. The request-level JSONL preserves per-request telemetry for auditing usage, cost, provider, latency, TTFT, and cache fields.
+The checked-in dataset is sufficient to reproduce the aggregate tables and figures without making new API calls. The paired CSV is the direct input to the summary tables and core metric figures. The request-level JSONL preserves per-request telemetry for auditing usage, cost, provider, E2E latency, Streaming TTFT, and cache fields.
 
 | Data file | Granularity | Rows | SHA256 | Purpose |
 | --- | ---: | ---: | --- | --- |
@@ -427,9 +427,9 @@ Field dictionary:
 | --- | --- |
 | `sort/group/round` | A/B pairing key; input tokens are equal for Infron and OpenRouter within included pairs |
 | `*_pair_cost_usd` | Observed first + second request cost |
-| `*_avg_latency_ms` | Mean latency of first/second requests |
-| `*_avg_ttft_ms` | Mean TTFT of first/second requests |
-| `*_response_throughput_tps` | Completion tokens divided by total response latency seconds |
+| `*_avg_latency_ms` | Mean E2E latency of first/second requests |
+| `*_avg_ttft_ms` | Mean Streaming TTFT of first/second requests |
+| `*_response_throughput_tps` | Completion tokens divided by total response E2E-latency seconds |
 | `*_second_cache_read_tokens` | Cache read tokens in the second request |
 | `*_second_cache_hit_rate` | Second-request cache read tokens / second-request prompt tokens |
 | `*_provider` | Observable upstream provider identifier |

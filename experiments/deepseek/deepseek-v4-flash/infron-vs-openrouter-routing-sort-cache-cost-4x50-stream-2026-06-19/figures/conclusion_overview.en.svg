@@ -17,12 +17,12 @@
 <text x="488" y="168" class="value" font-size="11" font-weight="800" fill="#f97316">Max edge 75.62%</text>
 <text x="488" y="200" class="tick">Higher is better</text>
 <rect x="681" y="96" width="196" height="118" rx="10" fill="#f8fafc" stroke="#dbe3ef"/>
-<text x="699" y="124" class="label" font-weight="800">Latency</text>
+<text x="699" y="124" class="label" font-weight="800">E2E Latency</text>
 <text x="699" y="148" class="value" font-size="11" font-weight="800" fill="#f97316">OpenRouter wins 2/3</text>
 <text x="699" y="168" class="value" font-size="11" font-weight="800" fill="#f97316">Max edge 59.13%</text>
 <text x="699" y="200" class="tick">Lower is better</text>
 <rect x="892" y="96" width="196" height="118" rx="10" fill="#f8fafc" stroke="#dbe3ef"/>
-<text x="910" y="124" class="label" font-weight="800">TTFT</text>
+<text x="910" y="124" class="label" font-weight="800">Streaming TTFT</text>
 <text x="910" y="148" class="value" font-size="11" font-weight="800" fill="#f97316">OpenRouter wins 2/3</text>
 <text x="910" y="168" class="value" font-size="11" font-weight="800" fill="#f97316">Max edge 54.10%</text>
 <text x="910" y="200" class="tick">Lower is better</text>
@@ -35,9 +35,9 @@
 <rect x="562" y="284" width="170" height="58" fill="#eef2ff" stroke="#c7d2fe"/>
 <text x="647.0" y="320" class="label" font-weight="800" text-anchor="middle">Throughput</text>
 <rect x="732" y="284" width="170" height="58" fill="#eef2ff" stroke="#c7d2fe"/>
-<text x="817.0" y="320" class="label" font-weight="800" text-anchor="middle">Latency</text>
+<text x="817.0" y="320" class="label" font-weight="800" text-anchor="middle">E2E Latency</text>
 <rect x="902" y="284" width="170" height="58" fill="#eef2ff" stroke="#c7d2fe"/>
-<text x="987.0" y="320" class="label" font-weight="800" text-anchor="middle">TTFT</text>
+<text x="987.0" y="320" class="label" font-weight="800" text-anchor="middle">Streaming TTFT</text>
 <rect x="72" y="342" width="150" height="58" fill="#ffffff" stroke="#e5e7eb"/>
 <text x="90" y="377" class="label" font-weight="800">Throughput First</text>
 <rect x="222" y="342" width="170" height="58" fill="#eff6ff" stroke="#93c5fd"/>
@@ -89,7 +89,7 @@
 <rect x="902" y="458" width="170" height="58" fill="#eff6ff" stroke="#93c5fd"/>
 <text x="987.0" y="483" class="label" font-weight="900" text-anchor="middle" fill="#2563eb">Infron</text>
 <text x="987.0" y="502" class="tick" font-weight="800" text-anchor="middle" fill="#2563eb">55.81% lower</text>
-<text x="72" y="600" class="label">How to read: each row shows winners for one routing mode; higher is better for cache and throughput; lower is better for cost, latency, and TTFT.</text>
+<text x="72" y="600" class="label">How to read: each row shows winners for one routing mode; higher is better for cache and throughput; lower is better for cost, E2E latency, and Streaming TTFT.</text>
 <rect x="820" y="618" width="14" height="14" rx="3" fill="#2563eb"/>
 <text x="842" y="630" class="label">Infron</text>
 <rect x="820" y="642" width="14" height="14" rx="3" fill="#f97316"/>

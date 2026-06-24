@@ -15,7 +15,7 @@
 <text x="643.0" y="172" class="tick" text-anchor="middle">A/B pair</text>
 <rect x="812" y="118" width="210" height="76" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
 <text x="917.0" y="148" class="label" font-weight="700" text-anchor="middle">过滤后聚合</text>
-<text x="917.0" y="172" class="tick" text-anchor="middle">cache / cost / latency / TTFT</text>
+<text x="917.0" y="172" class="tick" text-anchor="middle">cache / cost / 端到端E2E时延 / 流式TTFT</text>
 <path d="M218,156 L282,110" stroke="#64748b" stroke-width="2" fill="none"/><path d="M274,105 L282,110 L274,115" stroke="#64748b" stroke-width="2" fill="none"/>
 <path d="M218,156 L282,208" stroke="#64748b" stroke-width="2" fill="none"/><path d="M274,203 L282,208 L274,213" stroke="#64748b" stroke-width="2" fill="none"/>
 <path d="M472,110 L548,156" stroke="#64748b" stroke-width="2" fill="none"/><path d="M540,151 L548,156 L540,161" stroke="#64748b" stroke-width="2" fill="none"/>
