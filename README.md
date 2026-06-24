@@ -36,6 +36,12 @@ This repository publishes reproducible experiment code, raw benchmark datasets, 
                 └── metadata/        # Manifest and checksums
 ```
 
+## Documentation
+
+- [Methodology](docs/methodology.md)
+- [Online preview notes](docs/online-preview.md)
+- [Report release runbook](docs/report-release-runbook.md)
+
 ## Published Experiment
 
 <table>
