@@ -1,4 +1,4 @@
-# Infron vs OpenRouter Prompt Caching A/B Replication Study
+# A/B Benchmark of Prompt Caching, Cost, and Performance Under Routing Strategies: Infron vs OpenRouter
 
 ## Abstract and Executive Outline
 

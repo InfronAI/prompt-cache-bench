@@ -1,4 +1,4 @@
-# Infron 与 OpenRouter 提示词缓存 A/B 重复实验报告
+# Infron 与 OpenRouter 路由策略下的提示词缓存、成本与性能 A/B 基准研究
 
 ## 摘要与结论大纲
 
