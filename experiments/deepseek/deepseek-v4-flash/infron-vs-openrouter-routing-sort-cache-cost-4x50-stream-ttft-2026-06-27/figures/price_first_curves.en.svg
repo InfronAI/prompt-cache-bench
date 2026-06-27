@@ -1,0 +1,293 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1000" viewBox="0 0 1080 1000"><style>text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;fill:#111827}.title{font-size:22px;font-weight:700}.label{font-size:13px;fill:#374151}.tick{font-size:12px;fill:#6b7280}.value{font-size:12px;fill:#111827}</style><rect width="100%" height="100%" fill="#ffffff"/>
+<text x="48" y="34" class="title">Price First Routing Mode：Metric-generation Comparison Curves</text>
+<text x="48" y="58" class="label">Metrics are plotted by group/round sequence; curves show the variation behind aggregate means.</text>
+<rect x="48" y="76" width="472" height="245" rx="8" fill="#ffffff" stroke="#dbe3ef"/>
+<text x="66" y="104" class="label" font-weight="700">E2E Latency / request (incl. reasoning)</text>
+<rect x="366" y="88" width="136" height="26" rx="13" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.4"/>
+<text x="434" y="106" class="tick" font-weight="800" text-anchor="middle" fill="#92400e">Average winner: OpenRouter</text>
+<line x1="106" y1="281.00" x2="496" y2="281.00" stroke="#e5e7eb"/>
+<text x="98" y="285.00" class="tick" text-anchor="end">0.0</text>
+<line x1="106" y1="228.67" x2="496" y2="228.67" stroke="#e5e7eb"/>
+<text x="98" y="232.67" class="tick" text-anchor="end">5099</text>
+<line x1="106" y1="176.33" x2="496" y2="176.33" stroke="#e5e7eb"/>
+<text x="98" y="180.33" class="tick" text-anchor="end">10198</text>
+<line x1="106" y1="124.00" x2="496" y2="124.00" stroke="#e5e7eb"/>
+<text x="98" y="128.00" class="tick" text-anchor="end">15298</text>
+<polyline points="106.00,229.31 115.75,245.28 125.50,217.70 135.25,166.99 145.00,228.70 154.75,242.51 164.50,153.64 174.25,179.49 184.00,188.22 193.75,230.37 203.50,246.06 213.25,204.74 223.00,206.00 232.75,221.80 242.50,225.71 252.25,140.82 262.00,151.69 271.75,186.39 281.50,237.74 291.25,162.24 301.00,189.84 310.75,233.00 320.50,224.31 330.25,211.24 340.00,152.56 349.75,235.40 359.50,233.88 369.25,203.24 379.00,176.04 388.75,234.54 398.50,247.41 408.25,203.63 418.00,198.69 427.75,224.98 437.50,228.49 447.25,172.81 457.00,159.35 466.75,192.85 476.50,247.88 486.25,204.32 496.00,193.58" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-opacity="0.45" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="106.00" cy="229.31" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="125.50" cy="217.70" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="145.00" cy="228.70" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="164.50" cy="153.64" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="184.00" cy="188.22" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="203.50" cy="246.06" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="223.00" cy="206.00" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="242.50" cy="225.71" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="262.00" cy="151.69" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="281.50" cy="237.74" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="301.00" cy="189.84" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="320.50" cy="224.31" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="340.00" cy="152.56" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="359.50" cy="233.88" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="379.00" cy="176.04" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="398.50" cy="247.41" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="418.00" cy="198.69" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="437.50" cy="228.49" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="457.00" cy="159.35" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="476.50" cy="247.88" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="496.00" cy="193.58" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<polyline points="106.00,252.89 115.75,260.30 125.50,258.80 135.25,258.75 145.00,259.19 154.75,253.53 164.50,258.38 174.25,262.07 184.00,249.27 193.75,253.42 203.50,252.88 213.25,261.81 223.00,258.13 232.75,263.29 242.50,216.75 252.25,248.09 262.00,249.23 271.75,257.00 281.50,252.78 291.25,257.78 301.00,252.12 310.75,259.73 320.50,253.35 330.25,261.18 340.00,257.15 349.75,254.84 359.50,250.11 369.25,258.70 379.00,257.26 388.75,256.11 398.50,258.91 408.25,256.32 418.00,257.56 427.75,258.50 437.50,254.27 447.25,258.07 457.00,261.49 466.75,260.54 476.50,260.27 486.25,253.71 496.00,254.25" fill="none" stroke="#f97316" stroke-width="3.8" stroke-opacity="1" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="106.00" cy="252.89" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="125.50" cy="258.80" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="145.00" cy="259.19" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="164.50" cy="258.38" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="184.00" cy="249.27" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="203.50" cy="252.88" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="223.00" cy="258.13" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="242.50" cy="216.75" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="262.00" cy="249.23" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="281.50" cy="252.78" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="301.00" cy="252.12" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="320.50" cy="253.35" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="340.00" cy="257.15" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="359.50" cy="250.11" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="379.00" cy="257.26" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="398.50" cy="258.91" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="418.00" cy="257.56" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="437.50" cy="254.27" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="457.00" cy="261.49" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="476.50" cy="260.27" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="496.00" cy="254.25" r="3.0" fill="#f97316" fill-opacity="1"/>
+<text x="496" y="306" class="tick" text-anchor="end">Round sequence; lower is better</text>
+<rect x="560" y="76" width="472" height="245" rx="8" fill="#ffffff" stroke="#dbe3ef"/>
+<text x="578" y="104" class="label" font-weight="700">Streaming TTFT / first byte</text>
+<rect x="878" y="88" width="136" height="26" rx="13" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.4"/>
+<text x="946" y="106" class="tick" font-weight="800" text-anchor="middle" fill="#92400e">Average winner: OpenRouter</text>
+<line x1="618" y1="281.00" x2="1008" y2="281.00" stroke="#e5e7eb"/>
+<text x="610" y="285.00" class="tick" text-anchor="end">0.0</text>
+<line x1="618" y1="228.67" x2="1008" y2="228.67" stroke="#e5e7eb"/>
+<text x="610" y="232.67" class="tick" text-anchor="end">3978</text>
+<line x1="618" y1="176.33" x2="1008" y2="176.33" stroke="#e5e7eb"/>
+<text x="610" y="180.33" class="tick" text-anchor="end">7957</text>
+<line x1="618" y1="124.00" x2="1008" y2="124.00" stroke="#e5e7eb"/>
+<text x="610" y="128.00" class="tick" text-anchor="end">11935</text>
+<polyline points="618.00,255.66 627.75,251.81 637.50,220.46 647.25,197.64 657.00,248.45 666.75,248.78 676.50,169.69 686.25,186.39 696.00,207.43 705.75,247.82 715.50,254.02 725.25,199.96 735.00,258.52 744.75,258.65 754.50,251.47 764.25,140.82 774.00,201.59 783.75,245.55 793.50,244.04 803.25,150.55 813.00,220.57 822.75,249.03 832.50,252.47 842.25,212.03 852.00,154.11 861.75,253.59 871.50,238.54 881.25,217.90 891.00,207.48 900.75,252.47 910.50,245.62 920.25,206.80 930.00,227.00 939.75,242.02 949.50,241.25 959.25,172.83 969.00,162.84 978.75,250.77 988.50,252.22 998.25,213.32 1008.00,213.47" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-opacity="0.45" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="618.00" cy="255.66" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="637.50" cy="220.46" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="657.00" cy="248.45" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="676.50" cy="169.69" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="696.00" cy="207.43" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="715.50" cy="254.02" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="735.00" cy="258.52" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="754.50" cy="251.47" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="774.00" cy="201.59" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="793.50" cy="244.04" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="813.00" cy="220.57" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="832.50" cy="252.47" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="852.00" cy="154.11" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="871.50" cy="238.54" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="891.00" cy="207.48" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="910.50" cy="245.62" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="930.00" cy="227.00" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="949.50" cy="241.25" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="969.00" cy="162.84" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="988.50" cy="252.22" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<circle cx="1008.00" cy="213.47" r="1.8" fill="#2563eb" fill-opacity="0.55"/>
+<polyline points="618.00,256.19 627.75,259.50 637.50,258.71 647.25,256.39 657.00,258.10 666.75,250.39 676.50,254.70 686.25,258.96 696.00,252.32 705.75,259.83 715.50,250.07 725.25,260.97 735.00,257.27 744.75,259.67 754.50,203.51 764.25,243.28 774.00,245.78 783.75,256.66 793.50,257.43 803.25,255.28 813.00,255.17 822.75,259.07 832.50,260.25 842.25,259.34 852.00,257.37 861.75,252.73 871.50,255.38 881.25,258.99 891.00,253.15 900.75,258.06 910.50,256.99 920.25,255.18 930.00,253.43 939.75,258.00 949.50,249.79 959.25,258.05 969.00,260.94 978.75,258.03 988.50,258.29 998.25,250.97 1008.00,249.80" fill="none" stroke="#f97316" stroke-width="3.8" stroke-opacity="1" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="618.00" cy="256.19" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="637.50" cy="258.71" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="657.00" cy="258.10" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="676.50" cy="254.70" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="696.00" cy="252.32" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="715.50" cy="250.07" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="735.00" cy="257.27" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="754.50" cy="203.51" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="774.00" cy="245.78" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="793.50" cy="257.43" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="813.00" cy="255.17" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="832.50" cy="260.25" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="852.00" cy="257.37" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="871.50" cy="255.38" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="891.00" cy="253.15" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="910.50" cy="256.99" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="930.00" cy="253.43" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="949.50" cy="249.79" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="969.00" cy="260.94" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="988.50" cy="258.29" r="3.0" fill="#f97316" fill-opacity="1"/>
+<circle cx="1008.00" cy="249.80" r="3.0" fill="#f97316" fill-opacity="1"/>
+<text x="1008" y="306" class="tick" text-anchor="end">Round sequence; lower is better</text>
+<rect x="48" y="379" width="472" height="245" rx="8" fill="#ffffff" stroke="#dbe3ef"/>
+<text x="66" y="407" class="label" font-weight="700">Response throughput (incl. reasoning)</text>
+<rect x="366" y="391" width="136" height="26" rx="13" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.4"/>
+<text x="434" y="409" class="tick" font-weight="800" text-anchor="middle" fill="#92400e">Average winner: Infron</text>
+<line x1="106" y1="584.00" x2="496" y2="584.00" stroke="#e5e7eb"/>
+<text x="98" y="588.00" class="tick" text-anchor="end">0.0</text>
+<line x1="106" y1="531.67" x2="496" y2="531.67" stroke="#e5e7eb"/>
+<text x="98" y="535.67" class="tick" text-anchor="end">22.9</text>
+<line x1="106" y1="479.33" x2="496" y2="479.33" stroke="#e5e7eb"/>
+<text x="98" y="483.33" class="tick" text-anchor="end">45.8</text>
+<line x1="106" y1="427.00" x2="496" y2="427.00" stroke="#e5e7eb"/>
+<text x="98" y="431.00" class="tick" text-anchor="end">68.7</text>
+<polyline points="106.00,444.16 115.75,523.87 125.50,531.35 135.25,487.55 145.00,478.32 154.75,514.18 164.50,498.22 174.25,521.00 184.00,510.52 193.75,480.38 203.50,492.97 213.25,542.76 223.00,477.92 232.75,461.10 242.50,475.98 252.25,520.13 262.00,466.20 271.75,474.35 281.50,509.67 291.25,553.17 301.00,474.45 310.75,493.05 320.50,446.14 330.25,537.74 340.00,524.15 349.75,484.41 359.50,527.72 369.25,485.31 379.00,506.75 388.75,459.97 398.50,542.43 408.25,528.19 418.00,459.25 427.75,485.34 437.50,514.95 447.25,521.09 457.00,519.56 466.75,443.82 476.50,510.31 486.25,480.40 496.00,480.91" fill="none" stroke="#2563eb" stroke-width="3.8" stroke-opacity="1" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="106.00" cy="444.16" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="125.50" cy="531.35" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="145.00" cy="478.32" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="164.50" cy="498.22" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="184.00" cy="510.52" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="203.50" cy="492.97" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="223.00" cy="477.92" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="242.50" cy="475.98" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="262.00" cy="466.20" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="281.50" cy="509.67" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="301.00" cy="474.45" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="320.50" cy="446.14" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="340.00" cy="524.15" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="359.50" cy="527.72" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="379.00" cy="506.75" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="398.50" cy="542.43" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="418.00" cy="459.25" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="437.50" cy="514.95" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="457.00" cy="519.56" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="476.50" cy="510.31" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="496.00" cy="480.91" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<polyline points="106.00,570.64 115.75,565.86 125.50,567.09 135.25,567.12 145.00,566.78 154.75,570.33 164.50,567.40 174.25,564.16 184.00,572.16 193.75,570.38 203.50,570.64 213.25,564.43 223.00,567.58 232.75,562.79 242.50,578.16 252.25,572.59 262.00,572.18 271.75,568.35 281.50,570.69 291.25,567.83 301.00,571.00 310.75,566.34 320.50,570.42 330.25,565.05 340.00,568.26 349.75,569.64 359.50,571.84 369.25,567.16 379.00,568.18 388.75,568.91 398.50,567.00 408.25,568.79 418.00,567.98 427.75,567.31 437.50,569.95 447.25,567.62 457.00,564.75 466.75,565.65 476.50,565.88 486.25,570.24 496.00,569.96" fill="none" stroke="#f97316" stroke-width="1.8" stroke-opacity="0.45" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="106.00" cy="570.64" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="125.50" cy="567.09" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="145.00" cy="566.78" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="164.50" cy="567.40" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="184.00" cy="572.16" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="203.50" cy="570.64" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="223.00" cy="567.58" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="242.50" cy="578.16" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="262.00" cy="572.18" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="281.50" cy="570.69" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="301.00" cy="571.00" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="320.50" cy="570.42" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="340.00" cy="568.26" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="359.50" cy="571.84" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="379.00" cy="568.18" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="398.50" cy="567.00" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="418.00" cy="567.98" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="437.50" cy="569.95" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="457.00" cy="564.75" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="476.50" cy="565.88" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="496.00" cy="569.96" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<text x="496" y="609" class="tick" text-anchor="end">Round sequence; higher is better</text>
+<rect x="560" y="379" width="472" height="245" rx="8" fill="#ffffff" stroke="#dbe3ef"/>
+<text x="578" y="407" class="label" font-weight="700">Observed cost / round</text>
+<rect x="878" y="391" width="136" height="26" rx="13" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.4"/>
+<text x="946" y="409" class="tick" font-weight="800" text-anchor="middle" fill="#92400e">Average winner: Infron</text>
+<line x1="618" y1="584.00" x2="1008" y2="584.00" stroke="#e5e7eb"/>
+<text x="610" y="588.00" class="tick" text-anchor="end">$0.0000</text>
+<line x1="618" y1="531.67" x2="1008" y2="531.67" stroke="#e5e7eb"/>
+<text x="610" y="535.67" class="tick" text-anchor="end">$0.0001</text>
+<line x1="618" y1="479.33" x2="1008" y2="479.33" stroke="#e5e7eb"/>
+<text x="610" y="483.33" class="tick" text-anchor="end">$0.0002</text>
+<line x1="618" y1="427.00" x2="1008" y2="427.00" stroke="#e5e7eb"/>
+<text x="610" y="431.00" class="tick" text-anchor="end">$0.0003</text>
+<polyline points="618.00,498.95 627.75,534.73 637.50,510.10 647.25,473.15 657.00,511.27 666.75,531.21 676.50,473.73 686.25,505.41 696.00,501.89 705.75,513.03 715.50,511.27 725.25,527.69 735.00,493.68 744.75,481.95 754.50,508.34 764.25,487.22 774.00,443.82 783.75,477.25 793.50,527.69 803.25,524.17 813.00,480.19 822.75,518.90 832.50,495.44 842.25,527.11 852.00,496.02 861.75,517.72 871.50,531.21 881.25,496.02 891.00,476.67 900.75,508.93 910.50,523.59 920.25,519.48 930.00,478.43 939.75,510.68 949.50,524.76 959.25,502.47 969.00,494.85 978.75,463.76 988.50,532.97 998.25,494.26 1008.00,487.22" fill="none" stroke="#2563eb" stroke-width="3.8" stroke-opacity="1" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="618.00" cy="498.95" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="637.50" cy="510.10" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="657.00" cy="511.27" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="676.50" cy="473.73" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="696.00" cy="501.89" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="715.50" cy="511.27" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="735.00" cy="493.68" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="754.50" cy="508.34" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="774.00" cy="443.82" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="793.50" cy="527.69" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="813.00" cy="480.19" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="832.50" cy="495.44" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="852.00" cy="496.02" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="871.50" cy="531.21" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="891.00" cy="476.67" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="910.50" cy="523.59" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="930.00" cy="478.43" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="949.50" cy="524.76" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="969.00" cy="494.85" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="988.50" cy="532.97" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="1008.00" cy="487.22" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<polyline points="618.00,457.15 627.75,454.82 637.50,464.36 647.25,461.04 657.00,457.93 666.75,457.08 676.50,458.74 686.25,454.50 696.00,461.04 705.75,455.63 715.50,457.82 725.25,463.63 735.00,457.26 744.75,454.11 754.50,463.12 764.25,462.84 774.00,462.56 783.75,456.41 793.50,458.60 803.25,456.80 813.00,457.22 822.75,460.97 832.50,462.38 842.25,457.54 852.00,454.22 861.75,452.58 871.50,458.60 881.25,457.54 891.00,459.52 900.75,455.67 910.50,455.56 920.25,461.32 930.00,459.52 939.75,454.15 949.50,464.64 959.25,454.50 969.00,459.52 978.75,460.24 988.50,464.64 998.25,453.76 1008.00,460.26" fill="none" stroke="#f97316" stroke-width="1.8" stroke-opacity="0.45" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="618.00" cy="457.15" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="637.50" cy="464.36" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="657.00" cy="457.93" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="676.50" cy="458.74" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="696.00" cy="461.04" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="715.50" cy="457.82" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="735.00" cy="457.26" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="754.50" cy="463.12" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="774.00" cy="462.56" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="793.50" cy="458.60" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="813.00" cy="457.22" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="832.50" cy="462.38" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="852.00" cy="454.22" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="871.50" cy="458.60" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="891.00" cy="459.52" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="910.50" cy="455.56" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="930.00" cy="459.52" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="949.50" cy="464.64" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="969.00" cy="459.52" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="988.50" cy="464.64" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="1008.00" cy="460.26" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<text x="1008" y="609" class="tick" text-anchor="end">Round sequence; lower is better</text>
+<rect x="48" y="682" width="472" height="245" rx="8" fill="#ffffff" stroke="#dbe3ef"/>
+<text x="66" y="710" class="label" font-weight="700">Token cache hit rate</text>
+<rect x="366" y="694" width="136" height="26" rx="13" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.4"/>
+<text x="434" y="712" class="tick" font-weight="800" text-anchor="middle" fill="#92400e">Average winner: Infron</text>
+<line x1="106" y1="887.00" x2="496" y2="887.00" stroke="#e5e7eb"/>
+<text x="98" y="891.00" class="tick" text-anchor="end">0%</text>
+<line x1="106" y1="834.67" x2="496" y2="834.67" stroke="#e5e7eb"/>
+<text x="98" y="838.67" class="tick" text-anchor="end">35%</text>
+<line x1="106" y1="782.33" x2="496" y2="782.33" stroke="#e5e7eb"/>
+<text x="98" y="786.33" class="tick" text-anchor="end">70%</text>
+<line x1="106" y1="730.00" x2="496" y2="730.00" stroke="#e5e7eb"/>
+<text x="98" y="734.00" class="tick" text-anchor="end">105%</text>
+<polyline points="106.00,747.59 115.75,746.82 125.50,793.78 135.25,747.50 145.00,747.59 154.75,746.82 164.50,747.50 174.25,747.16 184.00,747.50 193.75,747.59 203.50,746.82 213.25,747.16 223.00,747.50 232.75,747.59 242.50,746.82 252.25,747.16 262.00,747.50 271.75,747.59 281.50,746.82 291.25,747.16 301.00,747.50 310.75,747.59 320.50,746.82 330.25,747.16 340.00,747.50 349.75,747.59 359.50,746.82 369.25,747.16 379.00,794.00 388.75,747.59 398.50,746.82 408.25,747.16 418.00,747.50 427.75,747.59 437.50,746.82 447.25,747.16 457.00,747.50 466.75,747.59 476.50,746.82 486.25,747.16 496.00,747.50" fill="none" stroke="#2563eb" stroke-width="3.8" stroke-opacity="1" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="106.00" cy="747.59" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="125.50" cy="793.78" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="145.00" cy="747.59" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="164.50" cy="747.50" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="184.00" cy="747.50" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="203.50" cy="746.82" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="223.00" cy="747.50" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="242.50" cy="746.82" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="262.00" cy="747.50" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="281.50" cy="746.82" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="301.00" cy="747.50" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="320.50" cy="746.82" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="340.00" cy="747.50" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="359.50" cy="746.82" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="379.00" cy="794.00" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="398.50" cy="746.82" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="418.00" cy="747.50" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="437.50" cy="746.82" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="457.00" cy="747.50" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="476.50" cy="746.82" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<circle cx="496.00" cy="747.50" r="3.0" fill="#2563eb" fill-opacity="1"/>
+<polyline points="106.00,827.28 115.75,827.22 125.50,815.26 135.25,818.25 145.00,822.74 154.75,824.30 164.50,816.80 174.25,821.27 184.00,812.26 193.75,824.28 203.50,818.28 213.25,812.26 223.00,824.24 232.75,827.28 242.50,816.82 252.25,813.80 262.00,818.25 271.75,819.74 281.50,819.74 291.25,821.27 301.00,819.79 310.75,819.74 320.50,815.27 330.25,824.27 340.00,827.24 349.75,827.28 359.50,821.29 369.25,821.27 379.00,822.79 388.75,825.73 398.50,824.30 408.25,813.80 418.00,824.24 427.75,825.73 437.50,813.81 447.25,827.28 457.00,818.25 466.75,819.74 476.50,812.26 486.25,822.73 496.00,816.80" fill="none" stroke="#f97316" stroke-width="1.8" stroke-opacity="0.45" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="106.00" cy="827.28" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="125.50" cy="815.26" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="145.00" cy="822.74" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="164.50" cy="816.80" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="184.00" cy="812.26" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="203.50" cy="818.28" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="223.00" cy="824.24" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="242.50" cy="816.82" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="262.00" cy="818.25" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="281.50" cy="819.74" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="301.00" cy="819.79" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="320.50" cy="815.27" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="340.00" cy="827.24" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="359.50" cy="821.29" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="379.00" cy="822.79" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="398.50" cy="824.30" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="418.00" cy="824.24" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="437.50" cy="813.81" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="457.00" cy="818.25" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="476.50" cy="812.26" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<circle cx="496.00" cy="816.80" r="1.8" fill="#f97316" fill-opacity="0.55"/>
+<text x="496" y="912" class="tick" text-anchor="end">Round sequence; higher is better</text>
+<rect x="830" y="28" width="14" height="14" rx="3" fill="#2563eb"/>
+<text x="852" y="40" class="label">Infron</text>
+<rect x="830" y="52" width="14" height="14" rx="3" fill="#f97316"/>
+<text x="852" y="64" class="label">OpenRouter</text>
+</svg>

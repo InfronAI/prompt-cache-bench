@@ -3,12 +3,15 @@ from __future__ import annotations
 import argparse
 import csv
 import hashlib
+import http.client
 from html import escape
 import io
 import json
 import math
 import os
 import random
+import socket
+import ssl
 import statistics
 import sys
 import time
@@ -18,15 +21,7 @@ from pathlib import Path
 from typing import Any, Callable
 from urllib.error import HTTPError, URLError
 from urllib.request import ProxyHandler, Request, build_opener
-
-
-MODEL = "deepseek/deepseek-v4-flash"
-SORT_MODES = ("throughput", "price", "latency")
-PROVIDERS = ("infron", "openrouter")
-CACHE_PREFIX_REPEAT = 53
-CACHE_PREFIX_SUFFIX = "Stable prompt cache suffix unchanged across repeated requests for token accounting verification only."
-DEFAULT_DATASET_NAME = "controlled_cache_probe"
-
+from urllib.parse import urlparse, urlunparse
 
 class Settings:
     def __init__(self) -> None:
@@ -151,6 +146,18 @@ def _sum_numeric_fields(payload: Any, field_names: set[str]) -> int:
     return total
 
 
+MODEL = "deepseek/deepseek-v4-flash"
+SORT_MODES = ("throughput", "price", "latency", "ttft")
+PROVIDERS = ("infron", "openrouter")
+PROVIDER_SORT_OVERRIDES = {
+    ("ttft", "infron"): "ttft",
+    ("ttft", "openrouter"): "latency",
+}
+CACHE_PREFIX_REPEAT = 53
+CACHE_PREFIX_SUFFIX = "Stable prompt cache suffix unchanged across repeated requests for token accounting verification only."
+DEFAULT_DATASET_NAME = "controlled_cache_probe"
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--groups", type=int, default=3)
@@ -164,15 +171,21 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--dataset-name", default=DEFAULT_DATASET_NAME)
     parser.add_argument("--dataset-file", default=None, help="Optional JSONL business corpus. Each row may include system/user/messages.")
     parser.add_argument("--soak-duration-seconds", type=int, default=0, help="Metadata for long-running experiments.")
+    parser.add_argument(
+        "--local-proxy-url",
+        default=None,
+        help="One local proxy URL shared by Infron and OpenRouter. Overrides provider-specific proxy settings.",
+    )
     args = parser.parse_args(argv)
 
     settings = load_settings()
-    run_id = f"routing_sort_cache_cost_ab_3x40_repeat_{int(time.time())}"
+    run_id = f"routing_sort_cache_cost_ab_4x50_stream_ttft_{int(time.time())}"
     out_dir = Path(args.out_dir) if args.out_dir else Path("export") / run_id
     out_dir.mkdir(parents=True, exist_ok=True)
     report_path = Path(args.report) if args.report else Path("export") / f"{run_id}-report-zh.md"
 
-    configs = _provider_configs(settings)
+    local_proxy_url = _shared_local_proxy_url(args.local_proxy_url, settings)
+    configs = _provider_configs(settings, local_proxy_url=local_proxy_url)
     missing = [name for name, config in configs.items() if not config["api_key"]]
     if missing:
         raise SystemExit(f"Missing API key for providers: {', '.join(missing)}")
@@ -295,7 +308,7 @@ def main(argv: list[str] | None = None) -> int:
     return 0
 
 
-def _provider_configs(settings: Any) -> dict[str, dict[str, Any]]:
+def _provider_configs(settings: Any, *, local_proxy_url: str | None = None) -> dict[str, dict[str, Any]]:
     return {
         "infron": {
             "name": "infron",
@@ -303,7 +316,7 @@ def _provider_configs(settings: Any) -> dict[str, dict[str, Any]]:
             "api_key": settings.model_probe_api_key,
             "cache_policy": settings.model_probe_infron_cache_policy,
             "headers": {},
-            "proxy_url": settings.model_probe_infron_proxy_url,
+            "proxy_url": local_proxy_url if local_proxy_url is not None else settings.model_probe_infron_proxy_url,
         },
         "openrouter": {
             "name": "openrouter",
@@ -314,9 +327,25 @@ def _provider_configs(settings: Any) -> dict[str, dict[str, Any]]:
                 **({"HTTP-Referer": settings.openrouter_http_referer} if settings.openrouter_http_referer else {}),
                 **({"X-Title": settings.openrouter_app_title} if settings.openrouter_app_title else {}),
             },
-            "proxy_url": settings.model_probe_openrouter_proxy_url,
+            "proxy_url": local_proxy_url if local_proxy_url is not None else settings.model_probe_openrouter_proxy_url,
         },
     }
+
+
+def _shared_local_proxy_url(cli_proxy_url: str | None, settings: Any) -> str | None:
+    raw = (
+        cli_proxy_url
+        if cli_proxy_url is not None
+        else os.getenv("AB_TEST_LOCAL_PROXY_URL")
+        or os.getenv("LOCAL_PROXY_URL")
+        or getattr(settings, "global_proxy_url", None)
+    )
+    if raw is None:
+        return None
+    proxy_url = raw.strip()
+    if not proxy_url or proxy_url.lower() in {"none", "direct", "off", "false", "0"}:
+        return None
+    return proxy_url
 
 
 def _run_round(
@@ -333,6 +362,7 @@ def _run_round(
 ) -> dict[str, Any]:
     payload = _payload(
         sort_mode=sort_mode,
+        provider_name=provider_name,
         stream=stream,
         group=group,
         round_no=round_no,
@@ -343,6 +373,7 @@ def _run_round(
     second = _send(provider_config=provider_config, payload=payload, timeout=timeout)
     return {
         "sort": sort_mode,
+        "provider_sort": _provider_sort_for(provider_name, sort_mode),
         "provider": provider_name,
         "group": group,
         "round": round_no,
@@ -354,6 +385,7 @@ def _run_round(
 def _payload(
     *,
     sort_mode: str,
+    provider_name: str | None = None,
     stream: bool = False,
     group: int = 1,
     round_no: int = 1,
@@ -361,18 +393,23 @@ def _payload(
     dataset_file: str | None = None,
 ) -> dict[str, Any]:
     messages = _messages_for_round(dataset_name=dataset_name, dataset_file=dataset_file, group=group, round_no=round_no)
+    provider_sort = _provider_sort_for(provider_name or "infron", sort_mode)
     payload = {
         "model": MODEL,
         "messages": messages,
         "temperature": 0,
         "max_tokens": 16,
         "usage": {"include": True},
-        "provider": {"sort": sort_mode, "allow_fallbacks": True},
+        "provider": {"sort": provider_sort, "allow_fallbacks": True},
     }
     if stream:
         payload["stream"] = True
         payload["stream_options"] = {"include_usage": True}
     return payload
+
+
+def _provider_sort_for(provider_name: str, sort_mode: str) -> str:
+    return PROVIDER_SORT_OVERRIDES.get((sort_mode, provider_name), sort_mode)
 
 
 def _messages_for_round(*, dataset_name: str, dataset_file: str | None, group: int, round_no: int) -> list[dict[str, str]]:
@@ -454,16 +491,29 @@ def _send(*, provider_config: dict[str, Any], payload: dict[str, Any], timeout: 
     response_headers: dict[str, str] = {}
     stream_metrics: dict[str, Any] = {}
     try:
-        opener = _opener(provider_config.get("proxy_url"))
-        with opener.open(request, timeout=timeout) as response:
-            status = int(response.status)
-            response_headers = {str(key): str(value) for key, value in response.headers.items()}
-            if payload.get("stream") is True:
-                payload_out, stream_metrics = _read_stream_response(response, started=started)
-            else:
-                raw = response.read()
-                payload_out = json.loads(raw.decode("utf-8")) if raw else {}
-            error = ""
+        proxy_url = provider_config.get("proxy_url")
+        if _is_socks_proxy(proxy_url):
+            status, response_headers, payload_out, stream_metrics = _send_via_socks_proxy(
+                url=url,
+                body=body,
+                headers=headers,
+                timeout=timeout,
+                proxy_url=str(proxy_url),
+                stream=payload.get("stream") is True,
+                started=started,
+            )
+            error = "" if 200 <= status < 300 else _extract_error(payload_out)
+        else:
+            opener = _opener(proxy_url)
+            with opener.open(request, timeout=timeout) as response:
+                status = int(response.status)
+                response_headers = {str(key): str(value) for key, value in response.headers.items()}
+                if payload.get("stream") is True:
+                    payload_out, stream_metrics = _read_stream_response(response, started=started)
+                else:
+                    raw = response.read()
+                    payload_out = json.loads(raw.decode("utf-8")) if raw else {}
+                error = ""
     except HTTPError as exc:
         status = int(exc.code)
         raw = exc.read()
@@ -676,10 +726,118 @@ def _provider_cost_breakdown(payload: Any) -> dict[str, Any]:
 
 def _opener(proxy_url: str | None):
     if not proxy_url:
-        return build_opener()
-    if proxy_url.startswith("socks"):
-        return build_opener()
+        return build_opener(ProxyHandler({}))
     return build_opener(ProxyHandler({"http": proxy_url, "https": proxy_url}))
+
+
+def _is_socks_proxy(proxy_url: str | None) -> bool:
+    return bool(proxy_url and proxy_url.lower().startswith(("socks5://", "socks5h://")))
+
+
+def _send_via_socks_proxy(
+    *,
+    url: str,
+    body: bytes,
+    headers: dict[str, str],
+    timeout: int,
+    proxy_url: str,
+    stream: bool,
+    started: float,
+) -> tuple[int, dict[str, str], Any, dict[str, Any]]:
+    parsed = urlparse(url)
+    if parsed.scheme not in {"http", "https"}:
+        raise ValueError(f"Unsupported proxied URL scheme: {parsed.scheme}")
+    if not parsed.hostname:
+        raise ValueError("Proxied URL host is required")
+    port = parsed.port or (443 if parsed.scheme == "https" else 80)
+    path = parsed.path or "/"
+    if parsed.query:
+        path = f"{path}?{parsed.query}"
+
+    sock = _open_socks5_socket(proxy_url=proxy_url, host=parsed.hostname, port=port, timeout=timeout)
+    try:
+        if parsed.scheme == "https":
+            context = ssl.create_default_context()
+            sock = context.wrap_socket(sock, server_hostname=parsed.hostname)
+        outbound_headers = {
+            "Host": parsed.hostname if port in {80, 443} else f"{parsed.hostname}:{port}",
+            "Content-Length": str(len(body)),
+            **headers,
+        }
+        request_lines = [f"POST {path} HTTP/1.1"]
+        request_lines.extend(f"{key}: {value}" for key, value in outbound_headers.items())
+        request_bytes = ("\r\n".join(request_lines) + "\r\n\r\n").encode("utf-8") + body
+        sock.sendall(request_bytes)
+        response = http.client.HTTPResponse(sock)
+        response.begin()
+        status = int(response.status)
+        response_headers = {str(key): str(value) for key, value in response.headers.items()}
+        if stream:
+            payload_out, stream_metrics = _read_stream_response(response, started=started)
+        else:
+            raw = response.read()
+            payload_out = json.loads(raw.decode("utf-8")) if raw else {}
+            stream_metrics = {}
+        return status, response_headers, payload_out, stream_metrics
+    finally:
+        sock.close()
+
+
+def _parse_socks5_proxy(proxy_url: str) -> tuple[str, int]:
+    parsed = urlparse(proxy_url)
+    if parsed.scheme not in {"socks5", "socks5h"}:
+        raise ValueError("Only socks5:// or socks5h:// local proxy URLs are supported")
+    if parsed.username or parsed.password:
+        raise ValueError("Authenticated SOCKS proxies are not supported")
+    if not parsed.hostname:
+        raise ValueError("SOCKS proxy host is required")
+    return parsed.hostname, parsed.port or 1080
+
+
+def _open_socks5_socket(*, proxy_url: str, host: str, port: int, timeout: int | float | None) -> socket.socket:
+    proxy_host, proxy_port = _parse_socks5_proxy(proxy_url)
+    sock = socket.create_connection((proxy_host, proxy_port), timeout)
+    try:
+        sock.settimeout(timeout)
+        sock.sendall(b"\x05\x01\x00")
+        response = _read_exact(sock, 2)
+        if response != b"\x05\x00":
+            raise OSError(f"SOCKS5 proxy authentication negotiation failed: {response!r}")
+        host_bytes = host.encode("idna")
+        if len(host_bytes) > 255:
+            raise OSError("SOCKS5 target host is too long")
+        request = b"\x05\x01\x00\x03" + bytes([len(host_bytes)]) + host_bytes + int(port).to_bytes(2, "big")
+        sock.sendall(request)
+        header = _read_exact(sock, 4)
+        if header[0] != 5 or header[1] != 0:
+            raise OSError(f"SOCKS5 proxy connect failed: {header!r}")
+        address_type = header[3]
+        if address_type == 1:
+            _read_exact(sock, 4)
+        elif address_type == 3:
+            length = _read_exact(sock, 1)[0]
+            _read_exact(sock, length)
+        elif address_type == 4:
+            _read_exact(sock, 16)
+        else:
+            raise OSError(f"SOCKS5 proxy returned unsupported address type: {address_type}")
+        _read_exact(sock, 2)
+        return sock
+    except Exception:
+        sock.close()
+        raise
+
+
+def _read_exact(sock: socket.socket, size: int) -> bytes:
+    chunks: list[bytes] = []
+    remaining = size
+    while remaining > 0:
+        chunk = sock.recv(remaining)
+        if not chunk:
+            raise OSError("SOCKS5 proxy closed connection unexpectedly")
+        chunks.append(chunk)
+        remaining -= len(chunk)
+    return b"".join(chunks)
 
 
 def _extract_error(payload: Any) -> str:
@@ -741,7 +899,23 @@ def _build_summary(
         "model": MODEL,
         "sort_modes": list(SORT_MODES),
         "request_payload_sha256_by_sort": {
-            sort_mode: _payload_hash(_payload(sort_mode=sort_mode, stream=stream, dataset_name=dataset_name, dataset_file=dataset_file)) for sort_mode in SORT_MODES
+            sort_mode: {
+                provider: _payload_hash(
+                    _payload(
+                        sort_mode=sort_mode,
+                        provider_name=provider,
+                        stream=stream,
+                        dataset_name=dataset_name,
+                        dataset_file=dataset_file,
+                    )
+                )
+                for provider in PROVIDERS
+            }
+            for sort_mode in SORT_MODES
+        },
+        "provider_sort_mapping": {
+            sort_mode: {provider: _provider_sort_for(provider, sort_mode) for provider in PROVIDERS}
+            for sort_mode in SORT_MODES
         },
         "dataset": _dataset_metadata(dataset_name=dataset_name, dataset_file=dataset_file),
         "execution_profile": {
@@ -750,6 +924,7 @@ def _build_summary(
             "planned_request_count": len(SORT_MODES) * len(PROVIDERS) * groups * rounds * 2,
             "pairing_method": "strict sort/group/round pair with equal first/second usage.prompt_tokens",
         },
+        "network_environment": _network_environment_summary(configs),
         "streaming_enabled": stream,
         "groups": groups,
         "rounds_per_group": rounds,
@@ -762,6 +937,39 @@ def _build_summary(
         "result_dir": str(out_dir),
         "results": results,
     }
+
+
+def _network_environment_summary(configs: dict[str, dict[str, Any]]) -> dict[str, Any]:
+    proxy_by_provider = {name: configs[name].get("proxy_url") for name in PROVIDERS}
+    unique_proxy_urls = {value for value in proxy_by_provider.values() if value}
+    same_proxy = len(set(proxy_by_provider.values())) == 1
+    selected_proxy = next(iter(unique_proxy_urls), None) if same_proxy and unique_proxy_urls else None
+    return {
+        "same_local_runtime": True,
+        "same_http_client_logic": True,
+        "same_local_proxy": same_proxy,
+        "proxy_enabled": bool(selected_proxy),
+        "proxy_url_redacted": _redact_url(selected_proxy),
+        "proxy_scheme": urlparse(selected_proxy).scheme if selected_proxy else None,
+        "proxy_by_provider_redacted": {
+            provider: _redact_url(proxy_url)
+            for provider, proxy_url in proxy_by_provider.items()
+        },
+        "implicit_environment_proxy_disabled": True,
+        "proxy_config_source_priority": ["--local-proxy-url", "AB_TEST_LOCAL_PROXY_URL", "LOCAL_PROXY_URL", "GLOBAL_PROXY_URL"],
+    }
+
+
+def _redact_url(url: str | None) -> str | None:
+    if not url:
+        return None
+    parsed = urlparse(url)
+    netloc = parsed.netloc
+    if parsed.username or parsed.password:
+        host = parsed.hostname or ""
+        port = f":{parsed.port}" if parsed.port else ""
+        netloc = f"***:***@{host}{port}"
+    return urlunparse((parsed.scheme, netloc, parsed.path, "", "", ""))
 
 
 def _aggregate(rows: list[dict[str, Any]]) -> dict[str, Any]:
@@ -1245,17 +1453,17 @@ def _academic_outline_lines(summary: dict[str, Any]) -> list[str]:
         "",
         "### 摘要",
         "",
-        f"本报告以 `deepseek/deepseek-v4-flash` 为对象，对比 Infron 与 OpenRouter 在 Prompt Caching 场景下的路由策略、缓存命中、实际成本、吞吐量、TTFT 首包响应时间和端到端时延。实验包含 {summary['groups']} 个实验组、每组 {summary['rounds_per_group']} 轮，覆盖 3 种 routing sort 策略。经过异常 usage、HTTP 异常和 A/B input tokens 不一致样本剔除后，最终保留 {effective_pairs} 个严格配对样本、{request_count} 次请求级观测记录，剔除 {excluded_total} 条记录。",
+        f"本报告以 `deepseek/deepseek-v4-flash` 为对象，对比 Infron 与 OpenRouter 在 Prompt Caching 场景下的路由策略、缓存命中、实际成本、吞吐量、TTFT 首包响应时间和端到端时延。实验包含 {summary['groups']} 个实验组、每组 {summary['rounds_per_group']} 轮，覆盖 {len(SORT_MODES)} 种 routing sort 策略；其中 TTFT First 中，Infron 使用 `provider.sort=ttft`，OpenRouter 使用其支持的 `provider.sort=latency` 作为对照。经过异常 usage、HTTP 异常和 A/B input tokens 不一致样本剔除后，最终保留 {effective_pairs} 个严格配对样本、{request_count} 次请求级观测记录，剔除 {excluded_total} 条记录。",
         "",
         f"核心结论是：在 `usage.prompt_tokens` 完全一致的样本中，{cache_sentence}；{cost_sentence}；{throughput_sentence}；{latency_sentence}；{ttft_sentence}。整体看，Infron 的优势集中在缓存复用、成本控制和 Latency First 下的低时延路径，OpenRouter 的优势集中在吞吐、TTFT 和部分模式的端到端时延表现。平台选择应围绕业务目标展开，单一指标不足以代表整体效果。",
         "",
-        f"![Inference 平台不可能三角]({_chart_ref(chart_dir.get('impossible_triangle', ''))})",
+        f"![Inference 平台不可能四角]({_chart_ref(chart_dir.get('impossible_triangle', ''))})",
         "",
-        "图 0：Inference 平台“不可能三角”。吞吐量、价格和时延很难同时达到最优，平台路由通常会在三个方向之间做取舍；图中位置越靠近某个角，表示该平台在本实验聚合口径下越偏向该目标。",
+        "图 0：Inference 平台“不可能四角”。吞吐量、价格、端到端时延和 TTFT 很难同时达到最优，平台路由通常会在四个方向之间做取舍；图中将四项归一化指标投影为路由模式点，并将同一平台的四个点连接成区域。",
         "",
         f"![结论总览图]({_chart_ref(chart_dir.get('conclusion_overview', ''))})",
         "",
-        "图 A：结论总览图。上方卡片概括跨路由模式的总体胜出方，下方矩阵展示每一种路由模式在缓存命中、成本、throughput、latency 与 TTFT 五个维度上的 A/B 结论。",
+        "图 A：结论总览图。上方卡片概括跨路由模式的总体胜出方，下方矩阵按 throughput、price、latency、TTFT 的路由目标顺序组织列，金色对角线表示各路由模式目标指标的 A/B 胜出方。",
         "",
         "### 结论大纲",
         "",
@@ -1277,7 +1485,7 @@ def _academic_outline_lines(summary: dict[str, Any]) -> list[str]:
     ]
 
 
-def _render_report(summary: dict[str, Any], *, embed_full_reproducibility: bool = True) -> str:
+def _render_report(summary: dict[str, Any], *, embed_full_reproducibility: bool = False) -> str:
     payload_hashes = summary.get("request_payload_sha256_by_sort", {})
     chart_dir = summary.get("charts", {})
     lines = [
@@ -1290,7 +1498,7 @@ def _render_report(summary: dict[str, Any], *, embed_full_reproducibility: bool 
         "",
         "Prompt caching 对生产业务的核心价值在于：当业务请求包含稳定系统提示词、长上下文模板、RAG 前缀、工具说明或固定工作流指令时，第二次及后续请求理论上可以复用已处理的输入 token，从而降低单位请求成本，并可能改善整体服务稳定性。本实验通过“两次相同 prompt 请求”的方式构造可重复观测场景，用第二次请求的 cache read tokens 衡量缓存收益。",
         "",
-        "本报告回答三个问题：第一，在相同 payload 和相同 `usage.prompt_tokens` 口径下，Infron 与 OpenRouter 的缓存命中和成本表现有何差异；第二，不同 routing sort（`throughput`、`price`、`latency`）下速度、成本和缓存如何变化；第三，从可观测 telemetry 看，两个平台的路由选择如何影响最终结果。",
+        "本报告回答三个问题：第一，在相同 payload 和相同 `usage.prompt_tokens` 口径下，Infron 与 OpenRouter 的缓存命中和成本表现有何差异；第二，不同 routing sort（`throughput`、`price`、`latency`、`ttft`）下速度、成本、首包和缓存如何变化；第三，从可观测 telemetry 看，两个平台的路由选择如何影响最终结果。由于 OpenRouter 不支持 `provider.sort=ttft`，TTFT First 的 A/B 设计为 Infron `sort=ttft` 对比 OpenRouter `sort=latency`。",
         "",
         "### 1.1 研究假设",
         "",
@@ -1311,7 +1519,7 @@ def _render_report(summary: dict[str, Any], *, embed_full_reproducibility: bool 
         "",
         "### 2.1 数据集生成方法",
         "",
-        f"实验数据集由脚本自动生成，共覆盖 3 种 routing sort、2 个平台、{summary['groups']} 个实验组、每组 {summary['rounds_per_group']} 轮。每一轮包含两次完全相同的 `chat/completions` 请求：第一次用于建立或触发缓存写入，第二次用于观测缓存读取。每个 routing sort 都使用固定 payload，并记录该 payload 的 SHA256，以便验证请求内容没有漂移。",
+        f"实验数据集由脚本自动生成，共覆盖 {len(SORT_MODES)} 种 routing sort、2 个平台、{summary['groups']} 个实验组、每组 {summary['rounds_per_group']} 轮。每一轮包含两次完全相同的 `chat/completions` 请求：第一次用于建立或触发缓存写入，第二次用于观测缓存读取。每个逻辑 routing sort 都记录平台侧实际 payload 的 SHA256，以便验证请求内容没有漂移。",
         "",
         _dataset_construction_text(summary),
         "",
@@ -1347,9 +1555,11 @@ def _render_report(summary: dict[str, Any], *, embed_full_reproducibility: bool 
         "  \"temperature\": 0,",
         "  \"max_tokens\": 16,",
         "  \"usage\": {\"include\": true},",
-        "  \"provider\": {\"sort\": \"throughput | price | latency\", \"allow_fallbacks\": true}",
+        "  \"provider\": {\"sort\": \"throughput | price | latency | ttft\", \"allow_fallbacks\": true}",
         "}",
         "```",
+        "",
+        "TTFT First 对照规则：Infron 请求使用 `provider.sort=ttft`；OpenRouter 不支持该参数，因此 OpenRouter 请求使用 `provider.sort=latency` 作为首包/时延优先对照。报告中的逻辑路由模式仍统一记为 `ttft`，用于配对、聚合和可视化。",
         "",
         "最终过滤逻辑可概括为以下伪代码。这个步骤是本实验控制变量的核心。",
         "",
@@ -1404,7 +1614,8 @@ def _render_report(summary: dict[str, Any], *, embed_full_reproducibility: bool 
         "| --- | --- |",
         f"| 测试模型 | `{summary['model']}` |",
         "| 对比平台 | Infron、OpenRouter |",
-        "| 路由偏好 | `throughput`、`price`、`latency` |",
+        "| 路由偏好 | `throughput`、`price`、`latency`、`ttft` |",
+        "| TTFT First 对照 | Infron 使用 `provider.sort=ttft`；OpenRouter 使用 `provider.sort=latency` |",
         f"| 数据集名称 | `{summary.get('dataset', {}).get('name', DEFAULT_DATASET_NAME)}` |",
         f"| 数据集类型 | {summary.get('dataset', {}).get('description', '')} |",
         f"| 外部业务语料 | {summary.get('dataset', {}).get('file') or '未提供；本轮使用脚本内置/合成数据集'} |",
@@ -1412,6 +1623,7 @@ def _render_report(summary: dict[str, Any], *, embed_full_reproducibility: bool 
         f"| 每组轮次 | {summary['rounds_per_group']} 轮 |",
         f"| 并发 worker 数 | {summary.get('execution_profile', {}).get('workers', 1)} |",
         f"| 长稳运行目标 | {summary.get('execution_profile', {}).get('soak_duration_seconds', 0)} 秒 |",
+        f"| 本地代理控制 | {_network_environment_report_cell(summary.get('network_environment', {}))} |",
         "| 每轮请求 | 两次相同 prompt 请求，用第二次请求统计缓存命中 |",
         "| Usage 采集 | 请求默认带 `usage: {\"include\": true}`，以响应 usage 作为真实统计口径 |",
         "| 成本口径 | 只统计响应真实返回的 `usage.cost` 或 cost breakdown；若平台未返回成本字段，则显示 `N/A`，不按 0 计入胜负 |",
@@ -1421,9 +1633,7 @@ def _render_report(summary: dict[str, Any], *, embed_full_reproducibility: bool 
         f"| 结果目录 | `{summary['result_dir']}/` |",
         "| 剔除规则 | HTTP 非 200、请求异常、任一请求 `usage.prompt_tokens <= 0`、或同一 `sort/group/round` 下 A/B 两边 first/second `usage.prompt_tokens` 不完全相等的轮次不进入统计 |",
         f"| 剔除记录数 | {summary.get('excluded_records', {}).get('total', 0)} 条 |",
-        f"| `throughput` payload SHA256 | `{payload_hashes.get('throughput', '')}` |",
-        f"| `price` payload SHA256 | `{payload_hashes.get('price', '')}` |",
-        f"| `latency` payload SHA256 | `{payload_hashes.get('latency', '')}` |",
+        *[f"| `{sort_mode}` payload SHA256 | {_payload_hash_table_cell(payload_hashes.get(sort_mode, {}))} |" for sort_mode in SORT_MODES],
         "",
         "说明：A/B 控制变量是同一 routing sort 下发送给 Infron 和 OpenRouter 的请求 payload。总览中的 Input Tokens 按响应返回的 `usage.prompt_tokens` 汇总，代表各平台实际统计和计费口径下处理的输入 token 量。",
         "",
@@ -1462,48 +1672,7 @@ def _render_report(summary: dict[str, Any], *, embed_full_reproducibility: bool 
             "",
             f"说明：本节按路由模式组织图表。每张图对应一种 First 路由模式，并在同一图内对比 Infron 与 OpenRouter 的 latency、TTFT、throughput、实际成本和 Token 级缓存命中率，方便观察同一模式下的 A/B 指标差异。{'本轮已启用 streaming，并采集 TTFT、首内容 token 与首 reasoning token 时间；TTFT 代表首包响应体验，latency 代表完整响应体验。' if summary.get('streaming_enabled') else 'TTFT 需要 streaming 首 token 时间；本轮未启用 streaming，因此 TTFT 不参与核心判断。后续重跑加 `--stream` 后会记录 TTFT 和首 reasoning token 时间。'}",
             "",
-            "### Latency First 路由模式",
-            "",
-            f"![Latency First 路由模式下的核心指标 A/B 对比]({_chart_ref(chart_dir.get('latency_first', ''))})",
-            "",
-            "图 3：Latency First 路由模式下的核心指标对比。柱状图同时呈现低时延目标下的缓存、成本、吞吐、TTFT 和 latency 表现。",
-            "",
-            f"![Latency First 路由模式下的综合雷达图]({_chart_ref(chart_dir.get('latency_first_radar', ''))})",
-            "",
-            "图 4：Latency First 路由模式下的综合雷达图。所有轴都按“越外圈越好”归一化，便于快速比较两家平台的综合形状。",
-            "",
-            f"![Latency First 路由模式下的指标生成过程对比曲线]({_chart_ref(chart_dir.get('latency_first_curves', ''))})",
-            "",
-            "图 5：Latency First 路由模式下的指标生成过程曲线。该图用于观察指标随 group/round 的变化，而不只依赖均值。",
-            "",
-            "### Throughput First 路由模式",
-            "",
-            f"![Throughput First 路由模式下的核心指标 A/B 对比]({_chart_ref(chart_dir.get('throughput_first', ''))})",
-            "",
-            "图 6：Throughput First 路由模式下的核心指标对比。该图突出吞吐优先策略下的吞吐优势是否伴随成本、TTFT 或时延代价。",
-            "",
-            f"![Throughput First 路由模式下的综合雷达图]({_chart_ref(chart_dir.get('throughput_first_radar', ''))})",
-            "",
-            "图 7：Throughput First 路由模式下的综合雷达图。雷达面积越外扩，表示该平台在归一化综合指标上越占优。",
-            "",
-            f"![Throughput First 路由模式下的指标生成过程对比曲线]({_chart_ref(chart_dir.get('throughput_first_curves', ''))})",
-            "",
-            "图 8：Throughput First 路由模式下的指标生成过程曲线。该图用于识别吞吐波动、缓存稳定性和潜在异常点。",
-            "",
-            "### Price First 路由模式",
-            "",
-            f"![Price First 路由模式下的核心指标 A/B 对比]({_chart_ref(chart_dir.get('price_first', ''))})",
-            "",
-            "图 9：Price First 路由模式下的核心指标对比。该图用于验证成本优先策略是否真正降低实际成本，以及是否牺牲 TTFT、latency 或 throughput。",
-            "",
-            f"![Price First 路由模式下的综合雷达图]({_chart_ref(chart_dir.get('price_first_radar', ''))})",
-            "",
-            "图 10：Price First 路由模式下的综合雷达图。该图把成本效率、缓存、吞吐、时延和 TTFT 放在同一视角中比较。",
-            "",
-            f"![Price First 路由模式下的指标生成过程对比曲线]({_chart_ref(chart_dir.get('price_first_curves', ''))})",
-            "",
-            "图 11：Price First 路由模式下的指标生成过程曲线。该图用于观察成本与缓存命中率是否同步变化。",
-            "",
+            *_mode_visualization_lines(summary),
         ]
     )
     lines.extend(_infron_architecture_lines(summary))
@@ -1594,6 +1763,67 @@ def _format_ms(value: Any) -> str:
     if numeric is None:
         return "N/A"
     return f"{numeric:.2f} ms"
+
+
+def _payload_hash_table_cell(value: Any) -> str:
+    if isinstance(value, dict):
+        parts = []
+        for provider in PROVIDERS:
+            provider_hash = str(value.get(provider, ""))
+            parts.append(f"{_display_provider(provider)} `{provider_hash}`")
+        return "<br>".join(parts)
+    return f"`{value}`" if value else ""
+
+
+def _network_environment_report_cell(network_environment: dict[str, Any]) -> str:
+    if not network_environment:
+        return "未记录"
+    same_proxy = "是" if network_environment.get("same_local_proxy") else "否"
+    proxy_enabled = "启用" if network_environment.get("proxy_enabled") else "未启用"
+    proxy_url = network_environment.get("proxy_url_redacted") or "direct"
+    implicit_disabled = "已禁用" if network_environment.get("implicit_environment_proxy_disabled") else "未禁用"
+    return f"同一本地代理：{same_proxy}；代理：{proxy_enabled} `{proxy_url}`；隐式环境代理：{implicit_disabled}"
+
+
+def _chart_key(sort_mode: str, suffix: str = "") -> str:
+    base = f"{sort_mode}_first"
+    return f"{base}_{suffix}" if suffix else base
+
+
+def _mode_visualization_lines(summary: dict[str, Any]) -> list[str]:
+    chart_dir = summary.get("charts", {})
+    lines: list[str] = []
+    figure_no = 3
+    for sort_mode in SORT_MODES:
+        mode_name = _sort_mode_label(sort_mode)
+        short_name = mode_name.replace(" 路由模式", "")
+        lines.extend(
+            [
+                f"### {short_name} 路由模式",
+                "",
+                f"![{short_name} 路由模式下的核心指标 A/B 对比]({_chart_ref(chart_dir.get(_chart_key(sort_mode), ''))})",
+                "",
+                f"图 {figure_no}：{short_name} 路由模式下的核心指标对比。柱状图同时呈现缓存、成本、吞吐、TTFT 和 latency 表现。",
+                "",
+                f"![{short_name} 路由模式下的综合雷达图]({_chart_ref(chart_dir.get(_chart_key(sort_mode, 'radar'), ''))})",
+                "",
+                f"图 {figure_no + 1}：{short_name} 路由模式下的综合雷达图。所有轴都按“越外圈越好”归一化，便于快速比较两家平台的综合形状。",
+                "",
+                f"![{short_name} 路由模式下的指标生成过程对比曲线]({_chart_ref(chart_dir.get(_chart_key(sort_mode, 'curves'), ''))})",
+                "",
+                f"图 {figure_no + 2}：{short_name} 路由模式下的指标生成过程曲线。该图用于观察指标随 group/round 的变化，而不只依赖均值。",
+                "",
+            ]
+        )
+        if sort_mode == "ttft":
+            lines.extend(
+                [
+                    "说明：TTFT First 中，Infron 使用 `provider.sort=ttft`；OpenRouter 使用 `provider.sort=latency` 作为可支持的对照策略。",
+                    "",
+                ]
+            )
+        figure_no += 3
+    return lines
 
 
 def _routing_mode_bar_sections(summary: dict[str, Any]) -> list[str]:
@@ -1858,7 +2088,7 @@ def _reproducibility_lines(summary: dict[str, Any], *, embed_full_artifacts: boo
         "",
         "## 12. 可复现性附录：Benchmark 数据集",
         "",
-        "本节给出复现结论和图表所需的数据文件。配对级 CSV 是报告中所有总览表、核心指标图和结论快照的直接输入；请求级 JSONL 保留每一次 first/second 请求的原始 telemetry，便于审计 provider、usage、cost、latency、TTFT 与缓存字段。为满足单文件审计，报告后文完整嵌入本次实验使用的配对级数据、请求级数据、过滤后记录和剔除样本记录。",
+        "本节给出复现结论和图表所需的数据文件。配对级 CSV 是报告中所有总览表、核心指标图和结论快照的直接输入；请求级 JSONL 保留每一次 first/second 请求的 telemetry，便于审计 provider、usage、cost、latency、TTFT 与缓存字段。公开报告通过文件路径引用数据集，不在报告正文中展开大体量原始记录。",
         "",
         "| 数据文件 | 粒度 | 行数 | SHA256 | 用途 |",
         "| --- | ---: | ---: | --- | --- |",
@@ -1907,7 +2137,8 @@ def _reproducibility_lines(summary: dict[str, Any], *, embed_full_artifacts: boo
             "from urllib.request import Request, urlopen",
             "",
             "MODEL = 'deepseek/deepseek-v4-flash'",
-            "SORT_MODES = ('throughput', 'price', 'latency')",
+            "SORT_MODES = ('throughput', 'price', 'latency', 'ttft')",
+            "PROVIDER_SORT_OVERRIDES = {('infron', 'ttft'): 'ttft', ('openrouter', 'ttft'): 'latency'}",
             "CACHE_PREFIX = ' '.join(['stable prompt cache prefix'] * 220)",
             "",
             "PROVIDERS = {",
@@ -1926,7 +2157,7 @@ def _reproducibility_lines(summary: dict[str, Any], *, embed_full_artifacts: boo
             "    },",
             "}",
             "",
-            "def payload(sort_mode: str) -> dict:",
+            "def payload(sort_mode: str, provider_name: str) -> dict:",
             "    return {",
             "        'model': MODEL,",
             "        'messages': [",
@@ -1938,7 +2169,7 @@ def _reproducibility_lines(summary: dict[str, Any], *, embed_full_artifacts: boo
             "        'stream': True,",
             "        'stream_options': {'include_usage': True},",
             "        'usage': {'include': True},",
-            "        'provider': {'sort': sort_mode, 'allow_fallbacks': True},",
+            "        'provider': {'sort': PROVIDER_SORT_OVERRIDES.get((provider_name, sort_mode), sort_mode), 'allow_fallbacks': True},",
             "    }",
             "",
             "def read_sse(resp, started: float) -> tuple[dict, dict]:",
@@ -1988,7 +2219,7 @@ def _reproducibility_lines(summary: dict[str, Any], *, embed_full_artifacts: boo
             "",
             "def send(provider_name: str, sort_mode: str) -> dict:",
             "    provider = PROVIDERS[provider_name]",
-            "    body = json.dumps(payload(sort_mode)).encode('utf-8')",
+            "    body = json.dumps(payload(sort_mode, provider_name)).encode('utf-8')",
             "    headers = {",
             "        'Authorization': f\"Bearer {provider['api_key']}\",",
             "        'Content-Type': 'application/json',",
@@ -2096,12 +2327,12 @@ def _reproducibility_lines(summary: dict[str, Any], *, embed_full_artifacts: boo
             "    print(sort_mode, {'infron': infron, 'openrouter': openrouter, 'winners': winners})",
             "```",
             "",
-            "## 14. 可复现性附录：100% 原始 Benchmark 数据集",
+            "## 14. 可复现性附录：Benchmark 数据集",
             "",
             (
-                "本节完整嵌入本次报告使用的 benchmark 数据文件，不省略、不抽样。`benchmark_pairs.csv` 用于复现聚合指标；`benchmark_requests.jsonl` 用于审计请求级 telemetry；`records.json` 是严格过滤后的原始结构化记录；`records_excluded.json` 保留被剔除样本，便于复核异常日志和 input token 不一致样本。"
+                "本节引用本次报告使用的 benchmark 数据文件。`benchmark_pairs.csv` 用于复现聚合指标；`benchmark_requests.jsonl` 用于审计请求级 telemetry；`records.json` 是严格过滤后的结构化记录；`records_excluded.json` 保留被剔除样本，便于复核异常日志和 input token 不一致样本。"
                 if embed_full_artifacts
-                else "100% 原始 benchmark 数据集已嵌入同名 HTML/Markdown 完整版报告。PDF 版只保留数据文件路径、大小、SHA256 与用途，避免数 MB JSONL/JSON 造成 PDF 渲染超时。"
+                else "Benchmark 数据集保存在实验目录的数据文件中；报告保留数据文件路径、大小、SHA256 与用途，避免大体量 JSONL/JSON 影响网页与 PDF 渲染。"
             ),
             "",
         ]
@@ -2160,6 +2391,9 @@ def _display_provider(provider: str) -> str:
 def _chart_ref(path: str) -> str:
     if not path:
         return ""
+    deepseek_prefix = "export/deepseek_v4_flash_all_experiments/"
+    if path.startswith(deepseek_prefix):
+        return "../" + path[len(deepseek_prefix) :]
     prefix = "export/"
     return path[len(prefix) :] if path.startswith(prefix) else path
 
@@ -2179,7 +2413,7 @@ def _infron_architecture_lines(summary: dict[str, Any]) -> list[str]:
         "",
         "图 12：Infron 多 provider 路由与缓存控制面。该图用于说明请求从统一 API 入口进入后，路由控制面如何在健康状态、策略目标、provider 选择和缓存域之间形成决策链路。",
         "",
-        "本次实验中，Infron 在不同 routing sort 下呈现出清晰的 provider 分布：`throughput` 主要路由到 `alibaba/cn`，`price` 主要路由到 `gmicloud`，`latency` 主要路由到 `novita`。这种模式说明路由结果不是完全随机扩散，而是围绕路由目标形成了较稳定的 provider 选择。稳定的 provider 选择是高缓存命中率的前提，因为 prompt cache 通常与具体 provider、模型部署或缓存域绑定。",
+        f"本次实验中，Infron 在不同 routing sort 下呈现出可观测的 provider 分布：{_provider_distribution_sentence(summary, 'infron')}。这种模式说明路由结果不是完全随机扩散，而是围绕路由目标形成了较稳定的 provider 选择。稳定的 provider 选择是高缓存命中率的前提，因为 prompt cache 通常与具体 provider、模型部署或缓存域绑定。",
         "",
         "### 6.2 Provider Stick 与 Cache Affinity",
         "",
@@ -2324,7 +2558,7 @@ def _provider_drilldown_lines(summary: dict[str, Any]) -> list[str]:
 
 def _business_value_lines(summary: dict[str, Any]) -> list[str]:
     lines = [
-        "三种 routing sort 对应不同业务目标，需要结合缓存、成本、吞吐和时延一起判断。`throughput` 更适合批处理、异步生成、长文本生产和离线任务；`price` 更适合高频低毛利调用、固定模板请求、客服/营销自动化等成本敏感场景；`latency` 更适合交互式产品、Agent 工具调用链、实时辅助写作和用户等待成本较高的场景。",
+        "四种 routing sort 对应不同业务目标，需要结合缓存、成本、吞吐、端到端时延和 TTFT 一起判断。`throughput` 更适合批处理、异步生成、长文本生产和离线任务；`price` 更适合高频低毛利调用、固定模板请求、客服/营销自动化等成本敏感场景；`latency` 更适合交互式产品、Agent 工具调用链、实时辅助写作和用户等待成本较高的场景；`ttft` 更适合首包体验敏感、需要快速给用户反馈的流式交互场景。",
         "",
         "| 路由模式 | 主要业务目标 | 本轮数据体现 | 适用场景 | 注意事项 |",
         "| --- | --- | --- | --- | --- |",
@@ -2341,6 +2575,7 @@ def _business_value_lines(summary: dict[str, Any]) -> list[str]:
                 higher_is_better=True,
             ),
             "latency": _winner_name(infron["avg_request_latency_ms"], openrouter["avg_request_latency_ms"], higher_is_better=False),
+            "ttft": _winner_name(infron["avg_ttft_ms"], openrouter["avg_ttft_ms"], higher_is_better=False),
         }
         lines.append(
             f"| `{sort_mode}` | {_mode_business_goal(sort_mode)} | "
@@ -2364,6 +2599,7 @@ def _mode_business_goal(sort_mode: str) -> str:
         "throughput": "最大化单位时间输出能力",
         "price": "最小化单位请求和单位 token 成本",
         "latency": "最小化用户可感知等待时间",
+        "ttft": "最小化流式首包响应时间",
     }.get(sort_mode, "按路由策略优化")
 
 
@@ -2372,6 +2608,7 @@ def _mode_scenarios(sort_mode: str) -> str:
         "throughput": "批量内容生成、离线摘要、后台数据加工",
         "price": "高频模板化请求、客服自动化、营销触达、RAG 固定前缀",
         "latency": "在线聊天、Agent 调用链、IDE/写作辅助、实时运营工具",
+        "ttft": "流式聊天、实时 Copilot、首屏反馈、长思考任务的进度感知",
     }.get(sort_mode, "通用 LLM 调用")
 
 
@@ -2379,7 +2616,7 @@ def _mode_data_summary(winners: dict[str, str]) -> str:
     cost_summary = "成本不可比" if winners["cost"] == "不可比" else f"成本 {winners['cost']} 占优"
     return (
         f"缓存 {winners['cache']} 占优，{cost_summary}，"
-        f"throughput {winners['throughput']} 占优，latency {winners['latency']} 占优"
+        f"throughput {winners['throughput']} 占优，latency {winners['latency']} 占优，TTFT {winners['ttft']} 占优"
     )
 
 
@@ -2396,6 +2633,8 @@ def _mode_tradeoff(sort_mode: str, winners: dict[str, str]) -> str:
         return "适合成本敏感任务，但需检查吞吐是否满足 SLA"
     if sort_mode == "latency":
         return "适合交互式任务，但需同时约束缓存命中和单位成本"
+    if sort_mode == "ttft":
+        return "适合首包体验优先任务，但仍需检查完整响应时延和吞吐是否满足 SLA"
     return "需要结合 SLA 与预算综合判断"
 
 
@@ -2423,6 +2662,23 @@ def _route_profile(sort_mode: str, provider: str, sort_aggs: dict[str, dict[str,
     if better_throughput:
         return "吞吐优先"
     return "表现均衡但无单项极值"
+
+
+def _provider_distribution_sentence(summary: dict[str, Any], provider: str) -> str:
+    distribution = summary.get("provider_distribution")
+    if not isinstance(distribution, dict):
+        return "provider 字段未形成稳定可读分布"
+    parts = []
+    for sort_mode in SORT_MODES:
+        item = distribution.get(sort_mode, {}).get(provider, {})
+        counts = item.get("counts") if isinstance(item, dict) else {}
+        if not isinstance(counts, dict) or not counts:
+            parts.append(f"`{sort_mode}` 未返回稳定 provider 标识")
+            continue
+        provider_name, count = max(counts.items(), key=lambda pair: int(pair[1]))
+        total = sum(int(value) for value in counts.values()) or 1
+        parts.append(f"`{sort_mode}` 主要路由到 `{provider_name}`（{count / total:.2%}）")
+    return "；".join(parts)
 
 
 def _route_insight_lines(summary: dict[str, Any]) -> list[str]:
@@ -2479,17 +2735,8 @@ def _route_takeaway(winners: dict[str, str]) -> str:
 def _write_charts(out_dir: Path, summary: dict[str, Any], records: list[dict[str, Any]]) -> dict[str, str]:
     charts_dir = out_dir / "charts"
     charts_dir.mkdir(parents=True, exist_ok=True)
-    latency_first_path = charts_dir / "latency_first.svg"
-    throughput_first_path = charts_dir / "throughput_first.svg"
-    price_first_path = charts_dir / "price_first.svg"
-    latency_first_curves_path = charts_dir / "latency_first_curves.svg"
-    throughput_first_curves_path = charts_dir / "throughput_first_curves.svg"
-    price_first_curves_path = charts_dir / "price_first_curves.svg"
-    latency_first_radar_path = charts_dir / "latency_first_radar.svg"
-    throughput_first_radar_path = charts_dir / "throughput_first_radar.svg"
-    price_first_radar_path = charts_dir / "price_first_radar.svg"
     conclusion_overview_path = charts_dir / "conclusion_overview.svg"
-    impossible_triangle_path = charts_dir / "inference_impossible_triangle.svg"
+    impossible_triangle_path = charts_dir / "inference_impossible_quadrilateral.svg"
     experiment_flow_path = charts_dir / "experiment_flow.svg"
     ab_pairing_path = charts_dir / "ab_pairing.svg"
     infron_architecture_path = charts_dir / "infron_architecture.svg"
@@ -2501,27 +2748,21 @@ def _write_charts(out_dir: Path, summary: dict[str, Any], records: list[dict[str
     _write_infron_architecture_diagram(infron_architecture_path)
     _write_provider_stick_diagram(provider_stick_path)
     _write_cost_control_diagram(cost_control_path)
-    _write_mode_comparison_chart(latency_first_path, summary, "latency")
-    _write_mode_comparison_chart(throughput_first_path, summary, "throughput")
-    _write_mode_comparison_chart(price_first_path, summary, "price")
-    _write_mode_curve_chart(latency_first_curves_path, records, "latency")
-    _write_mode_curve_chart(throughput_first_curves_path, records, "throughput")
-    _write_mode_curve_chart(price_first_curves_path, records, "price")
-    _write_mode_radar_chart(latency_first_radar_path, summary, "latency")
-    _write_mode_radar_chart(throughput_first_radar_path, summary, "throughput")
-    _write_mode_radar_chart(price_first_radar_path, summary, "price")
+    chart_paths: dict[str, str] = {}
+    for sort_mode in SORT_MODES:
+        comparison_path = charts_dir / f"{sort_mode}_first.svg"
+        curves_path = charts_dir / f"{sort_mode}_first_curves.svg"
+        radar_path = charts_dir / f"{sort_mode}_first_radar.svg"
+        _write_mode_comparison_chart(comparison_path, summary, sort_mode)
+        _write_mode_curve_chart(curves_path, records, sort_mode)
+        _write_mode_radar_chart(radar_path, summary, sort_mode)
+        chart_paths[_chart_key(sort_mode)] = str(comparison_path)
+        chart_paths[_chart_key(sort_mode, "curves")] = str(curves_path)
+        chart_paths[_chart_key(sort_mode, "radar")] = str(radar_path)
     _write_conclusion_overview_chart(conclusion_overview_path, summary)
     _write_impossible_triangle_chart(impossible_triangle_path, summary)
     return {
-        "latency_first": str(latency_first_path),
-        "throughput_first": str(throughput_first_path),
-        "price_first": str(price_first_path),
-        "latency_first_curves": str(latency_first_curves_path),
-        "throughput_first_curves": str(throughput_first_curves_path),
-        "price_first_curves": str(price_first_curves_path),
-        "latency_first_radar": str(latency_first_radar_path),
-        "throughput_first_radar": str(throughput_first_radar_path),
-        "price_first_radar": str(price_first_radar_path),
+        **chart_paths,
         "conclusion_overview": str(conclusion_overview_path),
         "impossible_triangle": str(impossible_triangle_path),
         "experiment_flow": str(experiment_flow_path),
@@ -2709,7 +2950,7 @@ def _write_cost_control_diagram(path: Path) -> None:
             _arrow(818, 160, 880, 160),
             _arrow(431, 286, 431, 204),
             _arrow(713, 286, 713, 204),
-            '<text x="72" y="438" class="label">本次实验信号：Infron 的 Token 级缓存命中率约 88%-94%，实际总成本在三种路由模式下均低于 OpenRouter。</text>',
+        '<text x="72" y="438" class="label">本次实验信号：Infron 的 Token 级缓存命中率和实际成本在不同路由模式下呈现差异化优势。</text>',
             '<text x="72" y="466" class="label">解释：高 cache read tokens 降低重复 prefill 成本；provider stick 维持缓存域稳定；成本感知 routing 在健康 provider 中选择更合适的价格路径。</text>',
         ]
     )
@@ -2893,7 +3134,7 @@ def _write_mode_radar_chart(path: Path, summary: dict[str, Any], sort_mode: str)
 
 
 def _write_conclusion_overview_chart(path: Path, summary: dict[str, Any]) -> None:
-    width, height = 1120, 700
+    width, height = 1280, 720
     colors = {"Infron": "#2563eb", "OpenRouter": "#f97316", "Tie": "#64748b"}
     svg: list[str] = [
         _svg_header(width, height),
@@ -2907,7 +3148,7 @@ def _write_conclusion_overview_chart(path: Path, summary: dict[str, Any]) -> Non
         ("时延", _winner_summary_lines(summary, "avg_request_latency_ms", False), "越低越好"),
         ("TTFT", _winner_summary_lines(summary, "avg_ttft_ms", False), "越低越好"),
     ]
-    card_w, card_h, card_gap = 196, 118, 15
+    card_w, card_h, card_gap = 208, 118, 18
     for index, (title, value_lines, subtitle) in enumerate(headline_cards):
         x = 48 + index * (card_w + card_gap)
         y = 96
@@ -2920,20 +3161,20 @@ def _write_conclusion_overview_chart(path: Path, summary: dict[str, Any]) -> Non
             )
         svg.append(f'<text x="{x + 18}" y="{y + 104}" class="tick">{escape(subtitle)}</text>')
     table_x, table_y = 72, 284
-    col_w = [150, 170, 170, 170, 170, 170]
+    col_w = [150, 145, 145, 145, 145, 145, 260]
     row_h = 58
-    headers = ["路由模式", "缓存命中", "成本", "吞吐", "时延", "TTFT"]
+    headers = ["路由模式", "吞吐达成", "成本达成", "时延达成", "TTFT 达成", "缓存命中", "路由模式达成情况"]
     x = table_x
     for index, header in enumerate(headers):
         svg.append(f'<rect x="{x}" y="{table_y}" width="{col_w[index]}" height="{row_h}" fill="#eef2ff" stroke="#c7d2fe"/>')
         svg.append(f'<text x="{x + col_w[index] / 2}" y="{table_y + 36}" class="label" font-weight="800" text-anchor="middle">{escape(header)}</text>')
         x += col_w[index]
     metric_defs = [
-        ("token_cache_hit_rate", True),
-        ("total_actual_cost_usd", False),
         ("avg_throughput_output_tokens_per_second", True),
+        ("total_actual_cost_usd", False),
         ("avg_request_latency_ms", False),
         ("avg_ttft_ms", False),
+        ("token_cache_hit_rate", True),
     ]
     for row_index, sort_mode in enumerate(SORT_MODES):
         y = table_y + row_h * (row_index + 1)
@@ -2944,108 +3185,265 @@ def _write_conclusion_overview_chart(path: Path, summary: dict[str, Any]) -> Non
         for col_index, (key, higher_is_better) in enumerate(metric_defs, start=1):
             winner = _winner_for_sort_metric(summary, sort_mode, key, higher_is_better)
             advantage = _winner_advantage_text(summary, sort_mode, key, higher_is_better)
+            is_diagonal = col_index == row_index + 1 and row_index < len(SORT_MODES)
             fill = "#eff6ff" if winner == "Infron" else "#fff7ed" if winner == "OpenRouter" else "#f8fafc"
             stroke = "#93c5fd" if winner == "Infron" else "#fdba74" if winner == "OpenRouter" else "#cbd5e1"
-            svg.append(f'<rect x="{x}" y="{y}" width="{col_w[col_index]}" height="{row_h}" fill="{fill}" stroke="{stroke}"/>')
+            if is_diagonal:
+                svg.append(f'<rect x="{x + 3}" y="{y + 3}" width="{col_w[col_index] - 6}" height="{row_h - 6}" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2.4"/>')
+                svg.append(f'<rect x="{x + 9}" y="{y + 9}" width="{col_w[col_index] - 18}" height="{row_h - 18}" rx="6" fill="{fill}" stroke="{stroke}" stroke-width="1.4"/>')
+            else:
+                svg.append(f'<rect x="{x}" y="{y}" width="{col_w[col_index]}" height="{row_h}" fill="{fill}" stroke="{stroke}"/>')
             svg.append(
                 f'<text x="{x + col_w[col_index] / 2}" y="{y + 25}" class="label" font-weight="900" text-anchor="middle" fill="{colors.get(winner, "#111827")}">{escape(winner)}</text>'
             )
             svg.append(
                 f'<text x="{x + col_w[col_index] / 2}" y="{y + 44}" class="tick" font-weight="800" text-anchor="middle" fill="{colors.get(winner, "#111827")}">{escape(advantage)}</text>'
             )
+            if is_diagonal:
+                svg.append(
+                    f'<text x="{x + col_w[col_index] - 14}" y="{y + 16}" class="tick" font-size="10" font-weight="900" text-anchor="end" fill="#92400e">目标</text>'
+                )
             x += col_w[col_index]
-    note_y = table_y + row_h * 5 + 26
-    svg.append(f'<text x="{table_x}" y="{note_y}" class="label">读法：同一行展示一种路由模式下的指标胜出方；缓存和吞吐越高越好，成本、时延和 TTFT 越低越好。</text>')
-    svg.extend(_legend(820, note_y + 18, {"infron": "#2563eb", "openrouter": "#f97316"}))
+        goal_key, goal_higher_is_better = _sort_goal_metric(sort_mode)
+        goal_winner = _winner_for_sort_metric(summary, sort_mode, goal_key, goal_higher_is_better)
+        goal_advantage = _winner_advantage_text(summary, sort_mode, goal_key, goal_higher_is_better)
+        goal_fill = "#eff6ff" if goal_winner == "Infron" else "#fff7ed" if goal_winner == "OpenRouter" else "#f8fafc"
+        goal_stroke = "#93c5fd" if goal_winner == "Infron" else "#fdba74" if goal_winner == "OpenRouter" else "#cbd5e1"
+        svg.append(f'<rect x="{x}" y="{y}" width="{col_w[-1]}" height="{row_h}" fill="{goal_fill}" stroke="{goal_stroke}"/>')
+        svg.append(
+            f'<text x="{x + 16}" y="{y + 24}" class="label" font-weight="900" fill="{colors.get(goal_winner, "#111827")}">{escape(_sort_goal_label(sort_mode))}: {escape(goal_winner)}</text>'
+        )
+        svg.append(
+            f'<text x="{x + 16}" y="{y + 44}" class="tick" font-weight="800" fill="{colors.get(goal_winner, "#111827")}">{escape(goal_advantage)}</text>'
+        )
+    note_y = table_y + row_h * (len(SORT_MODES) + 1) + 26
+    svg.append(f'<text x="{table_x}" y="{note_y}" class="label">读法：前四列与四种路由模式顺序对齐；金色对角线表示该路由模式目标指标的胜出方。</text>')
+    svg.append(f'<text x="{table_x}" y="{note_y + 24}" class="label">缓存和吞吐越高越好，成本、时延和 TTFT 越低越好；缓存命中作为跨模式辅助指标单独放在最后一列。</text>')
+    svg.extend(_legend(940, note_y + 42, {"infron": "#2563eb", "openrouter": "#f97316"}))
     svg.append("</svg>")
     path.write_text("\n".join(svg), encoding="utf-8")
+
+
+def _sort_goal_metric(sort_mode: str) -> tuple[str, bool]:
+    return {
+        "throughput": ("avg_throughput_output_tokens_per_second", True),
+        "price": ("total_actual_cost_usd", False),
+        "latency": ("avg_request_latency_ms", False),
+        "ttft": ("avg_ttft_ms", False),
+    }.get(sort_mode, ("token_cache_hit_rate", True))
+
+
+def _sort_goal_label(sort_mode: str) -> str:
+    return {
+        "throughput": "吞吐目标",
+        "price": "成本目标",
+        "latency": "时延目标",
+        "ttft": "TTFT 目标",
+    }.get(sort_mode, "目标指标")
 
 
 def _write_impossible_triangle_chart(path: Path, summary: dict[str, Any]) -> None:
-    width, height = 1080, 600
+    width, height = 1440, 1040
     colors = {"infron": "#2563eb", "openrouter": "#f97316"}
-    vertices = {
-        "吞吐量": (540.0, 102.0),
-        "价格": (210.0, 470.0),
-        "时延": (870.0, 470.0),
-    }
-    profiles = {provider: _impossible_triangle_profile(summary, provider) for provider in PROVIDERS}
+    cx, cy, radius = 720.0, 500.0, 330.0
     svg: list[str] = [
         _svg_header(width, height),
-        '<text x="48" y="36" class="title">Inference 平台“不可能三角”：吞吐量、价格与时延</text>',
-        '<text x="48" y="62" class="label">没有平台能在吞吐量、价格和时延三个方向同时达到最优；工程上通常需要选择策略侧重。</text>',
-        '<polygon points="540,102 210,470 870,470" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>',
-        '<line x1="540" y1="102" x2="540" y2="352" stroke="#cbd5e1" stroke-dasharray="5 5"/>',
-        '<line x1="210" y1="470" x2="540" y2="352" stroke="#cbd5e1" stroke-dasharray="5 5"/>',
-        '<line x1="870" y1="470" x2="540" y2="352" stroke="#cbd5e1" stroke-dasharray="5 5"/>',
-        '<text x="540" y="82" class="label" font-weight="900" text-anchor="middle">吞吐量</text>',
-        '<text x="540" y="100" class="tick" text-anchor="middle">更高 response tok/s</text>',
-        '<text x="182" y="498" class="label" font-weight="900" text-anchor="middle">价格</text>',
-        '<text x="205" y="518" class="tick" text-anchor="middle">更低实际成本</text>',
-        '<text x="898" y="498" class="label" font-weight="900" text-anchor="middle">时延</text>',
-        '<text x="875" y="518" class="tick" text-anchor="middle">更低完整响应耗时</text>',
-        '<text x="540" y="360" class="tick" text-anchor="middle">业务目标决定靠近哪个角</text>',
+        '<text x="48" y="38" class="title">Inference 平台“不可能四角”：四项核心指标的严格归一化对比</text>',
+        '<text x="48" y="64" class="label">单图投影展示：每个路由模式先做四项指标 A/B 归一化，再投影成一个点；同一平台的四个点连接成区域。</text>',
     ]
-    for provider in PROVIDERS:
-        point = _triangle_point(vertices, profiles[provider])
-        color = colors[provider]
-        svg.append(f'<circle cx="{point[0]:.1f}" cy="{point[1]:.1f}" r="10" fill="{color}" stroke="#ffffff" stroke-width="3"/>')
-        label_x = point[0] + (16 if provider == "openrouter" else -16)
-        anchor = "start" if provider == "openrouter" else "end"
-        svg.append(f'<text x="{label_x:.1f}" y="{point[1] - 14:.1f}" class="label" font-weight="900" text-anchor="{anchor}" fill="{color}">{escape(_display_provider(provider))}</text>')
-        svg.append(f'<text x="{label_x:.1f}" y="{point[1] + 6:.1f}" class="tick" text-anchor="{anchor}">{escape(_triangle_dominant_axis(profiles[provider]))}</text>')
-
-    table_x, table_y = 48, 130
-    svg.append(f'<rect x="{table_x}" y="{table_y}" width="245" height="150" rx="8" fill="#ffffff" stroke="#dbe3ef"/>')
-    svg.append(f'<text x="{table_x + 16}" y="{table_y + 26}" class="label" font-weight="900">相对位置解释</text>')
-    y = table_y + 54
-    for provider in PROVIDERS:
-        profile = profiles[provider]
-        svg.append(f'<circle cx="{table_x + 18}" cy="{y - 4}" r="5" fill="{colors[provider]}"/>')
+    for level in (0.25, 0.5, 0.75, 1.0):
+        points = [
+            (cx, cy - radius * level),
+            (cx + radius * level, cy),
+            (cx, cy + radius * level),
+            (cx - radius * level, cy),
+        ]
         svg.append(
-            f'<text x="{table_x + 32}" y="{y}" class="tick">{escape(_display_provider(provider))}: '
-            f'吞吐 {profile["throughput"]:.2f} / 价格 {profile["price"]:.2f} / 时延 {profile["latency"]:.2f}</text>'
+            '<polygon points="{}" fill="{}" stroke="{}" stroke-width="{}"/>'.format(
+                " ".join(f"{x:.1f},{y:.1f}" for x, y in points),
+                "#f8fafc" if level == 1.0 else "none",
+                "#94a3b8" if level == 1.0 else "#e2e8f0",
+                "2.0" if level == 1.0 else "1.0",
+            )
         )
-        y += 30
-    svg.append(f'<text x="{table_x + 16}" y="{table_y + 136}" class="tick">数值为三角坐标权重，三项合计为 1。</text>')
+        svg.append(f'<text x="{cx + radius * level + 9:.1f}" y="{cy - 7:.1f}" class="tick">{level:.2f}</text>')
+    for x, y in ((cx, cy - radius), (cx + radius, cy), (cx, cy + radius), (cx - radius, cy)):
+        svg.append(f'<line x1="{cx:.1f}" y1="{cy:.1f}" x2="{x:.1f}" y2="{y:.1f}" stroke="#cbd5e1" stroke-dasharray="5 5"/>')
+    axis_labels = {
+        "throughput": ("吞吐量", cx, cy - radius - 42, "middle", "更高 response tok/s"),
+        "price": ("价格", cx + radius + 50, cy - 4, "start", "更低实际成本"),
+        "latency": ("端到端 E2E 时延", cx, cy + radius + 52, "middle", "更低完整响应耗时"),
+        "ttft": ("流式 TTFT", cx - radius - 50, cy - 4, "end", "更低首包响应时间"),
+    }
+    for label, x, y, anchor, hint in axis_labels.values():
+        svg.append(f'<text x="{x:.1f}" y="{y:.1f}" class="label" font-weight="900" text-anchor="{anchor}">{escape(label)}</text>')
+        svg.append(f'<text x="{x:.1f}" y="{y + 20:.1f}" class="tick" text-anchor="{anchor}">{escape(hint)}</text>')
+
+    projected: dict[str, dict[str, tuple[float, float]]] = {provider: {} for provider in PROVIDERS}
+    for sort_mode in SORT_MODES:
+        scores = _impossible_quadrilateral_scores(summary, sort_mode)
+        for provider in PROVIDERS:
+            projected[provider][sort_mode] = _project_quadrilateral_scores(cx, cy, radius, scores[provider])
+    projected = _separate_projected_points(cx, cy, radius, projected)
+
+    for provider in PROVIDERS:
+        color = colors[provider]
+        points = [projected[provider][sort_mode] for sort_mode in SORT_MODES]
+        svg.append(
+            '<polygon points="{}" fill="{}" fill-opacity="0.16" stroke="{}" stroke-width="3.2" stroke-dasharray="{}"/>'.format(
+                " ".join(f"{x:.1f},{y:.1f}" for x, y in points),
+                color,
+                color,
+                "none" if provider == "infron" else "8 4",
+            )
+        )
+        for sort_mode, (x, y) in zip(SORT_MODES, points, strict=True):
+            svg.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="18" fill="{color}" stroke="#ffffff" stroke-width="3.2"/>')
+            svg.append(
+                f'<text x="{x:.1f}" y="{y + 4:.1f}" class="tick" font-size="10" font-weight="900" text-anchor="middle" fill="#ffffff">{_sort_mode_abbrev_for_quadrilateral(sort_mode)}</text>'
+            )
+
+    svg.extend(_legend(1078, 92, colors))
+    svg.extend(_projection_route_legend(1078, 174))
+    svg.append('<text x="48" y="960" class="tick">读图：THR/PRI/LAT/TTFT 分别代表四种路由模式；蓝色区域为 Infron，橙色区域为 OpenRouter，区域外扩方向表示对应指标优势方向。</text>')
+    svg.append('<text x="48" y="984" class="tick">该图采用统一归一化、四维到二维投影和一致径向视觉放大，用于总览区域形状；精确逐指标胜负以下方表格为准。</text>')
     svg.append("</svg>")
     path.write_text("\n".join(svg), encoding="utf-8")
 
 
-def _triangle_point(vertices: dict[str, tuple[float, float]], profile: dict[str, float]) -> tuple[float, float]:
-    throughput = vertices["吞吐量"]
-    price = vertices["价格"]
-    latency = vertices["时延"]
-    x = throughput[0] * profile["throughput"] + price[0] * profile["price"] + latency[0] * profile["latency"]
-    y = throughput[1] * profile["throughput"] + price[1] * profile["price"] + latency[1] * profile["latency"]
-    return x, y
-
-
-def _triangle_dominant_axis(profile: dict[str, float]) -> str:
-    labels = {"throughput": "更靠近吞吐量", "price": "更靠近价格", "latency": "更靠近时延"}
-    key = max(profile, key=lambda item: profile[item])
-    return labels[key]
-
-
-def _impossible_triangle_profile(summary: dict[str, Any], provider: str) -> dict[str, float]:
+def _impossible_quadrilateral_scores(summary: dict[str, Any], sort_mode: str) -> dict[str, dict[str, float]]:
     raw = {
-        item: {
-            "throughput": _weighted_metric_across_sorts(summary, item, "avg_throughput_output_tokens_per_second"),
-            "cost": _total_metric_across_sorts(summary, item, "total_actual_cost_usd"),
-            "latency": _weighted_metric_across_sorts(summary, item, "avg_request_latency_ms"),
+        provider: {
+            "throughput": _numeric_value(
+                summary["results"][sort_mode][provider]["aggregate"].get("avg_throughput_output_tokens_per_second")
+            )
+            or 0.0,
+            "price": _numeric_value(summary["results"][sort_mode][provider]["aggregate"].get("total_actual_cost_usd")),
+            "latency": _numeric_value(summary["results"][sort_mode][provider]["aggregate"].get("avg_request_latency_ms")) or 0.0,
+            "ttft": _numeric_value(summary["results"][sort_mode][provider]["aggregate"].get("avg_ttft_ms")) or 0.0,
         }
-        for item in PROVIDERS
+        for provider in PROVIDERS
     }
-    max_throughput = max(raw[item]["throughput"] for item in PROVIDERS) or 1
-    min_cost = min(value for value in (raw[item]["cost"] for item in PROVIDERS) if value is not None)
-    min_latency = min(raw[item]["latency"] for item in PROVIDERS) or 1
-    scores = {
-        "throughput": raw[provider]["throughput"] / max_throughput if max_throughput else 0,
-        "price": min_cost / raw[provider]["cost"] if raw[provider]["cost"] else 0,
-        "latency": min_latency / raw[provider]["latency"] if raw[provider]["latency"] else 0,
+    max_throughput = max(raw[provider]["throughput"] for provider in PROVIDERS) or 1.0
+    min_price = min((raw[provider]["price"] for provider in PROVIDERS if raw[provider]["price"] is not None), default=None)
+    min_latency = min((raw[provider]["latency"] for provider in PROVIDERS if raw[provider]["latency"] > 0), default=1.0)
+    min_ttft = min((raw[provider]["ttft"] for provider in PROVIDERS if raw[provider]["ttft"] > 0), default=1.0)
+    scores: dict[str, dict[str, float]] = {}
+    for provider in PROVIDERS:
+        price = raw[provider]["price"]
+        scores[provider] = {
+            "throughput": _clamp_score(raw[provider]["throughput"] / max_throughput),
+            "price": _clamp_score(min_price / price) if min_price is not None and price else 0.0,
+            "latency": _clamp_score(min_latency / raw[provider]["latency"]) if raw[provider]["latency"] else 0.0,
+            "ttft": _clamp_score(min_ttft / raw[provider]["ttft"]) if raw[provider]["ttft"] else 0.0,
+        }
+    return scores
+
+
+def _clamp_score(value: float) -> float:
+    return max(0.0, min(1.0, value))
+
+
+def _project_quadrilateral_scores(
+    cx: float,
+    cy: float,
+    radius: float,
+    scores: dict[str, float],
+) -> tuple[float, float]:
+    x = cx + radius * 0.46 * (scores["price"] - scores["ttft"])
+    y = cy + radius * 0.46 * (scores["latency"] - scores["throughput"])
+    visual_scale = 1.74
+    return _clamp_projected_point(cx, cy, radius, cx + (x - cx) * visual_scale, cy + (y - cy) * visual_scale)
+
+
+def _clamp_projected_point(cx: float, cy: float, radius: float, x: float, y: float) -> tuple[float, float]:
+    dx = x - cx
+    dy = y - cy
+    occupancy = abs(dx) / radius + abs(dy) / radius
+    if occupancy <= 0.92:
+        return x, y
+    scale = 0.92 / occupancy
+    return cx + dx * scale, cy + dy * scale
+
+
+def _separate_projected_points(
+    cx: float,
+    cy: float,
+    radius: float,
+    points: dict[str, dict[str, tuple[float, float]]],
+) -> dict[str, dict[str, tuple[float, float]]]:
+    adjusted = {provider: dict(provider_points) for provider, provider_points in points.items()}
+    keys = [(provider, sort_mode) for provider in PROVIDERS for sort_mode in SORT_MODES]
+    for _ in range(24):
+        moved = False
+        for i, (provider_a, sort_a) in enumerate(keys):
+            for provider_b, sort_b in keys[i + 1 :]:
+                ax, ay = adjusted[provider_a][sort_a]
+                bx, by = adjusted[provider_b][sort_b]
+                dx = bx - ax
+                dy = by - ay
+                distance = math.hypot(dx, dy)
+                min_distance = 46.0 if provider_a == provider_b else 54.0
+                if distance >= min_distance:
+                    continue
+                if distance < 0.001:
+                    angle = (i + 1) * 0.83
+                    ux, uy = math.cos(angle), math.sin(angle)
+                else:
+                    ux, uy = dx / distance, dy / distance
+                push = (min_distance - distance) / 2 + 1.0
+                adjusted[provider_a][sort_a] = _clamp_projected_point(cx, cy, radius, ax - ux * push, ay - uy * push)
+                adjusted[provider_b][sort_b] = _clamp_projected_point(cx, cy, radius, bx + ux * push, by + uy * push)
+                moved = True
+        if not moved:
+            break
+    return adjusted
+
+
+def _sort_mode_abbrev_for_quadrilateral(sort_mode: str) -> str:
+    return {
+        "throughput": "THR",
+        "price": "PRI",
+        "latency": "LAT",
+        "ttft": "TTFT",
+    }.get(sort_mode, sort_mode[:4].upper())
+
+
+def _projection_route_legend(x: int, y: int) -> list[str]:
+    rows = [
+        ("THR", "Throughput First"),
+        ("PRI", "Price First"),
+        ("LAT", "Latency First"),
+        ("TTFT", "TTFT First"),
+    ]
+    svg = [
+        f'<rect x="{x - 18}" y="{y - 24}" width="292" height="154" rx="10" fill="#ffffff" stroke="#dbe3ef"/>',
+        f'<text x="{x}" y="{y - 2}" class="label" font-weight="900">路由模式标记</text>',
+    ]
+    for index, (abbr, label) in enumerate(rows):
+        row_y = y + 28 + index * 28
+        svg.append(f'<text x="{x}" y="{row_y}" class="tick" font-size="10" font-weight="900">{abbr}</text>')
+        svg.append(f'<text x="{x + 52}" y="{row_y}" class="tick" font-weight="800">{escape(label)}</text>')
+    return svg
+
+
+def _quadrilateral_metric_winners(scores: dict[str, dict[str, float]]) -> list[tuple[str, str]]:
+    labels = {
+        "throughput": "吞吐",
+        "price": "价格",
+        "latency": "E2E",
+        "ttft": "TTFT",
     }
-    total = sum(scores.values()) or 1
-    return {key: value / total for key, value in scores.items()}
+    winners = []
+    for metric in ("throughput", "price", "latency", "ttft"):
+        infron = scores["infron"][metric]
+        openrouter = scores["openrouter"][metric]
+        if abs(infron - openrouter) < 1e-9:
+            winner = "双方持平"
+        else:
+            winner = "infron" if infron > openrouter else "openrouter"
+        winners.append((labels[metric], winner))
+    return winners
 
 
 def _weighted_metric_across_sorts(summary: dict[str, Any], provider: str, key: str) -> float:
@@ -3075,7 +3473,7 @@ def _winner_summary_lines(summary: dict[str, Any], key: str, higher_is_better: b
     provider = "Infron" if infron_wins >= openrouter_wins else "OpenRouter"
     win_count = max(infron_wins, openrouter_wins)
     max_advantage = _max_provider_advantage(summary, key, higher_is_better, provider)
-    return [f"{provider} {win_count}/3 胜", f"最大优势 {_pct(max_advantage)}"]
+    return [f"{provider} {win_count}/{len(SORT_MODES)} 胜", f"最大优势 {_pct(max_advantage)}"]
 
 
 def _max_provider_advantage(summary: dict[str, Any], key: str, higher_is_better: bool, provider: str) -> float:
@@ -3471,7 +3869,7 @@ def _write_cost_cache_chart(path: Path, records: list[dict[str, Any]]) -> None:
     for provider, sort_mode, cache_rate, cost in points:
         x = left + max(0, min(cache_rate, 1)) * plot_w
         y = top + plot_h - cost / max_axis * plot_h
-        radius = {"throughput": 4.8, "price": 4.0, "latency": 5.6}.get(sort_mode, 4.4)
+        radius = {"throughput": 4.8, "price": 4.0, "latency": 5.6, "ttft": 6.2}.get(sort_mode, 4.4)
         svg.append(
             f'<circle cx="{x:.2f}" cy="{y:.2f}" r="{radius:.1f}" fill="{colors.get(provider, "#64748b")}" fill-opacity="0.46"/>'
         )
@@ -3510,6 +3908,7 @@ def _sort_mode_label(sort_mode: str) -> str:
         "throughput": "Throughput First 路由模式",
         "price": "Price First 路由模式",
         "latency": "Latency First 路由模式",
+        "ttft": "TTFT First 路由模式",
     }.get(sort_mode, sort_mode)
 
 

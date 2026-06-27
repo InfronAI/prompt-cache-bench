@@ -18,7 +18,7 @@ from urllib.parse import unquote, urlparse
 DEFAULT_REPO_URL = "https://github.com/InfronAI/prompt-cache-bench"
 DEFAULT_EXPERIMENT = (
     "experiments/deepseek/deepseek-v4-flash/"
-    "infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19"
+    "infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-2026-06-27"
 )
 
 SECRET_PATTERNS = [

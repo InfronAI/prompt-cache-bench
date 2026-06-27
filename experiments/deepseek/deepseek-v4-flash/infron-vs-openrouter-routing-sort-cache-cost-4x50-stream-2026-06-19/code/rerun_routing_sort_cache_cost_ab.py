@@ -1858,7 +1858,7 @@ def _reproducibility_lines(summary: dict[str, Any], *, embed_full_artifacts: boo
         "",
         "## 12. 可复现性附录：Benchmark 数据集",
         "",
-        "本节给出复现结论和图表所需的数据文件。配对级 CSV 是报告中所有总览表、核心指标图和结论快照的直接输入；请求级 JSONL 保留每一次 first/second 请求的原始 telemetry，便于审计 provider、usage、cost、latency、TTFT 与缓存字段。为满足单文件审计，报告后文完整嵌入本次实验使用的配对级数据、请求级数据、过滤后记录和剔除样本记录。",
+        "本节给出复现结论和图表所需的数据文件。配对级 CSV 是报告中所有总览表、核心指标图和结论快照的直接输入；请求级 JSONL 保留每一次 first/second 请求的 telemetry，便于审计 provider、usage、cost、latency、TTFT 与缓存字段。公开报告通过文件路径引用数据集，不在报告正文中展开大体量原始记录。",
         "",
         "| 数据文件 | 粒度 | 行数 | SHA256 | 用途 |",
         "| --- | ---: | ---: | --- | --- |",
@@ -2096,12 +2096,12 @@ def _reproducibility_lines(summary: dict[str, Any], *, embed_full_artifacts: boo
             "    print(sort_mode, {'infron': infron, 'openrouter': openrouter, 'winners': winners})",
             "```",
             "",
-            "## 14. 可复现性附录：100% 原始 Benchmark 数据集",
+            "## 14. 可复现性附录：Benchmark 数据集",
             "",
             (
-                "本节完整嵌入本次报告使用的 benchmark 数据文件，不省略、不抽样。`benchmark_pairs.csv` 用于复现聚合指标；`benchmark_requests.jsonl` 用于审计请求级 telemetry；`records.json` 是严格过滤后的原始结构化记录；`records_excluded.json` 保留被剔除样本，便于复核异常日志和 input token 不一致样本。"
+                "本节引用本次报告使用的 benchmark 数据文件。`benchmark_pairs.csv` 用于复现聚合指标；`benchmark_requests.jsonl` 用于审计请求级 telemetry；`records.json` 是严格过滤后的结构化记录；`records_excluded.json` 保留被剔除样本，便于复核异常日志和 input token 不一致样本。"
                 if embed_full_artifacts
-                else "100% 原始 benchmark 数据集已嵌入同名 HTML/Markdown 完整版报告。PDF 版只保留数据文件路径、大小、SHA256 与用途，避免数 MB JSONL/JSON 造成 PDF 渲染超时。"
+                else "Benchmark 数据集保存在实验目录的数据文件中；报告保留数据文件路径、大小、SHA256 与用途，避免大体量 JSONL/JSON 影响网页与 PDF 渲染。"
             ),
             "",
         ]

@@ -1,0 +1,110 @@
+{
+  "records": [
+    {
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "group": 1,
+      "round": 22,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 3074.688,
+        "stream": true,
+        "ttft_ms": 2621.025,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 2626.316,
+        "stream_chunk_count": 19,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 1646,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 1645,
+            "video_tokens": 0
+          },
+          "total_tokens": 1662
+        },
+        "response_model": "deepseek/deepseek-v4-flash",
+        "response_id": "chatcmpl-0239150553364c9c985550ed98681b56",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "202606270918049677490529aTpAXer",
+          "CF-RAY": "a1235cc0fe961e1a-ORD"
+        },
+        "provider_attribution": {
+          "provider": "fireworks",
+          "model": "deepseek/deepseek-v4-flash",
+          "id": "chatcmpl-0239150553364c9c985550ed98681b56",
+          "request_id": "de6b9e38ddd44adf9d44b5bf165cd758",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 4.48e-06,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 5.0666e-05,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.4e-07,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 5.5e-05,
+        "prompt_tokens": 1646,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 1645,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1440.881,
+        "stream": true,
+        "ttft_ms": 1171.369,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 1197.198,
+        "stream_chunk_count": 6,
+        "usage": {},
+        "response_model": "deepseek/deepseek-v4-flash",
+        "response_id": "chatcmpl-f568c2b2070b4b8f82f0b6ccd70e8bcd",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260627091806761138646vnP6dFO4",
+          "CF-RAY": "a1235ccc2880dadb-ORD"
+        },
+        "provider_attribution": {
+          "model": "deepseek/deepseek-v4-flash",
+          "id": "chatcmpl-f568c2b2070b4b8f82f0b6ccd70e8bcd",
+          "request_id": "e8943c1a32874cc7ab39b71b4ad5d40d",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    }
+  ]
+}

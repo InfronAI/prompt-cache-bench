@@ -229,6 +229,16 @@ def _inline(text: str) -> str:
     escaped = escaped.replace("&lt;br&gt;", "<br>")
     escaped = escaped.replace('&lt;span class=&quot;provider-label&quot;&gt;', '<span class="provider-label">')
     escaped = escaped.replace("&lt;/span&gt;", "</span>")
+    escaped = re.sub(
+        r"\[([^\]]+)\]\((https?://[^)\s]+)\)",
+        r'<a href="\2">\1</a>',
+        escaped,
+    )
+    escaped = re.sub(
+        r"\[([^\]]+)\]\(([^)\s]+)\)",
+        r'<a href="\2">\1</a>',
+        escaped,
+    )
     escaped = re.sub(r"`([^`]+)`", r"<code>\1</code>", escaped)
     escaped = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", escaped)
     return escaped

@@ -1,0 +1,350 @@
+{
+  "experiment_id": "infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-2026-06-27",
+  "published_date": "2026-06-27",
+  "model": "deepseek/deepseek-v4-flash",
+  "providers": [
+    "Infron",
+    "OpenRouter"
+  ],
+  "routing_modes": [
+    "throughput",
+    "price",
+    "latency",
+    "ttft"
+  ],
+  "provider_sort_mapping": {
+    "throughput": {
+      "infron": "throughput",
+      "openrouter": "throughput"
+    },
+    "price": {
+      "infron": "price",
+      "openrouter": "price"
+    },
+    "latency": {
+      "infron": "latency",
+      "openrouter": "latency"
+    },
+    "ttft": {
+      "infron": "ttft",
+      "openrouter": "latency"
+    }
+  },
+  "groups": 4,
+  "rounds_per_group": 50,
+  "streaming_enabled": true,
+  "strict_ab_pairs": 499,
+  "request_rows": 1996,
+  "excluded_records": {
+    "incomplete": 366,
+    "anomalous_usage": 1,
+    "unequal_input_tokens": 235,
+    "total": 602
+  },
+  "network_environment": {
+    "same_local_runtime": true,
+    "same_http_client_logic": true,
+    "same_local_proxy": true,
+    "proxy_enabled": true,
+    "proxy_url_redacted": "socks5://127.0.0.1:1086",
+    "proxy_scheme": "socks5",
+    "proxy_by_provider_redacted": {
+      "infron": "socks5://127.0.0.1:1086",
+      "openrouter": "socks5://127.0.0.1:1086"
+    },
+    "implicit_environment_proxy_disabled": true,
+    "proxy_config_source_priority": [
+      "--local-proxy-url",
+      "AB_TEST_LOCAL_PROXY_URL",
+      "LOCAL_PROXY_URL",
+      "GLOBAL_PROXY_URL"
+    ]
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "size_bytes": 432,
+      "sha256": "61521fe30fac4c826a85a7b190dfcfd4ff38118380c966263ce8873cd2dd451f"
+    },
+    {
+      "path": "code/__pycache__/rerun_routing_sort_cache_cost_ab.cpython-312.pyc",
+      "size_bytes": 265173,
+      "sha256": "d0d3c7b2b9e1243f38d2947b03ad9d0442b92549f6d6ce7d300474b92a74f110"
+    },
+    {
+      "path": "code/export_routing_report_pdf.py",
+      "size_bytes": 9597,
+      "sha256": "a86ca43189011351f66c06c1ed878ec4910816c3bd41c6e2bf191e1d0cea84f3"
+    },
+    {
+      "path": "code/rerun_routing_sort_cache_cost_ab.py",
+      "size_bytes": 225163,
+      "sha256": "73a8df7938a818586d8af2a16b089786fe04f406a70a59210461088ab16af53f"
+    },
+    {
+      "path": "data/README.md",
+      "size_bytes": 1158,
+      "sha256": "b1b6171139c52b7cd059620044ba97a70f03b34ce732dd8f5905683549a054b1"
+    },
+    {
+      "path": "data/benchmark_pairs.csv",
+      "size_bytes": 155643,
+      "sha256": "455f7b7de38b7cd9a6006d8302669df4402ae3ab3ae4d27643183f66baaca567"
+    },
+    {
+      "path": "data/benchmark_requests.jsonl",
+      "size_bytes": 2790195,
+      "sha256": "865bb15e94fbf9e43a50e949ad521eb1b48c691bdd11a0503ec1444333550767"
+    },
+    {
+      "path": "data/records.json",
+      "size_bytes": 4605361,
+      "sha256": "bc7badacf97c056888bd3860104b0e4b9e3a57a87acef11574bef5b49cf5b8cb"
+    },
+    {
+      "path": "data/records_anomalous_usage.json",
+      "size_bytes": 3471,
+      "sha256": "e15357dbe1c32eea3af2b997cedc9c73fff3095eb538295c9fadef02c8ac001b"
+    },
+    {
+      "path": "data/records_excluded.json",
+      "size_bytes": 1716288,
+      "sha256": "311091fe28decc747cd041172b9d162c55b907c831bf6516cff3ac77a03a0e54"
+    },
+    {
+      "path": "data/records_incomplete.json",
+      "size_bytes": 617041,
+      "sha256": "1d806270328e4666a3d5e7616419d34dfbbb1aba5924db8be2af6f955bee6bd2"
+    },
+    {
+      "path": "data/records_unequal_input_tokens.json",
+      "size_bytes": 1095818,
+      "sha256": "5e32a6ae8e134917f8cd78187e381b7837fd00cdef30c84cf6eb06b55a532ede"
+    },
+    {
+      "path": "data/summary.json",
+      "size_bytes": 103046,
+      "sha256": "55bece4be8aad1d4d59e91d3c3a3eb7fb49c94da15b626d3ed29d7bd212ddeb3"
+    },
+    {
+      "path": "figures/ab_pairing.en.svg",
+      "size_bytes": 2384,
+      "sha256": "3ec47732a69cc452433ef3c35b709e0c921bfbbbc95413b7e1f9bbe9a0c1445d"
+    },
+    {
+      "path": "figures/ab_pairing.svg",
+      "size_bytes": 2362,
+      "sha256": "b06d0bc1668ee29a369b60b7416846a7cb25e41cf75bbaf6b004f742657c9065"
+    },
+    {
+      "path": "figures/conclusion_overview.en.svg",
+      "size_bytes": 13395,
+      "sha256": "a272484b6e31838d29d060d6893d7780d999a5da88a8b2bbde53813148d9ca7b"
+    },
+    {
+      "path": "figures/conclusion_overview.svg",
+      "size_bytes": 13220,
+      "sha256": "798727497a14d2c07525e31efe46b2b680d558ed0a49b3ff9dccc4353030d2a9"
+    },
+    {
+      "path": "figures/experiment_flow.en.svg",
+      "size_bytes": 3084,
+      "sha256": "ebdf0a986fb90eb983680fe847bcacd3c4a75be65e5b74eee9f8904c70b54167"
+    },
+    {
+      "path": "figures/experiment_flow.svg",
+      "size_bytes": 3048,
+      "sha256": "e27fa78142b5c045733087cad3d33371d24587f77b3838237bcf8a6f20f0d230"
+    },
+    {
+      "path": "figures/inference_impossible_quadrilateral.en.svg",
+      "size_bytes": 6018,
+      "sha256": "0ade648b1ceb79ec1f479216d31f9c1ddaa0a05fd1ea0736989a38763438730e"
+    },
+    {
+      "path": "figures/inference_impossible_quadrilateral.svg",
+      "size_bytes": 5937,
+      "sha256": "1d825bad3ae951b42484b0fc8694745782eccb81a9524e95d59246e58ee99d64"
+    },
+    {
+      "path": "figures/infron_architecture.en.svg",
+      "size_bytes": 4685,
+      "sha256": "89be92d6f87a50e087b56604bf4f513aaaa31ea41ccefb5c01adae976b932fad"
+    },
+    {
+      "path": "figures/infron_architecture.svg",
+      "size_bytes": 4677,
+      "sha256": "57e2c3c512106c046bf35d5013b4a4954949f9820aef82a3e2411e2d26db334a"
+    },
+    {
+      "path": "figures/infron_cost_control.en.svg",
+      "size_bytes": 3604,
+      "sha256": "339b4de91d2e8539e0b2de4a7bbab989448e8efb9bad2899a870c3b152dfed5d"
+    },
+    {
+      "path": "figures/infron_cost_control.svg",
+      "size_bytes": 3560,
+      "sha256": "32f7314771b1aff3e894dec1c63af31c2ebebca8afabf96ed92f400983d3748e"
+    },
+    {
+      "path": "figures/latency_first.en.svg",
+      "size_bytes": 9168,
+      "sha256": "acdeb503ff506b2f254fbef9285ef7d8dc91df687091009ff112a1c67811fb1c"
+    },
+    {
+      "path": "figures/latency_first.svg",
+      "size_bytes": 9187,
+      "sha256": "4db8f12c912ef44c1b00528d15202aabdc2fa72cce2fa291be4618443fec344d"
+    },
+    {
+      "path": "figures/latency_first_curves.en.svg",
+      "size_bytes": 35071,
+      "sha256": "d07530e75d4eb3d55acb7e8dec8ae69e7dac5ce5bab2b54824bfda3a5e74b524"
+    },
+    {
+      "path": "figures/latency_first_curves.svg",
+      "size_bytes": 35049,
+      "sha256": "b3eef1d86f817eac2b5bec61e27a9b1a19808c578b5e4dc719d07e7d42dbe29c"
+    },
+    {
+      "path": "figures/latency_first_radar.en.svg",
+      "size_bytes": 4603,
+      "sha256": "0e2a38c464038a1da86f9eb7513d329f35f9929e985ba021e4873377bfe200ea"
+    },
+    {
+      "path": "figures/latency_first_radar.svg",
+      "size_bytes": 4590,
+      "sha256": "44151f67656e09b00b739b1fb216fcc49e1b5a93d134c38d991c95c545a0a43e"
+    },
+    {
+      "path": "figures/price_first.en.svg",
+      "size_bytes": 9171,
+      "sha256": "cc434ffbd05b91498d6e01cf0cb5ca00f90d02b4ff4fbc6618c346102f39e357"
+    },
+    {
+      "path": "figures/price_first.svg",
+      "size_bytes": 9178,
+      "sha256": "180f8793a677dece911daaa14cdcf4a5624708e3626a48e14ae6e3330d3fe980"
+    },
+    {
+      "path": "figures/price_first_curves.en.svg",
+      "size_bytes": 29025,
+      "sha256": "21238e329f2b8109f5642feccfb188964497bf9c00da054f1a48b7992ced5a77"
+    },
+    {
+      "path": "figures/price_first_curves.svg",
+      "size_bytes": 28991,
+      "sha256": "1a6d4a9373e411773809b540528bdb07f0b1d808480115029a81def9e784fb90"
+    },
+    {
+      "path": "figures/price_first_radar.en.svg",
+      "size_bytes": 4601,
+      "sha256": "73352055275638391572b991ca6b1118db30063638b8006bc78f289b83858145"
+    },
+    {
+      "path": "figures/price_first_radar.svg",
+      "size_bytes": 4576,
+      "sha256": "7db513c255c5e61018b69a19a91284591bb8509879a145a224f11d5ab67bf79e"
+    },
+    {
+      "path": "figures/provider_stick_cache_affinity.en.svg",
+      "size_bytes": 3695,
+      "sha256": "286a4dd19fe24ea4ed28b947952f7a8c95e6288a182ca0e917084551f57ec438"
+    },
+    {
+      "path": "figures/provider_stick_cache_affinity.svg",
+      "size_bytes": 3663,
+      "sha256": "152c51a0a6824e50b4779df04ea6e559ef2ec603a619a2d6722148103d389e64"
+    },
+    {
+      "path": "figures/throughput_first.en.svg",
+      "size_bytes": 9176,
+      "sha256": "0aee64815928d35a78d2246436025179b4efb822a532e665a21b02f01181086e"
+    },
+    {
+      "path": "figures/throughput_first.svg",
+      "size_bytes": 9178,
+      "sha256": "bce0b888ca55c3e98ad2a4c2d199a7056d07c9ab6a4b497c2461616f35b0aced"
+    },
+    {
+      "path": "figures/throughput_first_curves.en.svg",
+      "size_bytes": 48109,
+      "sha256": "a5b27a5ad282557efa0871d64a0ff6acb41eff5488d171bfd3862e7c3a64d430"
+    },
+    {
+      "path": "figures/throughput_first_curves.svg",
+      "size_bytes": 48070,
+      "sha256": "22911037cb0ee9f7eadf39d610677961a28afb368713f174b7fdafb893411b4c"
+    },
+    {
+      "path": "figures/throughput_first_radar.en.svg",
+      "size_bytes": 4606,
+      "sha256": "24ad4ec7ce92ac7c1ce5fa63286a2290143f7d134dd5543e00ac13f2af351c4e"
+    },
+    {
+      "path": "figures/throughput_first_radar.svg",
+      "size_bytes": 4576,
+      "sha256": "0a1f1f5828f7ec90e72b9364da59ba7a2d3c91945ad0b17e5f1f3930867c0db9"
+    },
+    {
+      "path": "figures/ttft_first.en.svg",
+      "size_bytes": 9174,
+      "sha256": "c061865589f0a81554662a2063a4e78ac40b8e82c8a9f7868012c6d1d64a67c3"
+    },
+    {
+      "path": "figures/ttft_first.svg",
+      "size_bytes": 9188,
+      "sha256": "8d2030c908bbfd8c1a6a8704a659f120ec53d8fe152aa10723aa8639448ccfdc"
+    },
+    {
+      "path": "figures/ttft_first_curves.en.svg",
+      "size_bytes": 47047,
+      "sha256": "929975e4946b59b4bd15ec39ef04d856b61d4fa8bca666dcbf5831db89e14252"
+    },
+    {
+      "path": "figures/ttft_first_curves.svg",
+      "size_bytes": 47020,
+      "sha256": "bc42c71c3e50e9496732a387b84dfbb8c7907b7296887dc4eca55878f38419ed"
+    },
+    {
+      "path": "figures/ttft_first_radar.en.svg",
+      "size_bytes": 4600,
+      "sha256": "b73dff9ac83a67a8eb3d8140ecd8fb075fd2f10fb98cb07a0951854aafeb9c23"
+    },
+    {
+      "path": "figures/ttft_first_radar.svg",
+      "size_bytes": 4582,
+      "sha256": "d9ce6a5fd5bed6358996de2a366a6895fede5b9a8f7ff21f1341f8cb3438494e"
+    },
+    {
+      "path": "metadata/manifest.json",
+      "size_bytes": 11392,
+      "sha256": "8b31d043890eb191efc34c61cd1d5950e271955bc6931f6b708578aabb66f65b"
+    },
+    {
+      "path": "reports/README.md",
+      "size_bytes": 859,
+      "sha256": "8e23fefab3b0e1affd1cd9dc82ee53d8ae41c1eb8fa3ce5b791852331da77dc2"
+    },
+    {
+      "path": "reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft__2026-06-27.en.html",
+      "size_bytes": 436875,
+      "sha256": "3120292e5606eb64041262352304975594b4f1db53160ea06cac592b0795e0fd"
+    },
+    {
+      "path": "reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft__2026-06-27.en.md",
+      "size_bytes": 13968,
+      "sha256": "31faa4f09b4d7d5431e4162dc329f2d6402c476f5470b56043060684330027cc"
+    },
+    {
+      "path": "reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft__2026-06-27.zh.html",
+      "size_bytes": 436114,
+      "sha256": "c2456fb0bd8509bc7016d098d76b571dce5b51d96e4ef7b6e904a6c64121ef00"
+    },
+    {
+      "path": "reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft__2026-06-27.zh.md",
+      "size_bytes": 13898,
+      "sha256": "79cf05f685ffe05c95b29a3133c104d59709500f56c1bbef3f171f97a4f944d3"
+    }
+  ]
+}

@@ -28,7 +28,7 @@ This repository publishes reproducible experiment code, raw benchmark datasets, 
 └── experiments/
     └── deepseek/
         └── deepseek-v4-flash/
-            └── infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/
+            └── infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-2026-06-27/
                 ├── reports/         # HTML/Markdown report artifacts
                 ├── data/            # Raw and derived benchmark datasets
                 ├── figures/         # SVG figures used by reports
@@ -59,16 +59,16 @@ This repository publishes reproducible experiment code, raw benchmark datasets, 
   <tbody>
     <tr>
       <td rowspan="2"><code>deepseek/deepseek-v4-flash</code></td>
-      <td rowspan="2">Infron vs OpenRouter, routing sort <code>throughput</code>/<code>price</code>/<code>latency</code>, 4x50 streaming run</td>
+      <td rowspan="2">Infron vs OpenRouter, routing sort <code>throughput</code>/<code>price</code>/<code>latency</code>/<code>ttft</code>, 4x50 streaming run</td>
       <td>Chinese</td>
-      <td><a href="https://infronai.github.io/prompt-cache-bench/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.html">GitHub Pages HTML</a></td>
-      <td><a href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.md">GitHub Markdown preview</a></td>
-      <td rowspan="2"><a href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data/">data directory</a></td>
+      <td><a href="https://infronai.github.io/prompt-cache-bench/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-2026-06-27/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft__2026-06-27.zh.html">GitHub Pages HTML</a></td>
+      <td><a href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-2026-06-27/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft__2026-06-27.zh.md">GitHub Markdown preview</a></td>
+      <td rowspan="2"><a href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-2026-06-27/data/">data directory</a></td>
     </tr>
     <tr>
       <td>English</td>
-      <td><a href="https://infronai.github.io/prompt-cache-bench/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.en.html">GitHub Pages HTML</a></td>
-      <td><a href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.en.md">GitHub Markdown preview</a></td>
+      <td><a href="https://infronai.github.io/prompt-cache-bench/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-2026-06-27/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft__2026-06-27.en.html">GitHub Pages HTML</a></td>
+      <td><a href="experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-2026-06-27/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft__2026-06-27.en.md">GitHub Markdown preview</a></td>
     </tr>
   </tbody>
 </table>
@@ -78,8 +78,8 @@ This repository publishes reproducible experiment code, raw benchmark datasets, 
 GitHub Pages is the recommended way to read the self-contained HTML report online:
 
 - Project page: <https://infronai.github.io/prompt-cache-bench/>
-- Chinese HTML report: <https://infronai.github.io/prompt-cache-bench/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.html>
-- English HTML report: <https://infronai.github.io/prompt-cache-bench/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.en.html>
+- Chinese HTML report: <https://infronai.github.io/prompt-cache-bench/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-2026-06-27/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft__2026-06-27.zh.html>
+- English HTML report: <https://infronai.github.io/prompt-cache-bench/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-2026-06-27/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft__2026-06-27.en.html>
 
 The Markdown report remains available for GitHub-native review and source diffs.
 
@@ -132,22 +132,22 @@ You do not need API keys to inspect the published experiment. The raw dataset, c
 
 Open the GitHub-rendered Markdown reports online:
 
-- [Chinese Markdown report](experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.md)
-- [English Markdown report](experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.en.md)
+- [Chinese Markdown report](experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-2026-06-27/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft__2026-06-27.zh.md)
+- [English Markdown report](experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-2026-06-27/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft__2026-06-27.en.md)
 
 GitHub does not render repository `.html` files as normal web pages in the file viewer. Use the Markdown report for online preview.
 
 To open the self-contained HTML reports locally:
 
 ```bash
-open experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.html
-open experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.en.html
+open experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-2026-06-27/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft__2026-06-27.zh.html
+open experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-2026-06-27/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft__2026-06-27.en.html
 ```
 
 Or inspect the data directly:
 
 ```bash
-ls experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/data
+ls experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-2026-06-27/data
 ```
 
 ## Quick Start: Run a Small Smoke Benchmark
@@ -158,9 +158,10 @@ After configuring `.env`, run a small 1x2 streaming smoke benchmark first. This 
 PYTHONPATH=. python3 scripts/rerun_routing_sort_cache_cost_ab.py \
   --groups 1 \
   --rounds 2 \
-  --timeout 120 \
+  --timeout 180 \
   --workers 1 \
   --stream \
+  --local-proxy-url "$AB_TEST_LOCAL_PROXY_URL" \
   --dataset-name business_representative \
   --out-dir export/smoke_1x2 \
   --report export/smoke_1x2-report.md
@@ -183,9 +184,10 @@ This command re-runs the full published design. It makes live API calls to both 
 PYTHONPATH=. python3 scripts/rerun_routing_sort_cache_cost_ab.py \
   --groups 4 \
   --rounds 50 \
-  --timeout 120 \
+  --timeout 180 \
   --workers 8 \
   --stream \
+  --local-proxy-url "$AB_TEST_LOCAL_PROXY_URL" \
   --dataset-name business_representative \
   --soak-duration-seconds 0 \
   --out-dir export/routing_sort_cache_cost_ab_4x50_stream_academic_1781889000 \
@@ -200,7 +202,7 @@ The report exporter can turn Markdown reports into standalone HTML with embedded
 
 ```bash
 python3 scripts/export_routing_report_pdf.py \
-  experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19.zh.md \
+  experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-2026-06-27/reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft__2026-06-27.zh.md \
   /tmp/prompt-cache-report.pdf \
   --embed-assets \
   --html-only
