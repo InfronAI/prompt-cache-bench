@@ -46,9 +46,13 @@ Before copying files into the open-source staging repository:
 
 1. Confirm the report is the final reviewed version.
 2. Confirm terminology is consistent across text, tables, and charts.
-3. Confirm HTML assets are self-contained or referenced through stable public URLs.
-4. Confirm report appendices reference raw datasets and code by path instead of embedding large raw records in the report body.
-5. Confirm all figures, metadata, and reproducibility files required by the report are present.
+3. Generate both language variants:
+   - Chinese report: every narrative section, table heading, chart title, chart label, tooltip, and diagram label should be Chinese. Keep only necessary English proper nouns and API/model terms such as `Infron`, `OpenRouter`, `TTFT`, `provider.sort`, `usage.prompt_tokens`, and model IDs.
+   - English report: every narrative section, table heading, chart title, chart label, tooltip, and diagram label should be English. Do not leave Chinese fallback labels in ECharts options, SVG text, table cells, or appendices.
+4. Confirm Chinese and English reports have the same report architecture, chart set, reproducibility appendix, favicon/logo treatment, and source/data links.
+5. Confirm HTML assets are self-contained or referenced through stable public URLs.
+6. Confirm report appendices reference raw datasets and code by path instead of embedding large raw records in the report body.
+7. Confirm all figures, metadata, and reproducibility files required by the report are present.
 
 Recommended local checks:
 
@@ -58,6 +62,22 @@ rg -n "完整嵌入|不省略|100% 原始|request_json|original_response_json|pr
 ```
 
 The first command identifies unfinished drafting notes. The second command helps catch report text that may still describe embedded raw data or expose unnecessary raw-request fields.
+
+Recommended language checks:
+
+```bash
+python3 - <<'PY'
+from pathlib import Path
+import re
+for path in Path("export/open-source/prompt-cache-bench/experiments").glob("**/reports/*.*"):
+    if path.name.endswith((".en.html", ".en.md")):
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        cjk = len(re.findall(r"[\u4e00-\u9fff]", text))
+        print(path, "CJK chars:", cjk)
+PY
+```
+
+English reports should have `0` CJK characters. Chinese reports should be reviewed manually for accidental English section labels such as `Abstract`, `Conclusion Overview`, `Figure`, or `Table`, except where those words are intentional technical terms.
 
 ## 4. Stage Files In `export/open-source`
 
@@ -82,6 +102,36 @@ git diff --name-status
 ```
 
 The diff should contain only files intended for the public release. If unrelated files appear, stop and isolate the report update before committing.
+
+### 4.1 Standard Sync Script
+
+Use `scripts/sync_report_release.py` from the open-source repository root to codify the release preparation steps:
+
+```bash
+cd export/open-source/prompt-cache-bench
+python3 scripts/sync_report_release.py \
+  --experiment experiments/deepseek/deepseek-v4-flash/<run-id>
+```
+
+The script:
+
+- prints the target experiment path so stale `.env` defaults are visible;
+- optionally copies finalized local artifacts when `--copy-local --local-experiment-dir <dir>` is provided;
+- normalizes all HTML report favicons to the Infron CDN icon used by GitHub Pages;
+- checks that `.en.html` and `.en.md` contain no Chinese characters;
+- checks that `.zh.html` and `.zh.md` contain substantial Chinese text and no obvious English section labels;
+- checks that Chinese and English HTML reports share core structural markers;
+- updates `metadata/manifest.json` checksums and file sizes;
+- verifies that `README.md` and `index.html` include the expected GitHub Pages and GitHub source links;
+- runs the repository validator unless `--skip-validator` is passed.
+
+If `.env` exists, it overrides `.env.example`. Before running the sync script, confirm:
+
+```bash
+rg -n "PROMPT_CACHE_BENCH_DEFAULT_EXPERIMENT" .env .env.example
+```
+
+The value should point to the report you are publishing. A stale `.env` is the most common cause of syncing an old report directory.
 
 ## 5. Defensive Secret Scan
 
@@ -150,6 +200,13 @@ Run the repository validator before committing:
 python3 scripts/validate_release.py
 ```
 
+For the full bilingual report-release check, run:
+
+```bash
+python3 scripts/sync_report_release.py \
+  --experiment experiments/<model-family>/<model-id>/<run-id>
+```
+
 The validator reads release defaults from `.env.example`, local `.env`, and `PROMPT_CACHE_BENCH_*` environment variables. Use `PROMPT_CACHE_BENCH_DEFAULT_EXPERIMENT` when validating a newly published run directory, or pass `--experiment <path>`.
 
 The validator checks:
@@ -186,23 +243,31 @@ When a local staging repository has diverged too much from the remote, create a 
 After pushing:
 
 1. Open the GitHub commit and confirm the changed file list is expected.
-2. Open the GitHub Pages report URL.
-3. Verify figures, logo, favicon, and embedded assets render correctly.
-4. Verify Markdown links to code and datasets resolve to existing GitHub paths.
-5. Verify the public report does not display secrets, internal-only text, or unnecessary raw records.
+2. Open both GitHub Pages report URLs:
+   - `.../<report>.zh.html`
+   - `.../<report>.en.html`
+3. Verify the Chinese report is Chinese and the English report is English across text, tables, charts, ECharts controls, diagrams, and appendices.
+4. Verify figures, logo, favicon, and embedded assets render correctly.
+5. Verify Markdown links to code and datasets resolve to existing GitHub paths.
+6. Verify `index.html` links to the current report pair and dataset.
+7. Verify the public report does not display secrets, internal-only text, or unnecessary raw records.
 
 ## 10. Release Checklist
 
 Use this checklist for every public report update:
 
 - [ ] Final local report reviewed.
+- [ ] Chinese and English reports generated with matching structure and language-specific chart/table text.
 - [ ] Final report files copied into `export/open-source/prompt-cache-bench/`.
 - [ ] Required datasets, figures, code snapshots, and metadata staged together.
+- [ ] `.env` and `.env.example` `PROMPT_CACHE_BENCH_DEFAULT_EXPERIMENT` point to the intended report, or `--experiment` is passed explicitly.
+- [ ] `python3 scripts/sync_report_release.py --experiment <path>` passes.
 - [ ] `git diff --name-status` contains only intended files.
 - [ ] Secret scan is clean or contains placeholders only.
 - [ ] Raw-data exposure scan is reviewed.
 - [ ] Report references data/code by GitHub path instead of embedding large raw records.
 - [ ] Hashes and paths in the report match committed files.
+- [ ] `README.md` and `index.html` link to the current Chinese HTML, English HTML, reports directory, data directory, and manifest.
 - [ ] Commit created from the open-source staging repository.
 - [ ] Push completed without force-pushing.
 - [ ] GitHub Pages and Markdown previews checked after push.

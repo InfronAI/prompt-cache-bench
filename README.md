@@ -212,6 +212,40 @@ python3 scripts/export_routing_report_pdf.py \
 
 Use `--html-only` when you only need a browser-readable report. PDF generation is optional and can be slow for very large appendices.
 
+## Publish A Bilingual Report Update
+
+Final report releases should be staged from the local debug export into `export/open-source/prompt-cache-bench`, then validated and pushed from this repository.
+
+The standard release gate is:
+
+```bash
+python3 scripts/sync_report_release.py \
+  --experiment experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-none-2026-06-29
+```
+
+This checks that Chinese and English reports are both present, the English report contains no Chinese text, HTML favicons match the GitHub Pages homepage, `manifest.json` checksums are current, `README.md` and `index.html` link to the expected Pages/source URLs, and the public release validator passes.
+
+If you are copying a finalized local debug run into the repository first:
+
+```bash
+python3 scripts/sync_report_release.py \
+  --copy-local \
+  --local-experiment-dir ../../deepseek_v4_flash_all_experiments/<final-run-dir> \
+  --experiment experiments/<model-family>/<model-id>/<run-id>
+```
+
+After the sync script passes, review and publish:
+
+```bash
+git status --short
+git diff --stat
+git add <intended files>
+git commit -m "Update benchmark report release"
+git push origin main
+```
+
+See [Report release runbook](docs/report-release-runbook.md) for the full checklist.
+
 ## Security
 
 No API keys or bearer tokens are committed. Raw request/response telemetry is retained only for benchmark observability fields such as usage, cost, provider metadata, TTFT, latency, and cache tokens.
