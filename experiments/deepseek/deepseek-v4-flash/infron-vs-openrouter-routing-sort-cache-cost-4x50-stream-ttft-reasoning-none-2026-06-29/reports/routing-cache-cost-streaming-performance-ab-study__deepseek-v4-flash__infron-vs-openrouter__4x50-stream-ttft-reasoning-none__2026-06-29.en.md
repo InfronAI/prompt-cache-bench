@@ -1,5 +1,8 @@
 # deepseek-v4-flash Routing, Prompt Caching, and Streaming TTFT A/B Benchmark Report
 
+> Canonical interactive report: [English HTML on GitHub Pages](https://infronai.github.io/prompt-cache-bench/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-none-2026-06-29/reports/routing-cache-cost-streaming-performance-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft-reasoning-none__2026-06-29.en.html). This Markdown file is a lightweight index; the HTML version contains the updated ECharts-based figures and interactive report layout.
+
+
 ## Abstract and Executive Outline
 
 This report evaluates `deepseek/deepseek-v4-flash` on Infron and OpenRouter across provider routing, prompt caching, observed cost, throughput, E2E latency, and Streaming TTFT. The experiment uses 4 groups, 50 rounds per group, and streaming requests. Each round sends two identical requests to each platform, then retains only strict A/B pairs with exactly equal `usage.prompt_tokens`.
