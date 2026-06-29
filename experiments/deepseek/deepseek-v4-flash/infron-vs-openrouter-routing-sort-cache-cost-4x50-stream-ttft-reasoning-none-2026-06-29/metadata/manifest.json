@@ -20,8 +20,8 @@
     },
     {
       "path": "reports/routing-cache-cost-streaming-performance-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft-reasoning-none__2026-06-29.zh.html",
-      "sha256": "90d29d7142d5cdda0ae6e82901ae53b298e3a7814a4b8d232c5a2000a3c1e89b",
-      "size_bytes": 17613848
+      "sha256": "5df653deee358d2a5bd8ab99e9b1dad8589d449165b91bcc184c52fc2b564f86",
+      "size_bytes": 1154629
     },
     {
       "path": "reports/routing-cache-cost-streaming-performance-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft-reasoning-none__2026-06-29.zh.md",
