@@ -23,127 +23,14 @@ from urllib.error import HTTPError, URLError
 from urllib.request import ProxyHandler, Request, build_opener
 from urllib.parse import urlparse, urlunparse
 
-class Settings:
-    def __init__(self) -> None:
-        env = _load_dotenv()
-        self.model_probe_base_url = _env(env, "INFRON_BASE_URL", "https://api.infron.ai/v1")
-        self.model_probe_api_key = _env(env, "INFRON_API_KEY")
-        self.openrouter_base_url = _env(env, "OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1")
-        self.openrouter_api_key = _env(env, "OPENROUTER_API_KEY")
-        self.openrouter_http_referer = _env(env, "OPENROUTER_HTTP_REFERER", "https://github.com/InfronAI/prompt-cache-bench")
-        self.openrouter_app_title = _env(env, "OPENROUTER_APP_TITLE", "prompt-cache-bench")
-        self.model_probe_infron_cache_policy = _env(env, "INFRON_CACHE_POLICY", "enabled")
-        self.model_probe_openrouter_cache_policy = _env(env, "OPENROUTER_CACHE_POLICY", "enabled")
-        self.model_probe_infron_proxy_url = _env(env, "INFRON_PROXY_URL")
-        self.model_probe_openrouter_proxy_url = _env(env, "OPENROUTER_PROXY_URL")
-
-
-def load_settings() -> Settings:
-    return Settings()
-
-
-def _load_dotenv() -> dict[str, str]:
-    env = dict(os.environ)
-    path = Path(".env")
-    if not path.exists():
-        return env
-    for line in path.read_text(encoding="utf-8").splitlines():
-        stripped = line.strip()
-        if not stripped or stripped.startswith("#") or "=" not in stripped:
-            continue
-        key, value = stripped.split("=", 1)
-        env.setdefault(key.strip(), value.strip().strip("'\""))
-    return env
-
-
-def _env(env: dict[str, str], key: str, default: str | None = None) -> str | None:
-    value = env.get(key)
-    return value if value not in {None, ""} else default
-
-
-def _actual_cost_value(payload: Any) -> float | None:
-    if not isinstance(payload, dict):
-        return None
-    direct = payload.get("cost")
-    if isinstance(direct, int | float) and not isinstance(direct, bool):
-        return float(direct)
-    usage = payload.get("usage")
-    if isinstance(usage, dict) and isinstance(usage.get("cost"), int | float):
-        return float(usage["cost"])
-    return None
-
-
-def _usage_value(payload: Any, *keys: str) -> int | None:
-    if not isinstance(payload, dict):
-        return None
-    for key in keys:
-        value = payload.get(key)
-        if isinstance(value, int) and not isinstance(value, bool):
-            return value
-    usage = payload.get("usage")
-    if isinstance(usage, dict):
-        for key in keys:
-            value = usage.get(key)
-            if isinstance(value, int) and not isinstance(value, bool):
-                return value
-    return None
-
-
-def _cache_read_tokens(payload: Any) -> int:
-    return _sum_numeric_fields(
-        payload,
-        {
-            "cached_tokens",
-            "cache_read_tokens",
-            "cache_read_input_tokens",
-            "input_cache_read_tokens",
-            "prompt_cache_read_tokens",
-        },
-    )
-
-
-def _cache_write_tokens(payload: Any) -> int:
-    return _sum_numeric_fields(
-        payload,
-        {
-            "cache_write_tokens",
-            "cache_creation_input_tokens",
-            "input_cache_write_tokens",
-            "prompt_cache_write_tokens",
-            "prompt_cache_write_1h_tokens",
-            "prompt_cache_write_5m_tokens",
-        },
-    )
-
-
-def _reasoning_tokens(payload: Any) -> int | None:
-    if not isinstance(payload, dict):
-        return None
-    usage = payload.get("usage") if isinstance(payload.get("usage"), dict) else payload
-    completion_details = usage.get("completion_tokens_details")
-    if isinstance(completion_details, dict) and isinstance(completion_details.get("reasoning_tokens"), int):
-        return int(completion_details["reasoning_tokens"])
-    for key in ("reasoning_tokens", "thinking_tokens"):
-        value = usage.get(key)
-        if isinstance(value, int) and not isinstance(value, bool):
-            return value
-    return None
-
-
-def _sum_numeric_fields(payload: Any, field_names: set[str]) -> int:
-    total = 0
-    stack = [payload]
-    while stack:
-        current = stack.pop()
-        if isinstance(current, dict):
-            for key, value in current.items():
-                if key in field_names and isinstance(value, int | float) and not isinstance(value, bool):
-                    total += int(value)
-                elif isinstance(value, dict | list):
-                    stack.append(value)
-        elif isinstance(current, list):
-            stack.extend(current)
-    return total
+from insightloop.config.loader import load_settings
+from insightloop.datasources.model_probe import (
+    _actual_cost_value,
+    _cache_read_tokens,
+    _cache_write_tokens,
+    _reasoning_tokens,
+    _usage_value,
+)
 
 
 MODEL = "deepseek/deepseek-v4-flash"
@@ -185,7 +72,7 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     settings = load_settings()
-    run_id = f"routing_sort_cache_cost_ab_4x50_stream_ttft_reasoning_none_{int(time.time())}"
+    run_id = f"routing_sort_cache_cost_ab_3x40_repeat_{int(time.time())}"
     out_dir = Path(args.out_dir) if args.out_dir else Path("export") / run_id
     out_dir.mkdir(parents=True, exist_ok=True)
     report_path = Path(args.report) if args.report else Path("export") / f"{run_id}-report-zh.md"
@@ -1541,7 +1428,7 @@ def _academic_outline_lines(summary: dict[str, Any]) -> list[str]:
     ]
 
 
-def _render_report(summary: dict[str, Any], *, embed_full_reproducibility: bool = False) -> str:
+def _render_report(summary: dict[str, Any], *, embed_full_reproducibility: bool = True) -> str:
     payload_hashes = summary.get("request_payload_sha256_by_sort", {})
     chart_dir = summary.get("charts", {})
     lines = [
@@ -2223,7 +2110,7 @@ def _reproducibility_lines(summary: dict[str, Any], *, embed_full_artifacts: boo
         "",
         "## 12. 可复现性附录：Benchmark 数据集",
         "",
-        "本节给出复现结论和图表所需的数据文件。配对级 CSV 是报告中所有总览表、核心指标图和结论快照的直接输入；请求级 JSONL 保留每一次 first/second 请求的 telemetry，便于审计 provider、usage、cost、latency、TTFT 与缓存字段。公开报告通过文件路径引用数据集，不在报告正文中展开大体量原始记录。",
+        "本节给出复现结论和图表所需的数据文件。配对级 CSV 是报告中所有总览表、核心指标图和结论快照的直接输入；请求级 JSONL 保留每一次 first/second 请求的原始 telemetry，便于审计 provider、usage、cost、latency、TTFT 与缓存字段。为满足单文件审计，报告后文完整嵌入本次实验使用的配对级数据、请求级数据、过滤后记录和剔除样本记录。",
         "",
         "| 数据文件 | 粒度 | 行数 | SHA256 | 用途 |",
         "| --- | ---: | ---: | --- | --- |",
@@ -2462,12 +2349,12 @@ def _reproducibility_lines(summary: dict[str, Any], *, embed_full_artifacts: boo
             "    print(sort_mode, {'infron': infron, 'openrouter': openrouter, 'winners': winners})",
             "```",
             "",
-            "## 14. 可复现性附录：Benchmark 数据集",
+            "## 14. 可复现性附录：100% 原始 Benchmark 数据集",
             "",
             (
-                "本节引用本次报告使用的 benchmark 数据文件。`benchmark_pairs.csv` 用于复现聚合指标；`benchmark_requests.jsonl` 用于审计请求级 telemetry；`records.json` 是严格过滤后的结构化记录；`records_excluded.json` 保留被剔除样本，便于复核异常日志和 input token 不一致样本。"
+                "本节完整嵌入本次报告使用的 benchmark 数据文件，不省略、不抽样。`benchmark_pairs.csv` 用于复现聚合指标；`benchmark_requests.jsonl` 用于审计请求级 telemetry；`records.json` 是严格过滤后的原始结构化记录；`records_excluded.json` 保留被剔除样本，便于复核异常日志和 input token 不一致样本。"
                 if embed_full_artifacts
-                else "Benchmark 数据集保存在实验目录的数据文件中；报告保留数据文件路径、大小、SHA256 与用途，避免大体量 JSONL/JSON 影响网页与 PDF 渲染。"
+                else "100% 原始 benchmark 数据集已嵌入同名 HTML/Markdown 完整版报告。PDF 版只保留数据文件路径、大小、SHA256 与用途，避免数 MB JSONL/JSON 造成 PDF 渲染超时。"
             ),
             "",
         ]
@@ -2852,10 +2739,34 @@ def _cache_cost_underperformance_drilldown_lines(summary: dict[str, Any]) -> lis
     )
     for sort_mode in SORT_MODES:
         lines.append(f"- `{sort_mode}`：{_cache_cost_mode_explanation(summary, sort_mode)}")
+    stronger_cache = []
+    lower_cost = []
+    higher_cost = []
+    nonzero_reasoning = []
+    for sort_mode in SORT_MODES:
+        infron = summary["results"][sort_mode]["infron"]["aggregate"]
+        openrouter = summary["results"][sort_mode]["openrouter"]["aggregate"]
+        cache_delta = float(infron["token_cache_hit_rate"]) - float(openrouter["token_cache_hit_rate"])
+        infron_cost = _numeric_value(infron.get("total_actual_cost_usd"))
+        openrouter_cost = _numeric_value(openrouter.get("total_actual_cost_usd"))
+        reasoning_delta = int(infron.get("total_reasoning_tokens") or 0) - int(openrouter.get("total_reasoning_tokens") or 0)
+        if cache_delta > 0:
+            stronger_cache.append(sort_mode)
+        if infron_cost is not None and openrouter_cost is not None:
+            if infron_cost < openrouter_cost:
+                lower_cost.append(sort_mode)
+            elif infron_cost > openrouter_cost:
+                higher_cost.append(sort_mode)
+        if reasoning_delta != 0:
+            nonzero_reasoning.append(f"`{sort_mode}` {reasoning_delta:+d}")
     lines.extend(
         [
             "",
-            "总体看，本轮真正影响缓存与成本的不是单一平台标签，而是“路由目标 → 实际 provider → 缓存域 → reasoning 执行 → usage/cost 返回”的链路组合。`latency` 模式下 Infron 全量落到 Fireworks，reasoning tokens 为 0，缓存命中率和成本同时优于 OpenRouter；`price` 模式下 Infron 全量落到 alibaba/cn，虽然请求侧设置了 `reasoning.effort=none`，响应侧仍产生大量 reasoning tokens，同时 cache read tokens 很低，导致成本显著高于 OpenRouter。",
+            "总体看，本轮真正影响缓存与成本的不是单一平台标签，而是“路由目标 → 实际 provider → 缓存域 → reasoning 执行 → usage/cost 返回”的链路组合。"
+            f"Infron 在 {_sort_list_text(stronger_cache)} 的 Token 级缓存命中率高于 OpenRouter，"
+            f"在 {_sort_list_text(lower_cost)} 的实际成本低于 OpenRouter。"
+            + (f" Infron 实际成本高于 OpenRouter 的路由模式为 {_sort_list_text(higher_cost)}。" if higher_cost else "")
+            + (f" Reasoning tokens 差异主要出现在 {'；'.join(nonzero_reasoning)}。" if nonzero_reasoning else " 双方 reasoning tokens 差异未成为本轮成本差异的主要来源。"),
             "",
         ]
     )
@@ -2944,19 +2855,30 @@ def _cache_cost_mode_explanation(summary: dict[str, Any], sort_mode: str) -> str
     reasoning_clause = (
         f"Infron 比 OpenRouter 多 {reasoning_delta} 个 reasoning tokens。"
         if reasoning_delta > 0
+        else f"OpenRouter 比 Infron 多 {abs(reasoning_delta)} 个 reasoning tokens。"
+        if reasoning_delta < 0
         else "双方均未观测到额外 reasoning tokens，或 Infron 未高于 OpenRouter。"
     )
-    if sort_mode == "price":
-        takeaway = "该模式下 Infron 全量落到 alibaba/cn，但 cache read tokens 明显不足，同时仍产生大量 reasoning tokens，是缓存低和成本高同时出现的主要可观测原因。"
-    elif sort_mode == "throughput":
-        takeaway = "该模式下 Infron 在 alibaba/cn、Fireworks、alibaba/us 之间分布，OpenRouter 几乎集中在 Alibaba；OpenRouter 的缓存域更稳定，且未产生 reasoning tokens，因此缓存和成本更优。"
-    elif sort_mode == "latency":
-        takeaway = "该模式下 Infron 全量落到 Fireworks，reasoning tokens 为 0，缓存命中率接近满命中，成本也低于 OpenRouter；这是路由目标与缓存亲和一致时的正向样本。"
-    elif sort_mode == "ttft":
-        takeaway = "该模式下 Infron 主要落到 Fireworks，但仍有一部分 alibaba/cn 路径产生 reasoning tokens；缓存命中率略高于 OpenRouter，成本也更低，但 TTFT 和端到端 E2E 时延仍受上游路径影响。"
+    if cache_delta > 0 and infron_cost is not None and openrouter_cost is not None and infron_cost < openrouter_cost:
+        takeaway = "该模式下 Infron 同时取得更高缓存命中率和更低实际成本，说明当前 provider 路径与缓存域匹配较好；若速度指标未同步胜出，差异更可能来自上游响应路径和排队行为。"
+    elif cache_delta < 0 and infron_cost is not None and openrouter_cost is not None and infron_cost > openrouter_cost:
+        if reasoning_delta > 0:
+            takeaway = "该模式下 Infron 缓存命中率更低、实际成本更高，同时存在更多 reasoning tokens，三者共同构成本轮可观测的成本劣势。"
+        else:
+            takeaway = "该模式下 Infron 缓存命中率更低、实际成本更高，主要需要从 provider 单价路径、输出规模和缓存域稳定性解释。"
+    elif cache_delta > 0 and infron_cost is not None and openrouter_cost is not None and infron_cost > openrouter_cost:
+        takeaway = "该模式下 Infron 缓存命中率更高但实际成本更高，说明缓存收益被 provider 单价、输出规模或 usage/cost 计费路径抵消。"
+    elif cache_delta < 0 and infron_cost is not None and openrouter_cost is not None and infron_cost < openrouter_cost:
+        takeaway = "该模式下 Infron 缓存命中率更低但实际成本更低，说明 provider 单价路径或输出规模对成本的影响超过了缓存差异。"
     else:
         takeaway = "该模式需要结合 provider 分布、缓存读数和 reasoning telemetry 综合判断。"
     return f"{metric_clause}{provider_clause}{reasoning_clause}{takeaway}"
+
+
+def _sort_list_text(sort_modes: list[str]) -> str:
+    if not sort_modes:
+        return "无"
+    return "、".join(f"`{sort_mode}`" for sort_mode in sort_modes)
 
 
 def _route_insight_lines(summary: dict[str, Any]) -> list[str]:

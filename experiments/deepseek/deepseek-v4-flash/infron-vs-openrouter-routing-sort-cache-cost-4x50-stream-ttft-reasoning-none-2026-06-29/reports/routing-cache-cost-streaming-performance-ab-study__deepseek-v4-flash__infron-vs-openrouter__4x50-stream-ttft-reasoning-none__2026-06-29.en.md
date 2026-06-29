@@ -4,7 +4,7 @@
 
 This report evaluates `deepseek/deepseek-v4-flash` on Infron and OpenRouter across provider routing, prompt caching, observed cost, throughput, E2E latency, and Streaming TTFT. The experiment uses 4 groups, 50 rounds per group, and streaming requests. Each round sends two identical requests to each platform, then retains only strict A/B pairs with exactly equal `usage.prompt_tokens`.
 
-The final analysis keeps 797 strict A/B pairs and 3188 request-level observations. Data-quality rules exclude 6 records. All core metrics are derived from response-returned telemetry: `usage.prompt_tokens`, cache tokens, cost fields, E2E latency, Streaming TTFT, and provider fields.
+The final analysis keeps 761 strict A/B pairs and 3044 request-level observations. Data-quality rules exclude 78 records. All core metrics are derived from response-returned telemetry: `usage.prompt_tokens`, cache tokens, cost fields, E2E latency, Streaming TTFT, and provider fields.
 
 ![Impossible quadrilateral](../figures/inference_impossible_quadrilateral.en.svg)
 
@@ -18,31 +18,31 @@ Figure A: Conclusion overview. The matrix shows winners for cache hit rate, obse
 
 | Routing mode | Objective winner | Cache hit rate | Observed cost | Throughput | E2E latency | Streaming TTFT |
 | --- | --- | --- | --- | --- | --- | --- |
-| Throughput First | **Infron** | **OpenRouter** (13.64%) | **OpenRouter** (23.27%) | **Infron** (675.35%) | **OpenRouter** (93.21%) | **Infron** (13.70%) |
-| Price First | **OpenRouter** | **OpenRouter** (1213.63%) | **OpenRouter** (205.97%) | **Infron** (1334.94%) | **OpenRouter** (62.87%) | **Infron** (27.67%) |
-| Latency First | **Infron** | **Infron** (14.60%) | **Infron** (9.15%) | **Infron** (152.73%) | **Infron** (91.34%) | **Infron** (97.83%) |
-| TTFT First | **OpenRouter** | **Infron** (0.97%) | **Infron** (22.42%) | **Infron** (179.67%) | **OpenRouter** (62.03%) | **OpenRouter** (42.74%) |
+| Throughput First | **OpenRouter** | **Infron** (0.42%) | **Infron** (42.25%) | **OpenRouter** (28.24%) | **OpenRouter** (28.11%) | **OpenRouter** (24.65%) |
+| Price First | **Infron** | **Infron** (13.66%) | **Infron** (80.59%) | **OpenRouter** (331.85%) | **OpenRouter** (209.52%) | **OpenRouter** (235.90%) |
+| Latency First | **Infron** | **Infron** (17.81%) | **Infron** (206.50%) | **Infron** (86.90%) | **Infron** (90.92%) | **Infron** (110.18%) |
+| TTFT First | **OpenRouter** | **Infron** (38.41%) | **Infron** (388.03%) | **OpenRouter** (47.04%) | **OpenRouter** (43.66%) | **OpenRouter** (46.68%) |
 
 ### Core Metric Winner Summary
 
 | Metric | Infron-winning modes | OpenRouter-winning modes | Largest advantage |
 | --- | --- | --- | --- |
-| Cache hit rate | Latency First, TTFT First | Throughput First, Price First | OpenRouter 1213.63% |
-| Observed cost | Latency First, TTFT First | Throughput First, Price First | OpenRouter 205.97% |
-| Throughput | Throughput First, Price First, Latency First, TTFT First | - | Infron 1334.94% |
-| E2E latency | Latency First | Throughput First, Price First, TTFT First | OpenRouter 93.21% |
-| Streaming TTFT | Throughput First, Price First, Latency First | TTFT First | Infron 97.83% |
+| Cache hit rate | Throughput First, Price First, Latency First, TTFT First | - | Infron 38.41% |
+| Observed cost | Throughput First, Price First, Latency First, TTFT First | - | Infron 388.03% |
+| Throughput | Latency First | Throughput First, Price First, TTFT First | OpenRouter 331.85% |
+| E2E latency | Latency First | Throughput First, Price First, TTFT First | OpenRouter 209.52% |
+| Streaming TTFT | Latency First | Throughput First, Price First, TTFT First | OpenRouter 235.90% |
 
 ### Reasoning Control and Cache/Cost Attribution Summary
 
-This run explicitly sets `reasoning.effort=none` on every request to control Thinking/Reasoning effects on Streaming TTFT, E2E latency, and throughput. Response telemetry shows Infron / Throughput First: 65934; Infron / Price First: 102730; Infron / TTFT First: 16447. OpenRouter / Throughput First; OpenRouter / Price First; Infron / Latency First; OpenRouter / Latency First; OpenRouter / TTFT First report zero reasoning tokens.
+This run explicitly sets `reasoning.effort=none` on every request to control Thinking/Reasoning effects on Streaming TTFT, E2E latency, and throughput. Response telemetry shows OpenRouter / Price First: 276. Infron / Throughput First; OpenRouter / Throughput First; Infron / Price First; Infron / Latency First; OpenRouter / Latency First; Infron / TTFT First; OpenRouter / TTFT First report zero reasoning tokens.
 
 | Routing mode | Cache-hit delta | Infron cost multiple | Infron top upstream path | OpenRouter top upstream path | Reasoning-token delta | Primary attribution |
 | --- | ---: | ---: | --- | --- | ---: | --- |
-| Throughput First | -11.00 pp | 1.23x | `alibaba/cn` 57.00%, `fireworks` 30.50% | `Alibaba` 99.50%, `Fireworks` 0.50% | 65,934 | Weaker cache affinity than OpenRouter plus nonzero response-side reasoning tokens jointly increased observed cost. |
-| Price First | -83.61 pp | 3.06x | `alibaba/cn` 100.00% | `GMICloud` 98.99%, `DigitalOcean` 0.50% | 102,730 | Weaker cache affinity than OpenRouter plus nonzero response-side reasoning tokens jointly increased observed cost. |
-| Latency First | +12.67 pp | 0.92x | `fireworks` 100.00% | `GMICloud` 75.75%, `Cloudflare` 19.50% | 0 | Cache affinity and upstream price path jointly produce a cost advantage. |
-| TTFT First | +0.79 pp | 0.82x | `fireworks` 82.32%, `alibaba/cn` 17.68% | `Cloudflare` 97.98%, `Parasail` 1.26% | 16,447 | Cache affinity and upstream price path jointly produce a cost advantage. |
+| Throughput First | +0.39 pp | 0.70x | `deepseek` 46.45%, `alibaba/sg` 30.87% | `Alibaba` 99.45%, `Fireworks` 0.27% | 0 | Cache affinity and upstream price path jointly produce a cost advantage. |
+| Price First | +10.77 pp | 0.55x | `alibaba/cn` 70.68%, `deepseek` 29.32% | `GMICloud` 98.95%, `DigitalOcean` 0.52% | -276 | Cache affinity and upstream price path jointly produce a cost advantage. |
+| Latency First | +14.13 pp | 0.33x | `deepseek` 100.00% | `GMICloud` 78.35%, `Cloudflare` 19.07% | 0 | Cache affinity and upstream price path jointly produce a cost advantage. |
+| TTFT First | +25.94 pp | 0.20x | `deepseek` 100.00% | `Cloudflare` 87.31%, `WandB` 11.14% | 0 | Cache affinity and upstream price path jointly produce a cost advantage. |
 
 ## 1. Research Background
 
@@ -129,14 +129,14 @@ Controlled-variable rule: within the same `sort/group/round`, both platforms mus
 
 | Routing mode | Platform | Strict paired rounds | Total Input Tokens | Token cache hit rate | Observed cost | Throughput | E2E latency | Streaming TTFT | P95 E2E latency | P99 E2E latency |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Throughput First | Infron | 200 | 657312 | 80.64% | $0.03119800 | **34.54 tok/s** | 5182.69 ms | **2185.81 ms** | 13069.44 ms | 19099.79 ms |
-| Throughput First | OpenRouter | 200 | 657312 | **91.63%** | **$0.02530937** | 4.46 tok/s | **2682.41 ms** | 2485.29 ms | 3846.13 ms | 4930.68 ms |
-| Price First | Infron | 199 | 654020 | 6.89% | $0.05729000 | **39.26 tok/s** | 6918.70 ms | **3077.02 ms** | 12625.87 ms | 17557.83 ms |
-| Price First | OpenRouter | 199 | 654020 | **90.50%** | **$0.01872401** | 2.74 tok/s | **4247.97 ms** | 3928.34 ms | 7858.67 ms | 11465.22 ms |
-| Latency First | Infron | 200 | 657312 | **99.44%** | **$0.02325700** | **7.63 tok/s** | **2097.07 ms** | **1794.06 ms** | 3743.97 ms | 4886.88 ms |
-| Latency First | OpenRouter | 200 | 657312 | 86.77% | $0.02538584 | 3.02 tok/s | 4012.61 ms | 3549.11 ms | 8971.72 ms | 14784.79 ms |
-| TTFT First | Infron | 198 | 650734 | **81.98%** | **$0.02832900** | **12.37 tok/s** | 4562.48 ms | 3615.03 ms | 10735.07 ms | 27416.20 ms |
-| TTFT First | OpenRouter | 198 | 650734 | 81.20% | $0.03468097 | 4.42 tok/s | **2815.78 ms** | **2532.65 ms** | 5697.46 ms | 8340.43 ms |
+| Throughput First | Infron | 183 | 601418 | **93.36%** | **$0.01549500** | 3.47 tok/s | 3530.87 ms | 3009.48 ms | 7547.27 ms | 10419.68 ms |
+| Throughput First | OpenRouter | 183 | 601418 | 92.96% | $0.02204184 | **4.45 tok/s** | **2756.05 ms** | **2414.39 ms** | 4238.60 ms | 6676.47 ms |
+| Price First | Infron | 191 | 627718 | **89.56%** | **$0.01342600** | 0.88 tok/s | 13452.75 ms | 13056.77 ms | 48793.74 ms | 68831.23 ms |
+| Price First | OpenRouter | 191 | 627718 | 78.79% | $0.02424667 | **3.80 tok/s** | **4346.36 ms** | **3887.05 ms** | 8909.52 ms | 15111.11 ms |
+| Latency First | Infron | 194 | 637616 | **93.47%** | **$0.00891300** | **4.59 tok/s** | **2630.68 ms** | **2172.98 ms** | 3517.18 ms | 4176.09 ms |
+| Latency First | OpenRouter | 194 | 637616 | 79.34% | $0.02731861 | 2.46 tok/s | 5022.49 ms | 4567.21 ms | 10295.12 ms | 12937.33 ms |
+| TTFT First | Infron | 193 | 634314 | **93.47%** | **$0.00886700** | 2.42 tok/s | 5006.64 ms | 4478.16 ms | 8032.61 ms | 10035.73 ms |
+| TTFT First | OpenRouter | 193 | 634314 | 67.53% | $0.04327400 | **3.56 tok/s** | **3485.10 ms** | **3053.07 ms** | 6750.53 ms | 9059.90 ms |
 
 ## 6. Routing-Mode Drill-Down
 
@@ -181,19 +181,19 @@ The charts are grouped by routing mode. Each chart compares E2E latency, through
 
 | Routing mode | Platform | Total requests | Attributed requests | Provider distribution |
 | --- | --- | ---: | ---: | --- |
-| Throughput First | Infron | 400 | 400 | `alibaba/cn` 228, `fireworks` 122, `alibaba/us` 44, `gmicloud` 6 |
-| Throughput First | OpenRouter | 400 | 400 | `Alibaba` 398, `Fireworks` 2 |
-| Price First | Infron | 398 | 398 | `alibaba/cn` 398 |
-| Price First | OpenRouter | 398 | 398 | `GMICloud` 394, `DigitalOcean` 2, `DeepInfra` 1, `Wafer` 1 |
-| Latency First | Infron | 400 | 400 | `fireworks` 400 |
-| Latency First | OpenRouter | 400 | 400 | `GMICloud` 303, `Cloudflare` 78, `WandB` 11, `Morph` 6, `Parasail` 2 |
-| TTFT First | Infron | 396 | 396 | `fireworks` 326, `alibaba/cn` 70 |
-| TTFT First | OpenRouter | 396 | 396 | `Cloudflare` 388, `Parasail` 5, `WandB` 3 |
+| Throughput First | Infron | 366 | 366 | `deepseek` 170, `alibaba/sg` 113, `fireworks` 83 |
+| Throughput First | OpenRouter | 366 | 366 | `Alibaba` 364, `Fireworks` 1, `Novita` 1 |
+| Price First | Infron | 382 | 382 | `alibaba/cn` 270, `deepseek` 112 |
+| Price First | OpenRouter | 382 | 382 | `GMICloud` 378, `DigitalOcean` 2, `SiliconFlow` 2 |
+| Latency First | Infron | 388 | 388 | `deepseek` 388 |
+| Latency First | OpenRouter | 388 | 388 | `GMICloud` 304, `Cloudflare` 74, `WandB` 10 |
+| TTFT First | Infron | 386 | 386 | `deepseek` 386 |
+| TTFT First | OpenRouter | 386 | 386 | `Cloudflare` 337, `WandB` 43, `Parasail` 3, `Baidu` 2, `Novita` 1 |
 
 ### Cache-Hit and Observed-Cost Attribution Drill-Down
 
-- **Throughput First**: Weaker cache affinity than OpenRouter plus nonzero response-side reasoning tokens jointly increased observed cost.
-- **Price First**: Weaker cache affinity than OpenRouter plus nonzero response-side reasoning tokens jointly increased observed cost.
+- **Throughput First**: Cache affinity and upstream price path jointly produce a cost advantage.
+- **Price First**: Cache affinity and upstream price path jointly produce a cost advantage.
 - **Latency First**: Cache affinity and upstream price path jointly produce a cost advantage.
 - **TTFT First**: Cache affinity and upstream price path jointly produce a cost advantage.
 

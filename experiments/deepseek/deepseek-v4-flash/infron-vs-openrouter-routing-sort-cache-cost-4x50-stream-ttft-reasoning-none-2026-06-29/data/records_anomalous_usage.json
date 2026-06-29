@@ -1,3 +1,111 @@
 {
-  "records": []
+  "records": [
+    {
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "group": 2,
+      "round": 23,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 3388.359,
+        "stream": true,
+        "ttft_ms": 3371.742,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 1,
+        "usage": {},
+        "response_model": "deepseek/deepseek-v4-flash-20260423",
+        "response_id": "gen-1782729577-Owjq2pbS4zYZtn3MKp2X",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1782729577-Owjq2pbS4zYZtn3MKp2X",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a1344ef1aa2d0008-ORD"
+        },
+        "provider_attribution": {
+          "provider": "GMICloud",
+          "model": "deepseek/deepseek-v4-flash-20260423",
+          "id": "gen-1782729577-Owjq2pbS4zYZtn3MKp2X",
+          "native_finish_reason": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 2810.79,
+        "stream": true,
+        "ttft_ms": 2561.688,
+        "first_content_token_ms": 2561.688,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 14,
+        "usage": {
+          "prompt_tokens": 1647,
+          "completion_tokens": 12,
+          "total_tokens": 1659,
+          "cost": 0.000163758,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000163758,
+            "upstream_inference_prompt_cost": 0.000161406,
+            "upstream_inference_completions_cost": 2.352e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "deepseek/deepseek-v4-flash-20260423",
+        "response_id": "gen-1782729580-nN2YheWZukNFMsKlgOSh",
+        "system_fingerprint": "fp_8b330d02d0_prod0820_fp8_kvcache_20260402",
+        "response_headers": {
+          "X-Generation-Id": "gen-1782729580-nN2YheWZukNFMsKlgOSh",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a1344f072cbdedc5-ORD"
+        },
+        "provider_attribution": {
+          "provider": "GMICloud",
+          "model": "deepseek/deepseek-v4-flash-20260423",
+          "id": "gen-1782729580-nN2YheWZukNFMsKlgOSh",
+          "system_fingerprint": "fp_8b330d02d0_prod0820_fp8_kvcache_20260402",
+          "native_finish_reason": "stop",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.000163758,
+            "upstream_inference_prompt_cost": 0.000161406,
+            "upstream_inference_completions_cost": 2.352e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.000163758,
+          "upstream_inference_prompt_cost": 0.000161406,
+          "upstream_inference_completions_cost": 2.352e-06
+        },
+        "cost": 0.000163758,
+        "prompt_tokens": 1647,
+        "completion_tokens": 12,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    }
+  ]
 }

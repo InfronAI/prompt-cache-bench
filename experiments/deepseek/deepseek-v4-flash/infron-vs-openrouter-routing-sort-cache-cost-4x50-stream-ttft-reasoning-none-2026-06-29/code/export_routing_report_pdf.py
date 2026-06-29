@@ -52,13 +52,10 @@ def _render_html(markdown: str, *, base_dir: Path, html_dir: Path, relative_imag
         relative_images=relative_images,
         embed_assets=embed_assets,
     )
-    favicon = _favicon_link(html_dir=html_dir)
-    brand = _brand_header(html_dir=html_dir)
     return f"""<!doctype html>
 <html>
 <head>
   <meta charset="utf-8">
-  {favicon}
   <style>
     @page {{ size: A4; margin: 18mm 14mm; }}
     body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans CJK SC", "PingFang SC", sans-serif; color: #111827; font-size: 10.5pt; line-height: 1.55; }}
@@ -78,49 +75,13 @@ def _render_html(markdown: str, *, base_dir: Path, html_dir: Path, relative_imag
     pre.code {{ background: #0f172a; color: #e5e7eb; padding: 10pt; border-radius: 5pt; font-size: 8pt; line-height: 1.45; white-space: pre-wrap; overflow-wrap: anywhere; }}
     pre.code code {{ background: transparent; color: inherit; padding: 0; font-size: inherit; }}
     strong {{ font-weight: 800; }}
-    .report-brand {{ display: flex; align-items: center; justify-content: space-between; gap: 14pt; margin: 0 0 14pt; padding: 0 0 8pt; border-bottom: 1px solid #d1d5db; color: #6b7280; font-size: 8.5pt; }}
-    .report-brand img {{ width: 88pt; max-width: 88pt; margin: 0; }}
-    .report-brand span {{ text-align: right; }}
   </style>
 </head>
 <body>
-{brand}
 {body}
 </body>
 </html>
 """
-
-
-def _brand_header(*, html_dir: Path) -> str:
-    logo = _find_brand_logo(html_dir)
-    if not logo:
-        return ""
-    return (
-        '<div class="report-brand">'
-        f'<img src="{html.escape(_data_uri(logo))}" alt="Infron">'
-        "<span>prompt-cache-bench · reproducible inference benchmark artifact</span>"
-        "</div>"
-    )
-
-
-def _favicon_link(*, html_dir: Path) -> str:
-    icon = _find_brand_asset(html_dir, "infron-icon-512.png")
-    if not icon:
-        return ""
-    data_uri = html.escape(_data_uri(icon))
-    return f'<link rel="icon" type="image/png" href="{data_uri}"><link rel="apple-touch-icon" href="{data_uri}">'
-
-
-def _find_brand_logo(start: Path) -> Path | None:
-    return _find_brand_asset(start, "infron-logo.png")
-
-
-def _find_brand_asset(start: Path, filename: str) -> Path | None:
-    for directory in [start, *start.parents]:
-        candidate = directory / "assets" / "brand" / filename
-        if candidate.exists():
-            return candidate
-    return None
 
 
 def _markdown_to_html(markdown: str, *, base_dir: Path, html_dir: Path, relative_images: bool, embed_assets: bool) -> str:
@@ -229,16 +190,6 @@ def _inline(text: str) -> str:
     escaped = escaped.replace("&lt;br&gt;", "<br>")
     escaped = escaped.replace('&lt;span class=&quot;provider-label&quot;&gt;', '<span class="provider-label">')
     escaped = escaped.replace("&lt;/span&gt;", "</span>")
-    escaped = re.sub(
-        r"\[([^\]]+)\]\((https?://[^)\s]+)\)",
-        r'<a href="\2">\1</a>',
-        escaped,
-    )
-    escaped = re.sub(
-        r"\[([^\]]+)\]\(([^)\s]+)\)",
-        r'<a href="\2">\1</a>',
-        escaped,
-    )
     escaped = re.sub(r"`([^`]+)`", r"<code>\1</code>", escaped)
     escaped = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", escaped)
     return escaped
