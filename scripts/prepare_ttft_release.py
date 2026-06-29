@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Stage the 2026-06-27 TTFT routing benchmark public release."""
+"""Stage the 2026-06-29 TTFT routing benchmark public release with reasoning disabled."""
 
 from __future__ import annotations
 
@@ -8,17 +8,18 @@ import hashlib
 import json
 import re
 import shutil
+import subprocess
 from pathlib import Path
 from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
 GROWTHPULSE = ROOT.parents[2]
-SOURCE_RUN = GROWTHPULSE / "export/deepseek_v4_flash_all_experiments/routing_sort_cache_cost_ab_4x50_stream_ttft_1782548941"
+SOURCE_RUN = GROWTHPULSE / "export/deepseek_v4_flash_all_experiments/routing_sort_cache_cost_ab_4x50_stream_ttft_reasoning_none_20260629"
 SOURCE_SCRIPT = GROWTHPULSE / "scripts/rerun_routing_sort_cache_cost_ab.py"
-EXPERIMENT_ID = "infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-2026-06-27"
+EXPERIMENT_ID = "infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-none-2026-06-29"
 EXPERIMENT_DIR = ROOT / "experiments/deepseek/deepseek-v4-flash" / EXPERIMENT_ID
-REPORT_STEM = "prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft__2026-06-27"
+REPORT_STEM = "routing-cache-cost-streaming-performance-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft-reasoning-none__2026-06-29"
 REPO_URL = "https://github.com/InfronAI/prompt-cache-bench"
 PAGES_BASE = "https://infronai.github.io/prompt-cache-bench"
 PUBLIC_RUNNER_HELPERS = r'''
@@ -168,6 +169,7 @@ def main() -> int:
     _copy_code_snapshots()
     _write_data_readme(summary)
     _write_reports(summary)
+    _render_html_reports()
     _write_reports_readme()
     _write_experiment_readme(summary)
     _write_manifest(summary)
@@ -403,6 +405,7 @@ def _en_svg(text: str) -> str:
     text = re.sub(r"(\d+)/4 胜", r"\1/4 wins", text)
     text = text.replace("最大优势", "max advantage")
     text = text.replace("胜", "wins")
+    text = text.replace("：", ":")
     return text
 
 
@@ -426,7 +429,7 @@ def _write_public_runner() -> None:
     )
     public_helpers = _extract_public_helpers()
     text = source.replace(old_import, public_helpers)
-    text = text.replace('run_id = f"routing_sort_cache_cost_ab_3x40_repeat_{int(time.time())}"', 'run_id = f"routing_sort_cache_cost_ab_4x50_stream_ttft_{int(time.time())}"')
+    text = text.replace('run_id = f"routing_sort_cache_cost_ab_3x40_repeat_{int(time.time())}"', 'run_id = f"routing_sort_cache_cost_ab_4x50_stream_ttft_reasoning_none_{int(time.time())}"')
     text = text.replace(
         "def _render_report(summary: dict[str, Any], *, embed_full_reproducibility: bool = True) -> str:",
         "def _render_report(summary: dict[str, Any], *, embed_full_reproducibility: bool = False) -> str:",
@@ -502,6 +505,24 @@ def _write_reports(summary: dict[str, Any]) -> None:
     (EXPERIMENT_DIR / "reports" / f"{REPORT_STEM}.en.md").write_text(_report_en(summary), encoding="utf-8")
 
 
+def _render_html_reports() -> None:
+    for language in ["zh", "en"]:
+        md_path = EXPERIMENT_DIR / "reports" / f"{REPORT_STEM}.{language}.md"
+        pdf_path = EXPERIMENT_DIR / "reports" / f"{REPORT_STEM}.{language}.pdf"
+        subprocess.run(
+            [
+                "python3",
+                str(ROOT / "scripts/export_routing_report_pdf.py"),
+                str(md_path),
+                str(pdf_path),
+                "--html-only",
+                "--relative-images",
+                "--embed-assets",
+            ],
+            check=True,
+        )
+
+
 def _metrics(summary: dict[str, Any]) -> list[dict[str, Any]]:
     rows = []
     for sort_mode in summary["sort_modes"]:
@@ -557,6 +578,12 @@ def _report_zh(summary: dict[str, Any]) -> str:
         "",
         _metric_win_table_zh(metric_rows),
         "",
+        "### Reasoning 控制校验与缓存/成本归因摘要",
+        "",
+        _reasoning_control_summary_zh(summary),
+        "",
+        _cache_cost_drilldown_table_zh(summary),
+        "",
         "## 1. 研究背景",
         "",
         "LLM 推理平台的真实性能不只由模型本身决定，还受到 provider 路由、提示词缓存、流式响应、成本归因和 fallback 策略影响。对于长上下文、RAG、Agent 工具说明和稳定系统提示词场景，缓存命中率会直接影响单位请求成本；而实时业务还需要同时关注端到端 E2E 时延、流式 TTFT 和吞吐量。",
@@ -608,6 +635,10 @@ def _report_zh(summary: dict[str, Any]) -> str:
         "## 8. Provider 路由下钻",
         "",
         _provider_distribution_zh(summary),
+        "",
+        "### 缓存命中率与实际成本反向表现下钻",
+        "",
+        _cache_cost_mode_explanations_zh(summary),
         "",
         "## 9. Infron 技术机制说明",
         "",
@@ -668,6 +699,12 @@ def _report_en(summary: dict[str, Any]) -> str:
         "",
         _metric_win_table_en(metric_rows),
         "",
+        "### Reasoning Control and Cache/Cost Attribution Summary",
+        "",
+        _reasoning_control_summary_en(summary),
+        "",
+        _cache_cost_drilldown_table_en(summary),
+        "",
         "## 1. Research Background",
         "",
         "LLM inference-platform behavior is shaped not only by the model, but also by provider routing, prompt caching, streaming response handling, cost attribution, and fallback policy. For long-context, RAG, agent-tool, and stable system-prompt workloads, cache hit rate directly affects unit economics. Interactive products must also control E2E latency, Streaming TTFT, and throughput.",
@@ -720,6 +757,10 @@ def _report_en(summary: dict[str, Any]) -> str:
         "",
         _provider_distribution_en(summary),
         "",
+        "### Cache-Hit and Observed-Cost Attribution Drill-Down",
+        "",
+        _cache_cost_mode_explanations_en(summary),
+        "",
         "## 9. Infron Technical Mechanism",
         "",
         "![Infron architecture](../figures/infron_architecture.en.svg)",
@@ -764,7 +805,7 @@ def _mode_conclusion_table_en(summary: dict[str, Any]) -> str:
     for sort in summary["sort_modes"]:
         aggs = _aggs(summary, sort)
         target = _winner(aggs, *target_metric[sort])
-        lines.append(f"| {SORT_LABEL_EN[sort]} | **{_provider(target)}** | {_winner_cell(aggs, 'token_cache_hit_rate', True)} | {_winner_cell(aggs, 'total_actual_cost_usd', False)} | {_winner_cell(aggs, 'avg_throughput_output_tokens_per_second', True)} | {_winner_cell(aggs, 'avg_request_latency_ms', False)} | {_winner_cell(aggs, 'avg_ttft_ms', False)} |")
+        lines.append(f"| {SORT_LABEL_EN[sort]} | **{_provider(target)}** | {_winner_cell_en(aggs, 'token_cache_hit_rate', True)} | {_winner_cell_en(aggs, 'total_actual_cost_usd', False)} | {_winner_cell_en(aggs, 'avg_throughput_output_tokens_per_second', True)} | {_winner_cell_en(aggs, 'avg_request_latency_ms', False)} | {_winner_cell_en(aggs, 'avg_ttft_ms', False)} |")
     return "\n".join(lines)
 
 
@@ -794,6 +835,9 @@ def _metric_win_table_en(rows: list[dict[str, Any]]) -> str:
 
 def _environment_table_zh(summary: dict[str, Any]) -> str:
     mapping = summary["provider_sort_mapping"]
+    dataset_description = summary["dataset"]["description"]
+    if dataset_description == "Built-in representative business prompt templates":
+        dataset_description = "内置代表性业务提示词模板"
     return "\n".join([
         "| 项目 | 配置 |",
         "| --- | --- |",
@@ -805,8 +849,9 @@ def _environment_table_zh(summary: dict[str, Any]) -> str:
         f"| 每组轮数 | {summary['rounds_per_group']} |",
         f"| Workers | {summary['execution_profile']['workers']} |",
         "| 请求方式 | 流式 Chat Completions，包含 `stream_options.include_usage` 和 `usage.include` |",
+        f"| Reasoning / Thinking 控制 | 所有请求显式携带 `reasoning.effort={summary.get('reasoning_control', {}).get('effort', 'none')}`；响应侧 telemetry 用于校验是否仍返回 reasoning tokens |",
         f"| 本地网络环境 | 两个平台使用相同本地代理：`{summary['network_environment']['proxy_url_redacted']}` |",
-        f"| 数据集 | `{summary['dataset']['name']}`，{summary['dataset']['description']} |",
+        f"| 数据集 | `{summary['dataset']['name']}`，{dataset_description} |",
     ])
 
 
@@ -823,6 +868,7 @@ def _environment_table_en(summary: dict[str, Any]) -> str:
         f"| Rounds per group | {summary['rounds_per_group']} |",
         f"| Workers | {summary['execution_profile']['workers']} |",
         "| Request mode | Streaming Chat Completions with `stream_options.include_usage` and `usage.include` |",
+        f"| Reasoning / thinking control | Every request explicitly includes `reasoning.effort={summary.get('reasoning_control', {}).get('effort', 'none')}`; response telemetry is used to verify whether reasoning tokens are still returned |",
         f"| Local network environment | Both platforms use the same local proxy: `{summary['network_environment']['proxy_url_redacted']}` |",
         f"| Dataset | `{summary['dataset']['name']}`, {summary['dataset']['description']} |",
     ])
@@ -920,7 +966,8 @@ def _provider_distribution_zh(summary: dict[str, Any]) -> str:
             item = dist.get(sort, {}).get(provider, {})
             details = item.get("details") or []
             names = ", ".join(f"`{d.get('provider')}` {d.get('request_count', 0)}" for d in details) or "未返回稳定 provider 标识"
-            lines.append(f"| {SORT_LABEL_ZH[sort]} | {_provider(provider)} | {item.get('total_requests', 0)} | {item.get('attributed_requests', 0)} | {names} |")
+            attributed = item.get("total_attributed_requests", item.get("attributed_requests", 0))
+            lines.append(f"| {SORT_LABEL_ZH[sort]} | {_provider(provider)} | {item.get('total_requests', 0)} | {attributed} | {names} |")
     return "\n".join(lines)
 
 
@@ -932,8 +979,172 @@ def _provider_distribution_en(summary: dict[str, Any]) -> str:
             item = dist.get(sort, {}).get(provider, {})
             details = item.get("details") or []
             names = ", ".join(f"`{d.get('provider')}` {d.get('request_count', 0)}" for d in details) or "No stable provider identifier returned"
-            lines.append(f"| {SORT_LABEL_EN[sort]} | {_provider(provider)} | {item.get('total_requests', 0)} | {item.get('attributed_requests', 0)} | {names} |")
+            attributed = item.get("total_attributed_requests", item.get("attributed_requests", 0))
+            lines.append(f"| {SORT_LABEL_EN[sort]} | {_provider(provider)} | {item.get('total_requests', 0)} | {attributed} | {names} |")
     return "\n".join(lines)
+
+
+def _reasoning_control_summary_zh(summary: dict[str, Any]) -> str:
+    nonzero = []
+    zero = []
+    for sort in summary["sort_modes"]:
+        for provider in ["infron", "openrouter"]:
+            tokens = int(_aggs(summary, sort)[provider].get("total_reasoning_tokens") or 0)
+            label = f"{_provider(provider)} / {SORT_LABEL_ZH[sort]}"
+            if tokens > 0:
+                nonzero.append(f"{label}: {tokens}")
+            else:
+                zero.append(label)
+    control = summary.get("reasoning_control", {})
+    effort = control.get("effort", "none")
+    return (
+        f"本轮实验在全部请求中显式设置 `reasoning.effort={effort}`，用于控制 Thinking/Reasoning 对流式 TTFT、端到端 E2E 时延和吞吐量的影响。"
+        f"响应侧 telemetry 显示，{'; '.join(nonzero) if nonzero else '所有样本均未返回 reasoning tokens'}。"
+        f"{'; '.join(zero)} 未观测到 reasoning tokens。"
+    )
+
+
+def _reasoning_control_summary_en(summary: dict[str, Any]) -> str:
+    nonzero = []
+    zero = []
+    for sort in summary["sort_modes"]:
+        for provider in ["infron", "openrouter"]:
+            tokens = int(_aggs(summary, sort)[provider].get("total_reasoning_tokens") or 0)
+            label = f"{_provider(provider)} / {SORT_LABEL_EN[sort]}"
+            if tokens > 0:
+                nonzero.append(f"{label}: {tokens}")
+            else:
+                zero.append(label)
+    control = summary.get("reasoning_control", {})
+    effort = control.get("effort", "none")
+    return (
+        f"This run explicitly sets `reasoning.effort={effort}` on every request to control Thinking/Reasoning effects on Streaming TTFT, E2E latency, and throughput. "
+        f"Response telemetry shows {('; '.join(nonzero)) if nonzero else 'no reasoning tokens in any retained sample'}. "
+        f"{'; '.join(zero)} report zero reasoning tokens."
+    )
+
+
+def _cache_cost_drilldown_table_zh(summary: dict[str, Any]) -> str:
+    lines = [
+        "| 路由模式 | 缓存命中率差值 | Infron 成本倍数 | Infron 主要上游路径 | OpenRouter 主要上游路径 | Reasoning Tokens 差异 | 主要归因 |",
+        "| --- | ---: | ---: | --- | --- | ---: | --- |",
+    ]
+    for sort in summary["sort_modes"]:
+        aggs = _aggs(summary, sort)
+        left = aggs["infron"]
+        right = aggs["openrouter"]
+        cache_delta = float(left.get("token_cache_hit_rate") or 0) - float(right.get("token_cache_hit_rate") or 0)
+        cost_multiple = _safe_div(float(left.get("total_actual_cost_usd") or 0), float(right.get("total_actual_cost_usd") or 0))
+        reasoning_delta = int(left.get("total_reasoning_tokens") or 0) - int(right.get("total_reasoning_tokens") or 0)
+        lines.append(
+            f"| {SORT_LABEL_ZH[sort]} | {_signed_pp(cache_delta)} | {_multiple(cost_multiple)} | "
+            f"{_top_provider_distribution(summary, sort, 'infron')} | {_top_provider_distribution(summary, sort, 'openrouter')} | "
+            f"{reasoning_delta:,} | {_cache_cost_diagnosis_zh(summary, sort)} |"
+        )
+    return "\n".join(lines)
+
+
+def _cache_cost_drilldown_table_en(summary: dict[str, Any]) -> str:
+    lines = [
+        "| Routing mode | Cache-hit delta | Infron cost multiple | Infron top upstream path | OpenRouter top upstream path | Reasoning-token delta | Primary attribution |",
+        "| --- | ---: | ---: | --- | --- | ---: | --- |",
+    ]
+    for sort in summary["sort_modes"]:
+        aggs = _aggs(summary, sort)
+        left = aggs["infron"]
+        right = aggs["openrouter"]
+        cache_delta = float(left.get("token_cache_hit_rate") or 0) - float(right.get("token_cache_hit_rate") or 0)
+        cost_multiple = _safe_div(float(left.get("total_actual_cost_usd") or 0), float(right.get("total_actual_cost_usd") or 0))
+        reasoning_delta = int(left.get("total_reasoning_tokens") or 0) - int(right.get("total_reasoning_tokens") or 0)
+        lines.append(
+            f"| {SORT_LABEL_EN[sort]} | {_signed_pp(cache_delta)} | {_multiple(cost_multiple)} | "
+            f"{_top_provider_distribution(summary, sort, 'infron')} | {_top_provider_distribution(summary, sort, 'openrouter')} | "
+            f"{reasoning_delta:,} | {_cache_cost_diagnosis_en(summary, sort)} |"
+        )
+    return "\n".join(lines)
+
+
+def _cache_cost_mode_explanations_zh(summary: dict[str, Any]) -> str:
+    chunks = []
+    for sort in summary["sort_modes"]:
+        chunks.extend([f"- **{SORT_LABEL_ZH[sort]}**：{_cache_cost_diagnosis_zh(summary, sort)}"])
+    return "\n".join(chunks)
+
+
+def _cache_cost_mode_explanations_en(summary: dict[str, Any]) -> str:
+    chunks = []
+    for sort in summary["sort_modes"]:
+        chunks.extend([f"- **{SORT_LABEL_EN[sort]}**: {_cache_cost_diagnosis_en(summary, sort)}"])
+    return "\n".join(chunks)
+
+
+def _cache_cost_diagnosis_zh(summary: dict[str, Any], sort: str) -> str:
+    aggs = _aggs(summary, sort)
+    cache_delta = float(aggs["infron"].get("token_cache_hit_rate") or 0) - float(aggs["openrouter"].get("token_cache_hit_rate") or 0)
+    cost_delta = float(aggs["infron"].get("total_actual_cost_usd") or 0) - float(aggs["openrouter"].get("total_actual_cost_usd") or 0)
+    reasoning_delta = int(aggs["infron"].get("total_reasoning_tokens") or 0) - int(aggs["openrouter"].get("total_reasoning_tokens") or 0)
+    if cache_delta < -0.05 and cost_delta > 0 and reasoning_delta > 0:
+        return "缓存亲和弱于 OpenRouter，且响应侧仍有 reasoning tokens，二者共同推高实际成本。"
+    if cache_delta < -0.05 and cost_delta > 0:
+        return "缓存读取不足是主要成本压力，provider 路由集中度和缓存域稳定性是关键变量。"
+    if cache_delta < -0.05:
+        return "缓存命中低于 OpenRouter，但价格路径或输出 token 差异抵消了部分成本影响。"
+    if cost_delta > 0 and reasoning_delta > 0:
+        return "缓存命中不低，但 reasoning tokens 和输出侧计费使实际成本高于 OpenRouter。"
+    if cache_delta > 0 and cost_delta < 0:
+        return "缓存亲和与上游价格路径共同带来成本优势。"
+    if cache_delta > 0:
+        return "缓存命中占优，成本差异更多来自 provider 单价和输出侧 token。"
+    return "两边缓存命中接近，成本差异主要来自上游 provider 价格、输出 token 和计费口径。"
+
+
+def _cache_cost_diagnosis_en(summary: dict[str, Any], sort: str) -> str:
+    aggs = _aggs(summary, sort)
+    cache_delta = float(aggs["infron"].get("token_cache_hit_rate") or 0) - float(aggs["openrouter"].get("token_cache_hit_rate") or 0)
+    cost_delta = float(aggs["infron"].get("total_actual_cost_usd") or 0) - float(aggs["openrouter"].get("total_actual_cost_usd") or 0)
+    reasoning_delta = int(aggs["infron"].get("total_reasoning_tokens") or 0) - int(aggs["openrouter"].get("total_reasoning_tokens") or 0)
+    if cache_delta < -0.05 and cost_delta > 0 and reasoning_delta > 0:
+        return "Weaker cache affinity than OpenRouter plus nonzero response-side reasoning tokens jointly increased observed cost."
+    if cache_delta < -0.05 and cost_delta > 0:
+        return "Lower cache reuse is the main cost pressure; provider concentration and cache-domain stability are key variables."
+    if cache_delta < -0.05:
+        return "Cache hit rate is lower than OpenRouter, but provider price path or output-token differences offset part of the cost impact."
+    if cost_delta > 0 and reasoning_delta > 0:
+        return "Cache hit rate is not lower, but reasoning tokens and output-side billing push observed cost above OpenRouter."
+    if cache_delta > 0 and cost_delta < 0:
+        return "Cache affinity and upstream price path jointly produce a cost advantage."
+    if cache_delta > 0:
+        return "Cache hit rate is higher; remaining cost difference is driven more by provider unit price and output-side tokens."
+    return "Cache hit rates are close; cost difference mainly reflects upstream provider price, output tokens, and billing semantics."
+
+
+def _top_provider_distribution(summary: dict[str, Any], sort: str, provider: str) -> str:
+    item = summary.get("provider_distribution", {}).get(sort, {}).get(provider, {})
+    details = item.get("details") or []
+    total = sum(int(d.get("request_count") or 0) for d in details)
+    if total <= 0:
+        return "N/A"
+    parts = []
+    for detail in details[:2]:
+        count = int(detail.get("request_count") or 0)
+        parts.append(f"`{detail.get('provider')}` {_pct(count / total)}")
+    return ", ".join(parts)
+
+
+def _signed_pp(value: float) -> str:
+    return f"{value * 100:+.2f} pp"
+
+
+def _multiple(value: float | None) -> str:
+    if value is None:
+        return "N/A"
+    return f"{value:.2f}x"
+
+
+def _safe_div(left: float, right: float) -> float | None:
+    if right == 0:
+        return None
+    return left / right
 
 
 def _repro_links_zh(links: dict[str, str]) -> str:
@@ -1004,7 +1215,7 @@ def _write_manifest(summary: dict[str, Any]) -> None:
             files.append({"path": path.relative_to(EXPERIMENT_DIR).as_posix(), "size_bytes": path.stat().st_size, "sha256": _sha256(path)})
     manifest = {
         "experiment_id": EXPERIMENT_ID,
-        "published_date": "2026-06-27",
+        "published_date": "2026-06-29",
         "model": summary["model"],
         "providers": ["Infron", "OpenRouter"],
         "routing_modes": summary["sort_modes"],
@@ -1016,6 +1227,7 @@ def _write_manifest(summary: dict[str, Any]) -> None:
         "request_rows": _line_count(EXPERIMENT_DIR / "data/benchmark_requests.jsonl"),
         "excluded_records": summary["excluded_records"],
         "network_environment": summary["network_environment"],
+        "reasoning_control": summary.get("reasoning_control"),
         "files": files,
     }
     (EXPERIMENT_DIR / "metadata/manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -1028,6 +1240,8 @@ def _update_env_example() -> None:
     text = re.sub(r"PROMPT_CACHE_BENCH_DEFAULT_EXPERIMENT=.*", f"PROMPT_CACHE_BENCH_DEFAULT_EXPERIMENT=experiments/deepseek/deepseek-v4-flash/{EXPERIMENT_ID}", text)
     if "AB_TEST_LOCAL_PROXY_URL=" not in text:
         text += "\n# Optional: force both providers through the same local proxy for controlled network conditions.\nAB_TEST_LOCAL_PROXY_URL=\n"
+    if "AB_TEST_REASONING_EFFORT=" not in text:
+        text += "\n# Reasoning control used by the published DeepSeek V4 Flash benchmark.\nAB_TEST_REASONING_EFFORT=none\n"
     path.write_text(text, encoding="utf-8")
 
 
@@ -1045,36 +1259,69 @@ def _update_validate_default() -> None:
 def _update_readme() -> None:
     path = ROOT / "README.md"
     text = path.read_text(encoding="utf-8")
-    old = "infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19"
-    old_stem = "prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19"
-    text = text.replace(old, EXPERIMENT_ID).replace(old_stem, REPORT_STEM)
+    old_experiments = [
+        "infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-2026-06-27",
+        "infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19",
+    ]
+    old_stems = [
+        "prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft__2026-06-27",
+        "prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19",
+    ]
+    for old in old_experiments:
+        text = text.replace(old, EXPERIMENT_ID)
+    for old_stem in old_stems:
+        text = text.replace(old_stem, REPORT_STEM)
+    text = text.replace("2026-06-27", "2026-06-29").replace("2026-06-19", "2026-06-29")
     text = text.replace("routing sort <code>throughput</code>/<code>price</code>/<code>latency</code>, 4x50 streaming run", "routing sort <code>throughput</code>/<code>price</code>/<code>latency</code>/<code>ttft</code>, 4x50 streaming run")
     text = text.replace("three routing", "four routing")
     text = text.replace("--timeout 120", "--timeout 180")
     if "--local-proxy-url" not in text:
         text = text.replace("  --stream \\\n", "  --stream \\\n  --local-proxy-url \"$AB_TEST_LOCAL_PROXY_URL\" \\\n")
+    if "--reasoning-effort" not in text:
+        text = text.replace("  --local-proxy-url \"$AB_TEST_LOCAL_PROXY_URL\" \\\n", "  --local-proxy-url \"$AB_TEST_LOCAL_PROXY_URL\" \\\n  --reasoning-effort \"$AB_TEST_REASONING_EFFORT\" \\\n")
+    text = text.replace("Streaming TTFT A/B benchmark", "Streaming TTFT A/B benchmark with explicit reasoning control")
     path.write_text(text, encoding="utf-8")
 
 
 def _update_index() -> None:
     path = ROOT / "index.html"
     text = path.read_text(encoding="utf-8")
-    old = "infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19"
-    old_stem = "prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19"
-    text = text.replace(old, EXPERIMENT_ID).replace(old_stem, REPORT_STEM)
-    text = text.replace("2026-06-19", "2026-06-27")
+    old_experiments = [
+        "infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-2026-06-27",
+        "infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19",
+    ]
+    old_stems = [
+        "prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft__2026-06-27",
+        "prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream__2026-06-19",
+    ]
+    for old in old_experiments:
+        text = text.replace(old, EXPERIMENT_ID)
+    for old_stem in old_stems:
+        text = text.replace(old_stem, REPORT_STEM)
+    text = text.replace("2026-06-27", "2026-06-29").replace("2026-06-19", "2026-06-29")
     text = text.replace("throughput / price / latency", "throughput / price / latency / ttft")
     text = text.replace("Throughput / Price / Latency", "Throughput / Price / Latency / TTFT")
-    text = text.replace("throughput / price / latency / ttft / ttft / ttft / ttft", "throughput / price / latency / ttft")
+    text = re.sub(r"throughput / price / latency(?: / ttft)+", "throughput / price / latency / ttft", text)
+    text = re.sub(r"Throughput / Price / Latency(?: / TTFT)+", "Throughput / Price / Latency / TTFT", text)
     text = text.replace("三种路由策略", "四种路由策略")
     text = text.replace("3 routing", "4 routing")
     text = text.replace("48 个文件", "69 个文件")
     text = text.replace("input token 控制、provider 归因、缓存命中分析、实际成本统计、latency/TTFT 测量", "input token 控制、provider 归因、缓存命中分析、实际成本统计、端到端 E2E 时延/流式 TTFT 测量")
-    text = text.replace("364 strict A/B pairs", "499 strict A/B pairs")
+    text = text.replace("364 strict A/B pairs", "797 strict A/B pairs").replace("499 strict A/B pairs", "797 strict A/B pairs")
     text = text.replace("第一份已发布工件", "最新已发布工件")
     text = text.replace("The first published artifact", "The latest published artifact")
-    text = text.replace("DeepSeek V4 Flash: Infron vs OpenRouter Routing Sort Cache Cost Study", "DeepSeek V4 Flash: Routing, Prompt Caching, and Streaming TTFT A/B Benchmark")
-    text = text.replace("DeepSeek V4 Flash：Infron vs OpenRouter Routing Sort Cache Cost Study", "DeepSeek V4 Flash：路由策略、提示词缓存与流式 TTFT A/B 基准")
+    text = text.replace("DeepSeek V4 Flash: Infron vs OpenRouter Routing Sort Cache Cost Study", "DeepSeek V4 Flash: Routing, Prompt Caching, and Streaming TTFT A/B Benchmark with Reasoning Control")
+    text = text.replace("DeepSeek V4 Flash：Infron vs OpenRouter Routing Sort Cache Cost Study", "DeepSeek V4 Flash：路由策略、提示词缓存与流式 TTFT 与 Reasoning 控制 A/B 基准")
+    text = re.sub(
+        r"DeepSeek V4 Flash: Routing, Prompt Caching, and Streaming TTFT A/B Benchmark(?: with Reasoning Control)+",
+        "DeepSeek V4 Flash: Routing, Prompt Caching, and Streaming TTFT A/B Benchmark with Reasoning Control",
+        text,
+    )
+    text = re.sub(
+        r"DeepSeek V4 Flash：路由策略、提示词缓存与流式 TTFT(?: 与 Reasoning 控制)+ A/B 基准",
+        "DeepSeek V4 Flash：路由策略、提示词缓存与流式 TTFT 与 Reasoning 控制 A/B 基准",
+        text,
+    )
     path.write_text(text, encoding="utf-8")
 
 
@@ -1090,6 +1337,7 @@ def _payload_example_zh() -> str:
         "stream": True,
         "stream_options": {"include_usage": True},
         "usage": {"include": True},
+        "reasoning": {"effort": "none"},
         "provider": {"sort": "throughput | price | latency | ttft", "allow_fallbacks": True},
     }, ensure_ascii=False, indent=2)
 
@@ -1106,6 +1354,7 @@ def _payload_example_en() -> str:
         "stream": True,
         "stream_options": {"include_usage": True},
         "usage": {"include": True},
+        "reasoning": {"effort": "none"},
         "provider": {"sort": "throughput | price | latency | ttft", "allow_fallbacks": True},
     }, ensure_ascii=False, indent=2)
 
@@ -1144,6 +1393,12 @@ def _winner_cell(aggs: dict[str, dict[str, Any]], key: str, higher: bool) -> str
     winner = _winner(aggs, key, higher)
     advantage = _advantage(aggs[winner][key], aggs[_other(winner)][key], higher)
     return f"**{_provider(winner)}**（{_pct(advantage)}）"
+
+
+def _winner_cell_en(aggs: dict[str, dict[str, Any]], key: str, higher: bool) -> str:
+    winner = _winner(aggs, key, higher)
+    advantage = _advantage(aggs[winner][key], aggs[_other(winner)][key], higher)
+    return f"**{_provider(winner)}** ({_pct(advantage)})"
 
 
 def _bold_win(provider: str, aggs: dict[str, dict[str, Any]], key: str, higher: bool, value: str) -> str:

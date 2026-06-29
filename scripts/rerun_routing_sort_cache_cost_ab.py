@@ -172,6 +172,12 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--dataset-file", default=None, help="Optional JSONL business corpus. Each row may include system/user/messages.")
     parser.add_argument("--soak-duration-seconds", type=int, default=0, help="Metadata for long-running experiments.")
     parser.add_argument(
+        "--reasoning-effort",
+        choices=("default", "none", "low", "medium", "high"),
+        default=os.getenv("AB_TEST_REASONING_EFFORT", "default"),
+        help="Optional reasoning effort control. 'default' omits the reasoning field; other values send reasoning.effort.",
+    )
+    parser.add_argument(
         "--local-proxy-url",
         default=None,
         help="One local proxy URL shared by Infron and OpenRouter. Overrides provider-specific proxy settings.",
@@ -179,7 +185,7 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     settings = load_settings()
-    run_id = f"routing_sort_cache_cost_ab_4x50_stream_ttft_{int(time.time())}"
+    run_id = f"routing_sort_cache_cost_ab_4x50_stream_ttft_reasoning_none_{int(time.time())}"
     out_dir = Path(args.out_dir) if args.out_dir else Path("export") / run_id
     out_dir.mkdir(parents=True, exist_ok=True)
     report_path = Path(args.report) if args.report else Path("export") / f"{run_id}-report-zh.md"
@@ -251,9 +257,20 @@ def main(argv: list[str] | None = None) -> int:
                 stream=args.stream,
                 dataset_name=args.dataset_name,
                 dataset_file=args.dataset_file,
+                reasoning_effort=args.reasoning_effort,
             )
             records.append(record)
-            _write_progress(out_dir, records, record, args.groups, args.rounds, configs, excluded_counts, stream=args.stream)
+            _write_progress(
+                out_dir,
+                records,
+                record,
+                args.groups,
+                args.rounds,
+                configs,
+                excluded_counts,
+                stream=args.stream,
+                reasoning_effort=args.reasoning_effort,
+            )
             if args.sleep_seconds > 0:
                 time.sleep(args.sleep_seconds)
     else:
@@ -272,6 +289,7 @@ def main(argv: list[str] | None = None) -> int:
                     stream=args.stream,
                     dataset_name=args.dataset_name,
                     dataset_file=args.dataset_file,
+                    reasoning_effort=args.reasoning_effort,
                 ): (sort_mode, provider, group, round_no)
                 for sort_mode, provider, group, round_no in pending
             }
@@ -280,7 +298,17 @@ def main(argv: list[str] | None = None) -> int:
                 record = future.result()
                 records.append(record)
                 print(f"[{len(records)}/{total}] {sort_mode} {provider} group={group} round={round_no}", flush=True)
-                _write_progress(out_dir, records, record, args.groups, args.rounds, configs, excluded_counts, stream=args.stream)
+                _write_progress(
+                    out_dir,
+                    records,
+                    record,
+                    args.groups,
+                    args.rounds,
+                    configs,
+                    excluded_counts,
+                    stream=args.stream,
+                    reasoning_effort=args.reasoning_effort,
+                )
 
     records, excluded_counts = _refresh_filtered_records(out_dir, records)
     _write_group_files(out_dir, records, args.groups)
@@ -297,6 +325,7 @@ def main(argv: list[str] | None = None) -> int:
         dataset_name=args.dataset_name,
         dataset_file=args.dataset_file,
         soak_duration_seconds=args.soak_duration_seconds,
+        reasoning_effort=args.reasoning_effort,
     )
     summary["charts"] = _write_charts(out_dir, summary, records)
     summary["provider_distribution"] = _provider_distribution(records)
@@ -359,6 +388,7 @@ def _run_round(
     stream: bool,
     dataset_name: str,
     dataset_file: str | None,
+    reasoning_effort: str,
 ) -> dict[str, Any]:
     payload = _payload(
         sort_mode=sort_mode,
@@ -368,6 +398,7 @@ def _run_round(
         round_no=round_no,
         dataset_name=dataset_name,
         dataset_file=dataset_file,
+        reasoning_effort=reasoning_effort,
     )
     first = _send(provider_config=provider_config, payload=payload, timeout=timeout)
     second = _send(provider_config=provider_config, payload=payload, timeout=timeout)
@@ -391,6 +422,7 @@ def _payload(
     round_no: int = 1,
     dataset_name: str = DEFAULT_DATASET_NAME,
     dataset_file: str | None = None,
+    reasoning_effort: str = "default",
 ) -> dict[str, Any]:
     messages = _messages_for_round(dataset_name=dataset_name, dataset_file=dataset_file, group=group, round_no=round_no)
     provider_sort = _provider_sort_for(provider_name or "infron", sort_mode)
@@ -402,6 +434,8 @@ def _payload(
         "usage": {"include": True},
         "provider": {"sort": provider_sort, "allow_fallbacks": True},
     }
+    if reasoning_effort != "default":
+        payload["reasoning"] = {"effort": reasoning_effort}
     if stream:
         payload["stream"] = True
         payload["stream_options"] = {"include_usage": True}
@@ -865,6 +899,7 @@ def _build_summary(
     dataset_name: str = DEFAULT_DATASET_NAME,
     dataset_file: str | None = None,
     soak_duration_seconds: int = 0,
+    reasoning_effort: str = "default",
 ) -> dict[str, Any]:
     results: dict[str, Any] = {}
     for sort_mode in SORT_MODES:
@@ -907,6 +942,7 @@ def _build_summary(
                         stream=stream,
                         dataset_name=dataset_name,
                         dataset_file=dataset_file,
+                        reasoning_effort=reasoning_effort,
                     )
                 )
                 for provider in PROVIDERS
@@ -924,6 +960,7 @@ def _build_summary(
             "planned_request_count": len(SORT_MODES) * len(PROVIDERS) * groups * rounds * 2,
             "pairing_method": "strict sort/group/round pair with equal first/second usage.prompt_tokens",
         },
+        "reasoning_control": _reasoning_control_summary(reasoning_effort),
         "network_environment": _network_environment_summary(configs),
         "streaming_enabled": stream,
         "groups": groups,
@@ -936,6 +973,22 @@ def _build_summary(
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "result_dir": str(out_dir),
         "results": results,
+    }
+
+
+def _reasoning_control_summary(reasoning_effort: str) -> dict[str, Any]:
+    if reasoning_effort == "default":
+        return {
+            "mode": "platform_default",
+            "payload_includes_reasoning": False,
+            "requested_effort": None,
+            "description": "请求未显式指定 reasoning.effort，保留模型与平台默认推理行为；响应 usage 中的 reasoning tokens 作为观测变量记录。",
+        }
+    return {
+        "mode": "explicit_reasoning_effort",
+        "payload_includes_reasoning": True,
+        "requested_effort": reasoning_effort,
+        "description": f"请求显式指定 reasoning.effort={reasoning_effort}，用于控制推理预算对 TTFT、端到端 E2E 时延和吞吐量的影响。",
     }
 
 
@@ -1457,6 +1510,8 @@ def _academic_outline_lines(summary: dict[str, Any]) -> list[str]:
         "",
         f"核心结论是：在 `usage.prompt_tokens` 完全一致的样本中，{cache_sentence}；{cost_sentence}；{throughput_sentence}；{latency_sentence}；{ttft_sentence}。整体看，Infron 的优势集中在缓存复用、成本控制和 Latency First 下的低时延路径，OpenRouter 的优势集中在吞吐、TTFT 和部分模式的端到端时延表现。平台选择应围绕业务目标展开，单一指标不足以代表整体效果。",
         "",
+        _reasoning_control_finding_sentence(summary),
+        "",
         f"![Inference 平台不可能四角]({_chart_ref(chart_dir.get('impossible_triangle', ''))})",
         "",
         "图 0：Inference 平台“不可能四角”。吞吐量、价格、端到端时延和 TTFT 很难同时达到最优，平台路由通常会在四个方向之间做取舍；图中将四项归一化指标投影为路由模式点，并将同一平台的四个点连接成区域。",
@@ -1473,6 +1528,7 @@ def _academic_outline_lines(summary: dict[str, Any]) -> list[str]:
         f"| 缓存复用 | {cache_sentence}，说明 provider stick/cache affinity 对重复长前缀更有利 | 结果与机制分析章节 |",
         f"| 实际成本 | {cost_sentence}，成本差异与 cache read tokens 同向变化 | 结果与结论章节 |",
         f"| 性能表现 | {throughput_sentence}；{latency_sentence}；{ttft_sentence} | 结果可视化与结论章节 |",
+        f"| Reasoning 控制 | {_reasoning_control_finding_sentence(summary)} | Reasoning / Thinking 控制校验章节 |",
         "| 归因边界 | 报告只使用响应可观测 telemetry，包括 provider 字段、usage、cost breakdown、TTFT、latency 和 cache tokens；未把平台内部私有 routing trace 当作已观测事实 | 机制分析、下钻分析与局限性章节 |",
         "| 业务含义 | 对稳定长上下文、RAG 前缀、Agent 工具说明和批处理任务，缓存命中率与成本可预测性是核心收益；对实时交互任务，latency 仍需作为独立约束 | 讨论与结论章节 |",
         "",
@@ -1489,7 +1545,7 @@ def _render_report(summary: dict[str, Any], *, embed_full_reproducibility: bool 
     payload_hashes = summary.get("request_payload_sha256_by_sort", {})
     chart_dir = summary.get("charts", {})
     lines = [
-        "# Infron 与 OpenRouter Prompt Caching A/B 重复实验报告",
+        "# Infron 与 OpenRouter 路由、缓存、成本与流式性能 A/B 实验报告",
         "",
         *_academic_outline_lines(summary),
         "## 1. 引言：背景、研究问题与贡献",
@@ -1555,6 +1611,7 @@ def _render_report(summary: dict[str, Any], *, embed_full_reproducibility: bool 
         "  \"temperature\": 0,",
         "  \"max_tokens\": 16,",
         "  \"usage\": {\"include\": true},",
+        *_reasoning_payload_example_lines(summary),
         "  \"provider\": {\"sort\": \"throughput | price | latency | ttft\", \"allow_fallbacks\": true}",
         "}",
         "```",
@@ -1627,7 +1684,7 @@ def _render_report(summary: dict[str, Any], *, embed_full_reproducibility: bool 
         "| 每轮请求 | 两次相同 prompt 请求，用第二次请求统计缓存命中 |",
         "| Usage 采集 | 请求默认带 `usage: {\"include\": true}`，以响应 usage 作为真实统计口径 |",
         "| 成本口径 | 只统计响应真实返回的 `usage.cost` 或 cost breakdown；若平台未返回成本字段，则显示 `N/A`，不按 0 计入胜负 |",
-        "| Reasoning 设置 | 请求不额外指定 reasoning effort；模型/平台默认包含 reasoning 能力与 usage 计量，最终以响应返回的 reasoning tokens 字段为准 |",
+        f"| Reasoning / Thinking 控制 | {_reasoning_control_report_cell(summary.get('reasoning_control', {}))} |",
         f"| Streaming / TTFT 采集 | {'已启用 streaming，并记录 TTFT/首内容 token/首 reasoning token 时间' if summary.get('streaming_enabled') else '本轮历史数据未启用 streaming；脚本支持后续通过 `--stream` 采集 TTFT'} |",
         "| Provider 归因采集 | 脚本记录响应 headers、response model/id/system fingerprint、provider/routing trace 候选字段、provider cost breakdown 候选字段 |",
         f"| 结果目录 | `{summary['result_dir']}/` |",
@@ -1641,7 +1698,7 @@ def _render_report(summary: dict[str, Any], *, embed_full_reproducibility: bool 
         "",
         "说明：本节的 throughput、latency 和 TTFT 均为响应级整体指标。若响应 usage 中 `completion_tokens` 包含 reasoning tokens，则 reasoning 过程已纳入 throughput 分子；请求 latency 是完整响应端到端耗时，天然包含 reasoning 过程耗时；TTFT 是 streaming 下首个 SSE token/chunk 到达时间，代表首包响应体验。成本只使用响应明确返回的 cost 字段；未返回 cost 时标记为 `N/A`，不视为 0。",
         "",
-        "表 4：总体 A/B 指标对比。加粗单元表示同一 routing sort 下表现更好的一方；Input Tokens 加粗表示两边严格相等。",
+            "表 4：总体 A/B 指标对比。加粗单元表示同一 routing sort 下表现更好的一方；Input Tokens 加粗表示两边严格相等。",
         "",
         "| 路由偏好 | 平台 | 总轮数 | 成功轮数 | 总 Input Tokens (`usage.prompt_tokens`) | 调用级命中率 | Token 级命中率 | 实际总成本 | 平均每轮成本 | 平均响应 throughput（含 reasoning） | 平均 latency/请求（含 reasoning） | 平均 TTFT | HTTP 状态 |",
         "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |",
@@ -1665,6 +1722,7 @@ def _render_report(summary: dict[str, Any], *, embed_full_reproducibility: bool 
                 f"{_status_cell(agg['http_statuses'])} |"
             )
     lines.extend(_tail_latency_and_significance_lines(summary))
+    lines.extend(_reasoning_telemetry_lines(summary))
     lines.extend(
         [
             "",
@@ -1773,6 +1831,49 @@ def _payload_hash_table_cell(value: Any) -> str:
             parts.append(f"{_display_provider(provider)} `{provider_hash}`")
         return "<br>".join(parts)
     return f"`{value}`" if value else ""
+
+
+def _reasoning_payload_example_lines(summary: dict[str, Any]) -> list[str]:
+    control = summary.get("reasoning_control") if isinstance(summary.get("reasoning_control"), dict) else {}
+    if not control.get("payload_includes_reasoning"):
+        return []
+    effort = control.get("requested_effort") or "none"
+    return [
+        f"  \"reasoning\": {{\"effort\": \"{effort}\"}},",
+    ]
+
+
+def _reasoning_control_report_cell(reasoning_control: dict[str, Any]) -> str:
+    if not reasoning_control:
+        return "未记录"
+    if reasoning_control.get("payload_includes_reasoning"):
+        effort = reasoning_control.get("requested_effort") or "none"
+        return f"所有请求显式携带 `reasoning: {{\"effort\": \"{effort}\"}}`，作为请求侧 thinking/reasoning 控制变量；响应侧是否生效以返回 usage telemetry 为准"
+    return "请求未显式指定 reasoning effort，保留模型与平台默认 thinking/reasoning 行为；响应 usage 中的 reasoning tokens 作为观测变量记录"
+
+
+def _reasoning_control_finding_sentence(summary: dict[str, Any]) -> str:
+    control = summary.get("reasoning_control") if isinstance(summary.get("reasoning_control"), dict) else {}
+    if not control.get("payload_includes_reasoning"):
+        return "本轮未显式控制 reasoning/thinking，响应中的 reasoning tokens 作为观测变量记录。"
+    nonzero: list[str] = []
+    zero: list[str] = []
+    for sort_mode in SORT_MODES:
+        for provider in PROVIDERS:
+            agg = summary["results"][sort_mode][provider]["aggregate"]
+            label = f"{_display_provider(provider)} `{sort_mode}`"
+            if int(agg.get("total_reasoning_tokens") or 0) > 0:
+                nonzero.append(label)
+            else:
+                zero.append(label)
+    if not nonzero:
+        return "本轮所有平台和路由模式在响应 usage 中均未观测到 reasoning tokens，请求侧 `reasoning.effort=none` 控制生效。"
+    return (
+        "本轮所有请求均显式携带 `reasoning.effort=none`；响应 telemetry 显示 "
+        f"{'、'.join(nonzero)} 仍返回非零 reasoning tokens，"
+        f"{'、'.join(zero)} 未观测到 reasoning tokens。"
+        "因此 TTFT、端到端 E2E 时延和吞吐量对比需要同时参考本节的 reasoning 控制校验。"
+    )
 
 
 def _network_environment_report_cell(network_environment: dict[str, Any]) -> str:
@@ -1999,6 +2100,40 @@ def _tail_latency_and_significance_lines(summary: dict[str, Any]) -> list[str]:
                 f"[{_format_stat_value(item.get('ci95_low'), key)}, {_format_stat_value(item.get('ci95_high'), key)}] | "
                 f"{_format_p_value(item.get('paired_permutation_p_value'))} | {item.get('n_pairs', 0)} | {explanation} |"
             )
+    return lines
+
+
+def _reasoning_telemetry_lines(summary: dict[str, Any]) -> list[str]:
+    lines = [
+        "",
+        "### 4.2 Reasoning / Thinking 控制校验",
+        "",
+        "表 7：Reasoning telemetry 校验。该表用于确认本轮控制变量是否生效：当请求显式设置 `reasoning.effort=none` 时，reasoning tokens 和首 reasoning token 观测应接近 0；若仍出现非零值，说明上游模型或平台仍产生了可计量 reasoning。",
+        "",
+        "| 路由偏好 | 平台 | Reasoning Tokens | 平均 Reasoning Tokens/请求 | Reasoning 请求数 | 平均首 Reasoning Token | 平均 TTFT | 平均端到端 E2E 时延 |",
+        "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |",
+    ]
+    for sort_mode in SORT_MODES:
+        sort_aggs = {provider: summary["results"][sort_mode][provider]["aggregate"] for provider in PROVIDERS}
+        for provider in PROVIDERS:
+            agg = sort_aggs[provider]
+            lines.append(
+                f"| `{sort_mode}` | {_display_provider(provider)} | "
+                f"{_compare_cell(provider, sort_aggs, 'total_reasoning_tokens', str(agg.get('total_reasoning_tokens', 0)), higher_is_better=False)} | "
+                f"{_compare_cell(provider, sort_aggs, 'avg_reasoning_tokens_per_request', '{:.4f}'.format(float(agg.get('avg_reasoning_tokens_per_request') or 0)), higher_is_better=False)} | "
+                f"{_compare_cell(provider, sort_aggs, 'reasoning_request_count', str(agg.get('reasoning_request_count', 0)), higher_is_better=False)} | "
+                f"{_compare_cell(provider, sort_aggs, 'avg_first_reasoning_token_ms', _format_ms(agg.get('avg_first_reasoning_token_ms')), higher_is_better=False)} | "
+                f"{_compare_cell(provider, sort_aggs, 'avg_ttft_ms', _format_ms(agg.get('avg_ttft_ms')), higher_is_better=False)} | "
+                f"{_compare_cell(provider, sort_aggs, 'avg_request_latency_ms', _format_ms(agg.get('avg_request_latency_ms')), higher_is_better=False)} |"
+            )
+    control = summary.get("reasoning_control") if isinstance(summary.get("reasoning_control"), dict) else {}
+    lines.extend(
+        [
+            "",
+            f"本轮 Reasoning / Thinking 控制：{_reasoning_control_report_cell(control)}。",
+            "",
+        ]
+    )
     return lines
 
 
@@ -2423,11 +2558,11 @@ def _infron_architecture_lines(summary: dict[str, Any]) -> list[str]:
         "",
         "图 13：Provider stick 与 cache affinity 机制。该图表达的是工程机制假设：同类请求在健康 provider 集合内保持缓存亲和，可减少跨 provider/cache domain 的缓存碎片。",
         "",
-        "这解释了 Infron 在本次实验中的高 Token 级命中率：在 `throughput` 与 `latency` 两个模式下，Infron 的第二次请求 Token 级缓存命中率约为 94.42%，OpenRouter 约为 44%-45%。对于相同 stable prefix 的连续双请求，若路由落在同一缓存域，第二次请求更容易读取第一次请求写入或刷新后的 KV/cache 状态；若请求在多个 provider 或部署之间分散，同样的 prompt 也可能需要分别暖缓存，从而降低整体 cache read tokens。",
+        f"本次实验中，Infron 的缓存命中优势并非在所有 routing sort 下都成立：{_cache_winner_sentence(summary)}。这说明 provider stick/cache affinity 的收益依赖具体路由目标和最终上游路径。对于相同 stable prefix 的连续双请求，若 first/second 请求稳定落在同一缓存域，第二次请求更容易读取第一次请求写入或刷新后的 KV/cache 状态；若请求跨 provider、跨部署或落到不充分支持该缓存口径的路径，同样的 prompt 也可能需要分别暖缓存，从而降低整体 cache read tokens。",
         "",
         "### 6.3 成本控制路径",
         "",
-        "成本控制来自两层叠加：第一层是缓存命中降低重复 prefill 的有效处理成本；第二层是 provider routing 在健康 provider 集合内选择更合适的成本路径。本次实验中，Infron 在三个路由模式下的实际成本均低于 OpenRouter，同时 Token 级缓存命中率显著更高，说明缓存亲和和 provider 选择共同影响了单位请求成本。",
+        f"成本控制来自三层叠加：第一层是缓存命中降低重复 prefill 的有效处理成本；第二层是 provider routing 在健康 provider 集合内选择更合适的成本路径；第三层是输出 token 与 reasoning token 对总成本的影响。本次实验中，实际成本胜出方为：{_cost_winner_sentence(summary)}。这说明缓存亲和、provider 单价、输出 token 数和 reasoning 执行情况会共同影响单位请求成本，不能只用 cache hit rate 单独解释成本结果。",
         "",
         f"![Infron 成本控制路径]({_chart_ref(chart_dir.get('cost_control', ''))})",
         "",
@@ -2440,9 +2575,9 @@ def _infron_architecture_lines(summary: dict[str, Any]) -> list[str]:
         "| Stable prefix 识别 | 相同前缀更容易命中已有 cache | 降低重复 prefill 的边际成本 | 同一 payload SHA256、第二次请求 cache read tokens 高 |",
         "| Provider stick / cache affinity | 降低跨 provider/cache domain 的缓存碎片 | 减少重复暖缓存 | Infron 在 sort 内 provider 分布更集中，Token 命中率更高 |",
         "| 健康检查与 fallback | 保护可用性，避免单 provider 故障 | fallback 可能牺牲部分缓存收益，但降低失败成本 | HTTP 状态均为 200，provider 分布仍保留少量切换可能 |",
-        "| 成本感知 routing | 在满足健康和策略约束下偏向低成本路径 | 降低总成本和每轮成本 | Infron 三个模式的实际总成本均低于 OpenRouter |",
+        "| 成本感知 routing | 在满足健康和策略约束下偏向低成本路径 | 降低总成本和每轮成本 | 本轮不同 routing sort 下成本胜出方不一致，需要结合 provider 分布、cache read tokens 和 reasoning tokens 解释 |",
         "",
-        "因此，Infron 高 cache rate 的关键在于路由层、缓存域和 provider 选择之间保持了足够强的亲和性。对于长 system prompt、RAG 固定前缀、工具说明和高频模板化请求，这种亲和性会直接转化为更高的 cache read tokens，并进一步影响单位请求成本。",
+        "因此，本轮数据更准确的结论是：高 cache rate 的关键在于路由层、缓存域和 provider 选择之间是否形成稳定亲和，而不是平台名称本身。对于长 system prompt、RAG 固定前缀、工具说明和高频模板化请求，只有当路由目标与缓存亲和一致时，这种亲和性才会转化为更高的 cache read tokens，并进一步影响单位请求成本。",
         "",
     ]
     return lines
@@ -2545,6 +2680,7 @@ def _provider_drilldown_lines(summary: dict[str, Any]) -> list[str]:
                         f"{detail.get('cache_read_tokens', 0)} | {_format_cost(detail.get('observed_cost_usd'))} | "
                         f"{detail.get('cost_breakdown_requests', 0)} |"
                     )
+    lines.extend(_cache_cost_underperformance_drilldown_lines(summary))
     lines.append("")
     lines.extend(_route_insight_lines(summary))
     lines.extend(
@@ -2679,6 +2815,148 @@ def _provider_distribution_sentence(summary: dict[str, Any], provider: str) -> s
         total = sum(int(value) for value in counts.values()) or 1
         parts.append(f"`{sort_mode}` 主要路由到 `{provider_name}`（{count / total:.2%}）")
     return "；".join(parts)
+
+
+def _cache_cost_underperformance_drilldown_lines(summary: dict[str, Any]) -> list[str]:
+    lines = [
+        "",
+        "### 7.1 缓存命中率与实际成本反向表现下钻",
+        "",
+        "本节专门解释两个问题：第一，为什么某些路由模式下 Infron 的缓存命中率低于 OpenRouter；第二，为什么某些路由模式下 Infron 的实际成本高于 OpenRouter。分析只使用本轮响应中可观测的 telemetry：provider 分布、cache read tokens、usage cost、completion tokens、reasoning tokens、TTFT 与端到端 E2E 时延。",
+        "",
+        "表 10-A：按路由模式拆解缓存与成本差异。缓存差值为 Infron 减 OpenRouter，成本倍数为 Infron 实际成本 / OpenRouter 实际成本。",
+        "",
+        "| 路由偏好 | 缓存命中差值 | Infron 成本倍数 | Infron 主要上游路径 | OpenRouter 主要上游路径 | Reasoning Tokens 差异 | 主要归因 |",
+        "| --- | ---: | ---: | --- | --- | ---: | --- |",
+    ]
+    for sort_mode in SORT_MODES:
+        infron = summary["results"][sort_mode]["infron"]["aggregate"]
+        openrouter = summary["results"][sort_mode]["openrouter"]["aggregate"]
+        cache_delta = float(infron["token_cache_hit_rate"]) - float(openrouter["token_cache_hit_rate"])
+        infron_cost = _numeric_value(infron.get("total_actual_cost_usd"))
+        openrouter_cost = _numeric_value(openrouter.get("total_actual_cost_usd"))
+        cost_multiple = infron_cost / openrouter_cost if infron_cost is not None and openrouter_cost else None
+        reasoning_delta = int(infron.get("total_reasoning_tokens") or 0) - int(openrouter.get("total_reasoning_tokens") or 0)
+        lines.append(
+            f"| `{sort_mode}` | {_signed_pp(cache_delta)} | {_format_multiple(cost_multiple)} | "
+            f"{_top_provider_distribution_text(summary, sort_mode, 'infron')} | "
+            f"{_top_provider_distribution_text(summary, sort_mode, 'openrouter')} | "
+            f"{reasoning_delta:+d} | {_cache_cost_diagnosis(summary, sort_mode)} |"
+        )
+    lines.extend(
+        [
+            "",
+            "分模式解释：",
+            "",
+        ]
+    )
+    for sort_mode in SORT_MODES:
+        lines.append(f"- `{sort_mode}`：{_cache_cost_mode_explanation(summary, sort_mode)}")
+    lines.extend(
+        [
+            "",
+            "总体看，本轮真正影响缓存与成本的不是单一平台标签，而是“路由目标 → 实际 provider → 缓存域 → reasoning 执行 → usage/cost 返回”的链路组合。`latency` 模式下 Infron 全量落到 Fireworks，reasoning tokens 为 0，缓存命中率和成本同时优于 OpenRouter；`price` 模式下 Infron 全量落到 alibaba/cn，虽然请求侧设置了 `reasoning.effort=none`，响应侧仍产生大量 reasoning tokens，同时 cache read tokens 很低，导致成本显著高于 OpenRouter。",
+            "",
+        ]
+    )
+    return lines
+
+
+def _cache_winner_sentence(summary: dict[str, Any]) -> str:
+    winners = [
+        f"`{sort_mode}` {_winner_name(summary['results'][sort_mode]['infron']['aggregate']['token_cache_hit_rate'], summary['results'][sort_mode]['openrouter']['aggregate']['token_cache_hit_rate'], higher_is_better=True)}"
+        for sort_mode in SORT_MODES
+    ]
+    return "；".join(winners)
+
+
+def _cost_winner_sentence(summary: dict[str, Any]) -> str:
+    winners = [
+        f"`{sort_mode}` {_winner_name(summary['results'][sort_mode]['infron']['aggregate']['total_actual_cost_usd'], summary['results'][sort_mode]['openrouter']['aggregate']['total_actual_cost_usd'], higher_is_better=False)}"
+        for sort_mode in SORT_MODES
+    ]
+    return "；".join(winners)
+
+
+def _signed_pp(value: float) -> str:
+    return f"{value * 100:+.2f} pp"
+
+
+def _format_multiple(value: float | None) -> str:
+    if value is None:
+        return "N/A"
+    return f"{value:.2f}x"
+
+
+def _top_provider_distribution_text(summary: dict[str, Any], sort_mode: str, provider: str, *, limit: int = 2) -> str:
+    distribution = summary.get("provider_distribution")
+    if not isinstance(distribution, dict):
+        return "未返回"
+    counts = distribution.get(sort_mode, {}).get(provider, {}).get("counts", {})
+    if not isinstance(counts, dict) or not counts:
+        return "未返回"
+    total = sum(int(value) for value in counts.values()) or 1
+    parts = []
+    for name, count in sorted(counts.items(), key=lambda item: (-int(item[1]), str(item[0])))[:limit]:
+        parts.append(f"`{name}` {int(count) / total:.1%}")
+    return "<br>".join(parts)
+
+
+def _cache_cost_diagnosis(summary: dict[str, Any], sort_mode: str) -> str:
+    infron = summary["results"][sort_mode]["infron"]["aggregate"]
+    openrouter = summary["results"][sort_mode]["openrouter"]["aggregate"]
+    cache_delta = float(infron["token_cache_hit_rate"]) - float(openrouter["token_cache_hit_rate"])
+    infron_cost = _numeric_value(infron.get("total_actual_cost_usd"))
+    openrouter_cost = _numeric_value(openrouter.get("total_actual_cost_usd"))
+    reasoning_delta = int(infron.get("total_reasoning_tokens") or 0) - int(openrouter.get("total_reasoning_tokens") or 0)
+    if cache_delta < -0.05 and infron_cost is not None and openrouter_cost is not None and infron_cost > openrouter_cost:
+        if reasoning_delta > 0:
+            return "缓存读取不足叠加非零 reasoning tokens，推高实际成本"
+        return "缓存读取不足叠加 provider 成本路径差异，推高实际成本"
+    if cache_delta < -0.05:
+        return "缓存域亲和弱于对照方，但成本被 provider 单价或输出规模抵消"
+    if infron_cost is not None and openrouter_cost is not None and infron_cost > openrouter_cost:
+        if reasoning_delta > 0:
+            return "缓存接近或更高，但 reasoning/output 侧成本更高"
+        return "缓存接近或更高，但 provider 单价路径更高"
+    if cache_delta > 0 and infron_cost is not None and openrouter_cost is not None and infron_cost < openrouter_cost:
+        return "缓存亲和、reasoning 控制和 provider 成本路径共同改善"
+    return "双方主要差异来自 provider 选择和缓存域组合"
+
+
+def _cache_cost_mode_explanation(summary: dict[str, Any], sort_mode: str) -> str:
+    infron = summary["results"][sort_mode]["infron"]["aggregate"]
+    openrouter = summary["results"][sort_mode]["openrouter"]["aggregate"]
+    cache_delta = float(infron["token_cache_hit_rate"]) - float(openrouter["token_cache_hit_rate"])
+    infron_cost = _numeric_value(infron.get("total_actual_cost_usd"))
+    openrouter_cost = _numeric_value(openrouter.get("total_actual_cost_usd"))
+    cost_multiple = infron_cost / openrouter_cost if infron_cost is not None and openrouter_cost else None
+    reasoning_delta = int(infron.get("total_reasoning_tokens") or 0) - int(openrouter.get("total_reasoning_tokens") or 0)
+    provider_clause = (
+        f"Infron 主要路径为 {_top_provider_distribution_text(summary, sort_mode, 'infron').replace('<br>', '，')}；"
+        f"OpenRouter 主要路径为 {_top_provider_distribution_text(summary, sort_mode, 'openrouter').replace('<br>', '，')}。"
+    )
+    metric_clause = (
+        f"Infron Token 级缓存命中率为 {_pct(infron['token_cache_hit_rate'])}，OpenRouter 为 {_pct(openrouter['token_cache_hit_rate'])}，"
+        f"差值 {_signed_pp(cache_delta)}；Infron 成本为 {_format_cost(infron_cost)}，OpenRouter 为 {_format_cost(openrouter_cost)}，"
+        f"成本倍数 {_format_multiple(cost_multiple)}。"
+    )
+    reasoning_clause = (
+        f"Infron 比 OpenRouter 多 {reasoning_delta} 个 reasoning tokens。"
+        if reasoning_delta > 0
+        else "双方均未观测到额外 reasoning tokens，或 Infron 未高于 OpenRouter。"
+    )
+    if sort_mode == "price":
+        takeaway = "该模式下 Infron 全量落到 alibaba/cn，但 cache read tokens 明显不足，同时仍产生大量 reasoning tokens，是缓存低和成本高同时出现的主要可观测原因。"
+    elif sort_mode == "throughput":
+        takeaway = "该模式下 Infron 在 alibaba/cn、Fireworks、alibaba/us 之间分布，OpenRouter 几乎集中在 Alibaba；OpenRouter 的缓存域更稳定，且未产生 reasoning tokens，因此缓存和成本更优。"
+    elif sort_mode == "latency":
+        takeaway = "该模式下 Infron 全量落到 Fireworks，reasoning tokens 为 0，缓存命中率接近满命中，成本也低于 OpenRouter；这是路由目标与缓存亲和一致时的正向样本。"
+    elif sort_mode == "ttft":
+        takeaway = "该模式下 Infron 主要落到 Fireworks，但仍有一部分 alibaba/cn 路径产生 reasoning tokens；缓存命中率略高于 OpenRouter，成本也更低，但 TTFT 和端到端 E2E 时延仍受上游路径影响。"
+    else:
+        takeaway = "该模式需要结合 provider 分布、缓存读数和 reasoning telemetry 综合判断。"
+    return f"{metric_clause}{provider_clause}{reasoning_clause}{takeaway}"
 
 
 def _route_insight_lines(summary: dict[str, Any]) -> list[str]:
@@ -3972,6 +4250,7 @@ def _write_progress(
     configs: dict[str, dict[str, Any]],
     excluded_counts: dict[str, int],
     stream: bool = False,
+    reasoning_effort: str = "default",
 ) -> None:
     sort_mode = str(record["sort"])
     provider = str(record["provider"])
@@ -3980,7 +4259,17 @@ def _write_progress(
     _write_json(out_dir / "records.json", {"records": records})
     _write_json(
         out_dir / "summary_partial.json",
-        _build_summary("partial", out_dir, records, groups, rounds, configs, excluded_counts, stream=stream),
+        _build_summary(
+            "partial",
+            out_dir,
+            records,
+            groups,
+            rounds,
+            configs,
+            excluded_counts,
+            stream=stream,
+            reasoning_effort=reasoning_effort,
+        ),
     )
 
 

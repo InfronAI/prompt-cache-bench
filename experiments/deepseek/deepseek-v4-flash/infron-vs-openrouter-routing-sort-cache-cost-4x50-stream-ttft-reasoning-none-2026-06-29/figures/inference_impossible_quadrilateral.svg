@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1040" viewBox="0 0 1440 1040"><style>text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;fill:#111827}.title{font-size:22px;font-weight:700}.label{font-size:13px;fill:#374151}.tick{font-size:12px;fill:#6b7280}.value{font-size:12px;fill:#111827}</style><rect width="100%" height="100%" fill="#ffffff"/>
+<text x="48" y="38" class="title">Inference 平台“不可能四角”：四项核心指标的严格归一化对比</text>
+<text x="48" y="64" class="label">单图投影展示：每个路由模式先做四项指标 A/B 归一化，再投影成一个点；同一平台的四个点连接成区域。</text>
+<polygon points="720.0,417.5 802.5,500.0 720.0,582.5 637.5,500.0" fill="none" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="811.5" y="493.0" class="tick">0.25</text>
+<polygon points="720.0,335.0 885.0,500.0 720.0,665.0 555.0,500.0" fill="none" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="894.0" y="493.0" class="tick">0.50</text>
+<polygon points="720.0,252.5 967.5,500.0 720.0,747.5 472.5,500.0" fill="none" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="976.5" y="493.0" class="tick">0.75</text>
+<polygon points="720.0,170.0 1050.0,500.0 720.0,830.0 390.0,500.0" fill="#f8fafc" stroke="#94a3b8" stroke-width="2.0"/>
+<text x="1059.0" y="493.0" class="tick">1.00</text>
+<line x1="720.0" y1="500.0" x2="720.0" y2="170.0" stroke="#cbd5e1" stroke-dasharray="5 5"/>
+<line x1="720.0" y1="500.0" x2="1050.0" y2="500.0" stroke="#cbd5e1" stroke-dasharray="5 5"/>
+<line x1="720.0" y1="500.0" x2="720.0" y2="830.0" stroke="#cbd5e1" stroke-dasharray="5 5"/>
+<line x1="720.0" y1="500.0" x2="390.0" y2="500.0" stroke="#cbd5e1" stroke-dasharray="5 5"/>
+<text x="720.0" y="128.0" class="label" font-weight="900" text-anchor="middle">吞吐量</text>
+<text x="720.0" y="148.0" class="tick" text-anchor="middle">更高 response tok/s</text>
+<text x="1100.0" y="496.0" class="label" font-weight="900" text-anchor="start">价格</text>
+<text x="1100.0" y="516.0" class="tick" text-anchor="start">更低实际成本</text>
+<text x="720.0" y="882.0" class="label" font-weight="900" text-anchor="middle">端到端 E2E 时延</text>
+<text x="720.0" y="902.0" class="tick" text-anchor="middle">更低完整响应耗时</text>
+<text x="340.0" y="496.0" class="label" font-weight="900" text-anchor="end">流式 TTFT</text>
+<text x="340.0" y="516.0" class="tick" text-anchor="end">更低首包响应时间</text>
+<polygon points="670.1,372.6 542.2,398.0 720.0,500.0 799.1,398.9" fill="#2563eb" fill-opacity="0.16" stroke="#2563eb" stroke-width="3.2" stroke-dasharray="none"/>
+<circle cx="670.1" cy="372.6" r="18" fill="#2563eb" stroke="#ffffff" stroke-width="3.2"/>
+<text x="670.1" y="376.6" class="tick" font-size="10" font-weight="900" text-anchor="middle" fill="#ffffff">THR</text>
+<circle cx="542.2" cy="398.0" r="18" fill="#2563eb" stroke="#ffffff" stroke-width="3.2"/>
+<text x="542.2" y="402.0" class="tick" font-size="10" font-weight="900" text-anchor="middle" fill="#ffffff">PRI</text>
+<circle cx="720.0" cy="500.0" r="18" fill="#2563eb" stroke="#ffffff" stroke-width="3.2"/>
+<text x="720.0" y="504.0" class="tick" font-size="10" font-weight="900" text-anchor="middle" fill="#ffffff">LAT</text>
+<circle cx="799.1" cy="398.9" r="18" fill="#2563eb" stroke="#ffffff" stroke-width="3.2"/>
+<text x="799.1" y="402.9" class="tick" font-size="10" font-weight="900" text-anchor="middle" fill="#ffffff">TTFT</text>
+<polygon points="740.2,723.8 785.3,738.3 828.5,533.5 671.6,669.7" fill="#f97316" fill-opacity="0.16" stroke="#f97316" stroke-width="3.2" stroke-dasharray="8 4"/>
+<circle cx="740.2" cy="723.8" r="18" fill="#f97316" stroke="#ffffff" stroke-width="3.2"/>
+<text x="740.2" y="727.8" class="tick" font-size="10" font-weight="900" text-anchor="middle" fill="#ffffff">THR</text>
+<circle cx="785.3" cy="738.3" r="18" fill="#f97316" stroke="#ffffff" stroke-width="3.2"/>
+<text x="785.3" y="742.3" class="tick" font-size="10" font-weight="900" text-anchor="middle" fill="#ffffff">PRI</text>
+<circle cx="828.5" cy="533.5" r="18" fill="#f97316" stroke="#ffffff" stroke-width="3.2"/>
+<text x="828.5" y="537.5" class="tick" font-size="10" font-weight="900" text-anchor="middle" fill="#ffffff">LAT</text>
+<circle cx="671.6" cy="669.7" r="18" fill="#f97316" stroke="#ffffff" stroke-width="3.2"/>
+<text x="671.6" y="673.7" class="tick" font-size="10" font-weight="900" text-anchor="middle" fill="#ffffff">TTFT</text>
+<rect x="1078" y="92" width="14" height="14" rx="3" fill="#2563eb"/>
+<text x="1100" y="104" class="label">Infron</text>
+<rect x="1078" y="116" width="14" height="14" rx="3" fill="#f97316"/>
+<text x="1100" y="128" class="label">OpenRouter</text>
+<rect x="1060" y="150" width="292" height="154" rx="10" fill="#ffffff" stroke="#dbe3ef"/>
+<text x="1078" y="172" class="label" font-weight="900">路由模式标记</text>
+<text x="1078" y="202" class="tick" font-size="10" font-weight="900">THR</text>
+<text x="1130" y="202" class="tick" font-weight="800">吞吐优先</text>
+<text x="1078" y="230" class="tick" font-size="10" font-weight="900">PRI</text>
+<text x="1130" y="230" class="tick" font-weight="800">成本优先</text>
+<text x="1078" y="258" class="tick" font-size="10" font-weight="900">LAT</text>
+<text x="1130" y="258" class="tick" font-weight="800">端到端 E2E 时延优先</text>
+<text x="1078" y="286" class="tick" font-size="10" font-weight="900">TTFT</text>
+<text x="1130" y="286" class="tick" font-weight="800">流式 TTFT 优先</text>
+<text x="48" y="960" class="tick">读图：THR/PRI/LAT/TTFT 分别代表四种路由模式；蓝色区域为 Infron，橙色区域为 OpenRouter，区域外扩方向表示对应指标优势方向。</text>
+<text x="48" y="984" class="tick">该图采用统一归一化、四维到二维投影和一致径向视觉放大，用于总览区域形状；精确逐指标胜负以下方表格为准。</text>
+</svg>
