@@ -1,0 +1,1105 @@
+{
+  "records": [
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 2,
+      "round": 31,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 3465.039,
+        "stream": true,
+        "ttft_ms": 2745.582,
+        "first_content_token_ms": 2872.647,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 14,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9291,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9216,
+            "video_tokens": 0
+          },
+          "total_tokens": 9303
+        },
+        "response_model": "deepseek/deepseek-v4-flash",
+        "response_id": "f753bd09-b5ae-4216-ad3c-4a6012ed48f5",
+        "system_fingerprint": "fp_8b330d02d0_prod0820_fp8_kvcache_20260402",
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260702062919528933137Aa0N3q2C",
+          "CF-RAY": "a14b986b4dc41dad-SIN"
+        },
+        "provider_attribution": {
+          "provider": "deepseek",
+          "model": "deepseek/deepseek-v4-flash",
+          "id": "f753bd09-b5ae-4216-ad3c-4a6012ed48f5",
+          "request_id": "cc5af5f759304334a44a15f4d8bab960",
+          "system_fingerprint": "fp_8b330d02d0_prod0820_fp8_kvcache_20260402"
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.36e-06,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 2.58048e-05,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.05e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 4e-05,
+        "prompt_tokens": 9291,
+        "completion_tokens": 12,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9216,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 0,
+        "error": "Remote end closed connection without response",
+        "latency_ms": 20236.274,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "openrouter",
+      "group": 3,
+      "round": 24,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 0,
+        "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)",
+        "latency_ms": 15664.374,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 4237.976,
+        "stream": true,
+        "ttft_ms": 3368.428,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 3368.428,
+        "stream_chunk_count": 18,
+        "usage": {
+          "prompt_tokens": 9282,
+          "completion_tokens": 16,
+          "total_tokens": 9298,
+          "cost": 0.000271768,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 9216,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000271768,
+            "upstream_inference_prompt_cost": 0.000267288,
+            "upstream_inference_completions_cost": 4.48e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "deepseek/deepseek-v4-flash-20260423",
+        "response_id": "gen-1782974273-owqVP5Cu9LaO5iAiamzY",
+        "system_fingerprint": "fp_8b330d02d0_prod0820_fp8_kvcache_20260402",
+        "response_headers": {
+          "X-Generation-Id": "gen-1782974273-owqVP5Cu9LaO5iAiamzY",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a14ba4f59ff5fd6b-SIN"
+        },
+        "provider_attribution": {
+          "provider": "Novita",
+          "model": "deepseek/deepseek-v4-flash-20260423",
+          "id": "gen-1782974273-owqVP5Cu9LaO5iAiamzY",
+          "system_fingerprint": "fp_8b330d02d0_prod0820_fp8_kvcache_20260402",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.000271768,
+            "upstream_inference_prompt_cost": 0.000267288,
+            "upstream_inference_completions_cost": 4.48e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.000271768,
+          "upstream_inference_prompt_cost": 0.000267288,
+          "upstream_inference_completions_cost": 4.48e-06
+        },
+        "cost": 0.000271768,
+        "prompt_tokens": 9282,
+        "completion_tokens": 16,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 9216,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "openrouter",
+      "group": 3,
+      "round": 45,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 0,
+        "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)",
+        "latency_ms": 17389.34,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 7237.241,
+        "stream": true,
+        "ttft_ms": 5633.201,
+        "first_content_token_ms": 7120.378,
+        "first_reasoning_token_ms": 5633.201,
+        "stream_chunk_count": 28,
+        "usage": {
+          "prompt_tokens": 9286,
+          "completion_tokens": 129,
+          "total_tokens": 9415,
+          "cost": 0.000303968,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 9216,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000303968,
+            "upstream_inference_prompt_cost": 0.000267848,
+            "upstream_inference_completions_cost": 3.612e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 111,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "deepseek/deepseek-v4-flash-20260423",
+        "response_id": "gen-1782974329-1npDXho1A5sphsQTRGkG",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1782974329-1npDXho1A5sphsQTRGkG",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a14ba65489b9d4a5-SIN"
+        },
+        "provider_attribution": {
+          "provider": "Novita",
+          "model": "deepseek/deepseek-v4-flash-20260423",
+          "id": "gen-1782974329-1npDXho1A5sphsQTRGkG",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.000303968,
+            "upstream_inference_prompt_cost": 0.000267848,
+            "upstream_inference_completions_cost": 3.612e-05
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.000303968,
+          "upstream_inference_prompt_cost": 0.000267848,
+          "upstream_inference_completions_cost": 3.612e-05
+        },
+        "cost": 0.000303968,
+        "prompt_tokens": 9286,
+        "completion_tokens": 129,
+        "reasoning_tokens": 111,
+        "cache_read_tokens": 9216,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "openrouter",
+      "group": 4,
+      "round": 36,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 0,
+        "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)",
+        "latency_ms": 17970.365,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 4335.885,
+        "stream": true,
+        "ttft_ms": 3582.994,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 3582.994,
+        "stream_chunk_count": 8,
+        "usage": {
+          "prompt_tokens": 36983,
+          "completion_tokens": 17,
+          "total_tokens": 37000,
+          "cost": 0.001053612,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 36864,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001053612,
+            "upstream_inference_prompt_cost": 0.001048852,
+            "upstream_inference_completions_cost": 4.76e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "deepseek/deepseek-v4-flash-20260423",
+        "response_id": "gen-1782974424-lDkTSit0hEkhzA2pWPdE",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1782974424-lDkTSit0hEkhzA2pWPdE",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a14ba8a51c0dd25b-SIN"
+        },
+        "provider_attribution": {
+          "provider": "Novita",
+          "model": "deepseek/deepseek-v4-flash-20260423",
+          "id": "gen-1782974424-lDkTSit0hEkhzA2pWPdE",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.001053612,
+            "upstream_inference_prompt_cost": 0.001048852,
+            "upstream_inference_completions_cost": 4.76e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.001053612,
+          "upstream_inference_prompt_cost": 0.001048852,
+          "upstream_inference_completions_cost": 4.76e-06
+        },
+        "cost": 0.001053612,
+        "prompt_tokens": 36983,
+        "completion_tokens": 17,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 36864,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "group": 4,
+      "round": 3,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 5944.944,
+        "stream": true,
+        "ttft_ms": 5654.785,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 5654.785,
+        "stream_chunk_count": 18,
+        "usage": {
+          "prompt_tokens": 36992,
+          "completion_tokens": 16,
+          "total_tokens": 37008,
+          "cost": 0.00075296,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 36864,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00075296,
+            "upstream_inference_prompt_cost": 0.000749824,
+            "upstream_inference_completions_cost": 3.136e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "deepseek/deepseek-v4-flash-20260423",
+        "response_id": "gen-1782975470-fSmZ8w9gHd56sL1Wsgb8",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1782975470-fSmZ8w9gHd56sL1Wsgb8",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a14bc2311d40256b-SIN"
+        },
+        "provider_attribution": {
+          "provider": "GMICloud",
+          "model": "deepseek/deepseek-v4-flash-20260423",
+          "id": "gen-1782975470-fSmZ8w9gHd56sL1Wsgb8",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00075296,
+            "upstream_inference_prompt_cost": 0.000749824,
+            "upstream_inference_completions_cost": 3.136e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00075296,
+          "upstream_inference_prompt_cost": 0.000749824,
+          "upstream_inference_completions_cost": 3.136e-06
+        },
+        "cost": 0.00075296,
+        "prompt_tokens": 36992,
+        "completion_tokens": 16,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 36864,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 0,
+        "error": "Remote end closed connection without response",
+        "latency_ms": 30073.725,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "group": 1,
+      "round": 9,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 0,
+        "error": "[Errno 54] Connection reset by peer",
+        "latency_ms": 29.998,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 4453.055,
+        "stream": true,
+        "ttft_ms": 4027.847,
+        "first_content_token_ms": 4027.847,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 8,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36987,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36864,
+            "video_tokens": 0
+          },
+          "total_tokens": 37003
+        },
+        "response_model": "deepseek/deepseek-v4-flash",
+        "response_id": "chatcmpl-f2404a12-6135-9a8c-a2f0-42005d27259a",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "202607020701053600425908Lo6Jb1u",
+          "CF-RAY": "a14bc6f04e31fd22-SIN"
+        },
+        "provider_attribution": {
+          "provider": "alibaba/sg",
+          "model": "deepseek/deepseek-v4-flash",
+          "id": "chatcmpl-f2404a12-6135-9a8c-a2f0-42005d27259a",
+          "request_id": "7fe4d86645e842289b96e88d2fe11a41",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.2e-06,
+          "discount_rate": 0.5,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.00073728,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.23e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000753,
+        "prompt_tokens": 36987,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36864,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "group": 4,
+      "round": 42,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 0,
+        "error": "Remote end closed connection without response",
+        "latency_ms": 29734.385,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 3715.041,
+        "stream": true,
+        "ttft_ms": 3695.742,
+        "first_content_token_ms": 3695.742,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 5,
+        "usage": {
+          "completion_tokens": 4,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36991,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36864,
+            "video_tokens": 0
+          },
+          "total_tokens": 36995
+        },
+        "response_model": "deepseek/deepseek-v4-flash",
+        "response_id": "chatcmpl-a585ebae-0c71-94d0-96bc-324a26dcf6e6",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260702070653499171449VLAOjfDr",
+          "CF-RAY": "a14bcf704b626032-SIN"
+        },
+        "provider_attribution": {
+          "provider": "alibaba/sg",
+          "model": "deepseek/deepseek-v4-flash",
+          "id": "chatcmpl-a585ebae-0c71-94d0-96bc-324a26dcf6e6",
+          "request_id": "7d1b2e3928f04e87b5d6d8ad84f5a2fa",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 8e-07,
+          "discount_rate": 0.5,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.00073728,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.27e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000751,
+        "prompt_tokens": 36991,
+        "completion_tokens": 4,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36864,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "ttft",
+      "provider_sort": "latency",
+      "provider": "openrouter",
+      "group": 1,
+      "round": 28,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 503,
+        "error": "",
+        "latency_ms": 3610.826,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a14be4535a81c90f-SIN"
+        },
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 3451.572,
+        "stream": true,
+        "ttft_ms": 2002.884,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 2002.884,
+        "stream_chunk_count": 10,
+        "usage": {
+          "prompt_tokens": 1857,
+          "completion_tokens": 16,
+          "total_tokens": 1873,
+          "cost": 0.00026446,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00026446,
+            "upstream_inference_prompt_cost": 0.00025998,
+            "upstream_inference_completions_cost": 4.48e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 26,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "deepseek/deepseek-v4-flash-20260423",
+        "response_id": "gen-1782976871-XQ9bAclQ1ReHA6m73YIS",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1782976871-XQ9bAclQ1ReHA6m73YIS",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a14be4697bb3fc2e-SIN"
+        },
+        "provider_attribution": {
+          "provider": "Parasail",
+          "model": "deepseek/deepseek-v4-flash-20260423",
+          "id": "gen-1782976871-XQ9bAclQ1ReHA6m73YIS",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00026446,
+            "upstream_inference_prompt_cost": 0.00025998,
+            "upstream_inference_completions_cost": 4.48e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00026446,
+          "upstream_inference_prompt_cost": 0.00025998,
+          "upstream_inference_completions_cost": 4.48e-06
+        },
+        "cost": 0.00026446,
+        "prompt_tokens": 1857,
+        "completion_tokens": 16,
+        "reasoning_tokens": 26,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "ttft",
+      "provider_sort": "latency",
+      "provider": "openrouter",
+      "group": 3,
+      "round": 22,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 0,
+        "error": "Remote end closed connection without response",
+        "latency_ms": 38990.109,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 2914.237,
+        "stream": true,
+        "ttft_ms": 2641.472,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 2641.472,
+        "stream_chunk_count": 18,
+        "usage": {
+          "prompt_tokens": 36991,
+          "completion_tokens": 16,
+          "total_tokens": 37007,
+          "cost": 0.001054452,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 36864,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001054452,
+            "upstream_inference_prompt_cost": 0.001049972,
+            "upstream_inference_completions_cost": 4.48e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "deepseek/deepseek-v4-flash-20260423",
+        "response_id": "gen-1782977096-B78tPa2omq5jnSJmaGlB",
+        "system_fingerprint": "fp_8b330d02d0_prod0820_fp8_kvcache_20260402",
+        "response_headers": {
+          "X-Generation-Id": "gen-1782977096-B78tPa2omq5jnSJmaGlB",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a14be9e37bfb7373-SIN"
+        },
+        "provider_attribution": {
+          "provider": "Novita",
+          "model": "deepseek/deepseek-v4-flash-20260423",
+          "id": "gen-1782977096-B78tPa2omq5jnSJmaGlB",
+          "system_fingerprint": "fp_8b330d02d0_prod0820_fp8_kvcache_20260402",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.001054452,
+            "upstream_inference_prompt_cost": 0.001049972,
+            "upstream_inference_completions_cost": 4.48e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.001054452,
+          "upstream_inference_prompt_cost": 0.001049972,
+          "upstream_inference_completions_cost": 4.48e-06
+        },
+        "cost": 0.001054452,
+        "prompt_tokens": 36991,
+        "completion_tokens": 16,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 36864,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "ttft",
+      "provider_sort": "latency",
+      "provider": "openrouter",
+      "group": 4,
+      "round": 18,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 3001.406,
+        "stream": true,
+        "ttft_ms": 2957.67,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 2957.67,
+        "stream_chunk_count": 18,
+        "usage": {
+          "prompt_tokens": 36991,
+          "completion_tokens": 16,
+          "total_tokens": 37007,
+          "cost": 0.001054452,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 36864,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001054452,
+            "upstream_inference_prompt_cost": 0.001049972,
+            "upstream_inference_completions_cost": 4.48e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "deepseek/deepseek-v4-flash-20260423",
+        "response_id": "gen-1782977153-LI4jUrf9XgfoHmHxhpPT",
+        "system_fingerprint": "fp_8b330d02d0_prod0820_fp8_kvcache_20260402",
+        "response_headers": {
+          "X-Generation-Id": "gen-1782977153-LI4jUrf9XgfoHmHxhpPT",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a14beb473a36f882-SIN"
+        },
+        "provider_attribution": {
+          "provider": "Novita",
+          "model": "deepseek/deepseek-v4-flash-20260423",
+          "id": "gen-1782977153-LI4jUrf9XgfoHmHxhpPT",
+          "system_fingerprint": "fp_8b330d02d0_prod0820_fp8_kvcache_20260402",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.001054452,
+            "upstream_inference_prompt_cost": 0.001049972,
+            "upstream_inference_completions_cost": 4.48e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.001054452,
+          "upstream_inference_prompt_cost": 0.001049972,
+          "upstream_inference_completions_cost": 4.48e-06
+        },
+        "cost": 0.001054452,
+        "prompt_tokens": 36991,
+        "completion_tokens": 16,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 36864,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 0,
+        "error": "Remote end closed connection without response",
+        "latency_ms": 23644.802,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "ttft",
+      "provider_sort": "latency",
+      "provider": "openrouter",
+      "group": 4,
+      "round": 29,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 3700.265,
+        "stream": true,
+        "ttft_ms": 1913.43,
+        "first_content_token_ms": 1913.43,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 10,
+        "usage": {
+          "prompt_tokens": 9286,
+          "completion_tokens": 16,
+          "total_tokens": 9302,
+          "cost": 0.00130452,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00130452,
+            "upstream_inference_prompt_cost": 0.00130004,
+            "upstream_inference_completions_cost": 4.48e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "deepseek/deepseek-v4-flash-20260423",
+        "response_id": "gen-1782977177-VnYXyYSqFn6NQFleQeKI",
+        "system_fingerprint": "vllm-0.22.1.dev0+g0b3ba88f1.d20260529-dp4-ep-a8f65562",
+        "response_headers": {
+          "X-Generation-Id": "gen-1782977177-VnYXyYSqFn6NQFleQeKI",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a14bebdeccdcce0e-SIN"
+        },
+        "provider_attribution": {
+          "provider": "WandB",
+          "model": "deepseek/deepseek-v4-flash-20260423",
+          "id": "gen-1782977177-VnYXyYSqFn6NQFleQeKI",
+          "system_fingerprint": "vllm-0.22.1.dev0+g0b3ba88f1.d20260529-dp4-ep-a8f65562",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00130452,
+            "upstream_inference_prompt_cost": 0.00130004,
+            "upstream_inference_completions_cost": 4.48e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00130452,
+          "upstream_inference_prompt_cost": 0.00130004,
+          "upstream_inference_completions_cost": 4.48e-06
+        },
+        "cost": 0.00130452,
+        "prompt_tokens": 9286,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 0,
+        "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)",
+        "latency_ms": 15390.163,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    }
+  ]
+}
