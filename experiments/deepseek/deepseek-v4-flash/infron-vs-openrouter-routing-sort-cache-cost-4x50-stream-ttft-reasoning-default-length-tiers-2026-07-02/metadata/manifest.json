@@ -25,8 +25,8 @@
     },
     {
       "path": "reports/routing-cache-cost-streaming-performance-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers__2026-07-02.zh.md",
-      "sha256": "c82b014c5a3b1030e9c86cbcbec6ab2b19ad3c0b338b27094c04affef69fdcc1",
-      "size_bytes": 12788102
+      "sha256": "563db0cda4f815be40aaf429486bab3c106b8c7c877be487e59be886926dea1a",
+      "size_bytes": 6239
     },
     {
       "path": "data/README.md",
