@@ -73,6 +73,14 @@ This repository publishes reproducible experiment code, raw benchmark datasets, 
   </tbody>
 </table>
 
+## Infron Papers
+
+This section tracks Infron research papers related to LLM gateway evaluation, provider routing, and inference systems.
+
+| Paper | Authors | Published | Subjects | Links |
+| --- | --- | --- | --- | --- |
+| SEAR: Schema-Based Evaluation and Routing for LLM Gateways | Zecheng Zhang, Han Zheng, Yue Xu | 2026-03-20 | cs.DB, cs.AI, cs.CL | [arXiv](https://arxiv.org/abs/2603.26728) · [PDF](https://arxiv.org/pdf/2603.26728) |
+
 ## Online Preview
 
 GitHub Pages is the recommended way to read the self-contained HTML report online:
