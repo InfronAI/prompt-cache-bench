@@ -6,9 +6,9 @@ The benchmark uses strict A/B pairing:
 2. Each provider receives two identical requests per round.
 3. The first request warms or refreshes prompt cache behavior.
 4. The second request observes cache-read tokens.
-5. A pair enters the final comparison only when Infron and OpenRouter return identical `usage.prompt_tokens` for both first and second requests.
+5. A pair enters the final comparison only when Infron and OpenRouter return comparable `usage.prompt_tokens` for both first and second requests. The current public standard allows first/second token deltas <= 50 tokens inside the same pair to absorb small cross-platform tokenizer drift.
 
-The comparison uses response-returned `usage.prompt_tokens` as the source of truth, because platform-side prompt wrapping, tokenizer differences, and cache accounting can diverge from local token estimates.
+The comparison uses response-returned `usage.prompt_tokens` as the source of truth, because platform-side prompt wrapping, tokenizer differences, and cache accounting can diverge from local token estimates. The tolerance is narrow enough to keep input scale comparable while avoiding false exclusions from non-material tokenizer counter differences.
 
 Core metrics:
 
@@ -17,4 +17,3 @@ Core metrics:
 - Throughput: response completion tokens divided by response latency seconds.
 - Latency: full request-response elapsed time.
 - TTFT: first streaming chunk/token arrival time.
-

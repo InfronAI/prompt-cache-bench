@@ -31,7 +31,7 @@ DEFAULT_REPO_URL = "https://github.com/InfronAI/prompt-cache-bench"
 DEFAULT_PAGES_BASE_URL = "https://infronai.github.io/prompt-cache-bench"
 DEFAULT_EXPERIMENT = (
     "experiments/deepseek/deepseek-v4-flash/"
-    "infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-none-2026-06-29"
+    "infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-04"
 )
 INFRON_ICON_URL = "https://framerusercontent.com/images/jYZGKXX6mcMkU1qAXZQeevZRY.png"
 

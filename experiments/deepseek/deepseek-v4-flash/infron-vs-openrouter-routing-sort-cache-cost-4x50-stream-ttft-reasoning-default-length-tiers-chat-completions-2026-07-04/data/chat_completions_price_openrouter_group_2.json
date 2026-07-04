@@ -1,0 +1,150 @@
+{
+  "records": [
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "group": 2,
+      "round": 50,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3727.682,
+        "stream": true,
+        "ttft_ms": 3693.723,
+        "first_content_token_ms": 3693.723,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 5,
+        "usage": {
+          "prompt_tokens": 36991,
+          "completion_tokens": 4,
+          "total_tokens": 36995,
+          "cost": 0.003325302,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 64,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003325302,
+            "upstream_inference_prompt_cost": 0.003324582,
+            "upstream_inference_completions_cost": 7.2e-07
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "deepseek/deepseek-v4-flash-20260423",
+        "response_id": "gen-1783136622-piSMbiShznv8kMX4yLWH",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1783136622-piSMbiShznv8kMX4yLWH",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a15b2092bcd7fd94-SIN"
+        },
+        "provider_attribution": {
+          "provider": "DeepInfra",
+          "model": "deepseek/deepseek-v4-flash-20260423",
+          "id": "gen-1783136622-piSMbiShznv8kMX4yLWH",
+          "native_finish_reason": "stop",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.003325302,
+            "upstream_inference_prompt_cost": 0.003324582,
+            "upstream_inference_completions_cost": 7.2e-07
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.003325302,
+          "upstream_inference_prompt_cost": 0.003324582,
+          "upstream_inference_completions_cost": 7.2e-07
+        },
+        "cost": 0.003325302,
+        "prompt_tokens": 36991,
+        "completion_tokens": 4,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 64,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 10269.292,
+        "stream": true,
+        "ttft_ms": 8203.318,
+        "first_content_token_ms": 10236.577,
+        "first_reasoning_token_ms": 8203.318,
+        "stream_chunk_count": 48,
+        "usage": {
+          "prompt_tokens": 36991,
+          "completion_tokens": 243,
+          "total_tokens": 37234,
+          "cost": 0.002314922,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 17408,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002314922,
+            "upstream_inference_prompt_cost": 0.002267294,
+            "upstream_inference_completions_cost": 4.7628e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 240,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "deepseek/deepseek-v4-flash-20260423",
+        "response_id": "gen-1783136626-yUOlB1aAyWy9IYobd6ZK",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1783136626-yUOlB1aAyWy9IYobd6ZK",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a15b20aada9bf904-SIN"
+        },
+        "provider_attribution": {
+          "provider": "GMICloud",
+          "model": "deepseek/deepseek-v4-flash-20260423",
+          "id": "gen-1783136626-yUOlB1aAyWy9IYobd6ZK",
+          "native_finish_reason": "stop",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.002314922,
+            "upstream_inference_prompt_cost": 0.002267294,
+            "upstream_inference_completions_cost": 4.7628e-05
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.002314922,
+          "upstream_inference_prompt_cost": 0.002267294,
+          "upstream_inference_completions_cost": 4.7628e-05
+        },
+        "cost": 0.002314922,
+        "prompt_tokens": 36991,
+        "completion_tokens": 243,
+        "reasoning_tokens": 240,
+        "cache_read_tokens": 17408,
+        "cache_write_tokens": 0
+      }
+    }
+  ]
+}

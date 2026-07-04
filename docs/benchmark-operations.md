@@ -29,7 +29,7 @@ experiments/<model-family>/<model-id>/<ab-pair-and-run-id>/
 Use model IDs as directory names where practical. Convert provider pairs and run parameters into explicit run IDs, for example:
 
 ```text
-infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19
+infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-04
 ```
 
 ## 3. Benchmark Design Workflow
@@ -52,7 +52,7 @@ infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-2026-06-19
    - HTTP failure or incomplete response;
    - missing final streaming usage when usage is required;
    - anomalous `usage.prompt_tokens`, including zero prompt tokens for successful benchmark responses;
-   - unequal Infron/OpenRouter input tokens within the same A/B pair.
+  - Infron/OpenRouter input-token deltas above the configured tolerance within the same A/B pair.
 
 ## 4. Metric Source Of Truth
 
@@ -60,7 +60,7 @@ Use API response telemetry, not local estimates, for final metrics.
 
 | Metric | Source of truth | Direction |
 | --- | --- | --- |
-| Input tokens | `usage.prompt_tokens` | Equal across included A/B pairs |
+| Input tokens | `usage.prompt_tokens` | Comparable across included A/B pairs; current tolerance <= 50 tokens per first/second request |
 | Completion tokens | response `usage` completion fields | Higher may increase output work |
 | Cache hit rate | second request cache read tokens / second request prompt tokens | Higher is better |
 | Actual cost | response-returned cost/cost_details | Lower is better |
