@@ -1,0 +1,367 @@
+{
+  "experiment_id": "infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-04",
+  "model": "openai/gpt-5.4-mini",
+  "updated_at": "2026-07-04",
+  "files": [
+    {
+      "path": "reports/README.md",
+      "sha256": "328cb6a862d46e136ec72dfe6da09835d7b3b8d82f280e94a33f09a447d1c6b8",
+      "size_bytes": 1573
+    },
+    {
+      "path": "reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-mini__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.en.html",
+      "sha256": "9790d94e21188509809007c4bcdf629784aa5fce2a44a2732af3e43cb10a5df2",
+      "size_bytes": 1113392
+    },
+    {
+      "path": "reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-mini__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.en.md",
+      "sha256": "af01eac87c2dbb3d18b0250be9485c128a375916b824dde0c26c6c774fcfabe5",
+      "size_bytes": 11531
+    },
+    {
+      "path": "reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-mini__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.en.pdf",
+      "sha256": "5e553553f0b77622c6d9b17cad9f51333732dc130efdbf65a60d93d05818e459",
+      "size_bytes": 61734
+    },
+    {
+      "path": "reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-mini__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.zh.html",
+      "sha256": "25ee2fe11e4a44f4306583e11aa1008d3d34194c64a66caf1b3907ce3e034514",
+      "size_bytes": 1113978
+    },
+    {
+      "path": "reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-mini__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.zh.md",
+      "sha256": "f10c58e5d89dc6875885d032f71e46a93bef58764dfe651860a09f2a83416f4c",
+      "size_bytes": 11398
+    },
+    {
+      "path": "reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-mini__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.zh.pdf",
+      "sha256": "9f6a9a15851343cb971bcbce65d382ccf12c38414b8a5d33574d0e862489f2ed",
+      "size_bytes": 192567
+    },
+    {
+      "path": "data/README.md",
+      "sha256": "f46e686b0ac4effe162f9217e21d55d265456f0f848655ddd630d184781b4283",
+      "size_bytes": 390
+    },
+    {
+      "path": "data/benchmark_pairs.csv",
+      "sha256": "3bd26737e7ca08438856d3d9f6367df63ac391adc7e0db841c81ae34a3880c23",
+      "size_bytes": 277567
+    },
+    {
+      "path": "data/benchmark_requests.jsonl",
+      "sha256": "4ff92a2e44c3d37cf6eb732ca00a85393114c4712ec35780b884899c551f93b5",
+      "size_bytes": 4660123
+    },
+    {
+      "path": "data/chat_completions_latency_infron_group_1.json",
+      "sha256": "445d4cc04597ea4ed07b08789494d87ce9f75fb7a646b4484a5c3901e20c5a58",
+      "size_bytes": 234419
+    },
+    {
+      "path": "data/chat_completions_latency_infron_group_2.json",
+      "sha256": "0f0b9a8c494821359c9281e837c34e91eebf264e08d687a04ecc55ef668f655d",
+      "size_bytes": 234459
+    },
+    {
+      "path": "data/chat_completions_latency_infron_group_3.json",
+      "sha256": "2a02116fc9507f22ebe258e58c26b3dd00c3c18cd62e83c2f4407c0ce8d74fe3",
+      "size_bytes": 234435
+    },
+    {
+      "path": "data/chat_completions_latency_infron_group_4.json",
+      "sha256": "676d63ff3d5a3d26c6981f53dd32b9dd7af812bb6d925d9c5efca239d767cc2b",
+      "size_bytes": 196908
+    },
+    {
+      "path": "data/chat_completions_latency_openrouter_group_1.json",
+      "sha256": "acb20d0307e236ea28e6ad9f573f315d1bc6a560279165e4a50fd148d3bfb544",
+      "size_bytes": 252959
+    },
+    {
+      "path": "data/chat_completions_latency_openrouter_group_2.json",
+      "sha256": "11eb9ad300e2feb8b0dbd2602b6bc21bee0e2a6f8510c57c3fba12670f6267f5",
+      "size_bytes": 252995
+    },
+    {
+      "path": "data/chat_completions_latency_openrouter_group_3.json",
+      "sha256": "09a8d4b0d7a14867845d3d72c995ac689b285f84f11f1541b0ee15e508d51625",
+      "size_bytes": 252953
+    },
+    {
+      "path": "data/chat_completions_latency_openrouter_group_4.json",
+      "sha256": "00c9a50e78b16e0407a56befe7ddbed68f4c28cdb054c76ad6f0fc28e45cee31",
+      "size_bytes": 212501
+    },
+    {
+      "path": "data/chat_completions_price_infron_group_1.json",
+      "sha256": "7eb28887b1fc0f1d5cfe4cbdbd6626d6acdad6ead2e05f792818f37dbb3bc7ff",
+      "size_bytes": 234208
+    },
+    {
+      "path": "data/chat_completions_price_infron_group_2.json",
+      "sha256": "567d6b9df2c872bdeb6041cea779605ecbbdd6d7f6fe53acbaa7e8c4b589f308",
+      "size_bytes": 234199
+    },
+    {
+      "path": "data/chat_completions_price_infron_group_3.json",
+      "sha256": "7a6f998c7787f8af956060c764af421144f35601acf35f2ff81e1705bff3f4d8",
+      "size_bytes": 234218
+    },
+    {
+      "path": "data/chat_completions_price_infron_group_4.json",
+      "sha256": "d070e6276146c7913a5976f65570c981c9769accf7ab61e3c7950eb9b076bd4c",
+      "size_bytes": 234206
+    },
+    {
+      "path": "data/chat_completions_price_openrouter_group_1.json",
+      "sha256": "e86decee6db41c73db16a0115d90645bf025355186034a7aa76dbd309661bdfc",
+      "size_bytes": 252751
+    },
+    {
+      "path": "data/chat_completions_price_openrouter_group_2.json",
+      "sha256": "979cc0740131d57796ebc18c16cafb54d841df6833f3e3755ce15aaebbb66f23",
+      "size_bytes": 252804
+    },
+    {
+      "path": "data/chat_completions_price_openrouter_group_3.json",
+      "sha256": "5f38f700deef4e4e33b52ef2740bc988fe7d7bcc6285c6d439ee9d1137c2fee1",
+      "size_bytes": 252748
+    },
+    {
+      "path": "data/chat_completions_price_openrouter_group_4.json",
+      "sha256": "e35fc67dfe8b835a48d082b4bc054bfe7ab328b520be6865ba9f2c26a41279a6",
+      "size_bytes": 252753
+    },
+    {
+      "path": "data/chat_completions_throughput_infron_group_1.json",
+      "sha256": "2756d51f80cd02b78a2c69af1243274bc9f8d337c9d8db165f89741b9173a8fa",
+      "size_bytes": 234543
+    },
+    {
+      "path": "data/chat_completions_throughput_infron_group_2.json",
+      "sha256": "ce1b8db414abd69fcd64eacd564e25895e209704018e9e717a900d1247b61a26",
+      "size_bytes": 234753
+    },
+    {
+      "path": "data/chat_completions_throughput_infron_group_3.json",
+      "sha256": "b6a01ace45f1fdf68ebf555f4dc68a1a1583e35fc68bc706c1a56825939261f9",
+      "size_bytes": 235180
+    },
+    {
+      "path": "data/chat_completions_throughput_infron_group_4.json",
+      "sha256": "5c16cfe3214215fd7b11727e73c577b03bb4e46f1c2f4af74e143b3232ce5baa",
+      "size_bytes": 234725
+    },
+    {
+      "path": "data/chat_completions_throughput_openrouter_group_1.json",
+      "sha256": "cddd08d5b7f8a0c751c6f89eb7f81d8036f9d9015c28889ecc13ecedfec84bd8",
+      "size_bytes": 253182
+    },
+    {
+      "path": "data/chat_completions_throughput_openrouter_group_2.json",
+      "sha256": "8780b4b9f1c5eb643c96083c8cac6402893dfbb270249ac6b89fb12a3e78f8c5",
+      "size_bytes": 253274
+    },
+    {
+      "path": "data/chat_completions_throughput_openrouter_group_3.json",
+      "sha256": "6619814365187ccf25ee32b9b354d20b12544d35b5097999ecfc6512d79a6398",
+      "size_bytes": 253261
+    },
+    {
+      "path": "data/chat_completions_throughput_openrouter_group_4.json",
+      "sha256": "e59f6bf751aed727f4f28b3ed1593d144e4c0bb668cd071c48f19659a9e63692",
+      "size_bytes": 253244
+    },
+    {
+      "path": "data/chat_completions_ttft_infron_group_1.json",
+      "sha256": "3fb1631776c3d82ee8b3fee2ab28318fbd1156435b819be9595a118aa5db75cf",
+      "size_bytes": 241123
+    },
+    {
+      "path": "data/chat_completions_ttft_infron_group_2.json",
+      "sha256": "8756f905009f1cb867c386ad0886efbe38d545851c2ca4ebd1fa5078db951d04",
+      "size_bytes": 241300
+    },
+    {
+      "path": "data/chat_completions_ttft_infron_group_3.json",
+      "sha256": "f7a68206763c1537e8505c447232dbe718888ff651fbc89a22d0af4095807f28",
+      "size_bytes": 241266
+    },
+    {
+      "path": "data/chat_completions_ttft_infron_group_4.json",
+      "sha256": "1ecdd59b2b127d7c200b21f8e424b158ef13e5514b959449950aa6554bda785b",
+      "size_bytes": 241203
+    },
+    {
+      "path": "data/chat_completions_ttft_openrouter_group_1.json",
+      "sha256": "acfa34c2eb77c1d2de0f3364e9aa9222b7f6fa581b4c4e4233c6ba24fa824e94",
+      "size_bytes": 252787
+    },
+    {
+      "path": "data/chat_completions_ttft_openrouter_group_2.json",
+      "sha256": "3d2f35df8105d1692b1a555bdbf307dc2e997b7d979e239d1d03e0783e185018",
+      "size_bytes": 252828
+    },
+    {
+      "path": "data/chat_completions_ttft_openrouter_group_3.json",
+      "sha256": "f66e02fb45f359245b8fe88d5e22b68c02359714e0398f8764a3a73c3dedbfc0",
+      "size_bytes": 252821
+    },
+    {
+      "path": "data/chat_completions_ttft_openrouter_group_4.json",
+      "sha256": "41aa97e5b20bef50f2dd5a71cc2f4d3e1d645cbe5ce20bc5bc2f553e4b2f27ea",
+      "size_bytes": 252797
+    },
+    {
+      "path": "data/records.json",
+      "sha256": "6389970e6381a1e2a8df96ba02d53b2f7fb610addf5f45ed69c64b2fbbfdac27",
+      "size_bytes": 7747152
+    },
+    {
+      "path": "data/records_anomalous_usage.json",
+      "sha256": "a4e17ae4dae862aae9f36cf63d5e892e9bfb67264b917b1febd1c786ddedef7b",
+      "size_bytes": 19
+    },
+    {
+      "path": "data/records_excluded.json",
+      "sha256": "11e2ed24815a7cf38765b2149b9d28bd51f312a36dbcedad6ef6d32b1648c138",
+      "size_bytes": 65646
+    },
+    {
+      "path": "data/records_incomplete.json",
+      "sha256": "34315e4c671fb66e5b22e0a31bbbc4c118d875566524fda11e2bdd36576136ce",
+      "size_bytes": 28153
+    },
+    {
+      "path": "data/records_unequal_input_tokens.json",
+      "sha256": "f4905c20e18de51233e2ae54df900479fa3346737ef008192297c2429de75556",
+      "size_bytes": 37514
+    },
+    {
+      "path": "data/summary.json",
+      "sha256": "b5fcdd6787abbc331d2a4326ce6473a0bd40226faa9adc3bf370bfa1c381faf3",
+      "size_bytes": 166476
+    },
+    {
+      "path": "data/summary_partial.json",
+      "sha256": "921cc4bf5cfc955b762f3ce37856277f492a7559e9676e02014b7cc971f1d5d0",
+      "size_bytes": 154358
+    },
+    {
+      "path": "code/export_routing_report_pdf.py",
+      "sha256": "3bf6139d5470a8f7ba55ea045bbd6a4908923191adb5fa32cc7c954da1ac4e67",
+      "size_bytes": 15643
+    },
+    {
+      "path": "code/render_glm52_deepseek_style_report.py",
+      "sha256": "e5bb0d32361d70ee688e0d0a0da3302a1e542e33e53876c905814eb5c27b0532",
+      "size_bytes": 93227
+    },
+    {
+      "path": "code/rerun_routing_sort_cache_cost_ab.py",
+      "sha256": "a485c5116e99375e6b171d0328e5a423babd1ee6b206c72f54053a3a045b1075",
+      "size_bytes": 272201
+    },
+    {
+      "path": "code/test_rerun_routing_sort_cache_cost_ab.py",
+      "sha256": "c086ddc5d0a9a91eba82b7e8767d7bddf2f1ca4a28af0a87056b7028825adce4",
+      "size_bytes": 10512
+    },
+    {
+      "path": "figures/ab_pairing.svg",
+      "sha256": "1643055ee28ebe6afa6ebfb3bf0715a551d8268854cade5bb060b4dd805a99e5",
+      "size_bytes": 2365
+    },
+    {
+      "path": "figures/conclusion_overview.svg",
+      "sha256": "81a4aac34bc61a7411c1657a3b7bc08799d372aca89c372f1419ac5ddd64250d",
+      "size_bytes": 13208
+    },
+    {
+      "path": "figures/experiment_flow.svg",
+      "sha256": "e27fa78142b5c045733087cad3d33371d24587f77b3838237bcf8a6f20f0d230",
+      "size_bytes": 3048
+    },
+    {
+      "path": "figures/inference_impossible_quadrilateral.svg",
+      "sha256": "ea86798819decf33c6aed16cc40e51cc519d2dbd2dfffa8d6febb6cf514357f7",
+      "size_bytes": 5919
+    },
+    {
+      "path": "figures/infron_architecture.svg",
+      "sha256": "eb2e314f683d654ba94595c82e5732bd1ff027e8cc725fb88107145e373a29c8",
+      "size_bytes": 4681
+    },
+    {
+      "path": "figures/infron_cost_control.svg",
+      "sha256": "8521aecb7bb4205e1767e7fd37e782176b9af1ce081be890098d83d6671f28f1",
+      "size_bytes": 3559
+    },
+    {
+      "path": "figures/latency_first.svg",
+      "sha256": "a8acc8a906f0401da1cd1a33b0a08b7eeb35ebdfeee7ee8e63faf7266699071a",
+      "size_bytes": 9159
+    },
+    {
+      "path": "figures/latency_first_curves.svg",
+      "sha256": "e06b52d8e26e43b44a6da41bb93dfd547c363c9ef048e1586ddcad112dcff926",
+      "size_bytes": 49366
+    },
+    {
+      "path": "figures/latency_first_radar.svg",
+      "sha256": "3493ef1422b5d533f0c495cec9bdacbabe6dbb6307bf7a34add757db9fb2175c",
+      "size_bytes": 4578
+    },
+    {
+      "path": "figures/price_first.svg",
+      "sha256": "61f6a2210e2ccd41cf79cdfb2b595355e27aab8fdbdd511dd64f8fa8f35c2765",
+      "size_bytes": 9159
+    },
+    {
+      "path": "figures/price_first_curves.svg",
+      "sha256": "c9facd7e826e7a1fc0343306a8eea3717c033e04d3366290c05bb5d5f814dbab",
+      "size_bytes": 49737
+    },
+    {
+      "path": "figures/price_first_radar.svg",
+      "sha256": "e8f6bafd46ca1f34df1b4b72ee0aa1dea58332190a61c2985c77c69a1c4849d4",
+      "size_bytes": 4576
+    },
+    {
+      "path": "figures/provider_stick_cache_affinity.svg",
+      "sha256": "47a031b1926022c25a16d81273d0672adf9ce72dd709e76bb9fc2c20a9469975",
+      "size_bytes": 3661
+    },
+    {
+      "path": "figures/throughput_first.svg",
+      "sha256": "7c624299220a4cd121db61ea2a2ce8f47aa292c90e72dfd25bf9a99164dcde41",
+      "size_bytes": 9168
+    },
+    {
+      "path": "figures/throughput_first_curves.svg",
+      "sha256": "00634ddfbcf9cbd693be91ddb01469818df6af537f042dc8c4deb4760454dc78",
+      "size_bytes": 49746
+    },
+    {
+      "path": "figures/throughput_first_radar.svg",
+      "sha256": "29378a9c1484f77b0a55c33a0a33ff697e05da96cab37cc6f66d4bfeac3fc009",
+      "size_bytes": 4581
+    },
+    {
+      "path": "figures/ttft_first.svg",
+      "sha256": "a481f4bd6db7f05f6eedfe962d59fdc2f81e3ffc57c045bcf7478aa54a59354e",
+      "size_bytes": 9166
+    },
+    {
+      "path": "figures/ttft_first_curves.svg",
+      "sha256": "eede1d2fe170ae1e50f2809d17e1d128e8c7fc83bd4e3241b7c6dd2efcb3db1e",
+      "size_bytes": 49740
+    },
+    {
+      "path": "figures/ttft_first_radar.svg",
+      "sha256": "f793a27644e784ce624452bbf2c446d101fcf404953f5baaddb68ee5619bb6ac",
+      "size_bytes": 4575
+    }
+  ]
+}
