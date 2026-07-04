@@ -1,0 +1,8 @@
+# Reports
+
+- [Chinese Markdown](./routing-cache-cost-streaming-performance-ab-study__deepseek-v4-pro__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.zh.md)
+- [English Markdown](./routing-cache-cost-streaming-performance-ab-study__deepseek-v4-pro__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.en.md)
+- [Chinese PDF](./routing-cache-cost-streaming-performance-ab-study__deepseek-v4-pro__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.zh.pdf)
+- [English PDF](./routing-cache-cost-streaming-performance-ab-study__deepseek-v4-pro__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.en.pdf)
+- [Chinese HTML](https://infronai.github.io/prompt-cache-bench/experiments/deepseek/deepseek-v4-pro/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-04/reports/routing-cache-cost-streaming-performance-ab-study__deepseek-v4-pro__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.zh.html)
+- [English HTML](https://infronai.github.io/prompt-cache-bench/experiments/deepseek/deepseek-v4-pro/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-04/reports/routing-cache-cost-streaming-performance-ab-study__deepseek-v4-pro__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.en.html)
