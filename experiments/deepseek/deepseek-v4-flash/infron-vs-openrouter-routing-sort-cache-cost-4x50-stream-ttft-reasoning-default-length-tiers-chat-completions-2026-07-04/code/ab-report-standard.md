@@ -194,6 +194,12 @@ The appendix must include direct paths to:
 
 If an external dataset is not used, name the built-in dataset and point to the request-level export.
 
+Path policy:
+
+- Local debug/export reports may use repository-relative or `export/...` relative paths.
+- Public GitHub Pages or open-source GitHub reports must use online-accessible GitHub links in the reproducibility appendix: `blob/main` URLs for files, `tree/main` URLs for directories, and GitHub Pages URLs for published HTML pages.
+- Do not mix local filesystem paths into public report appendices unless they are explicitly labeled as local-only reproduction paths.
+
 ## Current Canonical Implementation
 
 The current canonical implementation is:

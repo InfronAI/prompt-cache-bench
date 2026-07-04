@@ -10,13 +10,13 @@
     },
     {
       "path": "reports/routing-cache-cost-streaming-performance-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.en.html",
-      "sha256": "843abff79c75bc7fbc6bf8a36c16b96df6bd9245b3756afc3fa79989dde052d8",
-      "size_bytes": 1112883
+      "sha256": "63a9ed017f9f754f12691453e88bc72908aa77adeafda302a9cfb79a8bd4d117",
+      "size_bytes": 1114052
     },
     {
       "path": "reports/routing-cache-cost-streaming-performance-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.en.md",
-      "sha256": "53269730db91673722186b4271358b1166d835ba55dc63e25ee99ada9306f052",
-      "size_bytes": 9942
+      "sha256": "12f63711ee9ebef1d0178caeb15272d1e30df994ef03b15d0fa00b2f292c0e54",
+      "size_bytes": 10543
     },
     {
       "path": "reports/routing-cache-cost-streaming-performance-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.en.pdf",
@@ -25,13 +25,13 @@
     },
     {
       "path": "reports/routing-cache-cost-streaming-performance-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.zh.html",
-      "sha256": "00eaf3f26a69abc8d053b81db7bfc3cbd46cb64100e7e288d9bfb175b72a7df2",
-      "size_bytes": 1113567
+      "sha256": "ce117d2a3a2e13bbb2445000bf1579f03bf79807bdfad3b1333da85a1d89f88d",
+      "size_bytes": 1114736
     },
     {
       "path": "reports/routing-cache-cost-streaming-performance-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.zh.md",
-      "sha256": "2cc17bbe1552aa25c5d593f08ee42c6daf05bcd735516bba716a36d25f9b2bd2",
-      "size_bytes": 10002
+      "sha256": "e63c607f103ce10f20c6bd1f07acd83e175ece8068e5df3a161e7fbe5fc8d036",
+      "size_bytes": 10603
     },
     {
       "path": "reports/routing-cache-cost-streaming-performance-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.zh.pdf",
@@ -249,9 +249,14 @@
       "size_bytes": 157316
     },
     {
+      "path": "code/__pycache__/render_glm52_deepseek_style_report.cpython-312.pyc",
+      "sha256": "1841fb943a831b1170aee92a91014f6c6eb91069cdadd00658a5837946dfe9a0",
+      "size_bytes": 110418
+    },
+    {
       "path": "code/ab-report-standard.md",
-      "sha256": "897151e98e2fc4cd9d7acf2642e54f800f1b22712a70275d35526348460d8372",
-      "size_bytes": 8427
+      "sha256": "4c8633866de695fafeec1f70477340877b89b9253f24eb6c06b367656eae785c",
+      "size_bytes": 8901
     },
     {
       "path": "code/export_routing_report_pdf.py",
@@ -260,8 +265,8 @@
     },
     {
       "path": "code/render_glm52_deepseek_style_report.py",
-      "sha256": "8d6047a98107177daf86e9525a78df4735d72bfda7a55e2ba661620cc7cbee33",
-      "size_bytes": 91975
+      "sha256": "e5bb0d32361d70ee688e0d0a0da3302a1e542e33e53876c905814eb5c27b0532",
+      "size_bytes": 93227
     },
     {
       "path": "code/rerun_routing_sort_cache_cost_ab.py",

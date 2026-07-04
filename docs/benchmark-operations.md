@@ -88,6 +88,8 @@ Each full report should include:
 
 Do not embed full raw benchmark records in report bodies. Link to repository files in the reproducibility appendix.
 
+For local debug/export reports, repository-relative or `export/...` paths are acceptable. For public GitHub and GitHub Pages reports, the reproducibility appendix must use online-accessible links: GitHub `blob/main` URLs for files, GitHub `tree/main` URLs for directories, and GitHub Pages URLs for rendered HTML reports.
+
 ## 6. Bilingual Report Rules
 
 - Chinese reports should use Chinese prose and Chinese chart labels, except for necessary model IDs, API field names, platform names, and code.

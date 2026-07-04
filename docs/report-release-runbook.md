@@ -178,6 +178,12 @@ For each release, verify that the report points to the actual committed paths:
 find experiments/<model-family>/<model-id>/<run-id> -maxdepth 3 -type f | sort
 ```
 
+Reproducibility appendix path policy:
+
+- Local debug/export reports may use repository-relative or local `export/...` paths.
+- Public GitHub and GitHub Pages reports must use online-accessible GitHub links: `blob/main` URLs for files, `tree/main` URLs for directories, and GitHub Pages URLs for published HTML reports.
+- Do not leave unqualified local filesystem paths in public report appendices unless they are explicitly labeled as local-only.
+
 Check that these files exist when referenced by the report:
 
 - HTML report

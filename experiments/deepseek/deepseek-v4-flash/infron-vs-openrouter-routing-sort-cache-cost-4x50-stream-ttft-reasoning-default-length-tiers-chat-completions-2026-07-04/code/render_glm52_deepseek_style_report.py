@@ -113,12 +113,28 @@ def _replace_chart_data(init_template: str, chart_data: dict[str, Any]) -> str:
         1,
     )
     script = script.replace(
+        "const minTtft=Math.min(metrics.infron.ttft[i],metrics.openrouter.ttft[i]);\n      scores[sort]={",
+        "const minTtft=Math.min(metrics.infron.ttft[i],metrics.openrouter.ttft[i]);\n      const maxCache=Math.max(metrics.infron.cache[i],metrics.openrouter.cache[i])||1;\n      scores[sort]={",
+    )
+    script = script.replace(
         "infron:[metrics.infron.throughput[i]/maxThr*100,minCost/metrics.infron.cost[i]*100,minLatency/metrics.infron.latency[i]*100,minTtft/metrics.infron.ttft[i]*100].map(v=>Number(v.toFixed(2))),",
-        "infron:[safeHigher(metrics.infron.throughput[i],maxThr),safeLower(minCost,metrics.infron.cost[i]),safeLower(minLatency,metrics.infron.latency[i]),safeLower(minTtft,metrics.infron.ttft[i])].map(v=>Number(v.toFixed(2))),",
+        "infron:[safeHigher(metrics.infron.throughput[i],maxThr),safeLower(minCost,metrics.infron.cost[i]),safeLower(minLatency,metrics.infron.latency[i]),safeLower(minTtft,metrics.infron.ttft[i]),safeHigher(metrics.infron.cache[i],maxCache)].map(v=>Number(v.toFixed(2))),",
     )
     script = script.replace(
         "openrouter:[metrics.openrouter.throughput[i]/maxThr*100,minCost/metrics.openrouter.cost[i]*100,minLatency/metrics.openrouter.latency[i]*100,minTtft/metrics.openrouter.ttft[i]*100].map(v=>Number(v.toFixed(2)))",
-        "openrouter:[safeHigher(metrics.openrouter.throughput[i],maxThr),safeLower(minCost,metrics.openrouter.cost[i]),safeLower(minLatency,metrics.openrouter.latency[i]),safeLower(minTtft,metrics.openrouter.ttft[i])].map(v=>Number(v.toFixed(2)))",
+        "openrouter:[safeHigher(metrics.openrouter.throughput[i],maxThr),safeLower(minCost,metrics.openrouter.cost[i]),safeLower(minLatency,metrics.openrouter.latency[i]),safeLower(minTtft,metrics.openrouter.ttft[i]),safeHigher(metrics.openrouter.cache[i],maxCache)].map(v=>Number(v.toFixed(2)))",
+    )
+    script = script.replace(
+        "const avgScore=provider=>[0,1,2,3].map(idx=>Number((chartData.sorts.reduce((sum,sort)=>sum+scores[sort][provider][idx],0)/chartData.sorts.length).toFixed(2)));",
+        "const avgScore=provider=>[0,1,2,3,4].map(idx=>Number((chartData.sorts.reduce((sum,sort)=>sum+scores[sort][provider][idx],0)/chartData.sorts.length).toFixed(2)));",
+    )
+    script = script.replace(
+        "{name:'流式 TTFT\\n越低越好',max:100}]",
+        "{name:'流式 TTFT\\n越低越好',max:100},{name:'缓存命中率\\n越高越好',max:100}]",
+    )
+    script = script.replace(
+        "{name:'Streaming TTFT\\nlower is better',max:100}]",
+        "{name:'Streaming TTFT\\nlower is better',max:100},{name:'Cache hit rate\\nhigher is better',max:100}]",
     )
     script = script.replace(
         "function scores(provider){ const p=metrics[provider], o=provider==='infron'?metrics.openrouter:metrics.infron; const higher=(a,b)=>100*avg(a)/Math.max(avg(a),avg(b)); const lower=(a,b)=>100*Math.min(avg(a),avg(b))/avg(a); return [higher(p.throughput,o.throughput),lower(p.cost,o.cost),lower(p.latency,o.latency),lower(p.ttft,o.ttft),higher(p.cache,o.cache)].map(v=>Number(v.toFixed(2))); }",
@@ -336,7 +352,7 @@ def _impossible_panel_zh() -> str:
     return """
 <div class="echarts-academic-panel impossible-panel">
   <h3>图 0：Inference 平台“不可能四角”归一化综合轮廓</h3>
-  <p class="echarts-academic-note">四个方向分别代表吞吐量、价格、端到端 E2E 时延和流式 TTFT。所有指标统一转为 0-100 分，且越外侧越好。</p>
+  <p class="echarts-academic-note">五个方向分别代表吞吐量、价格、端到端 E2E 时延、流式 TTFT 和缓存命中率。所有指标统一转为 0-100 分，且越外侧越好。</p>
   <div id="echarts-impossible-quadrilateral" class="echarts-chart impossible-chart"></div>
   <p class="echarts-academic-note">粗实线表示平台综合轮廓，半透明细线和点表示各路由模式下的表现。</p>
 </div>"""
@@ -372,7 +388,7 @@ def _impossible_panel_en() -> str:
     return """
 <div class="echarts-academic-panel impossible-panel">
   <h3>Figure 0: Inference Platform Impossible Quadrilateral</h3>
-  <p class="echarts-academic-note">The four directions represent throughput, price, E2E latency, and Streaming TTFT. Every metric is normalized to a 0-100 score, with farther outward meaning better.</p>
+  <p class="echarts-academic-note">The five directions represent throughput, price, E2E latency, Streaming TTFT, and cache hit rate. Every metric is normalized to a 0-100 score, with farther outward meaning better.</p>
   <div id="echarts-impossible-quadrilateral" class="echarts-chart impossible-chart"></div>
   <p class="echarts-academic-note">Thick solid lines show platform-level contours; translucent lines and points show individual routing modes.</p>
 </div>"""
