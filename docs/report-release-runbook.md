@@ -224,7 +224,57 @@ The validator checks:
 - unrendered Markdown links inside HTML reports;
 - common secret and API key patterns.
 
-## 8. Commit And Push
+## 8. Homepage Registry Entry Standard
+
+The GitHub Pages homepage contains bilingual Experiment Registry tables. Every published experiment must use the same table shape in both language sections.
+
+Canonical columns:
+
+| English column | Chinese column | Required content |
+| --- | --- | --- |
+| Status | 状态 | Published / 已发布 badge for released experiments |
+| Model | 模型 | Exact model ID in `<code>` |
+| A/B Pair | A/B Pair | Comparison target, normally `Infron vs OpenRouter` |
+| Design | 实验设计 | Compact experiment settings sentence |
+| Reports | 报告 | Fixed ordered report links |
+| Data | 数据 | Dataset directory link |
+
+Registry rows must follow these rules:
+
+- Use one `<tr>` per published experiment.
+- Do not split Chinese and English reports into separate rows.
+- Do not use `rowspan` in the homepage registry.
+- Keep the same row order in English and Chinese registries.
+- Keep the `Design` cell concise and comparable across all rows: groups x rounds, streaming, routing sort modes, reasoning/thinking behavior, prompt-length tiers, and API protocol scope.
+- Use online-accessible links only.
+
+The `Reports` column must use this exact order:
+
+- English registry: `EN HTML · ZH HTML · EN MD · ZH MD · Reports`
+- Chinese registry: `中文 HTML · EN HTML · 中文 MD · EN MD · 报告目录`
+
+The `Data` column must link to the committed `data/` directory:
+
+- English registry label: `Dataset`
+- Chinese registry label: `数据集`
+
+Link targets:
+
+- HTML reports: GitHub Pages URLs.
+- Markdown reports: GitHub `blob/main` URLs.
+- Reports directory: GitHub `tree/main` URL for `reports/`.
+- Data directory: GitHub `tree/main` URL for `data/`.
+
+Before committing a homepage update, inspect both registry table snippets and run:
+
+```bash
+python3 scripts/sync_report_release.py \
+  --experiment experiments/<model-family>/<model-id>/<run-id>
+```
+
+After pushing, verify the live GitHub Pages homepage no longer contains stale two-row or `rowspan` registry entries for the released model.
+
+## 9. Commit And Push
 
 Commit only after the diff and scans are clean:
 
@@ -244,7 +294,7 @@ git push origin main
 
 When a local staging repository has diverged too much from the remote, create a fresh clone under `export/open-source/`, apply only the intended report files, then commit from that clean copy.
 
-## 9. Post-Push Verification
+## 10. Post-Push Verification
 
 After pushing:
 
