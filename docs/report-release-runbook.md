@@ -15,6 +15,18 @@ Use two separate areas:
 
 Do not push directly from the local debug export. Always copy finalized report artifacts into `export/open-source/prompt-cache-bench/`, review the diff there, then commit and push.
 
+Hard rule: public A/B benchmark reports are published only from the `InfronAI/prompt-cache-bench` repository. The product/debug repository may contain draft reports for iteration, but it is not the public release target for benchmark artifacts.
+
+Before staging or committing a public report, confirm the repository identity from the open-source staging root:
+
+```bash
+cd export/open-source/prompt-cache-bench
+git remote -v
+git rev-parse --show-toplevel
+```
+
+The remote must resolve to `https://github.com/InfronAI/prompt-cache-bench.git` or `git@github.com:InfronAI/prompt-cache-bench.git`. If it points to another repository, stop and switch to the correct staging checkout before committing.
+
 ## 2. Target Repository Layout
 
 Each finalized experiment should live under:
@@ -96,12 +108,13 @@ After copying, inspect the staging diff from the open-source repository root:
 
 ```bash
 cd export/open-source/prompt-cache-bench
+git remote -v
 git status --short --branch
 git diff --stat
 git diff --name-status
 ```
 
-The diff should contain only files intended for the public release. If unrelated files appear, stop and isolate the report update before committing.
+The remote must be `InfronAI/prompt-cache-bench`, and the diff should contain only files intended for the public release. If unrelated files appear, or if the remote is not the benchmark repository, stop and isolate the report update before committing.
 
 ### 4.1 Standard Sync Script
 
@@ -279,10 +292,13 @@ After pushing, verify the live GitHub Pages homepage no longer contains stale tw
 Commit only after the diff and scans are clean:
 
 ```bash
+git remote -v
 git add <report-files> <data-files> <figure-files> <metadata-files> <code-files>
 git commit -m "Update <model-id> benchmark report"
 git push origin main
 ```
+
+Never commit or push a public A/B benchmark release from the product/debug repository by accident. The commit should be created from `export/open-source/prompt-cache-bench`, and `git remote -v` should show `InfronAI/prompt-cache-bench` immediately before `git add`.
 
 If `git push` is rejected because the remote has newer commits, do not force push. Fetch and rebase or use a fresh clone:
 
@@ -299,14 +315,21 @@ When a local staging repository has diverged too much from the remote, create a 
 After pushing:
 
 1. Open the GitHub commit and confirm the changed file list is expected.
-2. Open both GitHub Pages report URLs:
+2. Confirm the remote branch points at the pushed commit:
+
+```bash
+git ls-remote origin refs/heads/main
+```
+
+3. Open both GitHub Pages report URLs:
    - `.../<report>.zh.html`
    - `.../<report>.en.html`
-3. Verify the Chinese report is Chinese and the English report is English across text, tables, charts, ECharts controls, diagrams, and appendices.
-4. Verify figures, logo, favicon, and embedded assets render correctly.
-5. Verify Markdown links to code and datasets resolve to existing GitHub paths.
-6. Verify `index.html` links to the current report pair and dataset.
-7. Verify the public report does not display secrets, internal-only text, or unnecessary raw records.
+4. Verify the URLs use the `https://infronai.github.io/prompt-cache-bench/` base path. A URL under another GitHub Pages site is a release-target error.
+5. Verify the Chinese report is Chinese and the English report is English across text, tables, charts, ECharts controls, diagrams, and appendices.
+6. Verify figures, logo, favicon, and embedded assets render correctly.
+7. Verify Markdown links to code and datasets resolve to existing GitHub paths.
+8. Verify `index.html` links to the current report pair and dataset.
+9. Verify the public report does not display secrets, internal-only text, or unnecessary raw records.
 
 ## 10. Release Checklist
 
@@ -314,6 +337,8 @@ Use this checklist for every public report update:
 
 - [ ] Final local report reviewed.
 - [ ] Chinese and English reports generated with matching structure and language-specific chart/table text.
+- [ ] Current shell is inside `export/open-source/prompt-cache-bench/`.
+- [ ] `git remote -v` points to `InfronAI/prompt-cache-bench`.
 - [ ] Final report files copied into `export/open-source/prompt-cache-bench/`.
 - [ ] Required datasets, figures, code snapshots, and metadata staged together.
 - [ ] `.env` and `.env.example` `PROMPT_CACHE_BENCH_DEFAULT_EXPERIMENT` point to the intended report, or `--experiment` is passed explicitly.
@@ -324,6 +349,7 @@ Use this checklist for every public report update:
 - [ ] Report references data/code by GitHub path instead of embedding large raw records.
 - [ ] Hashes and paths in the report match committed files.
 - [ ] `README.md` and `index.html` link to the current Chinese HTML, English HTML, reports directory, data directory, and manifest.
+- [ ] All public links use `github.com/InfronAI/prompt-cache-bench` or `infronai.github.io/prompt-cache-bench`.
 - [ ] Commit created from the open-source staging repository.
 - [ ] Push completed without force-pushing.
 - [ ] GitHub Pages and Markdown previews checked after push.
