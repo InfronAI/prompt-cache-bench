@@ -13,8 +13,8 @@
     },
     {
       "path": "reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-nano__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.en.html",
-      "bytes": 1112524,
-      "sha256": "f15b9b107e0b9a78d6b90a51fd40d998bb304cb8b763fe0a61274125928c8e12"
+      "bytes": 1112434,
+      "sha256": "67b01488df331505eb8cd2d3ad9ba23426b8f852738e5d4582c969f1983d7041"
     },
     {
       "path": "reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-nano__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.en.md",
@@ -28,8 +28,8 @@
     },
     {
       "path": "reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-nano__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.zh.html",
-      "bytes": 1113123,
-      "sha256": "a59be4662bb3a6ffe739aa1fc02e40b868a7524162f900b9823fe934c55a9130"
+      "bytes": 1113033,
+      "sha256": "1e3d9662b55944e7c7629f333d4607195db97ef48ca8fa4e23b9ab5f4162d3b3"
     },
     {
       "path": "reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-nano__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.zh.md",
