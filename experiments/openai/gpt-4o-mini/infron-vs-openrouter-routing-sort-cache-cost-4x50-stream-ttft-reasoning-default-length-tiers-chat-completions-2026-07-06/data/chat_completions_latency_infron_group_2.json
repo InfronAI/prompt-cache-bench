@@ -1,0 +1,5854 @@
+{
+  "records": [
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 6,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1748.22,
+        "stream": true,
+        "ttft_ms": 1527.584,
+        "first_content_token_ms": 1635.945,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 9,
+        "usage": {
+          "completion_tokens": 6,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 1769,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 1664,
+            "video_tokens": 0
+          },
+          "total_tokens": 1775
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025433427119596NeKe8vUm",
+          "CF-RAY": "a16b5352df2ff824-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "c4cf7b77a7ba4bc3b44caca47c241ad1",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 2.7e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0001872,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.18125e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000202,
+        "prompt_tokens": 1769,
+        "completion_tokens": 6,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 1664,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1781.008,
+        "stream": true,
+        "ttft_ms": 1585.355,
+        "first_content_token_ms": 1683.939,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 9,
+        "usage": {
+          "completion_tokens": 6,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 1769,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 1664,
+            "video_tokens": 0
+          },
+          "total_tokens": 1775
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025435189430492BpMffHlR",
+          "CF-RAY": "a16b535dcd7c55fa-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "35704978d8de4c949cbda1bcdacf9d4b",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 2.7e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0001872,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.18125e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000202,
+        "prompt_tokens": 1769,
+        "completion_tokens": 6,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 1664,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 7,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2055.366,
+        "stream": true,
+        "ttft_ms": 1761.553,
+        "first_content_token_ms": 1907.525,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9151,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9167
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025433798138697w2GXzsJt",
+          "CF-RAY": "a16b5353a90feae8-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "70b01773bfbf41d2879cf2be871dc3f6",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 7.0875e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.001037,
+        "prompt_tokens": 9151,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2105.448,
+        "stream": true,
+        "ttft_ms": 1897.53,
+        "first_content_token_ms": 1960.723,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9151,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9167
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "2026070602543617612450pOeysWaJ",
+          "CF-RAY": "a16b53615a2322fe-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "8f06d688b2e14961ae6f2ed817e3879a",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 7.0875e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.001037,
+        "prompt_tokens": 9151,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 10,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2321.649,
+        "stream": true,
+        "ttft_ms": 2138.408,
+        "first_content_token_ms": 2173.378,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 7,
+        "usage": {
+          "completion_tokens": 4,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9141,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9145
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025433867000831n33rRodM",
+          "CF-RAY": "a16b53541d40b595-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "05eb4f8199014682ad521aa12c9eedf9",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 1.8e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 5.9625e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.00103,
+        "prompt_tokens": 9141,
+        "completion_tokens": 4,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2523.634,
+        "stream": true,
+        "ttft_ms": 2234.156,
+        "first_content_token_ms": 2376.271,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 7,
+        "usage": {
+          "completion_tokens": 4,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9141,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9145
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025436353641653JB48eSIB",
+          "CF-RAY": "a16b53636f3aefe5-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "0bed787f0a4443ab9915c00a5ed11a15",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 1.8e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 5.9625e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.00103,
+        "prompt_tokens": 9141,
+        "completion_tokens": 4,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 24,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1880.339,
+        "stream": true,
+        "ttft_ms": 1526.955,
+        "first_content_token_ms": 1760.82,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 19,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 1766,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 1664,
+            "video_tokens": 0
+          },
+          "total_tokens": 1782
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025434517855801YFynJM2K",
+          "CF-RAY": "a16b5359ac17e80a-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "1eb963e3c2224247ae0e293221e2fc67",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0001872,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.1475e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000206,
+        "prompt_tokens": 1766,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 1664,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2053.698,
+        "stream": true,
+        "ttft_ms": 1750.152,
+        "first_content_token_ms": 1915.318,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 19,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 1766,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 1664,
+            "video_tokens": 0
+          },
+          "total_tokens": 1782
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025436451752756FxEKhlCw",
+          "CF-RAY": "a16b5365bd29e938-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "4abfda0d1e7d4d3bb164f316b261012b",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0001872,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.1475e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000206,
+        "prompt_tokens": 1766,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 1664,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 19,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2317.204,
+        "stream": true,
+        "ttft_ms": 1960.706,
+        "first_content_token_ms": 2152.042,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9151,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9167
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025434215254484Y4zqxSPM",
+          "CF-RAY": "a16b53565d8cf4eb-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "f016171728e545c986d8f569c578b8e1",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 7.0875e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.001037,
+        "prompt_tokens": 9151,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2478.85,
+        "stream": true,
+        "ttft_ms": 2053.955,
+        "first_content_token_ms": 2243.804,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9151,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9167
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "202607060254364911209332xaXGslc",
+          "CF-RAY": "a16b53648cedba7a-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "9ab8e79b81a84fd6be0e1d2a9c457ea4",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 7.0875e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.001037,
+        "prompt_tokens": 9151,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 21,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2145.956,
+        "stream": true,
+        "ttft_ms": 1782.874,
+        "first_content_token_ms": 2012.728,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 1767,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 1664,
+            "video_tokens": 0
+          },
+          "total_tokens": 1783
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025434264477321r5i8CUQg",
+          "CF-RAY": "a16b5357ff7f870e-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "97edcb9828e643d6a90195e3c0125bef",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0001872,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.15875e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000206,
+        "prompt_tokens": 1767,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 1664,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2236.581,
+        "stream": true,
+        "ttft_ms": 1471.939,
+        "first_content_token_ms": 2085.355,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 1767,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 1664,
+            "video_tokens": 0
+          },
+          "total_tokens": 1783
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025436388545517kFbzXVBM",
+          "CF-RAY": "a16b536559ec69dd-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "9005d6063ec546f4b80a1d458b24c045",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0001872,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.15875e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000206,
+        "prompt_tokens": 1767,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 1664,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 1,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2800.346,
+        "stream": true,
+        "ttft_ms": 2722.421,
+        "first_content_token_ms": 2722.455,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 19,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9139,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9155
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "chatcmpl-DyTlZTi07f4mHR9UbEDGgnT9NTbsC",
+        "system_fingerprint": "fp_965c8b9ecf",
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025433537884059U0aHuxzj",
+          "CF-RAY": "a16b5353698b7b1b-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "chatcmpl-DyTlZTi07f4mHR9UbEDGgnT9NTbsC",
+          "request_id": "3b7736365bab440c95fdc915482d8c31",
+          "system_fingerprint": "fp_965c8b9ecf"
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 5.7375e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.001035,
+        "prompt_tokens": 9139,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2885.117,
+        "stream": true,
+        "ttft_ms": 2381.394,
+        "first_content_token_ms": 2529.632,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9139,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9155
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "202607060254362430966928OlHYZpV",
+          "CF-RAY": "a16b53641eba61b2-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "499d9c122ba549c8a2cdd52d504e8991",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 5.7375e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.001035,
+        "prompt_tokens": 9139,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 16,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2468.91,
+        "stream": true,
+        "ttft_ms": 2395.261,
+        "first_content_token_ms": 2395.378,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 19,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9138,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9154
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "2026070602543455144787dBTX4wUz",
+          "CF-RAY": "a16b5356ba15f4a2-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "5cc66b80be8045a2b60f9f2c21fe9b47",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 5.625e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.001035,
+        "prompt_tokens": 9138,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2683.446,
+        "stream": true,
+        "ttft_ms": 2129.986,
+        "first_content_token_ms": 2542.593,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 19,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9138,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 9154
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "202607060254365957827185fO80JJM",
+          "CF-RAY": "a16b53668b4e1642-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "770ca0a853f54609a7aa55d99b9ced36",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.001028025,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.001035,
+        "prompt_tokens": 9138,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 27,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1603.247,
+        "stream": true,
+        "ttft_ms": 1288.379,
+        "first_content_token_ms": 1454.984,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 1779,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 1664,
+            "video_tokens": 0
+          },
+          "total_tokens": 1795
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025435648213526Qw1Z2chX",
+          "CF-RAY": "a16b5360b8ad253f-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "9adce3ca374b462db5ef1a92b5254b47",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0001872,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.29375e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000207,
+        "prompt_tokens": 1779,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 1664,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1583.77,
+        "stream": true,
+        "ttft_ms": 1400.328,
+        "first_content_token_ms": 1477.702,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 1779,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 1664,
+            "video_tokens": 0
+          },
+          "total_tokens": 1795
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025437284997110rSAGaSoJ",
+          "CF-RAY": "a16b536adbf2feda-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "af1064dc9da0497d816ea0d56e1456be",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0001872,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.29375e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000207,
+        "prompt_tokens": 1779,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 1664,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 22,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2301.824,
+        "stream": true,
+        "ttft_ms": 2105.622,
+        "first_content_token_ms": 2195.108,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 7,
+        "usage": {
+          "completion_tokens": 4,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9141,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9145
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025434777203536929ef8UV",
+          "CF-RAY": "a16b5359cf12000e-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "8b85b5ee9aa84c718bc8b633fe6f37fa",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 1.8e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 5.9625e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.00103,
+        "prompt_tokens": 9141,
+        "completion_tokens": 4,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2468.066,
+        "stream": true,
+        "ttft_ms": 2164.878,
+        "first_content_token_ms": 2295.575,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 13,
+        "usage": {
+          "completion_tokens": 10,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9141,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9151
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "2026070602543762662217msKkJ5Dc",
+          "CF-RAY": "a16b5367e8c5c6f0-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "8edde79733964682b21fe3882dde2f65",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 4.5e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 5.9625e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.001033,
+        "prompt_tokens": 9141,
+        "completion_tokens": 10,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 30,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1685.412,
+        "stream": true,
+        "ttft_ms": 1491.512,
+        "first_content_token_ms": 1578.238,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 9,
+        "usage": {
+          "completion_tokens": 6,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 1769,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 1664,
+            "video_tokens": 0
+          },
+          "total_tokens": 1775
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025436314613787w0RrJC8s",
+          "CF-RAY": "a16b5364dd1852a6-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "985f6c154d1a423688879f372c6829b5",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 2.7e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0001872,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.18125e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000202,
+        "prompt_tokens": 1769,
+        "completion_tokens": 6,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 1664,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1644.536,
+        "stream": true,
+        "ttft_ms": 1415.005,
+        "first_content_token_ms": 1499.313,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 9,
+        "usage": {
+          "completion_tokens": 6,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 1769,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 1664,
+            "video_tokens": 0
+          },
+          "total_tokens": 1775
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025437950021828gCy4UatB",
+          "CF-RAY": "a16b536f1a4273db-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "afd927a2fb5c4f1590a8648a9ba775d2",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 2.7e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0001872,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.18125e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000202,
+        "prompt_tokens": 1769,
+        "completion_tokens": 6,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 1664,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 25,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2354.786,
+        "stream": true,
+        "ttft_ms": 1960.1,
+        "first_content_token_ms": 2203.785,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9139,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9155
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025435285407468J8jfXuu7",
+          "CF-RAY": "a16b535d0b03b612-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "7e4f01ef13c54852893d99e634194ca6",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 5.7375e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.001035,
+        "prompt_tokens": 9139,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2495.034,
+        "stream": true,
+        "ttft_ms": 2208.555,
+        "first_content_token_ms": 2355.737,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9139,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9155
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025437788166469Y7Yu7OPO",
+          "CF-RAY": "a16b536c8c62029d-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "d9fd37b06ac44a53adc45415e1ae19b6",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 5.7375e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.001035,
+        "prompt_tokens": 9139,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 11,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2727.721,
+        "stream": true,
+        "ttft_ms": 2401.408,
+        "first_content_token_ms": 2529.375,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 19,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36378,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36352,
+            "video_tokens": 0
+          },
+          "total_tokens": 36394
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025434394398116QsN90WDk",
+          "CF-RAY": "a16b53555dcff163-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "b6ab26d5c7b04462969965a041f1dc9c",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0040896,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 2.925e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.0041,
+        "prompt_tokens": 36378,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36352,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3507.529,
+        "stream": true,
+        "ttft_ms": 2341.44,
+        "first_content_token_ms": 2440.899,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 19,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36378,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36352,
+            "video_tokens": 0
+          },
+          "total_tokens": 36394
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025436972678784ZbUjYOqN",
+          "CF-RAY": "a16b5365d95422b9-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "7c424864834c4f5ba7f558ab00fba209",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0040896,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 2.925e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.0041,
+        "prompt_tokens": 36378,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36352,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 17,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3156.765,
+        "stream": true,
+        "ttft_ms": 2685.475,
+        "first_content_token_ms": 2809.756,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36366,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36224,
+            "video_tokens": 0
+          },
+          "total_tokens": 36382
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025434378652621ayyQRo3X",
+          "CF-RAY": "a16b5355c9e61d01-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "c3188242148c4e68a98cbb0d3c0f82f9",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0040752,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.5975e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.004098,
+        "prompt_tokens": 36366,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36224,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3481.495,
+        "stream": true,
+        "ttft_ms": 3074.639,
+        "first_content_token_ms": 3273.554,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36366,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36224,
+            "video_tokens": 0
+          },
+          "total_tokens": 36382
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025437997508082PdOXw0yo",
+          "CF-RAY": "a16b536c080b1153-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "3c30fc5adfac474387c922917aecc04c",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0040752,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.5975e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.004098,
+        "prompt_tokens": 36366,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36224,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 23,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2810.66,
+        "stream": true,
+        "ttft_ms": 2485.123,
+        "first_content_token_ms": 2574.067,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36378,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36352,
+            "video_tokens": 0
+          },
+          "total_tokens": 36394
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025435378809605JO3hoal2",
+          "CF-RAY": "a16b535bef7ce82d-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "b938c974aef54f418599e0d81c53f493",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0040896,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 2.925e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.0041,
+        "prompt_tokens": 36378,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36352,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3185.969,
+        "stream": true,
+        "ttft_ms": 2811.429,
+        "first_content_token_ms": 2980.605,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36378,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36352,
+            "video_tokens": 0
+          },
+          "total_tokens": 36394
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025438344564365fXgTlbfT",
+          "CF-RAY": "a16b536cf9cfeae8-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "af6d60bd2f254f71b26002c9f57722f6",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0040896,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 2.925e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.0041,
+        "prompt_tokens": 36378,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36352,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 33,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1836.345,
+        "stream": true,
+        "ttft_ms": 1678.45,
+        "first_content_token_ms": 1728.399,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 1767,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 1664,
+            "video_tokens": 0
+          },
+          "total_tokens": 1783
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "202607060254369898673746ojzF9DJ",
+          "CF-RAY": "a16b53691df08b11-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "abd8e9605ae8413283b75233fd927568",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0001872,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.15875e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000206,
+        "prompt_tokens": 1767,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 1664,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1825.267,
+        "stream": true,
+        "ttft_ms": 1448.566,
+        "first_content_token_ms": 1703.284,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 1767,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 1664,
+            "video_tokens": 0
+          },
+          "total_tokens": 1783
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025438700047707kv3HA8al",
+          "CF-RAY": "a16b5373ca07ee24-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "e1df2448b9284a298166e94c96ce14ca",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0001872,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.15875e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000206,
+        "prompt_tokens": 1767,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 1664,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 20,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3126.43,
+        "stream": true,
+        "ttft_ms": 2776.513,
+        "first_content_token_ms": 2917.281,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 19,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36365,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36224,
+            "video_tokens": 0
+          },
+          "total_tokens": 36381
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025435102043593TrBF7BUX",
+          "CF-RAY": "a16b5359ed40b97d-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "968940ccef374f2a9290ce4c6a6ee843",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0040752,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.58625e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.004098,
+        "prompt_tokens": 36365,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36224,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3365.04,
+        "stream": true,
+        "ttft_ms": 2911.625,
+        "first_content_token_ms": 3201.342,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 19,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36365,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36224,
+            "video_tokens": 0
+          },
+          "total_tokens": 36381
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025438344413855RKHlt9zD",
+          "CF-RAY": "a16b536e5e440b74-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "6d1f6c5b57294907b21ef7a6d26866d1",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0040752,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.58625e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.004098,
+        "prompt_tokens": 36365,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36224,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 28,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2406.847,
+        "stream": true,
+        "ttft_ms": 2103.846,
+        "first_content_token_ms": 2293.321,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 19,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9138,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9154
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025436588452515Fkg1SypY",
+          "CF-RAY": "a16b53650ab6e566-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "218f21f49e42492c800a90d4e6b67017",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 5.625e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.001035,
+        "prompt_tokens": 9138,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2506.599,
+        "stream": true,
+        "ttft_ms": 2124.85,
+        "first_content_token_ms": 2326.307,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 19,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9138,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9154
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025439478169995ZHudxPE",
+          "CF-RAY": "a16b53747877de7e-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "80233cb4586e4109984415ae286eab3e",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 5.625e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.001035,
+        "prompt_tokens": 9138,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 31,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2229.689,
+        "stream": true,
+        "ttft_ms": 1939.12,
+        "first_content_token_ms": 2037.718,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9151,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9167
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025437180559408VqupjXHn",
+          "CF-RAY": "a16b53688bcbf5fc-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "c9df51bc141d4ad48643f9a0cd19801e",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 7.0875e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.001037,
+        "prompt_tokens": 9151,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2479.022,
+        "stream": true,
+        "ttft_ms": 2164.001,
+        "first_content_token_ms": 2351.784,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9151,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9167
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025439448258097PILYxuKL",
+          "CF-RAY": "a16b5376cd39fe20-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "692bc856c5b94692a97f8161da98912a",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 7.0875e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.001037,
+        "prompt_tokens": 9151,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 39,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1626.593,
+        "stream": true,
+        "ttft_ms": 1307.438,
+        "first_content_token_ms": 1454.679,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 1779,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 1664,
+            "video_tokens": 0
+          },
+          "total_tokens": 1795
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025438603485147KtXCh76c",
+          "CF-RAY": "a16b537338dce822-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "221cc996519340faa5a89ac22d8495c7",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0001872,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.29375e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000207,
+        "prompt_tokens": 1779,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 1664,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1882.518,
+        "stream": true,
+        "ttft_ms": 1536.358,
+        "first_content_token_ms": 1701.546,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 1779,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 1664,
+            "video_tokens": 0
+          },
+          "total_tokens": 1795
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025440227959095UaAeEz4f",
+          "CF-RAY": "a16b537d5e2f0008-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "0226b4d3e6684233b74877951c2d9fa4",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0001872,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.29375e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000207,
+        "prompt_tokens": 1779,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 1664,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 34,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2772.552,
+        "stream": true,
+        "ttft_ms": 2542.934,
+        "first_content_token_ms": 2617.473,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 7,
+        "usage": {
+          "completion_tokens": 4,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9141,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9145
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025437653858980adubKJeu",
+          "CF-RAY": "a16b536b89cc0045-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "75fcfe414c6f473d80388f2c6ca99455",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 1.8e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 5.9625e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.00103,
+        "prompt_tokens": 9141,
+        "completion_tokens": 4,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2685.255,
+        "stream": true,
+        "ttft_ms": 2267.665,
+        "first_content_token_ms": 2490.803,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 13,
+        "usage": {
+          "completion_tokens": 10,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9141,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9151
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "202607060254402644484826I4pRBL3",
+          "CF-RAY": "a16b537be9d610bb-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "5c44db88cbfd4682894e1a34bf98ad4c",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 4.5e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 5.9625e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.001033,
+        "prompt_tokens": 9141,
+        "completion_tokens": 10,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 42,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1770.497,
+        "stream": true,
+        "ttft_ms": 1552.522,
+        "first_content_token_ms": 1648.25,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 9,
+        "usage": {
+          "completion_tokens": 6,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 1769,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 1664,
+            "video_tokens": 0
+          },
+          "total_tokens": 1775
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025438875215686eETi0sTh",
+          "CF-RAY": "a16b5374cb056187-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "ffb3323b5da141ae8b256fbe3be1a3bb",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 2.7e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0001872,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.18125e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000202,
+        "prompt_tokens": 1769,
+        "completion_tokens": 6,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 1664,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1998.673,
+        "stream": true,
+        "ttft_ms": 1754.122,
+        "first_content_token_ms": 1882.357,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 9,
+        "usage": {
+          "completion_tokens": 6,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 1769,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 1664,
+            "video_tokens": 0
+          },
+          "total_tokens": 1775
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025440853349786KRKHSbKn",
+          "CF-RAY": "a16b53814aa7e938-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "99898693db484ee0bc09d0c368c0f086",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 2.7e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0001872,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.18125e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000202,
+        "prompt_tokens": 1769,
+        "completion_tokens": 6,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 1664,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 35,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2483.11,
+        "stream": true,
+        "ttft_ms": 2077.532,
+        "first_content_token_ms": 2322.076,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 19,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36378,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36352,
+            "video_tokens": 0
+          },
+          "total_tokens": 36394
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025438170426160r42byhka",
+          "CF-RAY": "a16b536d8e9eeaf0-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "ff6ca55adcc249d695ed412a0f4f8c49",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0040896,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 2.925e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.0041,
+        "prompt_tokens": 36378,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36352,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2675.905,
+        "stream": true,
+        "ttft_ms": 2271.182,
+        "first_content_token_ms": 2474.936,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36378,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36352,
+            "video_tokens": 0
+          },
+          "total_tokens": 36394
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025440765838107TZLRJfj0",
+          "CF-RAY": "a16b537d895170c4-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "c9976ec122a94df5b20510fbf1f8c51b",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0040896,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 2.925e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.0041,
+        "prompt_tokens": 36378,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36352,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 36,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1832.127,
+        "stream": true,
+        "ttft_ms": 1466.45,
+        "first_content_token_ms": 1691.676,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 19,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 1766,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 1664,
+            "video_tokens": 0
+          },
+          "total_tokens": 1782
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "202607060254382610153039ZQzSEXZ",
+          "CF-RAY": "a16b5370ff6613f8-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "e8bd5ad0234f48af93b84448efe23c49",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0001872,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.1475e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000206,
+        "prompt_tokens": 1766,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 1664,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2615.713,
+        "stream": true,
+        "ttft_ms": 1766.512,
+        "first_content_token_ms": 2392.573,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 19,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 1766,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 1664,
+            "video_tokens": 0
+          },
+          "total_tokens": 1782
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025440329573787mxGWJmRk",
+          "CF-RAY": "a16b537df970cd80-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "7c316f34218f40b0a40ffb393bd3e0ae",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0001872,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.1475e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000206,
+        "prompt_tokens": 1766,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 1664,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 43,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2005.369,
+        "stream": true,
+        "ttft_ms": 1843.964,
+        "first_content_token_ms": 1892.322,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9151,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9167
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025439330789997S5VsPN8k",
+          "CF-RAY": "a16b537619901107-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "fbceecd3ce044ab1a2ffbac905016d31",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 7.0875e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.001037,
+        "prompt_tokens": 9151,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2242.032,
+        "stream": true,
+        "ttft_ms": 1941.896,
+        "first_content_token_ms": 2097.322,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9151,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9167
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025441318073119feTV8QmH",
+          "CF-RAY": "a16b53829c491ce2-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "0028fe4c87be4113b441f40bf50102c6",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 7.0875e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.001037,
+        "prompt_tokens": 9151,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 48,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1707.166,
+        "stream": true,
+        "ttft_ms": 1374.784,
+        "first_content_token_ms": 1565.146,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 19,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 1766,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 1664,
+            "video_tokens": 0
+          },
+          "total_tokens": 1782
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025439663857469mWQujte3",
+          "CF-RAY": "a16b5379dc9ee450-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "f7375463e9564b81b7740ab814219a04",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0001872,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.1475e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000206,
+        "prompt_tokens": 1766,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 1664,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1807.601,
+        "stream": true,
+        "ttft_ms": 1482.819,
+        "first_content_token_ms": 1661.901,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 19,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 1766,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 1664,
+            "video_tokens": 0
+          },
+          "total_tokens": 1782
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025441521698839WGELx3dh",
+          "CF-RAY": "a16b53856a3de808-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "869e5a8d05cd4568b8ea3b38cb016d9d",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0001872,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.1475e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000206,
+        "prompt_tokens": 1766,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 1664,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 37,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2447.685,
+        "stream": true,
+        "ttft_ms": 2169.031,
+        "first_content_token_ms": 2316.921,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9139,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9155
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025438905352303jFXL9LT4",
+          "CF-RAY": "a16b5374ff2ba9c6-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "5ed1f921712344c788275a92e76c78e4",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 5.7375e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.001035,
+        "prompt_tokens": 9139,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2471.888,
+        "stream": true,
+        "ttft_ms": 2222.386,
+        "first_content_token_ms": 2326.577,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9139,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9155
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025441370903504BmFyhOZr",
+          "CF-RAY": "a16b5382ea8ed2e5-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "a6e153a543794bf49c83577bfd4a033a",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 5.7375e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.001035,
+        "prompt_tokens": 9139,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 45,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1749.629,
+        "stream": true,
+        "ttft_ms": 1464.069,
+        "first_content_token_ms": 1635.457,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 1767,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 1664,
+            "video_tokens": 0
+          },
+          "total_tokens": 1783
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025439427350309LDaqPtXC",
+          "CF-RAY": "a16b53784f2089e0-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "37d817e0b8324275ae65c5f27fa43188",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0001872,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.15875e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000206,
+        "prompt_tokens": 1767,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 1664,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2110.769,
+        "stream": true,
+        "ttft_ms": 1730.258,
+        "first_content_token_ms": 1976.196,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 1767,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 1664,
+            "video_tokens": 0
+          },
+          "total_tokens": 1783
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025441456652384yXKMjK7c",
+          "CF-RAY": "a16b53850c98ff5b-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "52e6b3f5982246dfa8c16984b647f24a",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0001872,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.15875e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000206,
+        "prompt_tokens": 1767,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 1664,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 32,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3126.947,
+        "stream": true,
+        "ttft_ms": 2797.564,
+        "first_content_token_ms": 2951.207,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 19,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36365,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36224,
+            "video_tokens": 0
+          },
+          "total_tokens": 36381
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025437682464610pGl2ZDJM",
+          "CF-RAY": "a16b536a3b01114e-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "5e47665c4b85427d82239c1a26de1a4a",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0040752,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.58625e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.004098,
+        "prompt_tokens": 36365,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36224,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3620.768,
+        "stream": true,
+        "ttft_ms": 2783.517,
+        "first_content_token_ms": 3013.286,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 19,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36365,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36224,
+            "video_tokens": 0
+          },
+          "total_tokens": 36381
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025440764279741thGCsmYl",
+          "CF-RAY": "a16b537d4c0e111d-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "d7132318b77f45cca31065a4fb36fc34",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0040752,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.58625e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.004098,
+        "prompt_tokens": 36365,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36224,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 29,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 4126.861,
+        "stream": true,
+        "ttft_ms": 3247.587,
+        "first_content_token_ms": 3551.723,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36366,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36224,
+            "video_tokens": 0
+          },
+          "total_tokens": 36382
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "202607060254374224913284dF1nAiT",
+          "CF-RAY": "a16b53689d0deaf3-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "d848db07c3de4d8eb74c87d444e6f9d6",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0040752,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.5975e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.004098,
+        "prompt_tokens": 36366,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36224,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3613.569,
+        "stream": true,
+        "ttft_ms": 2880.309,
+        "first_content_token_ms": 3050.966,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36366,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36224,
+            "video_tokens": 0
+          },
+          "total_tokens": 36382
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "202607060254414157334110pZNHVCI",
+          "CF-RAY": "a16b53816de4e271-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "bf4ad624a6cc424d8db16ec051197ba7",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0040752,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.5975e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.004098,
+        "prompt_tokens": 36366,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36224,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 40,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2732.33,
+        "stream": true,
+        "ttft_ms": 2636.437,
+        "first_content_token_ms": 2636.496,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 19,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9138,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9154
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025439214358668mQ1Hintf",
+          "CF-RAY": "a16b5376ec306881-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "b89f8baaf0064b7ab7dd3f53f489189e",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 5.625e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.001035,
+        "prompt_tokens": 9138,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2785.497,
+        "stream": true,
+        "ttft_ms": 2458.739,
+        "first_content_token_ms": 2710.819,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 19,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9138,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9154
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025441943596709XlNZAXwZ",
+          "CF-RAY": "a16b5387eb917a5f-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "f21e93a5dad44af4a57658d8bb75b36f",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 5.625e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.001035,
+        "prompt_tokens": 9138,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 46,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2367.059,
+        "stream": true,
+        "ttft_ms": 2051.852,
+        "first_content_token_ms": 2162.662,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 7,
+        "usage": {
+          "completion_tokens": 4,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9141,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9145
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025440134041163YHG6K5vf",
+          "CF-RAY": "a16b537b3b87e80c-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "70bf2864156c4484a3ea218c142b5fda",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 1.8e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 5.9625e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.00103,
+        "prompt_tokens": 9141,
+        "completion_tokens": 4,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2346.509,
+        "stream": true,
+        "ttft_ms": 2135.24,
+        "first_content_token_ms": 2202.512,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 7,
+        "usage": {
+          "completion_tokens": 4,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9141,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9145
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025442572622659xNxPAEQa",
+          "CF-RAY": "a16b538a8f161910-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "fcb51e4d9b7b432aa77e21ff4aaca673",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 1.8e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 5.9625e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.00103,
+        "prompt_tokens": 9141,
+        "completion_tokens": 4,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 38,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3303.826,
+        "stream": true,
+        "ttft_ms": 2735.381,
+        "first_content_token_ms": 2806.273,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 7,
+        "usage": {
+          "completion_tokens": 4,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36368,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36224,
+            "video_tokens": 0
+          },
+          "total_tokens": 36372
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025439342473067TWmNbjtT",
+          "CF-RAY": "a16b53749f45ead8-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "b5548fa856074f18ab15efc30115be0b",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 1.8e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0040752,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.62e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.004093,
+        "prompt_tokens": 36368,
+        "completion_tokens": 4,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36224,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2790.431,
+        "stream": true,
+        "ttft_ms": 2585.76,
+        "first_content_token_ms": 2635.398,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 7,
+        "usage": {
+          "completion_tokens": 4,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36368,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36224,
+            "video_tokens": 0
+          },
+          "total_tokens": 36372
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "202607060254425017425831vpqN8FN",
+          "CF-RAY": "a16b53885a2a89c5-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "f9de16783c7f4c41a557eadd002324a2",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 1.8e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0040752,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.62e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.004093,
+        "prompt_tokens": 36368,
+        "completion_tokens": 4,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36224,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 41,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3412.005,
+        "stream": true,
+        "ttft_ms": 2944.887,
+        "first_content_token_ms": 3187.3,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36366,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36224,
+            "video_tokens": 0
+          },
+          "total_tokens": 36382
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025439593454106F51wsmdw",
+          "CF-RAY": "a16b5374dbc634ad-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "bb9a5f0e436a40c08c95d6750a0dc0d6",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0040752,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.5975e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.004098,
+        "prompt_tokens": 36366,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36224,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3016.293,
+        "stream": true,
+        "ttft_ms": 2681.806,
+        "first_content_token_ms": 2816.044,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36366,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36224,
+            "video_tokens": 0
+          },
+          "total_tokens": 36382
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "202607060254428117068408vThF5hC",
+          "CF-RAY": "a16b538a5a0c0cde-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "b4b82024b13c4883adaaddac8b0e0b75",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0040752,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.5975e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.004098,
+        "prompt_tokens": 36366,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36224,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 47,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2752.361,
+        "stream": true,
+        "ttft_ms": 2292.7,
+        "first_content_token_ms": 2483.832,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 19,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36378,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36352,
+            "video_tokens": 0
+          },
+          "total_tokens": 36394
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025440502391873SEmKq2gk",
+          "CF-RAY": "a16b537bc9c5b6f8-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "19b4bcc1ed934f7298c40c9d9d5f53e7",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0040896,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 2.925e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.0041,
+        "prompt_tokens": 36378,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36352,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2900.85,
+        "stream": true,
+        "ttft_ms": 2556.997,
+        "first_content_token_ms": 2630.613,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36378,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36352,
+            "video_tokens": 0
+          },
+          "total_tokens": 36394
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "202607060254435648481706jubobE9",
+          "CF-RAY": "a16b538eddedeb0b-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "4353195955c24baea3b5a6c0c0bb06f5",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0040896,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 2.925e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.0041,
+        "prompt_tokens": 36378,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36352,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 44,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3385.219,
+        "stream": true,
+        "ttft_ms": 3094.1,
+        "first_content_token_ms": 3217.824,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 19,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36365,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36224,
+            "video_tokens": 0
+          },
+          "total_tokens": 36381
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025440152917038TiRU31GF",
+          "CF-RAY": "a16b53797ccde826-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "e4a6120cb5074c2dae1065d3f2d59457",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0040752,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.58625e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.004098,
+        "prompt_tokens": 36365,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36224,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3322.413,
+        "stream": true,
+        "ttft_ms": 2866.786,
+        "first_content_token_ms": 3165.415,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 19,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36365,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36224,
+            "video_tokens": 0
+          },
+          "total_tokens": 36381
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025443305671830dstifTBN",
+          "CF-RAY": "a16b538d4ebc1084-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "9cc0636ffdba430184b2cd46cb2c4658",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0040752,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.58625e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.004098,
+        "prompt_tokens": 36365,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36224,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 49,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2664.593,
+        "stream": true,
+        "ttft_ms": 2178.822,
+        "first_content_token_ms": 2566.261,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 20,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9139,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9155
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025440925302849VYdKb2Rb",
+          "CF-RAY": "a16b537ff8f1eaed-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "e772d19669a447ee9d81ba7a3fe38caf",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 5.7375e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.001035,
+        "prompt_tokens": 9139,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2945.646,
+        "stream": true,
+        "ttft_ms": 2822.808,
+        "first_content_token_ms": 2822.85,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 19,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 9139,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 9088,
+            "video_tokens": 0
+          },
+          "total_tokens": 9155
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "chatcmpl-DyTljHyowYhP5jR0t9qJCcZXCuAd1",
+        "system_fingerprint": "fp_965c8b9ecf",
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025443494466215f33ZAX4y",
+          "CF-RAY": "a16b53903fcda700-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "chatcmpl-DyTljHyowYhP5jR0t9qJCcZXCuAd1",
+          "request_id": "7709c335ec554fdca6014d8186d56923",
+          "system_fingerprint": "fp_965c8b9ecf"
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 7.2e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0010224,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 5.7375e-06,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.001035,
+        "prompt_tokens": 9139,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 9088,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 50,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3523.523,
+        "stream": true,
+        "ttft_ms": 3292.294,
+        "first_content_token_ms": 3356.138,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 7,
+        "usage": {
+          "completion_tokens": 4,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36368,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36224,
+            "video_tokens": 0
+          },
+          "total_tokens": 36372
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025441754718324LYU5sYbs",
+          "CF-RAY": "a16b5381ce6cfe20-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "2e4dce71d7d0490f9dcdf59b0973550b",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 1.8e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0040752,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.62e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.004093,
+        "prompt_tokens": 36368,
+        "completion_tokens": 4,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36224,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3248.33,
+        "stream": true,
+        "ttft_ms": 2907.538,
+        "first_content_token_ms": 3021.937,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 7,
+        "usage": {
+          "completion_tokens": 4,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36368,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36224,
+            "video_tokens": 0
+          },
+          "total_tokens": 36372
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025444837347929RLJxW8kY",
+          "CF-RAY": "a16b5396ad7bd84c-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "946758b9646d4b2bada8f79a4f0efa2a",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 1.8e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0040752,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.62e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.004093,
+        "prompt_tokens": 36368,
+        "completion_tokens": 4,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36224,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "infron",
+      "requested_model": "openai/gpt-4o-mini",
+      "actual_model": "openai/gpt-4o-mini",
+      "group": 2,
+      "round": 26,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 4181.815,
+        "stream": true,
+        "ttft_ms": 3929.455,
+        "first_content_token_ms": 4014.876,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 7,
+        "usage": {
+          "completion_tokens": 4,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36368,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36224,
+            "video_tokens": 0
+          },
+          "total_tokens": 36372
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706025437576120235bC5BLKeC",
+          "CF-RAY": "a16b53699f0a0bf0-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "13eb836ba4994f448c0ca0a6b2078f3e",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 1.8e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0040752,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.62e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.004093,
+        "prompt_tokens": 36368,
+        "completion_tokens": 4,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36224,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 7588.705,
+        "stream": true,
+        "ttft_ms": 7241.999,
+        "first_content_token_ms": 7333.811,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 7,
+        "usage": {
+          "completion_tokens": 4,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 36368,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 36224,
+            "video_tokens": 0
+          },
+          "total_tokens": 36372
+        },
+        "response_model": "openai/gpt-4o-mini",
+        "response_id": "",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "202607060254405741603891Ryi3hJh",
+          "CF-RAY": "a16b537c4ae290bd-ORD"
+        },
+        "provider_attribution": {
+          "provider": "azure",
+          "model": "openai/gpt-4o-mini",
+          "id": "",
+          "request_id": "ab0c61b42c8a488aac65e647e3da3b37",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 1.8e-06,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.0040752,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 1.62e-05,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.004093,
+        "prompt_tokens": 36368,
+        "completion_tokens": 4,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 36224,
+        "cache_write_tokens": 0
+      }
+    }
+  ]
+}
