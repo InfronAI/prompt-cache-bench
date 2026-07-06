@@ -58,6 +58,19 @@ This repository publishes reproducible experiment code, raw benchmark datasets, 
   </thead>
   <tbody>
     <tr>
+      <td rowspan="2"><code>qwen/qwen3.5-plus</code></td>
+      <td rowspan="2">Infron vs OpenRouter, routing sort <code>throughput</code>/<code>price</code>/<code>latency</code>/<code>ttft</code>, 4x50 streaming default-reasoning length-tier chat-completions-only run</td>
+      <td>Chinese</td>
+      <td><a href="https://infronai.github.io/prompt-cache-bench/experiments/qwen/qwen3.5-plus/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-5-plus__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.zh.html">GitHub Pages HTML</a></td>
+      <td><a href="experiments/qwen/qwen3.5-plus/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-5-plus__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.zh.md">GitHub Markdown preview</a></td>
+      <td rowspan="2"><a href="experiments/qwen/qwen3.5-plus/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/data/">data directory</a></td>
+    </tr>
+    <tr>
+      <td>English</td>
+      <td><a href="https://infronai.github.io/prompt-cache-bench/experiments/qwen/qwen3.5-plus/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-5-plus__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.en.html">GitHub Pages HTML</a></td>
+      <td><a href="experiments/qwen/qwen3.5-plus/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-5-plus__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.en.md">GitHub Markdown preview</a></td>
+    </tr>
+    <tr>
       <td rowspan="2"><code>openai/gpt-5.4-mini</code></td>
       <td rowspan="2">Infron vs OpenRouter, routing sort <code>throughput</code>/<code>price</code>/<code>latency</code>/<code>ttft</code>, 4x50 streaming default-reasoning length-tier chat-completions-only run</td>
       <td>Chinese</td>
@@ -126,8 +139,8 @@ GitHub Pages is the recommended way to read the self-contained HTML report onlin
 
 - Project page: <https://infronai.github.io/prompt-cache-bench/>
 
-- Chinese HTML report: <https://infronai.github.io/prompt-cache-bench/experiments/openai/gpt-5.4-mini/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-04/reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-mini__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.zh.html>
-- English HTML report: <https://infronai.github.io/prompt-cache-bench/experiments/openai/gpt-5.4-mini/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-04/reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-mini__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.en.html>
+- Chinese HTML report: <https://infronai.github.io/prompt-cache-bench/experiments/qwen/qwen3.5-plus/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-5-plus__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.zh.html>
+- English HTML report: <https://infronai.github.io/prompt-cache-bench/experiments/qwen/qwen3.5-plus/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-5-plus__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.en.html>
 
 
 The Markdown report remains available for GitHub-native review and source diffs.
