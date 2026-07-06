@@ -1,0 +1,2361 @@
+{
+  "records": [
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "requested_model": "qwen/qwen3.6-35b-a3b",
+      "actual_model": "qwen/qwen3.6-35b-a3b",
+      "group": 3,
+      "round": 15,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3079.12,
+        "stream": true,
+        "ttft_ms": 1875.067,
+        "first_content_token_ms": 1968.53,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 18,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 10333,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 10349
+        },
+        "response_model": "qwen/qwen3.6-35b-a3b",
+        "response_id": "chatcmpl-R1mljcnmQEBBmN4zrvkG43QP",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "202607061209327029870735zHnb9dk",
+          "CF-RAY": "a16e8049d80e4c35-ORD"
+        },
+        "provider_attribution": {
+          "provider": "deepinfra",
+          "model": "qwen/qwen3.6-35b-a3b",
+          "id": "chatcmpl-R1mljcnmQEBBmN4zrvkG43QP",
+          "request_id": "6e6fd49abd144648a546d07ed2ba6973",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 1.5216e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.00154995,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.001565,
+        "prompt_tokens": 10333,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 0,
+        "error": "Remote end closed connection without response",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 18623.58,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "requested_model": "qwen/qwen3.6-35b-a3b",
+      "actual_model": "qwen/qwen3.6-35b-a3b",
+      "group": 3,
+      "round": 36,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2584.577,
+        "stream": true,
+        "ttft_ms": 1984.983,
+        "first_content_token_ms": 1985.085,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 15,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 10324,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 10340
+        },
+        "response_model": "qwen/qwen3.6-35b-a3b",
+        "response_id": "chatcmpl-RgnRrN4gXyqK6LLwU6AjbURX",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260706120938695485852jes8eVo9",
+          "CF-RAY": "a16e806f3c3ee260-ORD"
+        },
+        "provider_attribution": {
+          "provider": "deepinfra",
+          "model": "qwen/qwen3.6-35b-a3b",
+          "id": "chatcmpl-RgnRrN4gXyqK6LLwU6AjbURX",
+          "request_id": "9c67ecebd8814c38a50d2e48f45e97fc",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 1.5216e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.0015486,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.001564,
+        "prompt_tokens": 10324,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 0,
+        "error": "Remote end closed connection without response",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 16323.566,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.6-35b-a3b",
+      "actual_model": "qwen/qwen3.6-35b-a3b",
+      "group": 1,
+      "round": 44,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 0,
+        "error": "Remote end closed connection without response",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 15949.822,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 5549.983,
+        "stream": true,
+        "ttft_ms": 2871.312,
+        "first_content_token_ms": 5547.635,
+        "first_reasoning_token_ms": 2871.312,
+        "stream_chunk_count": 161,
+        "usage": {
+          "prompt_tokens": 10322,
+          "completion_tokens": 542,
+          "total_tokens": 10864,
+          "cost": 0.0021870719,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0021870719,
+            "upstream_inference_prompt_cost": 0.0016639064,
+            "upstream_inference_completions_cost": 0.0005231655
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 522,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.6-35b-a3b-20260415",
+        "response_id": "gen-1783339842-8YLsXbZo4NHXoFp65v27",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1783339842-8YLsXbZo4NHXoFp65v27",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a16e81fc1a44fc38-ORD"
+        },
+        "provider_attribution": {
+          "provider": "AtlasCloud",
+          "model": "qwen/qwen3.6-35b-a3b-20260415",
+          "id": "gen-1783339842-8YLsXbZo4NHXoFp65v27",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.0021870719,
+            "upstream_inference_prompt_cost": 0.0016639064,
+            "upstream_inference_completions_cost": 0.0005231655
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.0021870719,
+          "upstream_inference_prompt_cost": 0.0016639064,
+          "upstream_inference_completions_cost": 0.0005231655
+        },
+        "cost": 0.0021870719,
+        "prompt_tokens": 10322,
+        "completion_tokens": 542,
+        "reasoning_tokens": 522,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.6-35b-a3b",
+      "actual_model": "qwen/qwen3.6-35b-a3b",
+      "group": 1,
+      "round": 46,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 18580.258,
+        "stream": true,
+        "ttft_ms": 2055.75,
+        "first_content_token_ms": 18566.865,
+        "first_reasoning_token_ms": 2055.75,
+        "stream_chunk_count": 535,
+        "usage": {
+          "prompt_tokens": 1993,
+          "completion_tokens": 1847,
+          "total_tokens": 3840,
+          "cost": 0.00210408835,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00210408835,
+            "upstream_inference_prompt_cost": 0.0003212716,
+            "upstream_inference_completions_cost": 0.00178281675
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 1842,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.6-35b-a3b-20260415",
+        "response_id": "gen-1783339828-nBEnEcLMQNoPZawBXVy5",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1783339828-nBEnEcLMQNoPZawBXVy5",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a16e81a489f7844d-ORD"
+        },
+        "provider_attribution": {
+          "provider": "AtlasCloud",
+          "model": "qwen/qwen3.6-35b-a3b-20260415",
+          "id": "gen-1783339828-nBEnEcLMQNoPZawBXVy5",
+          "native_finish_reason": "stop",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00210408835,
+            "upstream_inference_prompt_cost": 0.0003212716,
+            "upstream_inference_completions_cost": 0.00178281675
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00210408835,
+          "upstream_inference_prompt_cost": 0.0003212716,
+          "upstream_inference_completions_cost": 0.00178281675
+        },
+        "cost": 0.00210408835,
+        "prompt_tokens": 1993,
+        "completion_tokens": 1847,
+        "reasoning_tokens": 1842,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 0,
+        "error": "Remote end closed connection without response",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 16949.568,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.6-35b-a3b",
+      "actual_model": "qwen/qwen3.6-35b-a3b",
+      "group": 1,
+      "round": 49,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 26935.496,
+        "stream": true,
+        "ttft_ms": 2612.521,
+        "first_content_token_ms": 26888.948,
+        "first_reasoning_token_ms": 2612.521,
+        "stream_chunk_count": 421,
+        "usage": {
+          "prompt_tokens": 1989,
+          "completion_tokens": 1490,
+          "total_tokens": 3479,
+          "cost": 0.0017588493,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0017588493,
+            "upstream_inference_prompt_cost": 0.0003206268,
+            "upstream_inference_completions_cost": 0.0014382225
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 1470,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.6-35b-a3b-20260415",
+        "response_id": "gen-1783339828-T4WYOVTfZRhQvFZ5qTBV",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1783339828-T4WYOVTfZRhQvFZ5qTBV",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a16e81a57aaafca8-ORD"
+        },
+        "provider_attribution": {
+          "provider": "AtlasCloud",
+          "model": "qwen/qwen3.6-35b-a3b-20260415",
+          "id": "gen-1783339828-T4WYOVTfZRhQvFZ5qTBV",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.0017588493,
+            "upstream_inference_prompt_cost": 0.0003206268,
+            "upstream_inference_completions_cost": 0.0014382225
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.0017588493,
+          "upstream_inference_prompt_cost": 0.0003206268,
+          "upstream_inference_completions_cost": 0.0014382225
+        },
+        "cost": 0.0017588493,
+        "prompt_tokens": 1989,
+        "completion_tokens": 1490,
+        "reasoning_tokens": 1470,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 0,
+        "error": "[Errno 54] Connection reset by peer",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 10156.504,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.6-35b-a3b",
+      "actual_model": "qwen/qwen3.6-35b-a3b",
+      "group": 2,
+      "round": 16,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 11484.818,
+        "stream": true,
+        "ttft_ms": 11259.521,
+        "first_content_token_ms": 11434.433,
+        "first_reasoning_token_ms": 11259.521,
+        "stream_chunk_count": 10,
+        "usage": {
+          "prompt_tokens": 10322,
+          "completion_tokens": 30,
+          "total_tokens": 10352,
+          "cost": 0.0016928639,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0016928639,
+            "upstream_inference_prompt_cost": 0.0016639064,
+            "upstream_inference_completions_cost": 2.89575e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.6-35b-a3b-20260415",
+        "response_id": "gen-1783339855-UVEjPmAixI9OYTAjtUv6",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1783339855-UVEjPmAixI9OYTAjtUv6",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a16e824fbacff13a-ORD"
+        },
+        "provider_attribution": {
+          "provider": "AtlasCloud",
+          "model": "qwen/qwen3.6-35b-a3b-20260415",
+          "id": "gen-1783339855-UVEjPmAixI9OYTAjtUv6",
+          "native_finish_reason": "stop",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.0016928639,
+            "upstream_inference_prompt_cost": 0.0016639064,
+            "upstream_inference_completions_cost": 2.89575e-05
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.0016928639,
+          "upstream_inference_prompt_cost": 0.0016639064,
+          "upstream_inference_completions_cost": 2.89575e-05
+        },
+        "cost": 0.0016928639,
+        "prompt_tokens": 10322,
+        "completion_tokens": 30,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 0,
+        "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 10090.535,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.6-35b-a3b",
+      "actual_model": "qwen/qwen3.6-35b-a3b",
+      "group": 2,
+      "round": 14,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 0,
+        "error": "Remote end closed connection without response",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 17113.859,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 12764.172,
+        "stream": true,
+        "ttft_ms": 7631.084,
+        "first_content_token_ms": 12761.1,
+        "first_reasoning_token_ms": 7631.084,
+        "stream_chunk_count": 10,
+        "usage": {
+          "prompt_tokens": 41107,
+          "completion_tokens": 22,
+          "total_tokens": 41129,
+          "cost": 0.0066476839,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0066476839,
+            "upstream_inference_prompt_cost": 0.0066264484,
+            "upstream_inference_completions_cost": 2.12355e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.6-35b-a3b-20260415",
+        "response_id": "gen-1783339863-ELrNon3lEf6oGaYD0Z7K",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1783339863-ELrNon3lEf6oGaYD0Z7K",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a16e827f6d78b7cd-ORD"
+        },
+        "provider_attribution": {
+          "provider": "AtlasCloud",
+          "model": "qwen/qwen3.6-35b-a3b-20260415",
+          "id": "gen-1783339863-ELrNon3lEf6oGaYD0Z7K",
+          "native_finish_reason": "stop",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.0066476839,
+            "upstream_inference_prompt_cost": 0.0066264484,
+            "upstream_inference_completions_cost": 2.12355e-05
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.0066476839,
+          "upstream_inference_prompt_cost": 0.0066264484,
+          "upstream_inference_completions_cost": 2.12355e-05
+        },
+        "cost": 0.0066476839,
+        "prompt_tokens": 41107,
+        "completion_tokens": 22,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.6-35b-a3b",
+      "actual_model": "qwen/qwen3.6-35b-a3b",
+      "group": 2,
+      "round": 19,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 0,
+        "error": "Remote end closed connection without response",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 21850.491,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 10179.932,
+        "stream": true,
+        "ttft_ms": 9533.94,
+        "first_content_token_ms": 10175.944,
+        "first_reasoning_token_ms": 9533.94,
+        "stream_chunk_count": 11,
+        "usage": {
+          "prompt_tokens": 10331,
+          "completion_tokens": 35,
+          "total_tokens": 10366,
+          "cost": 0.00169914095,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00169914095,
+            "upstream_inference_prompt_cost": 0.0016653572,
+            "upstream_inference_completions_cost": 3.378375e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.6-35b-a3b-20260415",
+        "response_id": "gen-1783339878-EN25hD747eHIHkcdC1Uz",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1783339878-EN25hD747eHIHkcdC1Uz",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a16e82dc4fd73a0f-ORD"
+        },
+        "provider_attribution": {
+          "provider": "AtlasCloud",
+          "model": "qwen/qwen3.6-35b-a3b-20260415",
+          "id": "gen-1783339878-EN25hD747eHIHkcdC1Uz",
+          "native_finish_reason": "stop",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00169914095,
+            "upstream_inference_prompt_cost": 0.0016653572,
+            "upstream_inference_completions_cost": 3.378375e-05
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00169914095,
+          "upstream_inference_prompt_cost": 0.0016653572,
+          "upstream_inference_completions_cost": 3.378375e-05
+        },
+        "cost": 0.00169914095,
+        "prompt_tokens": 10331,
+        "completion_tokens": 35,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.6-35b-a3b",
+      "actual_model": "qwen/qwen3.6-35b-a3b",
+      "group": 2,
+      "round": 23,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 0,
+        "error": "Remote end closed connection without response",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 20117.62,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 11444.385,
+        "stream": true,
+        "ttft_ms": 7122.425,
+        "first_content_token_ms": 11104.641,
+        "first_reasoning_token_ms": 7122.425,
+        "stream_chunk_count": 12,
+        "usage": {
+          "prompt_tokens": 41110,
+          "completion_tokens": 37,
+          "total_tokens": 41147,
+          "cost": 0.00666264625,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00666264625,
+            "upstream_inference_prompt_cost": 0.006626932,
+            "upstream_inference_completions_cost": 3.571425e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.6-35b-a3b-20260415",
+        "response_id": "gen-1783339875-LCXZwFiq4ZGbcKZ3CjDu",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1783339875-LCXZwFiq4ZGbcKZ3CjDu",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a16e82c97893dc66-ORD"
+        },
+        "provider_attribution": {
+          "provider": "AtlasCloud",
+          "model": "qwen/qwen3.6-35b-a3b-20260415",
+          "id": "gen-1783339875-LCXZwFiq4ZGbcKZ3CjDu",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00666264625,
+            "upstream_inference_prompt_cost": 0.006626932,
+            "upstream_inference_completions_cost": 3.571425e-05
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00666264625,
+          "upstream_inference_prompt_cost": 0.006626932,
+          "upstream_inference_completions_cost": 3.571425e-05
+        },
+        "cost": 0.00666264625,
+        "prompt_tokens": 41110,
+        "completion_tokens": 37,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.6-35b-a3b",
+      "actual_model": "qwen/qwen3.6-35b-a3b",
+      "group": 2,
+      "round": 20,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 0,
+        "error": "[SYS] unknown error (_ssl.c:2406)",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 30607.099,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 20073.406,
+        "stream": true,
+        "ttft_ms": 15232.687,
+        "first_content_token_ms": 20059.827,
+        "first_reasoning_token_ms": 15232.687,
+        "stream_chunk_count": 257,
+        "usage": {
+          "prompt_tokens": 41101,
+          "completion_tokens": 895,
+          "total_tokens": 41996,
+          "cost": 0.00748937995,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00748937995,
+            "upstream_inference_prompt_cost": 0.0066254812,
+            "upstream_inference_completions_cost": 0.00086389875
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 874,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.6-35b-a3b-20260415",
+        "response_id": "gen-1783339893-96A2c6sxIzyzb81UG5yj",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1783339893-96A2c6sxIzyzb81UG5yj",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a16e83381bd813cd-ORD"
+        },
+        "provider_attribution": {
+          "provider": "AtlasCloud",
+          "model": "qwen/qwen3.6-35b-a3b-20260415",
+          "id": "gen-1783339893-96A2c6sxIzyzb81UG5yj",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00748937995,
+            "upstream_inference_prompt_cost": 0.0066254812,
+            "upstream_inference_completions_cost": 0.00086389875
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00748937995,
+          "upstream_inference_prompt_cost": 0.0066254812,
+          "upstream_inference_completions_cost": 0.00086389875
+        },
+        "cost": 0.00748937995,
+        "prompt_tokens": 41101,
+        "completion_tokens": 895,
+        "reasoning_tokens": 874,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.6-35b-a3b",
+      "actual_model": "qwen/qwen3.6-35b-a3b",
+      "group": 2,
+      "round": 18,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 0,
+        "error": "[SYS] unknown error (_ssl.c:2406)",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 42272.144,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 15803.695,
+        "stream": true,
+        "ttft_ms": 2984.469,
+        "first_content_token_ms": 15801.008,
+        "first_reasoning_token_ms": 2984.469,
+        "stream_chunk_count": 460,
+        "usage": {
+          "prompt_tokens": 1993,
+          "completion_tokens": 1616,
+          "total_tokens": 3609,
+          "cost": 0.0018811156,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0018811156,
+            "upstream_inference_prompt_cost": 0.0003212716,
+            "upstream_inference_completions_cost": 0.001559844
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 1611,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.6-35b-a3b-20260415",
+        "response_id": "gen-1783339890-gKHH4g4jz3n8Pzfh92hF",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1783339890-gKHH4g4jz3n8Pzfh92hF",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a16e83295947e26f-ORD"
+        },
+        "provider_attribution": {
+          "provider": "AtlasCloud",
+          "model": "qwen/qwen3.6-35b-a3b-20260415",
+          "id": "gen-1783339890-gKHH4g4jz3n8Pzfh92hF",
+          "native_finish_reason": "stop",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.0018811156,
+            "upstream_inference_prompt_cost": 0.0003212716,
+            "upstream_inference_completions_cost": 0.001559844
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.0018811156,
+          "upstream_inference_prompt_cost": 0.0003212716,
+          "upstream_inference_completions_cost": 0.001559844
+        },
+        "cost": 0.0018811156,
+        "prompt_tokens": 1993,
+        "completion_tokens": 1616,
+        "reasoning_tokens": 1611,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.6-35b-a3b",
+      "actual_model": "qwen/qwen3.6-35b-a3b",
+      "group": 2,
+      "round": 12,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 11515.099,
+        "stream": true,
+        "ttft_ms": 2480.311,
+        "first_content_token_ms": 11511.909,
+        "first_reasoning_token_ms": 2480.311,
+        "stream_chunk_count": 342,
+        "usage": {
+          "prompt_tokens": 1987,
+          "completion_tokens": 1187,
+          "total_tokens": 3174,
+          "cost": 0.00146605615,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00146605615,
+            "upstream_inference_prompt_cost": 0.0003203044,
+            "upstream_inference_completions_cost": 0.00114575175
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 1165,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.6-35b-a3b-20260415",
+        "response_id": "gen-1783339838-t6LUfI9NxdnfHlgUIHwQ",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1783339838-t6LUfI9NxdnfHlgUIHwQ",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a16e81e7af30eb68-ORD"
+        },
+        "provider_attribution": {
+          "provider": "AtlasCloud",
+          "model": "qwen/qwen3.6-35b-a3b-20260415",
+          "id": "gen-1783339838-t6LUfI9NxdnfHlgUIHwQ",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00146605615,
+            "upstream_inference_prompt_cost": 0.0003203044,
+            "upstream_inference_completions_cost": 0.00114575175
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00146605615,
+          "upstream_inference_prompt_cost": 0.0003203044,
+          "upstream_inference_completions_cost": 0.00114575175
+        },
+        "cost": 0.00146605615,
+        "prompt_tokens": 1987,
+        "completion_tokens": 1187,
+        "reasoning_tokens": 1165,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 0,
+        "error": "[SYS] unknown error (_ssl.c:2406)",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 66268.61,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.6-35b-a3b",
+      "actual_model": "qwen/qwen3.6-35b-a3b",
+      "group": 2,
+      "round": 21,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 0,
+        "error": "[SYS] unknown error (_ssl.c:2406)",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 51103.897,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 14888.583,
+        "stream": true,
+        "ttft_ms": 2257.467,
+        "first_content_token_ms": 14762.66,
+        "first_reasoning_token_ms": 2257.467,
+        "stream_chunk_count": 456,
+        "usage": {
+          "prompt_tokens": 1989,
+          "completion_tokens": 1575,
+          "total_tokens": 3564,
+          "cost": 0.00184089555,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00184089555,
+            "upstream_inference_prompt_cost": 0.0003206268,
+            "upstream_inference_completions_cost": 0.00152026875
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 1553,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.6-35b-a3b-20260415",
+        "response_id": "gen-1783339903-ECDf5Qx0KRqcMzZm4jxe",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1783339903-ECDf5Qx0KRqcMzZm4jxe",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a16e837d8a7752ca-ORD"
+        },
+        "provider_attribution": {
+          "provider": "AtlasCloud",
+          "model": "qwen/qwen3.6-35b-a3b-20260415",
+          "id": "gen-1783339903-ECDf5Qx0KRqcMzZm4jxe",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00184089555,
+            "upstream_inference_prompt_cost": 0.0003206268,
+            "upstream_inference_completions_cost": 0.00152026875
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00184089555,
+          "upstream_inference_prompt_cost": 0.0003206268,
+          "upstream_inference_completions_cost": 0.00152026875
+        },
+        "cost": 0.00184089555,
+        "prompt_tokens": 1989,
+        "completion_tokens": 1575,
+        "reasoning_tokens": 1553,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.6-35b-a3b",
+      "actual_model": "qwen/qwen3.6-35b-a3b",
+      "group": 2,
+      "round": 30,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 0,
+        "error": "[SYS] unknown error (_ssl.c:2406)",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 41256.65,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 18924.422,
+        "stream": true,
+        "ttft_ms": 1790.634,
+        "first_content_token_ms": 18909.05,
+        "first_reasoning_token_ms": 1790.634,
+        "stream_chunk_count": 619,
+        "usage": {
+          "prompt_tokens": 1993,
+          "completion_tokens": 2116,
+          "total_tokens": 4109,
+          "cost": 0.0023637406,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0023637406,
+            "upstream_inference_prompt_cost": 0.0003212716,
+            "upstream_inference_completions_cost": 0.002042469
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 2111,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.6-35b-a3b-20260415",
+        "response_id": "gen-1783339905-3COiqFIbbOSxmplVDnTZ",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1783339905-3COiqFIbbOSxmplVDnTZ",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a16e83873dbe61b2-ORD"
+        },
+        "provider_attribution": {
+          "provider": "AtlasCloud",
+          "model": "qwen/qwen3.6-35b-a3b-20260415",
+          "id": "gen-1783339905-3COiqFIbbOSxmplVDnTZ",
+          "native_finish_reason": "stop",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.0023637406,
+            "upstream_inference_prompt_cost": 0.0003212716,
+            "upstream_inference_completions_cost": 0.002042469
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.0023637406,
+          "upstream_inference_prompt_cost": 0.0003212716,
+          "upstream_inference_completions_cost": 0.002042469
+        },
+        "cost": 0.0023637406,
+        "prompt_tokens": 1993,
+        "completion_tokens": 2116,
+        "reasoning_tokens": 2111,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.6-35b-a3b",
+      "actual_model": "qwen/qwen3.6-35b-a3b",
+      "group": 2,
+      "round": 25,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 0,
+        "error": "[SYS] unknown error (_ssl.c:2406)",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 65514.344,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 11507.983,
+        "stream": true,
+        "ttft_ms": 2468.912,
+        "first_content_token_ms": 11500.837,
+        "first_reasoning_token_ms": 2468.912,
+        "stream_chunk_count": 496,
+        "usage": {
+          "prompt_tokens": 10324,
+          "completion_tokens": 1731,
+          "total_tokens": 12055,
+          "cost": 0.00333507655,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00333507655,
+            "upstream_inference_prompt_cost": 0.0016642288,
+            "upstream_inference_completions_cost": 0.00167084775
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 1711,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.6-35b-a3b-20260415",
+        "response_id": "gen-1783339921-Sns9BluGN2Klast0TxYM",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1783339921-Sns9BluGN2Klast0TxYM",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a16e83e8bb0d1413-ORD"
+        },
+        "provider_attribution": {
+          "provider": "AtlasCloud",
+          "model": "qwen/qwen3.6-35b-a3b-20260415",
+          "id": "gen-1783339921-Sns9BluGN2Klast0TxYM",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00333507655,
+            "upstream_inference_prompt_cost": 0.0016642288,
+            "upstream_inference_completions_cost": 0.00167084775
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00333507655,
+          "upstream_inference_prompt_cost": 0.0016642288,
+          "upstream_inference_completions_cost": 0.00167084775
+        },
+        "cost": 0.00333507655,
+        "prompt_tokens": 10324,
+        "completion_tokens": 1731,
+        "reasoning_tokens": 1711,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.6-35b-a3b",
+      "actual_model": "qwen/qwen3.6-35b-a3b",
+      "group": 3,
+      "round": 25,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 14759.306,
+        "stream": true,
+        "ttft_ms": 14468.257,
+        "first_content_token_ms": 14658.815,
+        "first_reasoning_token_ms": 14468.257,
+        "stream_chunk_count": 14,
+        "usage": {
+          "prompt_tokens": 41103,
+          "completion_tokens": 37,
+          "total_tokens": 41140,
+          "cost": 0.00666151785,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00666151785,
+            "upstream_inference_prompt_cost": 0.0066258036,
+            "upstream_inference_completions_cost": 3.571425e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.6-35b-a3b-20260415",
+        "response_id": "gen-1783339935-DJ9HfXmPkW8OGjYlIElc",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1783339935-DJ9HfXmPkW8OGjYlIElc",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a16e84020cdd4a04-ORD"
+        },
+        "provider_attribution": {
+          "provider": "AtlasCloud",
+          "model": "qwen/qwen3.6-35b-a3b-20260415",
+          "id": "gen-1783339935-DJ9HfXmPkW8OGjYlIElc",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00666151785,
+            "upstream_inference_prompt_cost": 0.0066258036,
+            "upstream_inference_completions_cost": 3.571425e-05
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00666151785,
+          "upstream_inference_prompt_cost": 0.0066258036,
+          "upstream_inference_completions_cost": 3.571425e-05
+        },
+        "cost": 0.00666151785,
+        "prompt_tokens": 41103,
+        "completion_tokens": 37,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 0,
+        "error": "Remote end closed connection without response",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 15629.087,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.6-35b-a3b",
+      "actual_model": "qwen/qwen3.6-35b-a3b",
+      "group": 4,
+      "round": 24,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 0,
+        "error": "Remote end closed connection without response",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 40638.608,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 4833.026,
+        "stream": true,
+        "ttft_ms": 4274.068,
+        "first_content_token_ms": 4491.168,
+        "first_reasoning_token_ms": 4274.068,
+        "stream_chunk_count": 12,
+        "usage": {
+          "prompt_tokens": 41101,
+          "completion_tokens": 37,
+          "total_tokens": 41138,
+          "cost": 0.00666119545,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00666119545,
+            "upstream_inference_prompt_cost": 0.0066254812,
+            "upstream_inference_completions_cost": 3.571425e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.6-35b-a3b-20260415",
+        "response_id": "gen-1783339993-97b3nI5rxCr7EWUC7VRR",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1783339993-97b3nI5rxCr7EWUC7VRR",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a16e85aa497aeb65-ORD"
+        },
+        "provider_attribution": {
+          "provider": "AtlasCloud",
+          "model": "qwen/qwen3.6-35b-a3b-20260415",
+          "id": "gen-1783339993-97b3nI5rxCr7EWUC7VRR",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00666119545,
+            "upstream_inference_prompt_cost": 0.0066254812,
+            "upstream_inference_completions_cost": 3.571425e-05
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00666119545,
+          "upstream_inference_prompt_cost": 0.0066254812,
+          "upstream_inference_completions_cost": 3.571425e-05
+        },
+        "cost": 0.00666119545,
+        "prompt_tokens": 41101,
+        "completion_tokens": 37,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.6-35b-a3b",
+      "actual_model": "qwen/qwen3.6-35b-a3b",
+      "group": 2,
+      "round": 2,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 0,
+        "error": "Remote end closed connection without response",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 16003.348,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3934.326,
+        "stream": true,
+        "ttft_ms": 2877.406,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 2877.406,
+        "stream_chunk_count": 18,
+        "usage": {
+          "prompt_tokens": 41107,
+          "completion_tokens": 16,
+          "total_tokens": 41123,
+          "cost": 0.00577098,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00577098,
+            "upstream_inference_prompt_cost": 0.00575498,
+            "upstream_inference_completions_cost": 1.6e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 28,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.6-35b-a3b-20260415",
+        "response_id": "gen-1783340072-LId8rBUnEkl81Ke8URcC",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1783340072-LId8rBUnEkl81Ke8URcC",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a16e8795798fda7a-ORD"
+        },
+        "provider_attribution": {
+          "provider": "AkashML",
+          "model": "qwen/qwen3.6-35b-a3b-20260415",
+          "id": "gen-1783340072-LId8rBUnEkl81Ke8URcC",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00577098,
+            "upstream_inference_prompt_cost": 0.00575498,
+            "upstream_inference_completions_cost": 1.6e-05
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00577098,
+          "upstream_inference_prompt_cost": 0.00575498,
+          "upstream_inference_completions_cost": 1.6e-05
+        },
+        "cost": 0.00577098,
+        "prompt_tokens": 41107,
+        "completion_tokens": 16,
+        "reasoning_tokens": 28,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.6-35b-a3b",
+      "actual_model": "qwen/qwen3.6-35b-a3b",
+      "group": 3,
+      "round": 13,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 0,
+        "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 128.926,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3082.483,
+        "stream": true,
+        "ttft_ms": 2817.195,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 2817.195,
+        "stream_chunk_count": 18,
+        "usage": {
+          "prompt_tokens": 41103,
+          "completion_tokens": 16,
+          "total_tokens": 41119,
+          "cost": 0.00577042,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00577042,
+            "upstream_inference_prompt_cost": 0.00575442,
+            "upstream_inference_completions_cost": 1.6e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.6-35b-a3b-20260415",
+        "response_id": "gen-1783340075-DQGneXlOegNBlKE9jHTZ",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1783340075-DQGneXlOegNBlKE9jHTZ",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a16e87ab6ed5e7fc-ORD"
+        },
+        "provider_attribution": {
+          "provider": "AkashML",
+          "model": "qwen/qwen3.6-35b-a3b-20260415",
+          "id": "gen-1783340075-DQGneXlOegNBlKE9jHTZ",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00577042,
+            "upstream_inference_prompt_cost": 0.00575442,
+            "upstream_inference_completions_cost": 1.6e-05
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00577042,
+          "upstream_inference_prompt_cost": 0.00575442,
+          "upstream_inference_completions_cost": 1.6e-05
+        },
+        "cost": 0.00577042,
+        "prompt_tokens": 41103,
+        "completion_tokens": 16,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "latency",
+      "provider_sort": "latency",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.6-35b-a3b",
+      "actual_model": "qwen/qwen3.6-35b-a3b",
+      "group": 3,
+      "round": 43,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 0,
+        "error": "Remote end closed connection without response",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 16238.308,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3668.553,
+        "stream": true,
+        "ttft_ms": 2991.873,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 2991.873,
+        "stream_chunk_count": 18,
+        "usage": {
+          "prompt_tokens": 41110,
+          "completion_tokens": 16,
+          "total_tokens": 41126,
+          "cost": 0.0057714,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0057714,
+            "upstream_inference_prompt_cost": 0.0057554,
+            "upstream_inference_completions_cost": 1.6e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.6-35b-a3b-20260415",
+        "response_id": "gen-1783340202-bCncsx67Sq5pf4Hwdjis",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1783340202-bCncsx67Sq5pf4Hwdjis",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a16e8ac5ebc3863e-ORD"
+        },
+        "provider_attribution": {
+          "provider": "AkashML",
+          "model": "qwen/qwen3.6-35b-a3b-20260415",
+          "id": "gen-1783340202-bCncsx67Sq5pf4Hwdjis",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.0057714,
+            "upstream_inference_prompt_cost": 0.0057554,
+            "upstream_inference_completions_cost": 1.6e-05
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.0057714,
+          "upstream_inference_prompt_cost": 0.0057554,
+          "upstream_inference_completions_cost": 1.6e-05
+        },
+        "cost": 0.0057714,
+        "prompt_tokens": 41110,
+        "completion_tokens": 16,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "ttft",
+      "provider_sort": "ttft",
+      "provider": "infron",
+      "requested_model": "qwen/qwen3.6-35b-a3b",
+      "actual_model": "qwen/qwen3.6-35b-a3b",
+      "group": 2,
+      "round": 49,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 0,
+        "error": "Remote end closed connection without response",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 29872.445,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2899.068,
+        "stream": true,
+        "ttft_ms": 1741.607,
+        "first_content_token_ms": 1741.789,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 18,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 10326,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 10342
+        },
+        "response_model": "qwen/qwen3.6-35b-a3b",
+        "response_id": "chatcmpl-Riq1H8tp0kgB49v4s1WFF49j",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "202607061217344475310741I5MkvPi",
+          "CF-RAY": "a16e8c0cbd24f51e-ORD"
+        },
+        "provider_attribution": {
+          "provider": "deepinfra",
+          "model": "qwen/qwen3.6-35b-a3b",
+          "id": "chatcmpl-Riq1H8tp0kgB49v4s1WFF49j",
+          "request_id": "36ef85495ecd4512830daf2acab92681",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 1.5216e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.0015489,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.001564,
+        "prompt_tokens": 10326,
+        "completion_tokens": 16,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "ttft",
+      "provider_sort": "latency",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.6-35b-a3b",
+      "actual_model": "qwen/qwen3.6-35b-a3b",
+      "group": 3,
+      "round": 35,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2323.251,
+        "stream": true,
+        "ttft_ms": 1378.256,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 1378.256,
+        "stream_chunk_count": 18,
+        "usage": {
+          "prompt_tokens": 1996,
+          "completion_tokens": 16,
+          "total_tokens": 2012,
+          "cost": 0.00029544,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00029544,
+            "upstream_inference_prompt_cost": 0.00027944,
+            "upstream_inference_completions_cost": 1.6e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.6-35b-a3b-20260415",
+        "response_id": "gen-1783340287-5xmFMByG7bftLfwJ2q2j",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1783340287-5xmFMByG7bftLfwJ2q2j",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a16e8cdacd51462e-ORD"
+        },
+        "provider_attribution": {
+          "provider": "AkashML",
+          "model": "qwen/qwen3.6-35b-a3b-20260415",
+          "id": "gen-1783340287-5xmFMByG7bftLfwJ2q2j",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00029544,
+            "upstream_inference_prompt_cost": 0.00027944,
+            "upstream_inference_completions_cost": 1.6e-05
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00029544,
+          "upstream_inference_prompt_cost": 0.00027944,
+          "upstream_inference_completions_cost": 1.6e-05
+        },
+        "cost": 0.00029544,
+        "prompt_tokens": 1996,
+        "completion_tokens": 16,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 0,
+        "error": "Remote end closed connection without response",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 15640.728,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    }
+  ]
+}
