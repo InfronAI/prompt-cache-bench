@@ -59,6 +59,14 @@ This repository publishes reproducible experiment code, raw benchmark datasets, 
   <tbody>
     <tr>
       <td><span>Published</span></td>
+      <td><code>openai/gpt-5.4-nano</code></td>
+      <td>Infron vs OpenRouter</td>
+      <td>4x50 paired streaming Chat Completions; routing sort modes; default reasoning/thinking; prompt-length tiers; /v1/chat/completions only.</td>
+      <td><a href="https://infronai.github.io/prompt-cache-bench/experiments/openai/gpt-5.4-nano/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-nano__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.en.html">EN HTML</a> · <a href="https://infronai.github.io/prompt-cache-bench/experiments/openai/gpt-5.4-nano/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-nano__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.zh.html">ZH HTML</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/openai/gpt-5.4-nano/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-nano__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.en.md">EN MD</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/openai/gpt-5.4-nano/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-nano__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.zh.md">ZH MD</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/openai/gpt-5.4-nano/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports">Reports</a></td>
+      <td><a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/openai/gpt-5.4-nano/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/data">Dataset</a></td>
+    </tr>
+    <tr>
+      <td><span>Published</span></td>
       <td><code>openai/gpt-4o-mini</code></td>
       <td>Infron vs OpenRouter</td>
       <td>4 x 50, streaming, routing sort: throughput / price / latency / ttft, platform-default reasoning, short / medium / long prompt tiers, Chat Completions only</td>
@@ -122,8 +130,8 @@ GitHub Pages is the recommended way to read the self-contained HTML report onlin
 
 - Project page: <https://infronai.github.io/prompt-cache-bench/>
 
-- Chinese HTML report: <https://infronai.github.io/prompt-cache-bench/experiments/openai/gpt-4o-mini/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__gpt-4o-mini__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.zh.html>
-- English HTML report: <https://infronai.github.io/prompt-cache-bench/experiments/openai/gpt-4o-mini/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__gpt-4o-mini__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.en.html>
+- Chinese HTML report: <https://infronai.github.io/prompt-cache-bench/experiments/openai/gpt-5.4-nano/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-nano__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.zh.html>
+- English HTML report: <https://infronai.github.io/prompt-cache-bench/experiments/openai/gpt-5.4-nano/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-nano__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.en.html>
 
 
 The Markdown report remains available for GitHub-native review and source diffs.
