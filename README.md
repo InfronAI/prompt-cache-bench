@@ -59,6 +59,14 @@ This repository publishes reproducible experiment code, raw benchmark datasets, 
   <tbody>
     <tr>
       <td><span>Published</span></td>
+      <td><code>moonshotai/kimi-k2.6</code></td>
+      <td>Infron vs OpenRouter</td>
+      <td>4x50 paired streaming Chat Completions; routing sort modes; default reasoning/thinking; prompt-length tiers; /v1/chat/completions only.</td>
+      <td><a href="https://infronai.github.io/prompt-cache-bench/experiments/moonshotai/kimi-k2.6/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__kimi-k2-6__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.en.html">EN HTML</a> · <a href="https://infronai.github.io/prompt-cache-bench/experiments/moonshotai/kimi-k2.6/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__kimi-k2-6__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.zh.html">ZH HTML</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/moonshotai/kimi-k2.6/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__kimi-k2-6__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.en.md">EN MD</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/moonshotai/kimi-k2.6/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__kimi-k2-6__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.zh.md">ZH MD</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/moonshotai/kimi-k2.6/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports">Reports</a></td>
+      <td><a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/moonshotai/kimi-k2.6/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/data">Dataset</a></td>
+    </tr>
+    <tr>
+      <td><span>Published</span></td>
       <td><code>moonshotai/kimi-k2.5</code></td>
       <td>Infron vs OpenRouter</td>
       <td>4x50 paired streaming Chat Completions; routing sort modes; default reasoning/thinking; prompt-length tiers; /v1/chat/completions only.</td>
@@ -186,8 +194,8 @@ GitHub Pages is the recommended way to read the self-contained HTML report onlin
 
 - Project page: <https://infronai.github.io/prompt-cache-bench/>
 
-- Chinese HTML report: <https://infronai.github.io/prompt-cache-bench/experiments/moonshotai/kimi-k2.5/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__kimi-k2-5__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.zh.html>
-- English HTML report: <https://infronai.github.io/prompt-cache-bench/experiments/moonshotai/kimi-k2.5/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__kimi-k2-5__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.en.html>
+- Chinese HTML report: <https://infronai.github.io/prompt-cache-bench/experiments/moonshotai/kimi-k2.6/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__kimi-k2-6__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.zh.html>
+- English HTML report: <https://infronai.github.io/prompt-cache-bench/experiments/moonshotai/kimi-k2.6/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__kimi-k2-6__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.en.html>
 
 
 The Markdown report remains available for GitHub-native review and source diffs.

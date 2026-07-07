@@ -1,0 +1,310 @@
+{
+  "records": [
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "requested_model": "moonshotai/kimi-k2.6",
+      "actual_model": "moonshotai/kimi-k2.6",
+      "group": 3,
+      "round": 21,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 4641.452,
+        "stream": true,
+        "ttft_ms": 4356.813,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 4356.839,
+        "stream_chunk_count": 18,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 15
+          },
+          "prompt_tokens": 9135,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 8192,
+            "video_tokens": 0
+          },
+          "total_tokens": 9151
+        },
+        "response_model": "moonshotai/kimi-k2.6",
+        "response_id": "c197351d459deb8373f5a1736ec26bcf",
+        "system_fingerprint": "fpv0_81006e3b",
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260707021953364521697XYiKRRgr",
+          "CF-RAY": "a1735de8cfb0fc36-ORD"
+        },
+        "provider_attribution": {
+          "provider": "novita",
+          "model": "moonshotai/kimi-k2.6",
+          "id": "c197351d459deb8373f5a1736ec26bcf",
+          "request_id": "ed7b4b18678949489e7527c5d24e1492",
+          "system_fingerprint": "fpv0_81006e3b"
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 6.4144e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.001323008,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.00089585,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.002283,
+        "prompt_tokens": 9135,
+        "completion_tokens": 16,
+        "reasoning_tokens": 15,
+        "cache_read_tokens": 8192,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 4308.152,
+        "stream": true,
+        "ttft_ms": 3900.399,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 3900.431,
+        "stream_chunk_count": 18,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 15
+          },
+          "prompt_tokens": 9135,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 8192,
+            "video_tokens": 0
+          },
+          "total_tokens": 9151
+        },
+        "response_model": "moonshotai/kimi-k2.6",
+        "response_id": "6448965c6ad2ec1d430b8ae12bc73346",
+        "system_fingerprint": "fpv0_81006e3b",
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260707021957642951352gCsqkwoF",
+          "CF-RAY": "a1735e038dccc5db-ORD"
+        },
+        "provider_attribution": {
+          "provider": "novita",
+          "model": "moonshotai/kimi-k2.6",
+          "id": "6448965c6ad2ec1d430b8ae12bc73346",
+          "request_id": "e8d2fd38382b44f6995f6ae8d18bbd5b",
+          "system_fingerprint": "fpv0_81006e3b"
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 6.4144e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0.001323008,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.00089585,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.002283,
+        "prompt_tokens": 9135,
+        "completion_tokens": 16,
+        "reasoning_tokens": 15,
+        "cache_read_tokens": 8192,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "openrouter",
+      "requested_model": "moonshotai/kimi-k2.6",
+      "actual_model": "moonshotai/kimi-k2.6",
+      "group": 3,
+      "round": 21,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1992.357,
+        "stream": true,
+        "ttft_ms": 1884.115,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 1884.115,
+        "stream_chunk_count": 10,
+        "usage": {
+          "prompt_tokens": 11601,
+          "completion_tokens": 18,
+          "total_tokens": 11619,
+          "cost": 0.0140022,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0140022,
+            "upstream_inference_prompt_cost": 0.0139212,
+            "upstream_inference_completions_cost": 8.1e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 18,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "moonshotai/kimi-k2.6-20260420",
+        "response_id": "gen-1783390864-9arf5dzEjMdUlFjayKTT",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1783390864-9arf5dzEjMdUlFjayKTT",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a1735fa71b5861a1-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Together",
+          "model": "moonshotai/kimi-k2.6-20260420",
+          "id": "gen-1783390864-9arf5dzEjMdUlFjayKTT",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.0140022,
+            "upstream_inference_prompt_cost": 0.0139212,
+            "upstream_inference_completions_cost": 8.1e-05
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.0140022,
+          "upstream_inference_prompt_cost": 0.0139212,
+          "upstream_inference_completions_cost": 8.1e-05
+        },
+        "cost": 0.0140022,
+        "prompt_tokens": 11601,
+        "completion_tokens": 18,
+        "reasoning_tokens": 18,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 5888.274,
+        "stream": true,
+        "ttft_ms": 4489.137,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 4489.137,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 9136,
+          "completion_tokens": 15,
+          "total_tokens": 9151,
+          "cost": 0.0064462,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0064462,
+            "upstream_inference_prompt_cost": 0.0063952,
+            "upstream_inference_completions_cost": 5.1e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 15,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "moonshotai/kimi-k2.6-20260420",
+        "response_id": "gen-1783390867-kQQCQOZdpS2o1nURBIJ3",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1783390867-kQQCQOZdpS2o1nURBIJ3",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a1735fb59beceace-ORD"
+        },
+        "provider_attribution": {
+          "provider": "ModelRun",
+          "model": "moonshotai/kimi-k2.6-20260420",
+          "id": "gen-1783390867-kQQCQOZdpS2o1nURBIJ3",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.0064462,
+            "upstream_inference_prompt_cost": 0.0063952,
+            "upstream_inference_completions_cost": 5.1e-05
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.0064462,
+          "upstream_inference_prompt_cost": 0.0063952,
+          "upstream_inference_completions_cost": 5.1e-05
+        },
+        "cost": 0.0064462,
+        "prompt_tokens": 9136,
+        "completion_tokens": 15,
+        "reasoning_tokens": 15,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    }
+  ]
+}
