@@ -218,8 +218,8 @@ GitHub Pages is the recommended way to read the self-contained HTML report onlin
 
 - Project page: <https://infronai.github.io/prompt-cache-bench/>
 
-- Chinese HTML report: <https://infronai.github.io/prompt-cache-bench/experiments/google/gemma-4-26b-a4b/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-openrouter-alias-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__gemma-4-26b-a4b__infron-vs-openrouter-alias__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.zh.html>
-- English HTML report: <https://infronai.github.io/prompt-cache-bench/experiments/google/gemma-4-26b-a4b/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-openrouter-alias-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__gemma-4-26b-a4b__infron-vs-openrouter-alias__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.en.html>
+- Chinese HTML report: <https://infronai.github.io/prompt-cache-bench/experiments/minimax/minimax-m2.5/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__minimax-m2-5__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.zh.html>
+- English HTML report: <https://infronai.github.io/prompt-cache-bench/experiments/minimax/minimax-m2.5/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__minimax-m2-5__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.en.html>
 
 
 The Markdown report remains available for GitHub-native review and source diffs.
