@@ -1,0 +1,112 @@
+{
+  "records": [
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "ttft",
+      "provider_sort": "latency",
+      "provider": "openrouter",
+      "requested_model": "z-ai/glm-4.7",
+      "actual_model": "z-ai/glm-4.7",
+      "group": 2,
+      "round": 16,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2516.013,
+        "stream": true,
+        "ttft_ms": 2374.82,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 2374.82,
+        "stream_chunk_count": 10,
+        "usage": {
+          "prompt_tokens": 9222,
+          "completion_tokens": 16,
+          "total_tokens": 9238,
+          "cost": 0.0207935,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 9216,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0207935,
+            "upstream_inference_prompt_cost": 0.0207495,
+            "upstream_inference_completions_cost": 4.4e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "z-ai/glm-4.7-20251222",
+        "response_id": "gen-1783383799-NuhdqGPHdp4j2xMGGKdT",
+        "system_fingerprint": "fp_a33c042689e969567008",
+        "response_headers": {
+          "X-Generation-Id": "gen-1783383799-NuhdqGPHdp4j2xMGGKdT",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a172b326f90160ae-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Cerebras",
+          "model": "z-ai/glm-4.7-20251222",
+          "id": "gen-1783383799-NuhdqGPHdp4j2xMGGKdT",
+          "system_fingerprint": "fp_a33c042689e969567008",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.0207935,
+            "upstream_inference_prompt_cost": 0.0207495,
+            "upstream_inference_completions_cost": 4.4e-05
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.0207935,
+          "upstream_inference_prompt_cost": 0.0207495,
+          "upstream_inference_completions_cost": 4.4e-05
+        },
+        "cost": 0.0207935,
+        "prompt_tokens": 9222,
+        "completion_tokens": 16,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 9216,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 0,
+        "error": "Remote end closed connection without response",
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 15899.002,
+        "stream": true,
+        "ttft_ms": null,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 0,
+        "usage": {},
+        "response_model": null,
+        "response_id": null,
+        "system_fingerprint": null,
+        "response_headers": {},
+        "provider_attribution": {},
+        "routing_trace": {},
+        "provider_cost_breakdown": {},
+        "cost": null,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    }
+  ]
+}
