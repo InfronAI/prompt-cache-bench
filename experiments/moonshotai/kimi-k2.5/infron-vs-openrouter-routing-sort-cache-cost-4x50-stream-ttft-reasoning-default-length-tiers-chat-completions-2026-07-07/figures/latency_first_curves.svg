@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1000" viewBox="0 0 1080 1000"><style>text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;fill:#111827}.title{font-size:22px;font-weight:700}.label{font-size:13px;fill:#374151}.tick{font-size:12px;fill:#6b7280}.value{font-size:12px;fill:#111827}</style><rect width="100%" height="100%" fill="#ffffff"/>
+<text x="48" y="34" class="title">Latency First 路由模式：指标生成过程对比曲线</text>
+<text x="48" y="58" class="label">按 group/round 顺序绘制每轮指标；曲线展示汇总均值背后的波动过程。</text>
+<rect x="48" y="76" width="472" height="245" rx="8" fill="#ffffff" stroke="#dbe3ef"/>
+<text x="66" y="104" class="label" font-weight="700">Latency / 请求（含 reasoning）</text>
+<line x1="106" y1="281.00" x2="496" y2="281.00" stroke="#e5e7eb"/>
+<text x="98" y="285.00" class="tick" text-anchor="end">0.0</text>
+<line x1="106" y1="228.67" x2="496" y2="228.67" stroke="#e5e7eb"/>
+<text x="98" y="232.67" class="tick" text-anchor="end">0.4</text>
+<line x1="106" y1="176.33" x2="496" y2="176.33" stroke="#e5e7eb"/>
+<text x="98" y="180.33" class="tick" text-anchor="end">0.7</text>
+<line x1="106" y1="124.00" x2="496" y2="124.00" stroke="#e5e7eb"/>
+<text x="98" y="128.00" class="tick" text-anchor="end">1.1</text>
+<text x="496" y="306" class="tick" text-anchor="end">Round 序列；越低越好</text>
+<rect x="560" y="76" width="472" height="245" rx="8" fill="#ffffff" stroke="#dbe3ef"/>
+<text x="578" y="104" class="label" font-weight="700">TTFT / 首包响应</text>
+<line x1="618" y1="281.00" x2="1008" y2="281.00" stroke="#e5e7eb"/>
+<text x="610" y="285.00" class="tick" text-anchor="end">0.0</text>
+<line x1="618" y1="228.67" x2="1008" y2="228.67" stroke="#e5e7eb"/>
+<text x="610" y="232.67" class="tick" text-anchor="end">0.4</text>
+<line x1="618" y1="176.33" x2="1008" y2="176.33" stroke="#e5e7eb"/>
+<text x="610" y="180.33" class="tick" text-anchor="end">0.7</text>
+<line x1="618" y1="124.00" x2="1008" y2="124.00" stroke="#e5e7eb"/>
+<text x="610" y="128.00" class="tick" text-anchor="end">1.1</text>
+<text x="1008" y="306" class="tick" text-anchor="end">Round 序列；越低越好</text>
+<rect x="48" y="379" width="472" height="245" rx="8" fill="#ffffff" stroke="#dbe3ef"/>
+<text x="66" y="407" class="label" font-weight="700">Response Throughput（含 reasoning）</text>
+<line x1="106" y1="584.00" x2="496" y2="584.00" stroke="#e5e7eb"/>
+<text x="98" y="588.00" class="tick" text-anchor="end">0.0</text>
+<line x1="106" y1="531.67" x2="496" y2="531.67" stroke="#e5e7eb"/>
+<text x="98" y="535.67" class="tick" text-anchor="end">0.4</text>
+<line x1="106" y1="479.33" x2="496" y2="479.33" stroke="#e5e7eb"/>
+<text x="98" y="483.33" class="tick" text-anchor="end">0.7</text>
+<line x1="106" y1="427.00" x2="496" y2="427.00" stroke="#e5e7eb"/>
+<text x="98" y="431.00" class="tick" text-anchor="end">1.1</text>
+<text x="496" y="609" class="tick" text-anchor="end">Round 序列；越高越好</text>
+<rect x="560" y="379" width="472" height="245" rx="8" fill="#ffffff" stroke="#dbe3ef"/>
+<text x="578" y="407" class="label" font-weight="700">Actual Cost / 轮</text>
+<line x1="618" y1="584.00" x2="1008" y2="584.00" stroke="#e5e7eb"/>
+<text x="610" y="588.00" class="tick" text-anchor="end">$0.0000</text>
+<line x1="618" y1="531.67" x2="1008" y2="531.67" stroke="#e5e7eb"/>
+<text x="610" y="535.67" class="tick" text-anchor="end">$0.3733</text>
+<line x1="618" y1="479.33" x2="1008" y2="479.33" stroke="#e5e7eb"/>
+<text x="610" y="483.33" class="tick" text-anchor="end">$0.7467</text>
+<line x1="618" y1="427.00" x2="1008" y2="427.00" stroke="#e5e7eb"/>
+<text x="610" y="431.00" class="tick" text-anchor="end">$1.1200</text>
+<text x="1008" y="609" class="tick" text-anchor="end">Round 序列；越低越好</text>
+<rect x="48" y="682" width="472" height="245" rx="8" fill="#ffffff" stroke="#dbe3ef"/>
+<text x="66" y="710" class="label" font-weight="700">Token Cache Hit Rate</text>
+<line x1="106" y1="887.00" x2="496" y2="887.00" stroke="#e5e7eb"/>
+<text x="98" y="891.00" class="tick" text-anchor="end">0%</text>
+<line x1="106" y1="834.67" x2="496" y2="834.67" stroke="#e5e7eb"/>
+<text x="98" y="838.67" class="tick" text-anchor="end">37%</text>
+<line x1="106" y1="782.33" x2="496" y2="782.33" stroke="#e5e7eb"/>
+<text x="98" y="786.33" class="tick" text-anchor="end">75%</text>
+<line x1="106" y1="730.00" x2="496" y2="730.00" stroke="#e5e7eb"/>
+<text x="98" y="734.00" class="tick" text-anchor="end">112%</text>
+<text x="496" y="912" class="tick" text-anchor="end">Round 序列；越高越好</text>
+<rect x="830" y="28" width="14" height="14" rx="3" fill="#2563eb"/>
+<text x="852" y="40" class="label">Infron</text>
+<rect x="830" y="52" width="14" height="14" rx="3" fill="#f97316"/>
+<text x="852" y="64" class="label">OpenRouter</text>
+</svg>
