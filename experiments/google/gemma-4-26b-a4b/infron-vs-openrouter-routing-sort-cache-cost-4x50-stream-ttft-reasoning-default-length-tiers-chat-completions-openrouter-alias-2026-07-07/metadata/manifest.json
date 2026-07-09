@@ -25,8 +25,8 @@
     },
     {
       "path": "reports/routing-cache-cost-streaming-performance-ab-study__gemma-4-26b-a4b__infron-vs-openrouter-alias__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.en.html",
-      "sha256": "3942eec14ac60079041a816d7b2d1663deef415b47a9b43eced7e4e871011714",
-      "size_bytes": 1117053
+      "sha256": "778aa86c340103c7e8a704c19f7a3d641db9edf4f682091216c788f4183d0705",
+      "size_bytes": 1115480
     },
     {
       "path": "reports/routing-cache-cost-streaming-performance-ab-study__gemma-4-26b-a4b__infron-vs-openrouter-alias__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.en.md",
@@ -40,8 +40,8 @@
     },
     {
       "path": "reports/routing-cache-cost-streaming-performance-ab-study__gemma-4-26b-a4b__infron-vs-openrouter-alias__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.zh.html",
-      "sha256": "91be90b7b4476cac5ba4c168d9874c03c62feac0be2047e47f1c3aee81e14ede",
-      "size_bytes": 1117517
+      "sha256": "651295b4d7b1843cda9eb69e8221ef3ff9870e19c2c5a3ffc3e7158055916482",
+      "size_bytes": 1115954
     },
     {
       "path": "reports/routing-cache-cost-streaming-performance-ab-study__gemma-4-26b-a4b__infron-vs-openrouter-alias__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.zh.md",

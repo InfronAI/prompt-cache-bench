@@ -10,7 +10,11 @@ from __future__ import annotations
 import argparse
 import os
 import re
+import shutil
+import subprocess
 import sys
+import tempfile
+from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 
@@ -96,6 +100,40 @@ def read_text(path: Path) -> str:
 
 def rel(path: Path, root: Path) -> str:
     return path.relative_to(root).as_posix()
+
+
+class InlineScriptParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self._capturing = False
+        self._current: list[str] = []
+        self.scripts: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag.lower() != "script":
+            return
+        attr_names = {name.lower() for name, _ in attrs}
+        self._capturing = "src" not in attr_names
+        self._current = []
+
+    def handle_data(self, data: str) -> None:
+        if self._capturing:
+            self._current.append(data)
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag.lower() != "script" or not self._capturing:
+            return
+        script = "".join(self._current).strip()
+        if script:
+            self.scripts.append(script)
+        self._capturing = False
+        self._current = []
+
+
+def extract_inline_scripts(text: str) -> list[str]:
+    parser = InlineScriptParser()
+    parser.feed(text)
+    return parser.scripts
 
 
 def check_secrets(root: Path) -> list[str]:
@@ -221,6 +259,37 @@ def check_report_basics(root: Path, experiment_dir: Path, repo_url: str) -> list
     return issues
 
 
+def check_html_script_syntax(root: Path, experiment_dir: Path) -> list[str]:
+    node = shutil.which("node")
+    if not node:
+        return []
+
+    issues: list[str] = []
+    reports_dir = experiment_dir / "reports"
+    for html_report in sorted(reports_dir.glob("*.html")):
+        if not (html_report.name.endswith(".zh.html") or html_report.name.endswith(".en.html")):
+            continue
+
+        scripts = extract_inline_scripts(read_text(html_report))
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmpdir_path = Path(tmpdir)
+            for index, script in enumerate(scripts, start=1):
+                script_path = tmpdir_path / f"inline-script-{index}.js"
+                script_path.write_text(script, encoding="utf-8")
+                result = subprocess.run(
+                    [node, "--check", str(script_path)],
+                    capture_output=True,
+                    text=True,
+                    check=False,
+                )
+                if result.returncode != 0:
+                    stderr = " ".join((result.stderr or result.stdout).splitlines()[:3])
+                    issues.append(
+                        f"{rel(html_report, root)}: inline script {index} has invalid JavaScript: {stderr[:500]}"
+                    )
+    return issues
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Validate prompt-cache-bench release artifacts.")
     parser.add_argument("--root", default=".", help="Repository root. Defaults to current directory.")
@@ -248,6 +317,7 @@ def main() -> int:
         ("secret scan", check_secrets(root)),
         ("experiment shape", check_experiment_shape(root, experiment_dir)),
         ("report basics", check_report_basics(root, experiment_dir, repo_url)),
+        ("HTML script syntax", check_html_script_syntax(root, experiment_dir)),
         ("GitHub links", check_github_links(root, experiment_dir, repo_url)),
     ]
 
