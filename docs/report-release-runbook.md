@@ -17,6 +17,8 @@ Do not push directly from the local debug export. Always copy finalized report a
 
 Hard rule: public A/B benchmark reports are published only from the `InfronAI/prompt-cache-bench` repository. The product/debug repository may contain draft reports for iteration, but it is not the public release target for benchmark artifacts.
 
+If a report is missing from the public website, first assume a release-target or Pages-publication problem until proven otherwise. Do not publish the same report from `GrowthPulse`, another product/debug repository, or a GitHub Pages site outside `https://infronai.github.io/prompt-cache-bench/`.
+
 Before staging or committing a public report, confirm the repository identity from the open-source staging root:
 
 ```bash
@@ -26,6 +28,22 @@ git rev-parse --show-toplevel
 ```
 
 The remote must resolve to `https://github.com/InfronAI/prompt-cache-bench.git` or `git@github.com:InfronAI/prompt-cache-bench.git`. If it points to another repository, stop and switch to the correct staging checkout before committing.
+
+Recommended identity gate before any `git add`:
+
+```bash
+git remote -v
+git rev-parse --show-toplevel
+git branch -vv
+```
+
+Expected result:
+
+- repository root ends with `export/open-source/prompt-cache-bench`;
+- `origin` points to `InfronAI/prompt-cache-bench`;
+- current branch is `main` tracking `origin/main`.
+
+If any condition fails, stop and move the release work into the correct checkout before staging files.
 
 ## 2. Target Repository Layout
 
@@ -57,14 +75,15 @@ experiments/deepseek/deepseek-v4-flash/
 Before copying files into the open-source staging repository:
 
 1. Confirm the report is the final reviewed version.
-2. Confirm terminology is consistent across text, tables, and charts.
-3. Generate both language variants:
+2. Confirm the exact model ID and slug. Do not reuse a nearby model directory such as `qwen3.6-35b-a3b` when the requested model is `qwen3.6-flash`.
+3. Confirm terminology is consistent across text, tables, and charts.
+4. Generate both language variants:
    - Chinese report: every narrative section, table heading, chart title, chart label, tooltip, and diagram label should be Chinese. Keep only necessary English proper nouns and API/model terms such as `Infron`, `OpenRouter`, `TTFT`, `provider.sort`, `usage.prompt_tokens`, and model IDs.
    - English report: every narrative section, table heading, chart title, chart label, tooltip, and diagram label should be English. Do not leave Chinese fallback labels in ECharts options, SVG text, table cells, or appendices.
-4. Confirm Chinese and English reports have the same report architecture, chart set, reproducibility appendix, favicon/logo treatment, and source/data links.
-5. Confirm HTML assets are self-contained or referenced through stable public URLs.
-6. Confirm report appendices reference raw datasets and code by path instead of embedding large raw records in the report body.
-7. Confirm all figures, metadata, and reproducibility files required by the report are present.
+5. Confirm Chinese and English reports have the same report architecture, chart set, reproducibility appendix, favicon/logo treatment, and source/data links.
+6. Confirm HTML assets are self-contained or referenced through stable public URLs.
+7. Confirm report appendices reference raw datasets and code by path instead of embedding large raw records in the report body.
+8. Confirm all figures, metadata, and reproducibility files required by the report are present.
 
 Recommended local checks:
 
@@ -104,6 +123,14 @@ cp export/deepseek_v4_flash_all_experiments/reports_academic/final-report.zh.htm
 
 If the report depends on datasets, figures, code snapshots, or metadata files, copy those files in the same release batch.
 
+The public experiment directory must be a new, model-specific path unless the release intentionally updates an existing run. For example, a `qwen/qwen3.6-flash` release belongs under:
+
+```text
+experiments/qwen/qwen3.6-flash/<run-id>/
+```
+
+It must not be placed under another qwen model path just because the run design is similar.
+
 After copying, inspect the staging diff from the open-source repository root:
 
 ```bash
@@ -115,6 +142,8 @@ git diff --name-status
 ```
 
 The remote must be `InfronAI/prompt-cache-bench`, and the diff should contain only files intended for the public release. If unrelated files appear, or if the remote is not the benchmark repository, stop and isolate the report update before committing.
+
+Untracked local staging leftovers such as temporary `export/` or `reports/` directories may exist in a reused checkout. Do not stage them unless they are explicitly part of the public release.
 
 ### 4.1 Standard Sync Script
 
@@ -293,12 +322,22 @@ Commit only after the diff and scans are clean:
 
 ```bash
 git remote -v
-git add <report-files> <data-files> <figure-files> <metadata-files> <code-files>
+git add README.md index.html experiments/<model-family>/<model-id>/<run-id>
 git commit -m "Update <model-id> benchmark report"
 git push origin main
 ```
 
 Never commit or push a public A/B benchmark release from the product/debug repository by accident. The commit should be created from `export/open-source/prompt-cache-bench`, and `git remote -v` should show `InfronAI/prompt-cache-bench` immediately before `git add`.
+
+After staging, inspect exactly what will be committed:
+
+```bash
+git status --short
+git diff --cached --stat
+git diff --cached --name-status
+```
+
+The staged diff should include the intended experiment directory plus the required registry files, normally `README.md` and `index.html`. It should not include unrelated local debug exports.
 
 If `git push` is rejected because the remote has newer commits, do not force push. Fetch and rebase or use a fresh clone:
 
@@ -321,21 +360,61 @@ After pushing:
 git ls-remote origin refs/heads/main
 ```
 
-3. Open both GitHub Pages report URLs:
+3. Confirm GitHub source and raw content are updated before blaming Pages:
+
+```bash
+curl -L -s https://raw.githubusercontent.com/InfronAI/prompt-cache-bench/main/index.html | \
+  rg -n "<model-id>|<report-slug>|<published-count>"
+
+curl -I -L -s https://raw.githubusercontent.com/InfronAI/prompt-cache-bench/main/<experiment>/reports/<report>.zh.html
+```
+
+Both should show the pushed report. If raw GitHub content is missing the report, the commit or push went to the wrong place.
+
+4. Open both GitHub Pages report URLs:
    - `.../<report>.zh.html`
    - `.../<report>.en.html`
-4. Verify the URLs use the `https://infronai.github.io/prompt-cache-bench/` base path. A URL under another GitHub Pages site is a release-target error.
-5. Verify the Chinese report is Chinese and the English report is English across text, tables, charts, ECharts controls, diagrams, and appendices.
-6. Verify figures, logo, favicon, and embedded assets render correctly.
-7. Verify Markdown links to code and datasets resolve to existing GitHub paths.
-8. Verify `index.html` links to the current report pair and dataset.
-9. Verify the public report does not display secrets, internal-only text, or unnecessary raw records.
+5. Verify the URLs use the `https://infronai.github.io/prompt-cache-bench/` base path. A URL under another GitHub Pages site is a release-target error.
+6. Verify the GitHub Pages homepage contains the new model row and updated latest-report buttons:
 
-## 10. Release Checklist
+```bash
+curl -L -s https://infronai.github.io/prompt-cache-bench/ | \
+  rg -n "<model-id>|<report-slug>|Current release|当前版本"
+```
+
+7. If GitHub raw content is updated but GitHub Pages still returns old content or `404`, wait for Pages/CDN publication and retry. Pages can lag behind the pushed `main` branch; do not republish from another repository to work around this.
+8. Verify the Chinese report is Chinese and the English report is English across text, tables, charts, ECharts controls, diagrams, and appendices.
+9. Verify figures, logo, favicon, and embedded assets render correctly.
+10. Verify Markdown links to code and datasets resolve to existing GitHub paths.
+11. Verify `index.html` links to the current report pair and dataset.
+12. Verify the public report does not display secrets, internal-only text, or unnecessary raw records.
+
+## 11. Missing Report Triage
+
+Use this triage when a user says the GitHub Pages site does not show a report after a release:
+
+1. Confirm the intended public repository is `InfronAI/prompt-cache-bench`, not `GrowthPulse` or another debug repository.
+2. Confirm local HEAD and remote `main` match:
+
+```bash
+git rev-parse --short HEAD
+git ls-remote origin refs/heads/main
+```
+
+3. Confirm the GitHub raw `index.html` includes the model row and report links.
+4. Confirm the raw report HTML URL returns `200`.
+5. Confirm the live Pages homepage includes the model row.
+6. Confirm both Pages report HTML URLs return `200`.
+7. If raw URLs are correct but Pages is stale, wait and retry. If raw URLs are wrong, fix the commit in `prompt-cache-bench` and push again.
+
+Never treat a successful push to a private product/debug repository as a public report release.
+
+## 12. Release Checklist
 
 Use this checklist for every public report update:
 
 - [ ] Final local report reviewed.
+- [ ] Exact model ID, model directory, and report slug verified.
 - [ ] Chinese and English reports generated with matching structure and language-specific chart/table text.
 - [ ] Current shell is inside `export/open-source/prompt-cache-bench/`.
 - [ ] `git remote -v` points to `InfronAI/prompt-cache-bench`.
@@ -352,4 +431,9 @@ Use this checklist for every public report update:
 - [ ] All public links use `github.com/InfronAI/prompt-cache-bench` or `infronai.github.io/prompt-cache-bench`.
 - [ ] Commit created from the open-source staging repository.
 - [ ] Push completed without force-pushing.
+- [ ] `git ls-remote origin refs/heads/main` points to the pushed commit.
+- [ ] GitHub raw `index.html` contains the new model row.
+- [ ] GitHub raw report HTML returns `200`.
+- [ ] GitHub Pages homepage contains the new model row.
+- [ ] GitHub Pages Chinese and English report HTML URLs return `200`.
 - [ ] GitHub Pages and Markdown previews checked after push.
