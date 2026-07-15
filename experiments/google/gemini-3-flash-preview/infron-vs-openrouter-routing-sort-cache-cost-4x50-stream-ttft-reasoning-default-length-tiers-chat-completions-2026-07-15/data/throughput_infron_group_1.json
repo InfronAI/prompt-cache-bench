@@ -1,0 +1,5842 @@
+{
+  "records": [
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 12,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1436.575,
+        "stream": true,
+        "ttft_ms": 1365.743,
+        "first_content_token_ms": 1365.743,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012017981158435cdYta6AD",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012017981158435cdYta6AD",
+          "CF-RAY": "a1b4f19faabffd0c-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012017981158435cdYta6AD",
+          "request_id": "d154dbc8c0654530b8e8fc43881accb4",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1560.273,
+        "stream": true,
+        "ttft_ms": 1501.626,
+        "first_content_token_ms": 1501.626,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012019469436625RkTbOYc7",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012019469436625RkTbOYc7",
+          "CF-RAY": "a1b4f1a8ebf1fd7d-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012019469436625RkTbOYc7",
+          "request_id": "468d43eef27c4fb9aa4fe738f52e2725",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 24,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1525.96,
+        "stream": true,
+        "ttft_ms": 1459.412,
+        "first_content_token_ms": 1459.412,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-2026071501201825367482qIUBo3xr",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "2026071501201825367482qIUBo3xr",
+          "CF-RAY": "a1b4f19fea84a459-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-2026071501201825367482qIUBo3xr",
+          "request_id": "bdd3507596b8416e9ba96e689f79b30a",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1487.697,
+        "stream": true,
+        "ttft_ms": 1413.473,
+        "first_content_token_ms": 1413.473,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-2026071501201957337199441a9V3Lx",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "2026071501201957337199441a9V3Lx",
+          "CF-RAY": "a1b4f1a999f1fcde-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-2026071501201957337199441a9V3Lx",
+          "request_id": "a33f7dfd7e8740c6a3b819a4013d7dc6",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 6,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1595.126,
+        "stream": true,
+        "ttft_ms": 1484.808,
+        "first_content_token_ms": 1484.808,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-202607150120181766227372vzP68M",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "202607150120181766227372vzP68M",
+          "CF-RAY": "a1b4f19ff8cdfd26-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-202607150120181766227372vzP68M",
+          "request_id": "ca69eac62a584ade88f6a5ed10bbae7f",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1438.362,
+        "stream": true,
+        "ttft_ms": 1376.637,
+        "first_content_token_ms": 1376.637,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012019570472419RvD3F7ZC",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012019570472419RvD3F7ZC",
+          "CF-RAY": "a1b4f1a99c486009-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012019570472419RvD3F7ZC",
+          "request_id": "90a84cf3f061440ca970631d600237fb",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 11,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1519.672,
+        "stream": true,
+        "ttft_ms": 1454.854,
+        "first_content_token_ms": 1454.854,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012017969702826gviW2mOb",
+        "system_fingerprint": null,
+        "response_headers": {
+          "Server": "cloudflare",
+          "X-Infron-Request-Id": "20260715012017969702826gviW2mOb",
+          "CF-RAY": "a1b4f19fac2bef6e-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012017969702826gviW2mOb",
+          "request_id": "101560af827f449d9d1e17a93e68c360",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1531.203,
+        "stream": true,
+        "ttft_ms": 1470.106,
+        "first_content_token_ms": 1470.106,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012019568988355dKXo1gwJ",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012019568988355dKXo1gwJ",
+          "CF-RAY": "a1b4f1a98fe891a8-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012019568988355dKXo1gwJ",
+          "request_id": "8efe1e2bffe142b08e4aacc7fd99c9ff",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 3,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1530.426,
+        "stream": true,
+        "ttft_ms": 1435.444,
+        "first_content_token_ms": 1435.444,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012017992926904tg7WBV4L",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012017992926904tg7WBV4L",
+          "CF-RAY": "a1b4f19fcb70fd1e-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012017992926904tg7WBV4L",
+          "request_id": "8d2063ee192c48cda881c7e3198009e6",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1529.985,
+        "stream": true,
+        "ttft_ms": 1456.514,
+        "first_content_token_ms": 1456.514,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012019471279281zcQJHr6K",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012019471279281zcQJHr6K",
+          "CF-RAY": "a1b4f1a8e9d29cab-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012019471279281zcQJHr6K",
+          "request_id": "a1bd68367fa446d682a2642d9a5bf69a",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 23,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1639.909,
+        "stream": true,
+        "ttft_ms": 1594.033,
+        "first_content_token_ms": 1594.033,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012018178078595FvW5FvU",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012018178078595FvW5FvU",
+          "CF-RAY": "a1b4f19fead9fe22-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012018178078595FvW5FvU",
+          "request_id": "50baaaaa13044a089e3c9517f78aefc4",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1467.586,
+        "stream": true,
+        "ttft_ms": 1411.211,
+        "first_content_token_ms": 1411.211,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012019663761844RAGPye2F",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012019663761844RAGPye2F",
+          "CF-RAY": "a1b4f1aa3a5cce06-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012019663761844RAGPye2F",
+          "request_id": "b62439cd858a44e092b7131770a21d88",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 14,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1540.522,
+        "stream": true,
+        "ttft_ms": 1477.936,
+        "first_content_token_ms": 1477.936,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012017975750030UQwlhi3w",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012017975750030UQwlhi3w",
+          "CF-RAY": "a1b4f19fad64fcdf-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012017975750030UQwlhi3w",
+          "request_id": "2dca33cfa8aa4c4e8116b6ee299a4335",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1595.975,
+        "stream": true,
+        "ttft_ms": 1533.348,
+        "first_content_token_ms": 1533.348,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012019663675741O8hSm7cc",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012019663675741O8hSm7cc",
+          "CF-RAY": "a1b4f1aa1f7f5cd6-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012019663675741O8hSm7cc",
+          "request_id": "0315cc09e270429db041cbaaae657a62",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 9,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1551.719,
+        "stream": true,
+        "ttft_ms": 1471.85,
+        "first_content_token_ms": 1471.85,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-2026071501201819931102JzxsKr9t",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "2026071501201819931102JzxsKr9t",
+          "CF-RAY": "a1b4f19fea3ffd0a-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-2026071501201819931102JzxsKr9t",
+          "request_id": "97102a04828244b4b6e65f5decd5c2ef",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1613.436,
+        "stream": true,
+        "ttft_ms": 1531.705,
+        "first_content_token_ms": 1531.705,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012019565274705CB2ogeyZ",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012019565274705CB2ogeyZ",
+          "CF-RAY": "a1b4f1a98b2bf92c-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012019565274705CB2ogeyZ",
+          "request_id": "1ff7d958ea9c44fd9dc5d58675e79438",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 8,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1639.891,
+        "stream": true,
+        "ttft_ms": 1568.102,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 2,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 12
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012017997395558Ed7hEG9A",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012017997395558Ed7hEG9A",
+          "CF-RAY": "a1b4f19fcdb96033-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012017997395558Ed7hEG9A",
+          "request_id": "19a39d14bdb74fe18461753b0eabff48",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 12,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1538.543,
+        "stream": true,
+        "ttft_ms": 1465.151,
+        "first_content_token_ms": 1465.151,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012019663808597xEzYzLGM",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012019663808597xEzYzLGM",
+          "CF-RAY": "a1b4f1aa386d5f9c-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012019663808597xEzYzLGM",
+          "request_id": "1c6f5d529f6948258672aa4b8d8f7a50",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 15,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1621.986,
+        "stream": true,
+        "ttft_ms": 1552.51,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 2,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 12
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-2026071501201828009057HOog5mRt",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "2026071501201828009057HOog5mRt",
+          "CF-RAY": "a1b4f19fea0062dc-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-2026071501201828009057HOog5mRt",
+          "request_id": "a1f71353d7ad4878b2bdbc00247fb501",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 12,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1646.151,
+        "stream": true,
+        "ttft_ms": 1575.128,
+        "first_content_token_ms": 1575.128,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012019568980998XaU4FNBY",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012019568980998XaU4FNBY",
+          "CF-RAY": "a1b4f1a98d20c6f3-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012019568980998XaU4FNBY",
+          "request_id": "e09dfda9f1324b3c9c447bfd9a5cac6f",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 7,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1650.991,
+        "stream": true,
+        "ttft_ms": 1595.27,
+        "first_content_token_ms": 1595.27,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012017984542215lGXsyeQM",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012017984542215lGXsyeQM",
+          "CF-RAY": "a1b4f19fa8751195-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012017984542215lGXsyeQM",
+          "request_id": "094e5f6820df4151827d74f0dfd7aa47",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1625.367,
+        "stream": true,
+        "ttft_ms": 1560.073,
+        "first_content_token_ms": 1560.073,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012019666518017Q8wmTqo3",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012019666518017Q8wmTqo3",
+          "CF-RAY": "a1b4f1aa3d2487c3-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012019666518017Q8wmTqo3",
+          "request_id": "0d72a2717dc84926b7724819c68f7abd",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 13,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1672.171,
+        "stream": true,
+        "ttft_ms": 1620.676,
+        "first_content_token_ms": 1620.676,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-202607150120179864505857qe3k59i",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "202607150120179864505857qe3k59i",
+          "CF-RAY": "a1b4f19fbc1d1473-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-202607150120179864505857qe3k59i",
+          "request_id": "b4d1f357e0d140b799f5e8bdfe019db8",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1627.075,
+        "stream": true,
+        "ttft_ms": 1582.064,
+        "first_content_token_ms": 1582.064,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012019667740069PiYQoVoq",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012019667740069PiYQoVoq",
+          "CF-RAY": "a1b4f1aa3e0087ba-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012019667740069PiYQoVoq",
+          "request_id": "14f0aed6c62e42f4a588be5125163f5a",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1658.686,
+        "stream": true,
+        "ttft_ms": 1605.216,
+        "first_content_token_ms": 1605.216,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-202607150120186717843FWOYAz8a",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "202607150120186717843FWOYAz8a",
+          "CF-RAY": "a1b4f19fcbdcf8d2-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-202607150120186717843FWOYAz8a",
+          "request_id": "0d2f351b93714a20a2060154da944a1d",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1650.037,
+        "stream": true,
+        "ttft_ms": 1559.066,
+        "first_content_token_ms": 1559.066,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012019669099056O943HRDr",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012019669099056O943HRDr",
+          "CF-RAY": "a1b4f1aa3f086bab-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012019669099056O943HRDr",
+          "request_id": "810371fc7a5043c481798bd41714a361",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 10,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1659.369,
+        "stream": true,
+        "ttft_ms": 1624.473,
+        "first_content_token_ms": 1624.473,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-202607150120185956086epLeObLp",
+        "system_fingerprint": null,
+        "response_headers": {
+          "Server": "cloudflare",
+          "X-Infron-Request-Id": "202607150120185956086epLeObLp",
+          "CF-RAY": "a1b4f19fcae6fdc6-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-202607150120185956086epLeObLp",
+          "request_id": "d2095284fb2a45508b1684747c191abc",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1651.567,
+        "stream": true,
+        "ttft_ms": 1571.215,
+        "first_content_token_ms": 1571.215,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012019690250315hx7Pqb37",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012019690250315hx7Pqb37",
+          "CF-RAY": "a1b4f1aa380d6c09-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012019690250315hx7Pqb37",
+          "request_id": "b2df6e90068f44108ae15cc24eef4fb1",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1599.34,
+        "stream": true,
+        "ttft_ms": 1526.354,
+        "first_content_token_ms": 1526.354,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012017983170391bnhFqErA",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012017983170391bnhFqErA",
+          "CF-RAY": "a1b4f19faa6faecd-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012017983170391bnhFqErA",
+          "request_id": "659120cf51594882a391758f2864a13d",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1762.552,
+        "stream": true,
+        "ttft_ms": 1679.944,
+        "first_content_token_ms": 1679.944,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012019671395366C7n7MLqA",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012019671395366C7n7MLqA",
+          "CF-RAY": "a1b4f1aa3efc6d97-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012019671395366C7n7MLqA",
+          "request_id": "0e7d60467e394348b4b6b607f0ec14dc",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 4,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1654.711,
+        "stream": true,
+        "ttft_ms": 1601.006,
+        "first_content_token_ms": 1601.006,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012017985333215es518PHj",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012017985333215es518PHj",
+          "CF-RAY": "a1b4f19faf8391bd-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012017985333215es518PHj",
+          "request_id": "011cec94bb284b9b98b76d08d10062de",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 2253.383,
+        "stream": true,
+        "ttft_ms": 2180.212,
+        "first_content_token_ms": 2180.212,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012020299665944TijzQycs",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012020299665944TijzQycs",
+          "CF-RAY": "a1b4f1aa2b5fce15-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012020299665944TijzQycs",
+          "request_id": "0c8d78f047bd4e168e6a17ce8d15e931",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 25,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1391.284,
+        "stream": true,
+        "ttft_ms": 1318.369,
+        "first_content_token_ms": 1318.369,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012020855498419wg8u8UMw",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012020855498419wg8u8UMw",
+          "CF-RAY": "a1b4f1b18ed00ce9-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012020855498419wg8u8UMw",
+          "request_id": "d6599926f83d429ba1db62118e86578a",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1408.719,
+        "stream": true,
+        "ttft_ms": 1321.655,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 2,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 12
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012022237161717Di8Jjs2C",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012022237161717Di8Jjs2C",
+          "CF-RAY": "a1b4f1ba3f235900-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012022237161717Di8Jjs2C",
+          "request_id": "fbf52f0bbd644fcfa566647971fc11dd",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 12,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 27,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1468.916,
+        "stream": true,
+        "ttft_ms": 1378.432,
+        "first_content_token_ms": 1378.432,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012020945705781optkLR1b",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012020945705781optkLR1b",
+          "CF-RAY": "a1b4f1b22cf62739-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012020945705781optkLR1b",
+          "request_id": "29a2d35284f34db683cc3035f2a18c0c",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1433.939,
+        "stream": true,
+        "ttft_ms": 1362.583,
+        "first_content_token_ms": 1362.583,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012022415719447eYUwgnEn",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012022415719447eYUwgnEn",
+          "CF-RAY": "a1b4f1bb5bc19cb7-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012022415719447eYUwgnEn",
+          "request_id": "e9874b55631346dba356bc5535bc6943",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 31,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1492.683,
+        "stream": true,
+        "ttft_ms": 1426.643,
+        "first_content_token_ms": 1426.643,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012020999563827v4tyo9SP",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012020999563827v4tyo9SP",
+          "CF-RAY": "a1b4f1b27fe3aa7f-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012020999563827v4tyo9SP",
+          "request_id": "ab1e5d56d6854b048e7263e2421aaa29",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1390.579,
+        "stream": true,
+        "ttft_ms": 1313.767,
+        "first_content_token_ms": 1313.767,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012022484237825kBGolUuF",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012022484237825kBGolUuF",
+          "CF-RAY": "a1b4f1bbcc0eef6a-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012022484237825kBGolUuF",
+          "request_id": "fda1247fb0894dc1adbf5a935964bea5",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 29,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1467.781,
+        "stream": true,
+        "ttft_ms": 1388.912,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 2,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 12
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-202607150120209913051488IYmea5U",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "202607150120209913051488IYmea5U",
+          "CF-RAY": "a1b4f1b27f1ff8ff-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-202607150120209913051488IYmea5U",
+          "request_id": "747e5343fb4340b288a8581a1d7c9f36",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 12,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1575.401,
+        "stream": true,
+        "ttft_ms": 1483.938,
+        "first_content_token_ms": 1483.938,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012022442480278RUkonkav",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012022442480278RUkonkav",
+          "CF-RAY": "a1b4f1bb8915243f-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012022442480278RUkonkav",
+          "request_id": "3aa9f8fe29f3426abc6d9e89206de797",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 35,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1480.419,
+        "stream": true,
+        "ttft_ms": 1407.042,
+        "first_content_token_ms": 1407.042,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012021744792830Z07CGVF",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012021744792830Z07CGVF",
+          "CF-RAY": "a1b4f1b2fa16ce43-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012021744792830Z07CGVF",
+          "request_id": "d09f1d813ace4578a1d76de1f4220435",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1473.993,
+        "stream": true,
+        "ttft_ms": 1405.648,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 2,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 12
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012022545894774k1xwv8wE",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012022545894774k1xwv8wE",
+          "CF-RAY": "a1b4f1bc3f13633f-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012022545894774k1xwv8wE",
+          "request_id": "26a9ff413c0d47d9be2958b8b25fef3f",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 12,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 34,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1398.895,
+        "stream": true,
+        "ttft_ms": 1339.783,
+        "first_content_token_ms": 1339.783,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-2026071501202171098669QtfC9Zaq",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "2026071501202171098669QtfC9Zaq",
+          "CF-RAY": "a1b4f1b2feecce52-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-2026071501202171098669QtfC9Zaq",
+          "request_id": "71000008b1c142f88261e158660b828b",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1571.282,
+        "stream": true,
+        "ttft_ms": 1478.043,
+        "first_content_token_ms": 1478.043,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012022446833448nS7ReWQh",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012022446833448nS7ReWQh",
+          "CF-RAY": "a1b4f1bb8e30f8f8-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012022446833448nS7ReWQh",
+          "request_id": "c3de9ef5e3d747c4b46436df4a63769a",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 28,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1549.084,
+        "stream": true,
+        "ttft_ms": 1479.989,
+        "first_content_token_ms": 1479.989,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012020946657481ivuP4cNW",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012020946657481ivuP4cNW",
+          "CF-RAY": "a1b4f1b24ded289f-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012020946657481ivuP4cNW",
+          "request_id": "4d01c7ba2fb44499ae61bf1c0b7e150b",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1539.706,
+        "stream": true,
+        "ttft_ms": 1447.878,
+        "first_content_token_ms": 1447.878,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012022512642216aPzSJ7aX",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012022512642216aPzSJ7aX",
+          "CF-RAY": "a1b4f1bbec38fd77-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012022512642216aPzSJ7aX",
+          "request_id": "2e78e2852a5448b7813c31ba9ff6df33",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 32,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1542.403,
+        "stream": true,
+        "ttft_ms": 1467.208,
+        "first_content_token_ms": 1467.208,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-2026071501202163344652XQWOKmkl",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "2026071501202163344652XQWOKmkl",
+          "CF-RAY": "a1b4f1b2fe5d3104-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-2026071501202163344652XQWOKmkl",
+          "request_id": "ce6e9fc0223c49f0a8e38982cb6338b6",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1466.818,
+        "stream": true,
+        "ttft_ms": 1401.857,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 2,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 12
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-202607150120225992086432Dj4XKoL",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "202607150120225992086432Dj4XKoL",
+          "CF-RAY": "a1b4f1bc88ac8a13-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-202607150120225992086432Dj4XKoL",
+          "request_id": "1e24836d6eda48d9b4c6a39bad8ed659",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 12,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 38,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1378.092,
+        "stream": true,
+        "ttft_ms": 1324.822,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 2,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 12
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-2026071501202112265033905F0nwlJ",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "2026071501202112265033905F0nwlJ",
+          "CF-RAY": "a1b4f1b35b5dfd38-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-2026071501202112265033905F0nwlJ",
+          "request_id": "3e83ab08891e4571ae38fd6228059e99",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 12,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1547.703,
+        "stream": true,
+        "ttft_ms": 1413.529,
+        "first_content_token_ms": 1413.529,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012022487759364jron7KH0",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012022487759364jron7KH0",
+          "CF-RAY": "a1b4f1bbc9a4d4a5-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012022487759364jron7KH0",
+          "request_id": "816280d7f93d4f01a4996cf375268fd5",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 26,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1518.123,
+        "stream": true,
+        "ttft_ms": 1454.354,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 2,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 12
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012020949979594GfXzGwCd",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012020949979594GfXzGwCd",
+          "CF-RAY": "a1b4f1b22a7012b0-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012020949979594GfXzGwCd",
+          "request_id": "90ad4317091341118c484f1cb46ee554",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 12,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1626.221,
+        "stream": true,
+        "ttft_ms": 1521.201,
+        "first_content_token_ms": 1521.201,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012022470935346ATfyK3vG",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012022470935346ATfyK3vG",
+          "CF-RAY": "a1b4f1bbbddbfd22-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012022470935346ATfyK3vG",
+          "request_id": "edbbf964d3bd4a5c9456366b200fd7f9",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 45,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1449.42,
+        "stream": true,
+        "ttft_ms": 1386.601,
+        "first_content_token_ms": 1386.601,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012021227286918c9BzJfwr",
+        "system_fingerprint": null,
+        "response_headers": {
+          "Server": "cloudflare",
+          "X-Infron-Request-Id": "20260715012021227286918c9BzJfwr",
+          "CF-RAY": "a1b4f1b3ff2ffd83-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012021227286918c9BzJfwr",
+          "request_id": "b763657f96df4b96aea3bd42093590b4",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1392.559,
+        "stream": true,
+        "ttft_ms": 1314.014,
+        "first_content_token_ms": 1314.014,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-202607150120226753112863EH9Nqad",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "202607150120226753112863EH9Nqad",
+          "CF-RAY": "a1b4f1bcfe17fd69-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-202607150120226753112863EH9Nqad",
+          "request_id": "d4df5e77484b4c7d944aae1fb9109629",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 30,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1580.269,
+        "stream": true,
+        "ttft_ms": 1497.562,
+        "first_content_token_ms": 1497.562,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-202607150120209970060970ZEzKe6a",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "202607150120209970060970ZEzKe6a",
+          "CF-RAY": "a1b4f1b27c63e428-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-202607150120209970060970ZEzKe6a",
+          "request_id": "8758872aa7c841d191b735177f03af3a",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1533.064,
+        "stream": true,
+        "ttft_ms": 1445.288,
+        "first_content_token_ms": 1445.288,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012022561001229RAe69R1H",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012022561001229RAe69R1H",
+          "CF-RAY": "a1b4f1bc4c759f95-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012022561001229RAe69R1H",
+          "request_id": "2b4064ddec474bac850b8b2e668fc317",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 41,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1438.931,
+        "stream": true,
+        "ttft_ms": 1371.461,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 2,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 12
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012021207577230hcsNOjq3",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012021207577230hcsNOjq3",
+          "CF-RAY": "a1b4f1b3dcdd1dd6-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012021207577230hcsNOjq3",
+          "request_id": "a2cf3c4b052a42e4b509d99d546e393d",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 12,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1455.765,
+        "stream": true,
+        "ttft_ms": 1379.26,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 2,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 12
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012022626171023AI3ngbkP",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012022626171023AI3ngbkP",
+          "CF-RAY": "a1b4f1bcba1a122b-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012022626171023AI3ngbkP",
+          "request_id": "567198a2234f48c4995962e9235089b2",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 12,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 37,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1378.238,
+        "stream": true,
+        "ttft_ms": 1322.739,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 2,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 12
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012021110103233VrYixbzX",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012021110103233VrYixbzX",
+          "CF-RAY": "a1b4f1b32d41fdbb-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012021110103233VrYixbzX",
+          "request_id": "e13d794a64fd4f9db0c02e20d3cfba37",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 12,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1621.26,
+        "stream": true,
+        "ttft_ms": 1554.858,
+        "first_content_token_ms": 1554.858,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012022478238132tSZn2QAR",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012022478238132tSZn2QAR",
+          "CF-RAY": "a1b4f1bbcc673fff-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012022478238132tSZn2QAR",
+          "request_id": "e4c261077aac4f6594708669d584ce88",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 44,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1396.072,
+        "stream": true,
+        "ttft_ms": 1341.291,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 2,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 12
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012021233535599herP6tIX",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012021233535599herP6tIX",
+          "CF-RAY": "a1b4f1b3fc1e97a7-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012021233535599herP6tIX",
+          "request_id": "613ac9a07bd54da8b4669d1e39bf6a3f",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 12,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1502.424,
+        "stream": true,
+        "ttft_ms": 1416.513,
+        "first_content_token_ms": 1416.513,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012022625542743CMkcfx3p",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012022625542743CMkcfx3p",
+          "CF-RAY": "a1b4f1bcaf98ce19-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012022625542743CMkcfx3p",
+          "request_id": "acd656f84c9449918c92f2eeb513a3ce",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 42,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1389.718,
+        "stream": true,
+        "ttft_ms": 1330.766,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 2,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 12
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012021205169040jnYOqyNG",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012021205169040jnYOqyNG",
+          "CF-RAY": "a1b4f1b3dfb0d083-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012021205169040jnYOqyNG",
+          "request_id": "a2eea9af07e043f9ab0353d7c7bb8c75",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 12,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1532.409,
+        "stream": true,
+        "ttft_ms": 1457.721,
+        "first_content_token_ms": 1457.721,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012022594195835o2zOhXeS",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012022594195835o2zOhXeS",
+          "CF-RAY": "a1b4f1bc88d5fd9e-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012022594195835o2zOhXeS",
+          "request_id": "80a214d72bb84f3e829ec6d7de6f2c86",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 43,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1485.281,
+        "stream": true,
+        "ttft_ms": 1424.69,
+        "first_content_token_ms": 1424.69,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012021223263350isBt7z55",
+        "system_fingerprint": null,
+        "response_headers": {
+          "Server": "cloudflare",
+          "X-Infron-Request-Id": "20260715012021223263350isBt7z55",
+          "CF-RAY": "a1b4f1b3ffb4ef6d-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012021223263350isBt7z55",
+          "request_id": "7b7e7b91cdae48dfa26916296dfe665d",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1427.583,
+        "stream": true,
+        "ttft_ms": 1350.615,
+        "first_content_token_ms": 1350.615,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012022714921187strR2e84",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012022714921187strR2e84",
+          "CF-RAY": "a1b4f1bd4d25f838-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012022714921187strR2e84",
+          "request_id": "84c1b9749db94bc5b4251915384dec83",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 33,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1600.993,
+        "stream": true,
+        "ttft_ms": 1524.239,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 2,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 12
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-2026071501202160841435nLL9dsCL",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "2026071501202160841435nLL9dsCL",
+          "CF-RAY": "a1b4f1b2f9cffdf7-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-2026071501202160841435nLL9dsCL",
+          "request_id": "84248674b4784f8aa11f56cf1fcad4c9",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 12,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1487.307,
+        "stream": true,
+        "ttft_ms": 1419.827,
+        "first_content_token_ms": 1419.827,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012022690288268wPGcX927",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012022690288268wPGcX927",
+          "CF-RAY": "a1b4f1bcff3140e6-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012022690288268wPGcX927",
+          "request_id": "e28973b33d8b4d61a4693442f3e068bf",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 40,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1400.6,
+        "stream": true,
+        "ttft_ms": 1322.744,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 2,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 12
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012021193231279nuqDdJWR",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012021193231279nuqDdJWR",
+          "CF-RAY": "a1b4f1b3c8e87b14-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012021193231279nuqDdJWR",
+          "request_id": "e5cf072681e04de39295fda206fc65c9",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 12,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1634.981,
+        "stream": true,
+        "ttft_ms": 1540.517,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 2,
+        "usage": {
+          "completion_tokens": 13,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 13
+          },
+          "prompt_tokens": 1611,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012022620652052WxWp9P3G",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012022620652052WxWp9P3G",
+          "CF-RAY": "a1b4f1bca9013f6b-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-vertex",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012022620652052WxWp9P3G",
+          "request_id": "9dd863210b82443eae834c4f5e54185c",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 2.925e-05,
+          "discount_rate": 0.75,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000604125,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000633,
+        "prompt_tokens": 1611,
+        "completion_tokens": 13,
+        "reasoning_tokens": 13,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 39,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1603.102,
+        "stream": true,
+        "ttft_ms": 1544.933,
+        "first_content_token_ms": 1544.933,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012021175355986Cbd84Z9a",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012021175355986Cbd84Z9a",
+          "CF-RAY": "a1b4f1b398045665-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012021175355986Cbd84Z9a",
+          "request_id": "bcafc659a3a1441eb4096ed46d12c524",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1506.435,
+        "stream": true,
+        "ttft_ms": 1451.326,
+        "first_content_token_ms": 1451.326,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012022797809348YS8a7DHB",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012022797809348YS8a7DHB",
+          "CF-RAY": "a1b4f1bdbd6a7a47-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012022797809348YS8a7DHB",
+          "request_id": "990198b129ff4a5194fbee7d5239be05",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 47,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1437.298,
+        "stream": true,
+        "ttft_ms": 1384.809,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 2,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 12
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012021376588334Ly6SIGBG",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012021376588334Ly6SIGBG",
+          "CF-RAY": "a1b4f1b4d8f1fd97-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012021376588334Ly6SIGBG",
+          "request_id": "cda5dcc234dc43abb0fc2b9338966709",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 12,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1619.831,
+        "stream": true,
+        "ttft_ms": 1556.03,
+        "first_content_token_ms": 1556.03,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-202607150120227961828397qGzFdUa",
+        "system_fingerprint": null,
+        "response_headers": {
+          "Server": "cloudflare",
+          "X-Infron-Request-Id": "202607150120227961828397qGzFdUa",
+          "CF-RAY": "a1b4f1bdaec23de8-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-202607150120227961828397qGzFdUa",
+          "request_id": "3de04075169e4ae4b42c0219cb7f1e92",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 48,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1386.309,
+        "stream": true,
+        "ttft_ms": 1327.454,
+        "first_content_token_ms": 1327.454,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012021864177661ojpgEVqh",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012021864177661ojpgEVqh",
+          "CF-RAY": "a1b4f1b7ea767549-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012021864177661ojpgEVqh",
+          "request_id": "bdd7b23fd24d40ef916fb8efce3d8865",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1489.292,
+        "stream": true,
+        "ttft_ms": 1434.585,
+        "first_content_token_ms": 1434.585,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012023224360069Lg33bI9e",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012023224360069Lg33bI9e",
+          "CF-RAY": "a1b4f1c07a1fce15-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012023224360069Lg33bI9e",
+          "request_id": "6badaa3d91ca47918ca52543d3aa8246",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 46,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1465.106,
+        "stream": true,
+        "ttft_ms": 1386.089,
+        "first_content_token_ms": 1386.089,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012021278988004Z8Ei0CeI",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012021278988004Z8Ei0CeI",
+          "CF-RAY": "a1b4f1b45e2bfce6-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012021278988004Z8Ei0CeI",
+          "request_id": "77a3ed1f3c304c5c8e588173b3b84e77",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 2183.084,
+        "stream": true,
+        "ttft_ms": 2105.877,
+        "first_content_token_ms": 2105.877,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-2026071501202340451629922A73rA5",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "2026071501202340451629922A73rA5",
+          "CF-RAY": "a1b4f1c19b85fd30-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-2026071501202340451629922A73rA5",
+          "request_id": "3d96c7d5beda4ff8b8486fba557c060b",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 36,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1494.982,
+        "stream": true,
+        "ttft_ms": 1427.602,
+        "first_content_token_ms": 1427.602,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-2026071501202190920880LT5I0VOp",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "2026071501202190920880LT5I0VOp",
+          "CF-RAY": "a1b4f1b31f03fd04-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-2026071501202190920880LT5I0VOp",
+          "request_id": "e9599f31941c4d6abfb8a1d745e63b5f",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 2500.158,
+        "stream": true,
+        "ttft_ms": 2442.69,
+        "first_content_token_ms": 2442.69,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012023586266410oXxt9hrA",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012023586266410oXxt9hrA",
+          "CF-RAY": "a1b4f1c2a9676baa-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012023586266410oXxt9hrA",
+          "request_id": "0708dcf4fc8b464882666011da5d8f5e",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 49,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1483.877,
+        "stream": true,
+        "ttft_ms": 1418.158,
+        "first_content_token_ms": 1418.158,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012023669876017ss44rAV8",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012023669876017ss44rAV8",
+          "CF-RAY": "a1b4f1c33918f8ee-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012023669876017ss44rAV8",
+          "request_id": "9328fc0f21324bd3a9223b7a61f4018d",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1396.434,
+        "stream": true,
+        "ttft_ms": 1336.716,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 2,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 12
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-202607150120251577249457TXuXVAP",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "202607150120251577249457TXuXVAP",
+          "CF-RAY": "a1b4f1cc8bb2600b-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-202607150120251577249457TXuXVAP",
+          "request_id": "2e9841da2c514f24a54f3cd1d83d194d",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 12,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "sort": "throughput",
+      "provider_sort": "throughput",
+      "provider": "infron",
+      "group": 1,
+      "round": 50,
+      "first": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1521.703,
+        "stream": true,
+        "ttft_ms": 1457.989,
+        "first_content_token_ms": 1457.989,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012023887474129uyz6rkLp",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012023887474129uyz6rkLp",
+          "CF-RAY": "a1b4f1c48dc1fdfa-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012023887474129uyz6rkLp",
+          "request_id": "fac4848336b641a6bdcc92209417c2ba",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "latency_ms": 1436.949,
+        "stream": true,
+        "ttft_ms": 1384.389,
+        "first_content_token_ms": 1384.389,
+        "first_reasoning_token_ms": null,
+        "stream_chunk_count": 3,
+        "usage": {
+          "completion_tokens": 12,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 11
+          },
+          "prompt_tokens": 1612,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 1624
+        },
+        "response_model": "gemini-3-flash-preview",
+        "response_id": "chatcmpl-20260715012025380607368UrU9o54P",
+        "system_fingerprint": null,
+        "response_headers": {
+          "server": "cloudflare",
+          "x-infron-request-id": "20260715012025380607368UrU9o54P",
+          "CF-RAY": "a1b4f1cde9c78be4-SIN"
+        },
+        "provider_attribution": {
+          "provider": "google-ai-studio",
+          "model": "gemini-3-flash-preview",
+          "id": "chatcmpl-20260715012025380607368UrU9o54P",
+          "request_id": "9fd4a8d8a0e94e2bbafa444db92ade3d",
+          "system_fingerprint": null
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "audio_cost": 0,
+          "byok_cost": 0,
+          "completion_cost": 3.6e-05,
+          "discount_rate": 1,
+          "image_cost": 0,
+          "is_byok": false,
+          "native_web_search_cost": 0,
+          "plugin_web_search_cost": 0,
+          "prompt_cache_read_cost": 0,
+          "prompt_cache_write_1_h": 0,
+          "prompt_cache_write_5_min": 0,
+          "prompt_cache_write_cost": 0,
+          "prompt_cost": 0.000806,
+          "reasoning_cost": 0,
+          "tools_cost": 0,
+          "video_cost": 0
+        },
+        "cost": 0.000842,
+        "prompt_tokens": 1612,
+        "completion_tokens": 12,
+        "reasoning_tokens": 11,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    }
+  ]
+}
