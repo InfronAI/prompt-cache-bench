@@ -1,0 +1,5628 @@
+{
+  "records": [
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 9,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1712.984,
+        "stream": true,
+        "ttft_ms": 1595.416,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 1595.416,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 1991,
+          "completion_tokens": 18,
+          "total_tokens": 2009,
+          "cost": 6.207e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.207e-05,
+            "upstream_inference_prompt_cost": 5.973e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003472-tpcQ1fEf0hQeZnxBLZlL",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003472-tpcQ1fEf0hQeZnxBLZlL",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c88083886fe20-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003472-tpcQ1fEf0hQeZnxBLZlL",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 6.207e-05,
+            "upstream_inference_prompt_cost": 5.973e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 6.207e-05,
+          "upstream_inference_prompt_cost": 5.973e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 6.207e-05,
+        "prompt_tokens": 1991,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 4485.067,
+        "stream": true,
+        "ttft_ms": 2234.369,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 2234.369,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 1991,
+          "completion_tokens": 18,
+          "total_tokens": 2009,
+          "cost": 6.207e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.207e-05,
+            "upstream_inference_prompt_cost": 5.973e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003474-pp9EwqcirJ3Zsn6hJzko",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003474-pp9EwqcirJ3Zsn6hJzko",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c8813a99bb78e-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003474-pp9EwqcirJ3Zsn6hJzko",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 6.207e-05,
+            "upstream_inference_prompt_cost": 5.973e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 6.207e-05,
+          "upstream_inference_prompt_cost": 5.973e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 6.207e-05,
+        "prompt_tokens": 1991,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 2,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 4017.858,
+        "stream": true,
+        "ttft_ms": 3877.061,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 3877.061,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 41106,
+          "completion_tokens": 18,
+          "total_tokens": 41124,
+          "cost": 0.00098436,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 39168,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00098436,
+            "upstream_inference_prompt_cost": 0.00097716,
+            "upstream_inference_completions_cost": 7.2e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003473-kXj2teeAhmnGjUzKXyNk",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003473-kXj2teeAhmnGjUzKXyNk",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c8803cb48b834-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003473-kXj2teeAhmnGjUzKXyNk",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00098436,
+            "upstream_inference_prompt_cost": 0.00097716,
+            "upstream_inference_completions_cost": 7.2e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00098436,
+          "upstream_inference_prompt_cost": 0.00097716,
+          "upstream_inference_completions_cost": 7.2e-06
+        },
+        "cost": 0.00098436,
+        "prompt_tokens": 41106,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 39168,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 4570.798,
+        "stream": true,
+        "ttft_ms": 3882.964,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 3882.964,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 41106,
+          "completion_tokens": 18,
+          "total_tokens": 41124,
+          "cost": 0.00098436,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 39168,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00098436,
+            "upstream_inference_prompt_cost": 0.00097716,
+            "upstream_inference_completions_cost": 7.2e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003476-SKxVwZgdL4QqxavPKgL8",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003476-SKxVwZgdL4QqxavPKgL8",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c881bad3bfca8-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003476-SKxVwZgdL4QqxavPKgL8",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00098436,
+            "upstream_inference_prompt_cost": 0.00097716,
+            "upstream_inference_completions_cost": 7.2e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00098436,
+          "upstream_inference_prompt_cost": 0.00097716,
+          "upstream_inference_completions_cost": 7.2e-06
+        },
+        "cost": 0.00098436,
+        "prompt_tokens": 41106,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 39168,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 5,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3750.478,
+        "stream": true,
+        "ttft_ms": 3665.837,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 3665.837,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 41106,
+          "completion_tokens": 18,
+          "total_tokens": 41124,
+          "cost": 0.00098436,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 39168,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00098436,
+            "upstream_inference_prompt_cost": 0.00097716,
+            "upstream_inference_completions_cost": 7.2e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003473-xI8MgZJfYDPW6zUSlkjH",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003473-xI8MgZJfYDPW6zUSlkjH",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c8808996db838-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003473-xI8MgZJfYDPW6zUSlkjH",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00098436,
+            "upstream_inference_prompt_cost": 0.00097716,
+            "upstream_inference_completions_cost": 7.2e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00098436,
+          "upstream_inference_prompt_cost": 0.00097716,
+          "upstream_inference_completions_cost": 7.2e-06
+        },
+        "cost": 0.00098436,
+        "prompt_tokens": 41106,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 39168,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3425.797,
+        "stream": true,
+        "ttft_ms": 3323.75,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 3323.75,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 41106,
+          "completion_tokens": 18,
+          "total_tokens": 41124,
+          "cost": 0.00098436,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 39168,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00098436,
+            "upstream_inference_prompt_cost": 0.00097716,
+            "upstream_inference_completions_cost": 7.2e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003477-3n2rec200yNcSAG3VbBQ",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003477-3n2rec200yNcSAG3VbBQ",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c881f2f71e814-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003477-3n2rec200yNcSAG3VbBQ",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00098436,
+            "upstream_inference_prompt_cost": 0.00097716,
+            "upstream_inference_completions_cost": 7.2e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00098436,
+          "upstream_inference_prompt_cost": 0.00097716,
+          "upstream_inference_completions_cost": 7.2e-06
+        },
+        "cost": 0.00098436,
+        "prompt_tokens": 41106,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 39168,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 1,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2680.28,
+        "stream": true,
+        "ttft_ms": 2588.397,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 2588.397,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 10326,
+          "completion_tokens": 18,
+          "total_tokens": 10344,
+          "cost": 0.000100152,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 8832,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000100152,
+            "upstream_inference_prompt_cost": 9.7812e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003471-pnv9a7HQNnuIf3f1K3dR",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003471-pnv9a7HQNnuIf3f1K3dR",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c87fed9480c7b-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003471-pnv9a7HQNnuIf3f1K3dR",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.000100152,
+            "upstream_inference_prompt_cost": 9.7812e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.000100152,
+          "upstream_inference_prompt_cost": 9.7812e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 0.000100152,
+        "prompt_tokens": 10326,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 8832,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2370.41,
+        "stream": true,
+        "ttft_ms": 2225.912,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 2225.912,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 10326,
+          "completion_tokens": 18,
+          "total_tokens": 10344,
+          "cost": 0.000100152,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 8832,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000100152,
+            "upstream_inference_prompt_cost": 9.7812e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003473-IfUqb8j75TCeVs4UcuqH",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003473-IfUqb8j75TCeVs4UcuqH",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c880fa8f6e74c-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003473-IfUqb8j75TCeVs4UcuqH",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.000100152,
+            "upstream_inference_prompt_cost": 9.7812e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.000100152,
+          "upstream_inference_prompt_cost": 9.7812e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 0.000100152,
+        "prompt_tokens": 10326,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 8832,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 8,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3729.521,
+        "stream": true,
+        "ttft_ms": 3546.692,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 3546.692,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 41106,
+          "completion_tokens": 18,
+          "total_tokens": 41124,
+          "cost": 0.00098436,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 39168,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00098436,
+            "upstream_inference_prompt_cost": 0.00097716,
+            "upstream_inference_completions_cost": 7.2e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003474-ntmlJHoGJXgAvLemVZ22",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003474-ntmlJHoGJXgAvLemVZ22",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c880af9e2dae8-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003474-ntmlJHoGJXgAvLemVZ22",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00098436,
+            "upstream_inference_prompt_cost": 0.00097716,
+            "upstream_inference_completions_cost": 7.2e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00098436,
+          "upstream_inference_prompt_cost": 0.00097716,
+          "upstream_inference_completions_cost": 7.2e-06
+        },
+        "cost": 0.00098436,
+        "prompt_tokens": 41106,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 39168,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3697.421,
+        "stream": true,
+        "ttft_ms": 3669.964,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 3669.964,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 41106,
+          "completion_tokens": 18,
+          "total_tokens": 41124,
+          "cost": 0.00098436,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 39168,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00098436,
+            "upstream_inference_prompt_cost": 0.00097716,
+            "upstream_inference_completions_cost": 7.2e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003478-QGYNmyO5ffmrJFyhdP2h",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003478-QGYNmyO5ffmrJFyhdP2h",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c88245c5737be-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003478-QGYNmyO5ffmrJFyhdP2h",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00098436,
+            "upstream_inference_prompt_cost": 0.00097716,
+            "upstream_inference_completions_cost": 7.2e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00098436,
+          "upstream_inference_prompt_cost": 0.00097716,
+          "upstream_inference_completions_cost": 7.2e-06
+        },
+        "cost": 0.00098436,
+        "prompt_tokens": 41106,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 39168,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 3,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1732.318,
+        "stream": true,
+        "ttft_ms": 1527.979,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 1527.979,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 1991,
+          "completion_tokens": 18,
+          "total_tokens": 2009,
+          "cost": 6.207e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.207e-05,
+            "upstream_inference_prompt_cost": 5.973e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003471-mpwYKu1XNrxt8xl3o5Tb",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003471-mpwYKu1XNrxt8xl3o5Tb",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c87ffdebb141c-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003471-mpwYKu1XNrxt8xl3o5Tb",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 6.207e-05,
+            "upstream_inference_prompt_cost": 5.973e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 6.207e-05,
+          "upstream_inference_prompt_cost": 5.973e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 6.207e-05,
+        "prompt_tokens": 1991,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2223.543,
+        "stream": true,
+        "ttft_ms": 1690.894,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 1690.894,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 1991,
+          "completion_tokens": 18,
+          "total_tokens": 2009,
+          "cost": 6.207e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.207e-05,
+            "upstream_inference_prompt_cost": 5.973e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003473-aszriiWdAPQ6UVyBu95k",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003473-aszriiWdAPQ6UVyBu95k",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c880a6911e124-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003473-aszriiWdAPQ6UVyBu95k",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 6.207e-05,
+            "upstream_inference_prompt_cost": 5.973e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 6.207e-05,
+          "upstream_inference_prompt_cost": 5.973e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 6.207e-05,
+        "prompt_tokens": 1991,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 4,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3327.841,
+        "stream": true,
+        "ttft_ms": 3192.414,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 3192.414,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 10326,
+          "completion_tokens": 18,
+          "total_tokens": 10344,
+          "cost": 0.000100152,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 8832,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000100152,
+            "upstream_inference_prompt_cost": 9.7812e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003473-yDaaJk2baOoS62gJTmE6",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003473-yDaaJk2baOoS62gJTmE6",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c88084fc099f0-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003473-yDaaJk2baOoS62gJTmE6",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.000100152,
+            "upstream_inference_prompt_cost": 9.7812e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.000100152,
+          "upstream_inference_prompt_cost": 9.7812e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 0.000100152,
+        "prompt_tokens": 10326,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 8832,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3896.192,
+        "stream": true,
+        "ttft_ms": 3798.957,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 3798.957,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 10326,
+          "completion_tokens": 18,
+          "total_tokens": 10344,
+          "cost": 0.00031212,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00031212,
+            "upstream_inference_prompt_cost": 0.00030978,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003475-MWAU0LOI7vz1MsUKNQtF",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003475-MWAU0LOI7vz1MsUKNQtF",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c881bbed19d58-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003475-MWAU0LOI7vz1MsUKNQtF",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00031212,
+            "upstream_inference_prompt_cost": 0.00030978,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00031212,
+          "upstream_inference_prompt_cost": 0.00030978,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 0.00031212,
+        "prompt_tokens": 10326,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 13,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3032.702,
+        "stream": true,
+        "ttft_ms": 2879.415,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 2879.415,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 10327,
+          "completion_tokens": 18,
+          "total_tokens": 10345,
+          "cost": 0.00031215,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003474-JlPNy3x8TSLNUgwt9fVb",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003474-JlPNy3x8TSLNUgwt9fVb",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c88124b480558-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003474-JlPNy3x8TSLNUgwt9fVb",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00031215,
+          "upstream_inference_prompt_cost": 0.00030981,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 0.00031215,
+        "prompt_tokens": 10327,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3230.478,
+        "stream": true,
+        "ttft_ms": 3097.961,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 3097.961,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 10327,
+          "completion_tokens": 18,
+          "total_tokens": 10345,
+          "cost": 0.00031215,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003477-ywG73BN6GI0iBObI43Nt",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003477-ywG73BN6GI0iBObI43Nt",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c88241a6c9d52-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003477-ywG73BN6GI0iBObI43Nt",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00031215,
+          "upstream_inference_prompt_cost": 0.00030981,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 0.00031215,
+        "prompt_tokens": 10327,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 10,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2366.667,
+        "stream": true,
+        "ttft_ms": 2276.128,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 2276.128,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 10327,
+          "completion_tokens": 18,
+          "total_tokens": 10345,
+          "cost": 0.000100182,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 8832,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000100182,
+            "upstream_inference_prompt_cost": 9.7842e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003473-svuWwr9uhV49Y8fIM3Os",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003473-svuWwr9uhV49Y8fIM3Os",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c880acf63eb58-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003473-svuWwr9uhV49Y8fIM3Os",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.000100182,
+            "upstream_inference_prompt_cost": 9.7842e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.000100182,
+          "upstream_inference_prompt_cost": 9.7842e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 0.000100182,
+        "prompt_tokens": 10327,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 8832,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3086.528,
+        "stream": true,
+        "ttft_ms": 2972.035,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 2972.035,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 10327,
+          "completion_tokens": 18,
+          "total_tokens": 10345,
+          "cost": 0.00031215,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003476-zrMozKF2sJh7ef6ntZZW",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003476-zrMozKF2sJh7ef6ntZZW",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c881c19d32305-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003476-zrMozKF2sJh7ef6ntZZW",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00031215,
+          "upstream_inference_prompt_cost": 0.00030981,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 0.00031215,
+        "prompt_tokens": 10327,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 14,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 5488.71,
+        "stream": true,
+        "ttft_ms": 5393.898,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 5393.898,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 41107,
+          "completion_tokens": 18,
+          "total_tokens": 41125,
+          "cost": 0.00098446,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 39168,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003477-T3WC5COBHLSytQpWldyl",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003477-T3WC5COBHLSytQpWldyl",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c88158d9c90b3-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003477-T3WC5COBHLSytQpWldyl",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00098446,
+          "upstream_inference_prompt_cost": 0.00097726,
+          "upstream_inference_completions_cost": 7.2e-06
+        },
+        "cost": 0.00098446,
+        "prompt_tokens": 41107,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 39168,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 5819.366,
+        "stream": true,
+        "ttft_ms": 5773.409,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 5773.409,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 41107,
+          "completion_tokens": 18,
+          "total_tokens": 41125,
+          "cost": 0.00098446,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 39168,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003483-qtdiGwVDTfa6DVdYZ2QV",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003483-qtdiGwVDTfa6DVdYZ2QV",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c883a4993e267-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003483-qtdiGwVDTfa6DVdYZ2QV",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00098446,
+          "upstream_inference_prompt_cost": 0.00097726,
+          "upstream_inference_completions_cost": 7.2e-06
+        },
+        "cost": 0.00098446,
+        "prompt_tokens": 41107,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 39168,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 17,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 7467.765,
+        "stream": true,
+        "ttft_ms": 6150.491,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 6150.491,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 41107,
+          "completion_tokens": 18,
+          "total_tokens": 41125,
+          "cost": 0.0041179,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0041179,
+            "upstream_inference_prompt_cost": 0.0041107,
+            "upstream_inference_completions_cost": 7.2e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003477-xhl6MfDSvLhfT1dGyhdZ",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003477-xhl6MfDSvLhfT1dGyhdZ",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c881cf9d7253f-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003477-xhl6MfDSvLhfT1dGyhdZ",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.0041179,
+            "upstream_inference_prompt_cost": 0.0041107,
+            "upstream_inference_completions_cost": 7.2e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.0041179,
+          "upstream_inference_prompt_cost": 0.0041107,
+          "upstream_inference_completions_cost": 7.2e-06
+        },
+        "cost": 0.0041179,
+        "prompt_tokens": 41107,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 4931.426,
+        "stream": true,
+        "ttft_ms": 4681.471,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 4681.471,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 41107,
+          "completion_tokens": 18,
+          "total_tokens": 41125,
+          "cost": 0.0041179,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0041179,
+            "upstream_inference_prompt_cost": 0.0041107,
+            "upstream_inference_completions_cost": 7.2e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003483-p31UOa0LBJaYngsBuzBM",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003483-p31UOa0LBJaYngsBuzBM",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c88499aeddc06-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003483-p31UOa0LBJaYngsBuzBM",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.0041179,
+            "upstream_inference_prompt_cost": 0.0041107,
+            "upstream_inference_completions_cost": 7.2e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.0041179,
+          "upstream_inference_prompt_cost": 0.0041107,
+          "upstream_inference_completions_cost": 7.2e-06
+        },
+        "cost": 0.0041179,
+        "prompt_tokens": 41107,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 15,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2258.395,
+        "stream": true,
+        "ttft_ms": 2033.798,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 2033.798,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 1992,
+          "completion_tokens": 18,
+          "total_tokens": 2010,
+          "cost": 6.21e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003474-vRGZJWy5TvqtxSuoJhln",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003474-vRGZJWy5TvqtxSuoJhln",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c88140fb54138-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003474-vRGZJWy5TvqtxSuoJhln",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 6.21e-05,
+          "upstream_inference_prompt_cost": 5.976e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 6.21e-05,
+        "prompt_tokens": 1992,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2052.717,
+        "stream": true,
+        "ttft_ms": 1940.155,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 1940.155,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 1992,
+          "completion_tokens": 18,
+          "total_tokens": 2010,
+          "cost": 6.21e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003476-odkzj4sVTVgdHuAUL3oB",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003476-odkzj4sVTVgdHuAUL3oB",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c882248cfeb56-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003476-odkzj4sVTVgdHuAUL3oB",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 6.21e-05,
+          "upstream_inference_prompt_cost": 5.976e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 6.21e-05,
+        "prompt_tokens": 1992,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 16,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 4242.183,
+        "stream": true,
+        "ttft_ms": 4127.136,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 4127.136,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 10327,
+          "completion_tokens": 18,
+          "total_tokens": 10345,
+          "cost": 0.00031215,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003476-e00HoF00H8Qzjkw4yIXY",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003476-e00HoF00H8Qzjkw4yIXY",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c8819ccbfddf4-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003476-e00HoF00H8Qzjkw4yIXY",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00031215,
+          "upstream_inference_prompt_cost": 0.00030981,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 0.00031215,
+        "prompt_tokens": 10327,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2394.427,
+        "stream": true,
+        "ttft_ms": 2305.261,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 2305.261,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 10327,
+          "completion_tokens": 18,
+          "total_tokens": 10345,
+          "cost": 0.000100182,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 8832,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000100182,
+            "upstream_inference_prompt_cost": 9.7842e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003479-8SUcT8gLmOv96wA22iXw",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003479-8SUcT8gLmOv96wA22iXw",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c883259fca2a1-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003479-8SUcT8gLmOv96wA22iXw",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.000100182,
+            "upstream_inference_prompt_cost": 9.7842e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.000100182,
+          "upstream_inference_prompt_cost": 9.7842e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 0.000100182,
+        "prompt_tokens": 10327,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 8832,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 24,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1859.029,
+        "stream": true,
+        "ttft_ms": 1745.366,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 1745.366,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 1992,
+          "completion_tokens": 18,
+          "total_tokens": 2010,
+          "cost": 6.21e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003476-8QwmNAiGGG5ouBcvxdWL",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003476-8QwmNAiGGG5ouBcvxdWL",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c881f9ad7eaf0-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003476-8QwmNAiGGG5ouBcvxdWL",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 6.21e-05,
+          "upstream_inference_prompt_cost": 5.976e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 6.21e-05,
+        "prompt_tokens": 1992,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1796.654,
+        "stream": true,
+        "ttft_ms": 1655.991,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 1655.991,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 1992,
+          "completion_tokens": 18,
+          "total_tokens": 2010,
+          "cost": 6.21e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003478-iM9l74aXeoYxQRWpnQzj",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003478-iM9l74aXeoYxQRWpnQzj",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c882ae9d42c32-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003478-iM9l74aXeoYxQRWpnQzj",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 6.21e-05,
+          "upstream_inference_prompt_cost": 5.976e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 6.21e-05,
+        "prompt_tokens": 1992,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 20,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 5521.323,
+        "stream": true,
+        "ttft_ms": 5469.387,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 5469.387,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 41107,
+          "completion_tokens": 18,
+          "total_tokens": 41125,
+          "cost": 0.00098446,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 39168,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003479-lyQ0fkRKfBH4z205VaSo",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003479-lyQ0fkRKfBH4z205VaSo",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c8822db932911-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003479-lyQ0fkRKfBH4z205VaSo",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00098446,
+          "upstream_inference_prompt_cost": 0.00097726,
+          "upstream_inference_completions_cost": 7.2e-06
+        },
+        "cost": 0.00098446,
+        "prompt_tokens": 41107,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 39168,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 4908.327,
+        "stream": true,
+        "ttft_ms": 4820.467,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 4820.467,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 41107,
+          "completion_tokens": 18,
+          "total_tokens": 41125,
+          "cost": 0.00098446,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 39168,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003483-szo20YpECegP97WJgRCB",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003483-szo20YpECegP97WJgRCB",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c88434dbdb07e-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003483-szo20YpECegP97WJgRCB",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00098446,
+          "upstream_inference_prompt_cost": 0.00097726,
+          "upstream_inference_completions_cost": 7.2e-06
+        },
+        "cost": 0.00098446,
+        "prompt_tokens": 41107,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 39168,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 21,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1733.306,
+        "stream": true,
+        "ttft_ms": 1612.148,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 1612.148,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 1992,
+          "completion_tokens": 18,
+          "total_tokens": 2010,
+          "cost": 6.21e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003476-PypkJYdCeGyseFbfOsBA",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003476-PypkJYdCeGyseFbfOsBA",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c881dca8053b3-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003476-PypkJYdCeGyseFbfOsBA",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 6.21e-05,
+          "upstream_inference_prompt_cost": 5.976e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 6.21e-05,
+        "prompt_tokens": 1992,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1867.697,
+        "stream": true,
+        "ttft_ms": 1719.616,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 1719.616,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 1992,
+          "completion_tokens": 18,
+          "total_tokens": 2010,
+          "cost": 6.21e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003477-ZxLhAa4hIHWfAc3ilk1o",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003477-ZxLhAa4hIHWfAc3ilk1o",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c8828281898a7-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003477-ZxLhAa4hIHWfAc3ilk1o",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 6.21e-05,
+          "upstream_inference_prompt_cost": 5.976e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 6.21e-05,
+        "prompt_tokens": 1992,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 29,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3406.5,
+        "stream": true,
+        "ttft_ms": 3322.486,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 3322.486,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 41107,
+          "completion_tokens": 18,
+          "total_tokens": 41125,
+          "cost": 0.00098446,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 39168,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003479-cTXQCt2hRyzyOYVKlW9Q",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003479-cTXQCt2hRyzyOYVKlW9Q",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c882f3b20320f-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003479-cTXQCt2hRyzyOYVKlW9Q",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00098446,
+          "upstream_inference_prompt_cost": 0.00097726,
+          "upstream_inference_completions_cost": 7.2e-06
+        },
+        "cost": 0.00098446,
+        "prompt_tokens": 41107,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 39168,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2750.39,
+        "stream": true,
+        "ttft_ms": 2655.679,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 2655.679,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 41107,
+          "completion_tokens": 18,
+          "total_tokens": 41125,
+          "cost": 0.00098446,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 39168,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003482-glMzsaqZ4aVPkyDxlLXF",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003482-glMzsaqZ4aVPkyDxlLXF",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c8842ad2feb03-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003482-glMzsaqZ4aVPkyDxlLXF",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00098446,
+          "upstream_inference_prompt_cost": 0.00097726,
+          "upstream_inference_completions_cost": 7.2e-06
+        },
+        "cost": 0.00098446,
+        "prompt_tokens": 41107,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 39168,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 36,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2442.873,
+        "stream": true,
+        "ttft_ms": 2293.598,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 2293.598,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 1992,
+          "completion_tokens": 18,
+          "total_tokens": 2010,
+          "cost": 6.21e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003480-TQ1VLPnPEHCUTGfzRaqp",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003480-TQ1VLPnPEHCUTGfzRaqp",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c883719c7c5ca-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003480-TQ1VLPnPEHCUTGfzRaqp",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 6.21e-05,
+          "upstream_inference_prompt_cost": 5.976e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 6.21e-05,
+        "prompt_tokens": 1992,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1683.106,
+        "stream": true,
+        "ttft_ms": 1553.04,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 1553.04,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 1992,
+          "completion_tokens": 18,
+          "total_tokens": 2010,
+          "cost": 6.21e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003482-emq2WkYClXb7ZosZdzra",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003482-emq2WkYClXb7ZosZdzra",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c8842ae0319b0-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003482-emq2WkYClXb7ZosZdzra",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 6.21e-05,
+          "upstream_inference_prompt_cost": 5.976e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 6.21e-05,
+        "prompt_tokens": 1992,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 27,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2066.145,
+        "stream": true,
+        "ttft_ms": 1939.342,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 1939.342,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 1992,
+          "completion_tokens": 18,
+          "total_tokens": 2010,
+          "cost": 6.21e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003476-AmkXOBgEcTM8FmGjSBC0",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003476-AmkXOBgEcTM8FmGjSBC0",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c88227e8d1aeb-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003476-AmkXOBgEcTM8FmGjSBC0",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 6.21e-05,
+          "upstream_inference_prompt_cost": 5.976e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 6.21e-05,
+        "prompt_tokens": 1992,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2333.688,
+        "stream": true,
+        "ttft_ms": 2217.52,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 2217.52,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 1992,
+          "completion_tokens": 18,
+          "total_tokens": 2010,
+          "cost": 6.21e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003479-NvyrFeLPjcleHjxUmSxp",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003479-NvyrFeLPjcleHjxUmSxp",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c882fbbb59d03-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003479-NvyrFeLPjcleHjxUmSxp",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 6.21e-05,
+          "upstream_inference_prompt_cost": 5.976e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 6.21e-05,
+        "prompt_tokens": 1992,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 19,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3564.262,
+        "stream": true,
+        "ttft_ms": 3350.621,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 3350.621,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 10327,
+          "completion_tokens": 18,
+          "total_tokens": 10345,
+          "cost": 0.00031215,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003476-4GLCSgF8FJENq9mcBMv2",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003476-4GLCSgF8FJENq9mcBMv2",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c881f8cb6d250-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003476-4GLCSgF8FJENq9mcBMv2",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00031215,
+          "upstream_inference_prompt_cost": 0.00030981,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 0.00031215,
+        "prompt_tokens": 10327,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 4136.934,
+        "stream": true,
+        "ttft_ms": 4025.536,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 4025.536,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 10327,
+          "completion_tokens": 18,
+          "total_tokens": 10345,
+          "cost": 0.00031215,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003480-lxxAetMkbkuYBmGlbVg6",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003480-lxxAetMkbkuYBmGlbVg6",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c883ac8dfe805-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003480-lxxAetMkbkuYBmGlbVg6",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00031215,
+          "upstream_inference_prompt_cost": 0.00030981,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 0.00031215,
+        "prompt_tokens": 10327,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 31,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 5789.713,
+        "stream": true,
+        "ttft_ms": 5688.051,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 5688.051,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 10327,
+          "completion_tokens": 18,
+          "total_tokens": 10345,
+          "cost": 0.00031215,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003482-hhzxWA2OZzRY1cnIaqT6",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003482-hhzxWA2OZzRY1cnIaqT6",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c88336832c5fe-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003482-hhzxWA2OZzRY1cnIaqT6",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00031215,
+          "upstream_inference_prompt_cost": 0.00030981,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 0.00031215,
+        "prompt_tokens": 10327,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2581.243,
+        "stream": true,
+        "ttft_ms": 2491.917,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 2491.917,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 10327,
+          "completion_tokens": 18,
+          "total_tokens": 10345,
+          "cost": 0.00031215,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003485-CW7LXBpIEIlTaEMb4skn",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003485-CW7LXBpIEIlTaEMb4skn",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c88540a10e829-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003485-CW7LXBpIEIlTaEMb4skn",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00031215,
+          "upstream_inference_prompt_cost": 0.00030981,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 0.00031215,
+        "prompt_tokens": 10327,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 30,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1681.87,
+        "stream": true,
+        "ttft_ms": 1573.304,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 1573.304,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 1992,
+          "completion_tokens": 18,
+          "total_tokens": 2010,
+          "cost": 6.21e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003478-1QVC1Bmjf93UJTv7xQVg",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003478-1QVC1Bmjf93UJTv7xQVg",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c882d1a2ffc38-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003478-1QVC1Bmjf93UJTv7xQVg",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 6.21e-05,
+          "upstream_inference_prompt_cost": 5.976e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 6.21e-05,
+        "prompt_tokens": 1992,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1658.318,
+        "stream": true,
+        "ttft_ms": 1522.638,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 1522.638,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 1992,
+          "completion_tokens": 18,
+          "total_tokens": 2010,
+          "cost": 6.21e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003480-A1EasRVAamap67UPagzT",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003480-A1EasRVAamap67UPagzT",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c8837bd5458ee-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003480-A1EasRVAamap67UPagzT",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 6.21e-05,
+          "upstream_inference_prompt_cost": 5.976e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 6.21e-05,
+        "prompt_tokens": 1992,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 26,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 6745.096,
+        "stream": true,
+        "ttft_ms": 5107.325,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 5107.325,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 41107,
+          "completion_tokens": 18,
+          "total_tokens": 41125,
+          "cost": 0.0041179,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0041179,
+            "upstream_inference_prompt_cost": 0.0041107,
+            "upstream_inference_completions_cost": 7.2e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003477-qbxHGCcBKkyCgfNv0Wgx",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003477-qbxHGCcBKkyCgfNv0Wgx",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c8823e8b2e824-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003477-qbxHGCcBKkyCgfNv0Wgx",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.0041179,
+            "upstream_inference_prompt_cost": 0.0041107,
+            "upstream_inference_completions_cost": 7.2e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.0041179,
+          "upstream_inference_prompt_cost": 0.0041107,
+          "upstream_inference_completions_cost": 7.2e-06
+        },
+        "cost": 0.0041179,
+        "prompt_tokens": 41107,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 5359.377,
+        "stream": true,
+        "ttft_ms": 5178.817,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 5178.817,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 41107,
+          "completion_tokens": 18,
+          "total_tokens": 41125,
+          "cost": 0.00098446,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 39168,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003485-rNrVWkhBneBrTwBtCfU4",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003485-rNrVWkhBneBrTwBtCfU4",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c884d1b62b612-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003485-rNrVWkhBneBrTwBtCfU4",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00098446,
+          "upstream_inference_prompt_cost": 0.00097726,
+          "upstream_inference_completions_cost": 7.2e-06
+        },
+        "cost": 0.00098446,
+        "prompt_tokens": 41107,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 39168,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 28,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3176.053,
+        "stream": true,
+        "ttft_ms": 3068.58,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 3068.58,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 10327,
+          "completion_tokens": 18,
+          "total_tokens": 10345,
+          "cost": 0.00031215,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003478-sLyrvSiUkl5YFfjClhqX",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003478-sLyrvSiUkl5YFfjClhqX",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c882dbdf22d2a-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003478-sLyrvSiUkl5YFfjClhqX",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00031215,
+          "upstream_inference_prompt_cost": 0.00030981,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 0.00031215,
+        "prompt_tokens": 10327,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2893.498,
+        "stream": true,
+        "ttft_ms": 2781.079,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 2781.079,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 10327,
+          "completion_tokens": 18,
+          "total_tokens": 10345,
+          "cost": 0.000100182,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 8832,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000100182,
+            "upstream_inference_prompt_cost": 9.7842e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003482-lZ2rAtAFZuFCFdfMPGSa",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003482-lZ2rAtAFZuFCFdfMPGSa",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c88436ded2191-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003482-lZ2rAtAFZuFCFdfMPGSa",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.000100182,
+            "upstream_inference_prompt_cost": 9.7842e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.000100182,
+          "upstream_inference_prompt_cost": 9.7842e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 0.000100182,
+        "prompt_tokens": 10327,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 8832,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 39,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1606.603,
+        "stream": true,
+        "ttft_ms": 1480.156,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 1480.156,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 1992,
+          "completion_tokens": 18,
+          "total_tokens": 2010,
+          "cost": 6.21e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003480-CsOZ7MGXggk2UVmZeYpD",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003480-CsOZ7MGXggk2UVmZeYpD",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c88360a49bda8-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003480-CsOZ7MGXggk2UVmZeYpD",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 6.21e-05,
+          "upstream_inference_prompt_cost": 5.976e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 6.21e-05,
+        "prompt_tokens": 1992,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2664.924,
+        "stream": true,
+        "ttft_ms": 2521.066,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 2521.066,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 1992,
+          "completion_tokens": 18,
+          "total_tokens": 2010,
+          "cost": 6.21e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003482-OFr4DLr9c1VeI51kUhJ3",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003482-OFr4DLr9c1VeI51kUhJ3",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c88403827fa0f-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003482-OFr4DLr9c1VeI51kUhJ3",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 6.21e-05,
+          "upstream_inference_prompt_cost": 5.976e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 6.21e-05,
+        "prompt_tokens": 1992,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 35,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 5728.374,
+        "stream": true,
+        "ttft_ms": 5658.43,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 5658.43,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 41107,
+          "completion_tokens": 18,
+          "total_tokens": 41125,
+          "cost": 0.00098446,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 39168,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003483-CORefQVqziQqnv3KZXHG",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003483-CORefQVqziQqnv3KZXHG",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c88385c12e5db-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003483-CORefQVqziQqnv3KZXHG",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00098446,
+          "upstream_inference_prompt_cost": 0.00097726,
+          "upstream_inference_completions_cost": 7.2e-06
+        },
+        "cost": 0.00098446,
+        "prompt_tokens": 41107,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 39168,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3793.349,
+        "stream": true,
+        "ttft_ms": 3725.804,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 3725.804,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 41107,
+          "completion_tokens": 18,
+          "total_tokens": 41125,
+          "cost": 0.00098446,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 39168,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003486-U5rFTvdlBMfY5H8wW2tr",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003486-U5rFTvdlBMfY5H8wW2tr",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c8859d9f5eb03-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003486-U5rFTvdlBMfY5H8wW2tr",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00098446,
+          "upstream_inference_prompt_cost": 0.00097726,
+          "upstream_inference_completions_cost": 7.2e-06
+        },
+        "cost": 0.00098446,
+        "prompt_tokens": 41107,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 39168,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 45,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2007.658,
+        "stream": true,
+        "ttft_ms": 1880.708,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 1880.708,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 1992,
+          "completion_tokens": 18,
+          "total_tokens": 2010,
+          "cost": 6.21e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003482-tUKQb837w4L4XDfA6grw",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003482-tUKQb837w4L4XDfA6grw",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c88458df51d22-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003482-tUKQb837w4L4XDfA6grw",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 6.21e-05,
+          "upstream_inference_prompt_cost": 5.976e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 6.21e-05,
+        "prompt_tokens": 1992,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2109.118,
+        "stream": true,
+        "ttft_ms": 1988.03,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 1988.03,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 1992,
+          "completion_tokens": 18,
+          "total_tokens": 2010,
+          "cost": 6.21e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003484-sMtK7Repn7P9bkzfGMAK",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003484-sMtK7Repn7P9bkzfGMAK",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c88539af70ed2-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003484-sMtK7Repn7P9bkzfGMAK",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 6.21e-05,
+          "upstream_inference_prompt_cost": 5.976e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 6.21e-05,
+        "prompt_tokens": 1992,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 41,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3202.765,
+        "stream": true,
+        "ttft_ms": 3115.224,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 3115.224,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 41107,
+          "completion_tokens": 18,
+          "total_tokens": 41125,
+          "cost": 0.00098446,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 39168,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003481-ZhijGtVla4jFVFKJqjKT",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003481-ZhijGtVla4jFVFKJqjKT",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c883cffba64b3-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003481-ZhijGtVla4jFVFKJqjKT",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00098446,
+          "upstream_inference_prompt_cost": 0.00097726,
+          "upstream_inference_completions_cost": 7.2e-06
+        },
+        "cost": 0.00098446,
+        "prompt_tokens": 41107,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 39168,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 5611.881,
+        "stream": true,
+        "ttft_ms": 5548.587,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 5548.587,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 41107,
+          "completion_tokens": 18,
+          "total_tokens": 41125,
+          "cost": 0.0041179,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0041179,
+            "upstream_inference_prompt_cost": 0.0041107,
+            "upstream_inference_completions_cost": 7.2e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003485-62z0PrTI1lXwiFboTMJd",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003485-62z0PrTI1lXwiFboTMJd",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c8850e80145e6-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003485-62z0PrTI1lXwiFboTMJd",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.0041179,
+            "upstream_inference_prompt_cost": 0.0041107,
+            "upstream_inference_completions_cost": 7.2e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.0041179,
+          "upstream_inference_prompt_cost": 0.0041107,
+          "upstream_inference_completions_cost": 7.2e-06
+        },
+        "cost": 0.0041179,
+        "prompt_tokens": 41107,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 37,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3282.185,
+        "stream": true,
+        "ttft_ms": 3167.561,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 3167.561,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 10327,
+          "completion_tokens": 18,
+          "total_tokens": 10345,
+          "cost": 0.00031215,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003480-ufQM1WWdMUJW10rFCPCQ",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003480-ufQM1WWdMUJW10rFCPCQ",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c88394ac310db-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003480-ufQM1WWdMUJW10rFCPCQ",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00031215,
+          "upstream_inference_prompt_cost": 0.00030981,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 0.00031215,
+        "prompt_tokens": 10327,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3060.27,
+        "stream": true,
+        "ttft_ms": 2898.243,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 2898.243,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 10327,
+          "completion_tokens": 18,
+          "total_tokens": 10345,
+          "cost": 0.000100182,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 8832,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000100182,
+            "upstream_inference_prompt_cost": 9.7842e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003484-mfP5dc98jO0wdl8Jt7XD",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003484-mfP5dc98jO0wdl8Jt7XD",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c884ea9c40059-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003484-mfP5dc98jO0wdl8Jt7XD",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.000100182,
+            "upstream_inference_prompt_cost": 9.7842e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.000100182,
+          "upstream_inference_prompt_cost": 9.7842e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 0.000100182,
+        "prompt_tokens": 10327,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 8832,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 44,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3145.997,
+        "stream": true,
+        "ttft_ms": 3072.051,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 3072.051,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 41107,
+          "completion_tokens": 18,
+          "total_tokens": 41125,
+          "cost": 0.00098446,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 39168,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003483-sC3JT0eJq0brKw0A7rJA",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003483-sC3JT0eJq0brKw0A7rJA",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c88459db5e815-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003483-sC3JT0eJq0brKw0A7rJA",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00098446,
+          "upstream_inference_prompt_cost": 0.00097726,
+          "upstream_inference_completions_cost": 7.2e-06
+        },
+        "cost": 0.00098446,
+        "prompt_tokens": 41107,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 39168,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 4907.193,
+        "stream": true,
+        "ttft_ms": 4847.434,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 4847.434,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 41107,
+          "completion_tokens": 18,
+          "total_tokens": 41125,
+          "cost": 0.0041179,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0041179,
+            "upstream_inference_prompt_cost": 0.0041107,
+            "upstream_inference_completions_cost": 7.2e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003486-V8FxHV6fPTCOW9hyQqgD",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003486-V8FxHV6fPTCOW9hyQqgD",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c88582d35f13a-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003486-V8FxHV6fPTCOW9hyQqgD",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.0041179,
+            "upstream_inference_prompt_cost": 0.0041107,
+            "upstream_inference_completions_cost": 7.2e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.0041179,
+          "upstream_inference_prompt_cost": 0.0041107,
+          "upstream_inference_completions_cost": 7.2e-06
+        },
+        "cost": 0.0041179,
+        "prompt_tokens": 41107,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 34,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2809.283,
+        "stream": true,
+        "ttft_ms": 2685.812,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 2685.812,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 10327,
+          "completion_tokens": 18,
+          "total_tokens": 10345,
+          "cost": 0.000100182,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 8832,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000100182,
+            "upstream_inference_prompt_cost": 9.7842e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003480-FZMkDE0ktO5sEItpogdC",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003480-FZMkDE0ktO5sEItpogdC",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c8837ae3b17d6-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003480-FZMkDE0ktO5sEItpogdC",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.000100182,
+            "upstream_inference_prompt_cost": 9.7842e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.000100182,
+          "upstream_inference_prompt_cost": 9.7842e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 0.000100182,
+        "prompt_tokens": 10327,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 8832,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3527.756,
+        "stream": true,
+        "ttft_ms": 3429.705,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 3429.705,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 10327,
+          "completion_tokens": 18,
+          "total_tokens": 10345,
+          "cost": 0.00031215,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003482-FFkSR3QMJWzghaJAf72H",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003482-FFkSR3QMJWzghaJAf72H",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c88458ffaedc5-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003482-FFkSR3QMJWzghaJAf72H",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00031215,
+          "upstream_inference_prompt_cost": 0.00030981,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 0.00031215,
+        "prompt_tokens": 10327,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 47,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 4732.346,
+        "stream": true,
+        "ttft_ms": 4673.898,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 4673.898,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 41107,
+          "completion_tokens": 18,
+          "total_tokens": 41125,
+          "cost": 0.00098446,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 39168,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003484-dt5RxFh2xnzoWnKUSxfT",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003484-dt5RxFh2xnzoWnKUSxfT",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c884bbc76c5db-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003484-dt5RxFh2xnzoWnKUSxfT",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00098446,
+          "upstream_inference_prompt_cost": 0.00097726,
+          "upstream_inference_completions_cost": 7.2e-06
+        },
+        "cost": 0.00098446,
+        "prompt_tokens": 41107,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 39168,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 4738.933,
+        "stream": true,
+        "ttft_ms": 4541.974,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 4541.974,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 41107,
+          "completion_tokens": 18,
+          "total_tokens": 41125,
+          "cost": 0.00098446,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 39168,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003488-iwVf22ZV6hvli336qXkQ",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003488-iwVf22ZV6hvli336qXkQ",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c88674bf6eaf8-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003488-iwVf22ZV6hvli336qXkQ",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00098446,
+          "upstream_inference_prompt_cost": 0.00097726,
+          "upstream_inference_completions_cost": 7.2e-06
+        },
+        "cost": 0.00098446,
+        "prompt_tokens": 41107,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 39168,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 43,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3179.664,
+        "stream": true,
+        "ttft_ms": 3054.455,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 3054.455,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 10327,
+          "completion_tokens": 18,
+          "total_tokens": 10345,
+          "cost": 0.00031215,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003482-tiPY67pqFTEjlZHiMuTF",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003482-tiPY67pqFTEjlZHiMuTF",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c884138f7b002-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003482-tiPY67pqFTEjlZHiMuTF",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00031215,
+          "upstream_inference_prompt_cost": 0.00030981,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 0.00031215,
+        "prompt_tokens": 10327,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3701.455,
+        "stream": true,
+        "ttft_ms": 3389.929,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 3389.929,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 10327,
+          "completion_tokens": 18,
+          "total_tokens": 10345,
+          "cost": 0.000100182,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 8832,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000100182,
+            "upstream_inference_prompt_cost": 9.7842e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003485-KhBXDL9IXYmvzfeQ4YD2",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003485-KhBXDL9IXYmvzfeQ4YD2",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c88576ceeedc5-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003485-KhBXDL9IXYmvzfeQ4YD2",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.000100182,
+            "upstream_inference_prompt_cost": 9.7842e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.000100182,
+          "upstream_inference_prompt_cost": 9.7842e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 0.000100182,
+        "prompt_tokens": 10327,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 8832,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 48,
+      "prompt_length_tier": "short",
+      "target_prompt_tokens": 1500,
+      "prompt_length_tier_index": 0,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1734.091,
+        "stream": true,
+        "ttft_ms": 1614.198,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 1614.198,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 1992,
+          "completion_tokens": 18,
+          "total_tokens": 2010,
+          "cost": 6.21e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003482-2HJTz3KIJRSjRzFdEhoz",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003482-2HJTz3KIJRSjRzFdEhoz",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c88479a80fca8-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003482-2HJTz3KIJRSjRzFdEhoz",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 6.21e-05,
+          "upstream_inference_prompt_cost": 5.976e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 6.21e-05,
+        "prompt_tokens": 1992,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 1874.72,
+        "stream": true,
+        "ttft_ms": 1761.759,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 1761.759,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 1992,
+          "completion_tokens": 18,
+          "total_tokens": 2010,
+          "cost": 6.21e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003484-Aj0aNu3INNnkqsOPKnVO",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003484-Aj0aNu3INNnkqsOPKnVO",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c8851ff2a9327-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003484-Aj0aNu3INNnkqsOPKnVO",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 6.21e-05,
+            "upstream_inference_prompt_cost": 5.976e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 6.21e-05,
+          "upstream_inference_prompt_cost": 5.976e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 6.21e-05,
+        "prompt_tokens": 1992,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 50,
+      "prompt_length_tier": "long",
+      "target_prompt_tokens": 32000,
+      "prompt_length_tier_index": 2,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3942.927,
+        "stream": true,
+        "ttft_ms": 3870.798,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 3870.798,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 41107,
+          "completion_tokens": 18,
+          "total_tokens": 41125,
+          "cost": 0.00098446,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 39168,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003485-teOlvEiUvhvtoMLsWcsp",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003485-teOlvEiUvhvtoMLsWcsp",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c88540931f833-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003485-teOlvEiUvhvtoMLsWcsp",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00098446,
+          "upstream_inference_prompt_cost": 0.00097726,
+          "upstream_inference_completions_cost": 7.2e-06
+        },
+        "cost": 0.00098446,
+        "prompt_tokens": 41107,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 39168,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3327.843,
+        "stream": true,
+        "ttft_ms": 3257.462,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 3257.462,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 41107,
+          "completion_tokens": 18,
+          "total_tokens": 41125,
+          "cost": 0.00098446,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 39168,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003488-z4D3kpwOQ5Yo8JCOAgNv",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003488-z4D3kpwOQ5Yo8JCOAgNv",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c8868fbbb381e-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003488-z4D3kpwOQ5Yo8JCOAgNv",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00098446,
+            "upstream_inference_prompt_cost": 0.00097726,
+            "upstream_inference_completions_cost": 7.2e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00098446,
+          "upstream_inference_prompt_cost": 0.00097726,
+          "upstream_inference_completions_cost": 7.2e-06
+        },
+        "cost": 0.00098446,
+        "prompt_tokens": 41107,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 39168,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 46,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3358.371,
+        "stream": true,
+        "ttft_ms": 3254.589,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 3254.589,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 10327,
+          "completion_tokens": 18,
+          "total_tokens": 10345,
+          "cost": 0.000100182,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 8832,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000100182,
+            "upstream_inference_prompt_cost": 9.7842e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003483-Kuwe3re44kdhrsPAKmgI",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003483-Kuwe3re44kdhrsPAKmgI",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c884b585ba5d2-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003483-Kuwe3re44kdhrsPAKmgI",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.000100182,
+            "upstream_inference_prompt_cost": 9.7842e-05,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.000100182,
+          "upstream_inference_prompt_cost": 9.7842e-05,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 0.000100182,
+        "prompt_tokens": 10327,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 8832,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 3244.302,
+        "stream": true,
+        "ttft_ms": 3106.869,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 3106.869,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 10327,
+          "completion_tokens": 18,
+          "total_tokens": 10345,
+          "cost": 0.00031215,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003486-wX14cRfZdGAOQyxrnRkm",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003486-wX14cRfZdGAOQyxrnRkm",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c885fa855454f-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003486-wX14cRfZdGAOQyxrnRkm",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00031215,
+          "upstream_inference_prompt_cost": 0.00030981,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 0.00031215,
+        "prompt_tokens": 10327,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    },
+    {
+      "api_protocol": "chat_completions",
+      "endpoint_path": "/v1/chat/completions",
+      "sort": "price",
+      "provider_sort": "price",
+      "provider": "openrouter",
+      "requested_model": "qwen/qwen3.7-flash",
+      "actual_model": "qwen/qwen3.7-flash",
+      "group": 2,
+      "round": 49,
+      "prompt_length_tier": "medium",
+      "target_prompt_tokens": 8000,
+      "prompt_length_tier_index": 1,
+      "first": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 2662.332,
+        "stream": true,
+        "ttft_ms": 2537.588,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 2537.588,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 10327,
+          "completion_tokens": 18,
+          "total_tokens": 10345,
+          "cost": 0.00031215,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003483-doHWtr8SEVgVyau4fb12",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003483-doHWtr8SEVgVyau4fb12",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c884cbeac65a0-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003483-doHWtr8SEVgVyau4fb12",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00031215,
+          "upstream_inference_prompt_cost": 0.00030981,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 0.00031215,
+        "prompt_tokens": 10327,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "second": {
+        "status": 200,
+        "error": "",
+        "retry_errors": [],
+        "retry_attempts": 0,
+        "api_protocol": "chat_completions",
+        "endpoint_path": "/v1/chat/completions",
+        "latency_ms": 4390.564,
+        "stream": true,
+        "ttft_ms": 4268.917,
+        "first_content_token_ms": null,
+        "first_reasoning_token_ms": 4268.917,
+        "stream_chunk_count": 7,
+        "usage": {
+          "prompt_tokens": 10327,
+          "completion_tokens": 18,
+          "total_tokens": 10345,
+          "cost": 0.00031215,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "response_model": "qwen/qwen3.7-flash",
+        "response_id": "gen-1786003486-5oCNGP6a6Vo9sRCqQwVH",
+        "system_fingerprint": null,
+        "response_headers": {
+          "X-Generation-Id": "gen-1786003486-5oCNGP6a6Vo9sRCqQwVH",
+          "X-Content-Type-Options": "nosniff",
+          "Server": "cloudflare",
+          "CF-RAY": "a26c885dea9d110a-ORD"
+        },
+        "provider_attribution": {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-flash",
+          "id": "gen-1786003486-5oCNGP6a6Vo9sRCqQwVH",
+          "native_finish_reason": "length",
+          "usage.cost_details": {
+            "upstream_inference_cost": 0.00031215,
+            "upstream_inference_prompt_cost": 0.00030981,
+            "upstream_inference_completions_cost": 2.34e-06
+          }
+        },
+        "routing_trace": {},
+        "provider_cost_breakdown": {
+          "upstream_inference_cost": 0.00031215,
+          "upstream_inference_prompt_cost": 0.00030981,
+          "upstream_inference_completions_cost": 2.34e-06
+        },
+        "cost": 0.00031215,
+        "prompt_tokens": 10327,
+        "completion_tokens": 18,
+        "reasoning_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0
+      }
+    }
+  ]
+}
