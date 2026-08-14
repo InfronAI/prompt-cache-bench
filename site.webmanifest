@@ -3,8 +3,8 @@
   "short_name": "PCB",
   "icons": [
     {
-      "src": "https://framerusercontent.com/images/jYZGKXX6mcMkU1qAXZQeevZRY.png",
-      "sizes": "1827x1827",
+      "src": "https://infronai.github.io/prompt-cache-bench/assets/brand/infron-icon-512.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     }
