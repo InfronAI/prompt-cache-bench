@@ -4,30 +4,47 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>prompt-cache-bench | Open LLM Inference Benchmark Registry</title>
-  <link href="https://framerusercontent.com/images/jYZGKXX6mcMkU1qAXZQeevZRY.png" rel="icon" media="(prefers-color-scheme: light)">
-  <link href="https://framerusercontent.com/images/jYZGKXX6mcMkU1qAXZQeevZRY.png" rel="icon" media="(prefers-color-scheme: dark)">
-  <link rel="apple-touch-icon" href="https://framerusercontent.com/images/jYZGKXX6mcMkU1qAXZQeevZRY.png">
-  <link rel="manifest" href="site.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/brand/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="manifest" href="site.webmanifest">
   <style>
+    /* ============================================================
+       Infron Benchmark — aligned with infron.ai/models
+       Inter + Roboto Mono · neutral greys · black primary button ·
+       indigo #403AD4 brand accent · soft pastel hero wash
+       ============================================================ */
+
     :root {
       color-scheme: light;
-      --bg: #f4efe6;
-      --paper: #f4efe6;
-      --ink: #14120f;
-      --muted: #5d564d;
-      --line: #c9bfb1;
-      --line-strong: #1f1b17;
-      --accent: #004d45;
-      --accent-2: #004d45;
-      --surface: rgba(255, 255, 255, 0.22);
-      --surface-strong: rgba(255, 255, 255, 0.42);
-      --green-soft: transparent;
-      --amber-soft: transparent;
-      --amber: #7a4a1f;
-      --shadow: none;
+
+      --bg: #FFFFFF;
+      --surface: #FAFAFA;
+      --surface-2: #F5F5F5;
+      --line: #E5E5E5;
+      --line-soft: #F0F0F0;
+      --ink: #0F172A;
+      --body-color: #3F3F46;
+      --muted: #737373;
+
+      --brand: #403AD4;
+      --brand-deep: #3730A3;
+      --chip-bg: #EEF2FF;
+      --chip-text: #4338CA;
+      --amber-bg: #FEF3C7;
+      --amber-text: #B45309;
+
+      --btn-black: #171717;
+      --btn-black-hover: #2E2E2E;
+
+      --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      --font-mono: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
     }
 
     * {
@@ -41,231 +58,240 @@
     body {
       margin: 0;
       min-height: 100vh;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: "IBM Plex Sans", sans-serif;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 460px),
+        linear-gradient(100deg, rgba(96, 165, 250, 0.16) 0%, rgba(52, 211, 153, 0.11) 48%, rgba(244, 114, 182, 0.11) 100%),
+        #FFFFFF;
+      background-repeat: no-repeat;
+      background-size: 100% 460px, 100% 460px, auto;
+      color: var(--body-color);
+      font-family: var(--font-sans);
       font-size: 15px;
-      line-height: 1.45;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
     }
 
     a {
-      color: var(--accent-2);
+      color: var(--brand);
+      text-decoration: none;
+      transition: color 120ms ease;
+    }
+
+    a:hover {
+      color: var(--brand-deep);
+      text-decoration: underline;
       text-decoration-thickness: 1px;
       text-underline-offset: 3px;
     }
 
+    a:focus-visible,
+    button:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px var(--brand);
+      border-radius: 8px;
+    }
+
     code {
-      font-family: "IBM Plex Sans", sans-serif;
-      font-weight: 700;
+      padding: 1px 7px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--surface);
+      color: var(--ink);
+      font-family: var(--font-mono);
+      font-size: 0.82em;
+      font-weight: 500;
+      white-space: nowrap;
     }
 
     .shell {
-      width: min(1320px, calc(100% - 72px));
+      width: min(1240px, calc(100% - 72px));
       margin: 0 auto;
-      padding: 30px 0 48px;
+      padding: 20px 0 56px;
     }
+
+    /* ---- top bar (mirrors infron.ai: wordmark | section, black CTA) ---- */
 
     .topbar {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto auto;
-      gap: 36px;
+      gap: 32px;
       align-items: center;
-      padding: 0 0 28px;
-      border-bottom: 2px solid var(--line-strong);
+      padding: 10px 0 18px;
+      border-bottom: 1px solid var(--line);
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 12px;
       min-width: 0;
     }
 
     .brand-logo {
-      width: 58px;
-      height: 58px;
+      height: 24px;
+      width: auto;
       display: block;
-      object-fit: contain;
-      padding: 0;
-      border: 0;
-      background: transparent;
+    }
+
+    .brand-sep {
+      color: #D4D4D8;
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 1;
     }
 
     .brand-title {
       display: block;
-      color: #050505;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(24px, 2.5vw, 34px);
-      font-weight: 700;
-      line-height: 1;
+      color: var(--ink);
+      font-size: 16px;
+      font-weight: 600;
       letter-spacing: -0.01em;
-      white-space: nowrap;
-    }
-
-    .brand-subtitle {
-      display: block;
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 400;
       white-space: nowrap;
     }
 
     .nav {
       display: flex;
       align-items: center;
-      gap: 38px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 15px;
-      font-weight: 600;
+      gap: 26px;
+      font-size: 14px;
+      font-weight: 500;
     }
 
     .nav a {
-      color: var(--ink);
+      color: #52525B;
       text-decoration: none;
     }
 
     .nav a:hover {
-      color: var(--accent);
-      text-decoration: underline;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav a.nav-cta {
+      padding: 8px 16px;
+      border-radius: 10px;
+      background: var(--btn-black);
+      color: #FFFFFF;
+      font-weight: 600;
+    }
+
+    .nav a.nav-cta:hover {
+      background: var(--btn-black-hover);
+      color: #FFFFFF;
     }
 
     .language-tabs {
-      display: inline-flex;
-      gap: 18px;
-      align-items: center;
-      padding-left: 30px;
-      border-left: 1px solid var(--line);
-      background: transparent;
+      display: none; /* ZH temporarily unlisted */
     }
 
     .language-tabs button {
-      position: relative;
-      min-width: 72px;
-      min-height: 38px;
-      padding: 0 8px 2px;
+      min-height: 32px;
       border: 0;
       background: transparent;
-      color: var(--ink);
       font: inherit;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 15px;
-      font-weight: 600;
-      text-align: center;
       cursor: pointer;
     }
 
-    .language-tabs button:hover,
-    .language-tabs button:focus-visible {
-      color: var(--accent);
-    }
-
-    .language-tabs button:focus-visible {
-      outline: 1px solid var(--accent);
-      outline-offset: 4px;
-    }
-
-    .language-tabs button[aria-selected="true"] {
-      color: var(--accent);
-    }
-
-    .language-tabs button[aria-selected="true"]::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 3px;
-      background: var(--accent);
-    }
+    /* ---- hero ---- */
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(420px, 0.95fr);
-      gap: 60px;
-      align-items: start;
-      padding: 48px 0 62px;
-      border-bottom: 1.5px solid var(--line-strong);
+      grid-template-columns: minmax(0, 1.05fr) minmax(400px, 0.95fr);
+      gap: 56px;
+      align-items: center;
+      padding: 60px 0 68px;
     }
 
     .kicker {
-      margin: 0 0 28px;
-      color: var(--accent);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
     h1 {
       margin: 0;
-      max-width: 760px;
-      color: #050505;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(44px, 5.1vw, 72px);
-      font-weight: 500;
-      line-height: 1.04;
-      letter-spacing: -0.035em;
+      max-width: 700px;
+      color: var(--ink);
+      font-size: clamp(34px, 3.8vw, 48px);
+      font-weight: 700;
+      line-height: 1.14;
+      letter-spacing: -0.03em;
     }
 
-    h1::after {
-      content: "";
-      display: block;
-      width: 58px;
-      height: 3px;
-      margin: 28px 0 0;
-      background: var(--accent);
+    h1 em {
+      color: var(--brand);
+      font-style: normal;
     }
 
     .lead {
-      max-width: 640px;
-      margin: 24px 0 0;
-      color: var(--ink);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 18px;
-      line-height: 1.42;
+      max-width: 600px;
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 22px;
-      margin-top: 36px;
+      gap: 12px;
+      margin-top: 32px;
     }
+
+    /* ---- buttons: black primary, quiet secondary (as infron.ai) ---- */
 
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 48px;
-      padding: 0 24px;
-      border: 1.5px solid var(--line-strong);
-      border-radius: 2px;
-      background: transparent;
+      min-height: 44px;
+      padding: 0 22px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--bg);
       color: var(--ink);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 15px;
+      font-family: var(--font-sans);
+      font-size: 14.5px;
       font-weight: 600;
       text-decoration: none;
       white-space: nowrap;
+      transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, color 160ms ease;
+    }
+
+    .button:hover {
+      background: var(--surface);
+      border-color: #D4D4D8;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .button:focus-visible {
+      border-radius: 12px;
     }
 
     .button.primary {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #fff;
+      border: 1px solid var(--btn-black);
+      background: var(--btn-black);
+      color: #FFFFFF;
     }
 
-    .button.secondary {
-      color: var(--ink);
+    .button.primary:hover {
+      background: var(--btn-black-hover);
+      border-color: var(--btn-black-hover);
+      color: #FFFFFF;
     }
+
+    /* ---- scope card (hero aside) ---- */
 
     .registry-card {
-      border: 0;
-      border-top: 2px solid var(--line-strong);
-      border-bottom: 2px solid var(--line-strong);
-      background: transparent;
-      box-shadow: none;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--bg);
+      box-shadow: var(--shadow-sm);
+      padding: 24px;
     }
 
     .registry-card header {
@@ -273,26 +299,24 @@
       justify-content: space-between;
       gap: 18px;
       align-items: flex-start;
-      padding: 0 0 22px;
-      border-bottom: 1px solid var(--line);
-      background: transparent;
+      padding: 0 0 14px;
+      border-bottom: 1px solid var(--line-soft);
     }
 
-    .registry-card h2,
-    .section h2 {
+    .registry-card h2 {
       margin: 0;
-      color: var(--accent);
-      font-size: clamp(17px, 1.6vw, 21px);
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      line-height: 1.2;
-      text-transform: uppercase;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+      text-transform: none;
     }
 
     .registry-card p {
-      margin: 8px 0 0;
+      margin: 6px 0 0;
       color: var(--muted);
-      font-size: 14px;
+      font-size: 13px;
     }
 
     .scope-grid {
@@ -302,112 +326,119 @@
 
     .scope-item {
       display: grid;
-      grid-template-columns: minmax(190px, 0.42fr) minmax(0, 0.58fr);
-      min-height: 132px;
-      padding: 0;
-      border-bottom: 1px solid var(--line);
+      grid-template-columns: minmax(120px, 0.36fr) minmax(0, 0.64fr);
+      column-gap: 20px;
+      align-items: start;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line-soft);
     }
 
     .scope-item:last-child {
       border-bottom: 0;
+      padding-bottom: 4px;
     }
 
     .scope-item strong {
-      display: flex;
-      align-items: center;
-      padding: 28px 34px 28px 0;
-      border-right: 1px solid var(--line);
-      color: var(--accent);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 19px;
-      font-weight: 700;
-      text-transform: none;
+      grid-row: span 2;
+      align-self: center;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
     }
 
     .scope-item b {
       display: block;
       margin: 0;
-      padding: 28px 0 0 36px;
-      color: #050505;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 22px;
-      font-weight: 700;
-      line-height: 1.1;
+      color: var(--ink);
+      font-family: var(--font-mono);
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
     }
 
     .scope-item span {
       display: block;
-      margin: 8px 0 0;
-      padding: 0 0 24px 36px;
-      color: var(--ink);
-      font-size: 14px;
-      line-height: 1.45;
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
     }
 
+    /* ---- sections ---- */
+
     .section {
-      margin-top: 0;
-      padding: 58px 0;
-      border-top: 1.5px solid var(--line-strong);
+      padding: 52px 0 8px;
     }
 
     .section-head {
       display: grid;
-      grid-template-columns: minmax(250px, 0.36fr) minmax(0, 0.64fr);
-      gap: 64px;
-      align-items: start;
-      margin-bottom: 26px;
+      grid-template-columns: minmax(250px, 0.38fr) minmax(0, 0.62fr);
+      gap: 56px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .section > .section-head h2 {
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(22px, 2.2vw, 27px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      text-transform: none;
     }
 
     .section-note {
       margin: 0;
-      color: var(--ink);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 18px;
-      line-height: 1.45;
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.6;
     }
+
+    /* ---- card grids ---- */
 
     .coverage {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      border-top: 1px solid var(--line);
-      border-left: 1px solid var(--line);
+      gap: 14px;
     }
 
     .coverage-card,
     .paper-card,
     .artifact-card,
     .roadmap-card,
-    .method,
-    .table-wrap {
+    .method-step {
       border: 1px solid var(--line);
-      background: transparent;
-      box-shadow: none;
+      border-radius: 16px;
+      background: var(--bg);
+      box-shadow: var(--shadow-sm);
     }
 
     .coverage-card {
-      min-height: 176px;
-      padding: 22px;
-      border-top: 0;
-      border-left: 0;
+      min-height: 160px;
+      padding: 20px;
     }
 
     .coverage-card strong,
-    .fact strong,
-    th {
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
+    .fact strong {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
     }
 
     .coverage-card b {
       display: block;
-      margin-top: 18px;
-      color: #050505;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 23px;
-      line-height: 1.08;
+      margin-top: 12px;
+      color: var(--ink);
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
     }
 
     .coverage-card span,
@@ -416,15 +447,20 @@
     .method-step p,
     .paper-card p {
       display: block;
-      margin-top: 12px;
+      margin-top: 8px;
       color: var(--muted);
-      font-size: 14px;
-      line-height: 1.48;
+      font-size: 13.5px;
+      line-height: 1.55;
     }
+
+    /* ---- registry table ---- */
 
     .table-wrap {
       overflow-x: auto;
-      border-color: var(--line-strong);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--bg);
+      box-shadow: var(--shadow-sm);
     }
 
     table {
@@ -436,184 +472,208 @@
 
     th,
     td {
-      padding: 18px 16px;
-      border-bottom: 1px solid var(--line);
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--line-soft);
       text-align: left;
       vertical-align: top;
     }
 
     th {
-      background: transparent;
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      border-bottom: 1px solid var(--line);
+    }
+
+    td {
+      color: var(--body-color);
+      line-height: 1.55;
+    }
+
+    td strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    tbody tr {
+      transition: background-color 120ms ease;
+    }
+
+    tbody tr:hover {
+      background: var(--surface);
     }
 
     tr:last-child td {
       border-bottom: 0;
     }
 
+    /* ---- status badges (chip style from infron.ai) ---- */
+
     .tag {
       display: inline-flex;
       align-items: center;
       min-height: 24px;
-      padding: 0 8px;
-      border: 1px solid var(--line-strong);
-      border-radius: 0;
-      background: transparent;
-      color: var(--ink);
+      padding: 0 10px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--surface-2);
+      color: var(--muted);
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 600;
       white-space: nowrap;
     }
 
     .tag.live {
-      border-color: var(--accent);
-      color: var(--accent);
+      background: var(--chip-bg);
+      color: var(--chip-text);
     }
 
     .tag.unpublished {
-      border-color: var(--amber);
-      color: var(--amber);
+      background: var(--amber-bg);
+      color: var(--amber-text);
     }
+
+    /* ---- papers / artifacts ---- */
 
     .featured {
       display: grid;
       grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-      gap: 28px;
+      gap: 14px;
       align-items: stretch;
     }
 
     .paper-card,
     .artifact-card {
-      padding: 26px;
-      border-color: var(--line-strong);
+      padding: 22px;
     }
 
     .paper-card h3,
     .artifact-card h3,
     .roadmap-card h3 {
-      margin: 0 0 14px;
-      color: #050505;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 1.1;
+      margin: 0 0 8px;
+      color: var(--ink);
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.3;
       letter-spacing: -0.01em;
     }
 
     .facts {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0;
-      margin-top: 24px;
-      border-top: 1px solid var(--line);
-      border-left: 1px solid var(--line);
+      gap: 10px;
+      margin-top: 18px;
     }
 
     .fact {
-      padding: 14px;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: transparent;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--surface);
     }
 
     .fact span {
       display: block;
-      margin-top: 6px;
-      font-size: 14px;
-      font-weight: 600;
+      margin-top: 5px;
+      color: var(--ink);
+      font-size: 13.5px;
+      font-weight: 500;
       overflow-wrap: anywhere;
     }
 
     .artifact-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0;
-      border-top: 1px solid var(--line);
-      border-left: 1px solid var(--line);
+      gap: 10px;
     }
 
     .artifact-link {
-      min-height: 112px;
+      min-height: 104px;
       padding: 16px;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: transparent;
-      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--bg);
+      color: var(--body-color);
       text-decoration: none;
+      transition: box-shadow 160ms ease, border-color 160ms ease;
     }
 
     .artifact-link:hover {
-      background: rgba(255, 255, 255, 0.28);
+      border-color: #D4D4D8;
+      box-shadow: var(--shadow-md);
+      text-decoration: none;
+      color: var(--body-color);
     }
 
     .artifact-link strong {
       display: block;
-      color: #050505;
-      font-size: 15px;
-      font-weight: 700;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 600;
     }
+
+    /* ---- protocol steps ---- */
 
     .method {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      border-color: var(--line-strong);
+      gap: 14px;
     }
 
     .method-step {
-      min-height: 176px;
-      padding: 22px;
-      border-right: 1px solid var(--line);
-    }
-
-    .method-step:last-child {
-      border-right: 0;
+      min-height: 160px;
+      padding: 20px;
     }
 
     .method-step b {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 31px;
-      height: 31px;
-      margin-bottom: 18px;
-      border: 1.5px solid var(--line-strong);
-      color: var(--accent);
-      font-size: 14px;
-      font-weight: 700;
+      width: 28px;
+      height: 28px;
+      margin-bottom: 14px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--chip-bg);
+      color: var(--chip-text);
+      font-size: 13px;
+      font-weight: 600;
     }
 
     .method-step h3 {
-      margin: 0 0 8px;
-      color: #050505;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 19px;
-      line-height: 1.1;
+      margin: 0 0 6px;
+      color: var(--ink);
+      font-size: 15.5px;
+      font-weight: 600;
+      line-height: 1.3;
     }
 
     .roadmap {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0;
-      border-top: 1px solid var(--line);
-      border-left: 1px solid var(--line);
+      gap: 14px;
     }
 
     .roadmap-card {
-      min-height: 180px;
-      padding: 22px;
-      border-top: 0;
-      border-left: 0;
+      min-height: 150px;
+      padding: 20px;
     }
+
+    /* ---- footer ---- */
 
     footer {
       display: flex;
       justify-content: space-between;
       gap: 20px;
-      margin-top: 0;
-      padding-top: 24px;
-      border-top: 1.5px solid var(--line-strong);
+      margin-top: 52px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
       color: var(--muted);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 13px;
+      font-size: 12.5px;
     }
 
     [data-lang-panel] {
@@ -622,6 +682,19 @@
 
     [data-lang-panel].active {
       display: block;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 80ms !important;
+        animation: none !important;
+      }
     }
 
     @media (max-width: 1060px) {
@@ -640,7 +713,13 @@
       }
 
       .hero {
-        gap: 44px;
+        gap: 40px;
+        padding: 44px 0 52px;
+      }
+
+      .section-head {
+        gap: 10px;
+        align-items: start;
       }
 
       .coverage,
@@ -652,47 +731,37 @@
 
     @media (max-width: 720px) {
       .shell {
-        width: min(100% - 24px, 1400px);
-        padding-top: 18px;
+        width: min(100% - 32px, 1240px);
+        padding-top: 14px;
       }
 
       .topbar {
         grid-template-columns: 1fr;
       }
 
-      .brand {
-        align-items: flex-start;
-      }
-
-      .brand-title {
-        white-space: normal;
-      }
-
-      .brand-subtitle {
-        white-space: normal;
-      }
-
-      .language-tabs {
-        width: 100%;
-        justify-content: space-between;
-        gap: 12px;
-        padding-left: 0;
-        border-left: 0;
-      }
-
-      .language-tabs button {
-        flex: 1 1 0;
-      }
-
       .hero {
-        padding-top: 34px;
+        padding-top: 32px;
       }
 
       h1 {
-        font-size: clamp(38px, 11vw, 54px);
+        font-size: clamp(30px, 8.5vw, 40px);
       }
 
-      .scope-item,
+      .registry-card {
+        padding: 20px;
+      }
+
+      .scope-item {
+        grid-template-columns: 1fr;
+        row-gap: 4px;
+      }
+
+      .scope-item strong {
+        grid-row: auto;
+        align-self: start;
+        margin-bottom: 2px;
+      }
+
       .coverage,
       .facts,
       .artifact-grid,
@@ -701,31 +770,9 @@
         grid-template-columns: 1fr;
       }
 
-      .scope-item strong,
-      .scope-item b,
-      .scope-item span {
-        padding-left: 0;
-        padding-right: 0;
-        border-right: 0;
-      }
-
-      .scope-item b {
-        padding-top: 0;
-      }
-
-      .scope-item {
-        padding: 22px 0;
-      }
-
-      .coverage-card,
-      .method-step,
-      .method-step:last-child {
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-      }
-
       footer {
         flex-direction: column;
+        gap: 8px;
       }
     }
   </style>
@@ -733,18 +780,16 @@
 <body>
   <div class="shell">
     <header class="topbar">
-      <div class="brand" aria-label="prompt-cache-bench">
-        <img class="brand-logo" src="https://framerusercontent.com/images/jYZGKXX6mcMkU1qAXZQeevZRY.png" alt="Infron">
-        <div>
-          <span class="brand-title">prompt-cache-bench</span>
-          <span class="brand-subtitle">Longitudinal benchmark registry for LLM inference systems</span>
-        </div>
+      <div class="brand" aria-label="Infron Benchmark">
+        <a href="https://infron.ai" aria-label="Infron"><img class="brand-logo" src="assets/brand/infron-logo.png" alt="Infron"></a>
+        <span class="brand-sep">|</span>
+        <span class="brand-title">Benchmark</span>
       </div>
       <nav class="nav" aria-label="Primary">
         <a href="#registry-en">Registry</a>
         <a href="#papers-en">Papers</a>
         <a href="#protocol-en">Protocol</a>
-        <a href="https://github.com/InfronAI/prompt-cache-bench">GitHub</a>
+        <a class="nav-cta" href="https://github.com/InfronAI/prompt-cache-bench">GitHub</a>
       </nav>
       <div class="language-tabs" role="tablist" aria-label="Language">
         <button type="button" id="tab-en" role="tab" aria-controls="panel-en" aria-selected="true" data-lang-tab="en">English</button>
@@ -757,7 +802,7 @@
         <section class="hero" aria-labelledby="title-en">
           <div>
             <p class="kicker">Open Longitudinal Benchmark Registry</p>
-            <h1 id="title-en">Tracking prompt caching and provider routing across models, providers, and time.</h1>
+            <h1 id="title-en">Tracking prompt caching and provider routing across models, providers, and <em>time</em>.</h1>
             <p class="lead">
               prompt-cache-bench is designed as a long-running, reproducible registry for LLM inference systems. It will accumulate hundreds of model/provider A/B comparisons, raw datasets, report pages, figures, and runnable experiment code under a consistent methodology.
             </p>
@@ -811,7 +856,7 @@
                   <td><code>moonshotai/kimi-k3</code></td>
                   <td>Infron vs OpenRouter</td>
                   <td>4x50 paired streaming Chat Completions; routing sort modes; default reasoning/thinking; prompt-length tiers; /v1/chat/completions only.</td>
-                  <td><a href="https://infronai.github.io/prompt-cache-bench/experiments/moonshotai/kimi-k3/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-28/reports/routing-cache-cost-streaming-performance-ab-study__kimi-k3__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-28.en.html">EN HTML</a> · <a href="https://infronai.github.io/prompt-cache-bench/experiments/moonshotai/kimi-k3/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-28/reports/routing-cache-cost-streaming-performance-ab-study__kimi-k3__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-28.zh.html">ZH HTML</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/moonshotai/kimi-k3/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-28/reports/routing-cache-cost-streaming-performance-ab-study__kimi-k3__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-28.en.md">EN MD</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/moonshotai/kimi-k3/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-28/reports/routing-cache-cost-streaming-performance-ab-study__kimi-k3__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-28.zh.md">ZH MD</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/moonshotai/kimi-k3/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-28/reports">Reports</a></td>
+                  <td><a href="https://infronai.github.io/prompt-cache-bench/experiments/moonshotai/kimi-k3/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-28/reports/routing-cache-cost-streaming-performance-ab-study__kimi-k3__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-28.en.html">EN HTML</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/moonshotai/kimi-k3/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-28/reports/routing-cache-cost-streaming-performance-ab-study__kimi-k3__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-28.en.md">EN MD</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/moonshotai/kimi-k3/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-28/reports">Reports</a></td>
                   <td><a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/moonshotai/kimi-k3/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-28/data">Dataset</a></td>
                 </tr>
                 <tr>
@@ -819,7 +864,7 @@
                   <td><code>google/gemini-3-flash-preview</code></td>
                   <td>Infron vs OpenRouter</td>
                   <td>4x50 paired streaming Chat Completions; routing sort modes; default reasoning/thinking; prompt-length tiers; /v1/chat/completions only.</td>
-                  <td><a href="https://infronai.github.io/prompt-cache-bench/experiments/google/gemini-3-flash-preview/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-15/reports/routing-cache-cost-streaming-performance-ab-study__gemini-3-flash-preview__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-15.en.html">EN HTML</a> · <a href="https://infronai.github.io/prompt-cache-bench/experiments/google/gemini-3-flash-preview/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-15/reports/routing-cache-cost-streaming-performance-ab-study__gemini-3-flash-preview__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-15.zh.html">ZH HTML</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/google/gemini-3-flash-preview/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-15/reports/routing-cache-cost-streaming-performance-ab-study__gemini-3-flash-preview__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-15.en.md">EN MD</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/google/gemini-3-flash-preview/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-15/reports/routing-cache-cost-streaming-performance-ab-study__gemini-3-flash-preview__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-15.zh.md">ZH MD</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/google/gemini-3-flash-preview/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-15/reports">Reports</a></td>
+                  <td><a href="https://infronai.github.io/prompt-cache-bench/experiments/google/gemini-3-flash-preview/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-15/reports/routing-cache-cost-streaming-performance-ab-study__gemini-3-flash-preview__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-15.en.html">EN HTML</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/google/gemini-3-flash-preview/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-15/reports/routing-cache-cost-streaming-performance-ab-study__gemini-3-flash-preview__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-15.en.md">EN MD</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/google/gemini-3-flash-preview/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-15/reports">Reports</a></td>
                   <td><a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/google/gemini-3-flash-preview/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-15/data">Dataset</a></td>
                 </tr>
                 <tr>
@@ -827,7 +872,7 @@
                   <td><code>qwen/qwen3.7-flash</code></td>
                   <td>Infron vs OpenRouter</td>
                   <td>4x50 paired streaming Chat Completions; routing sort modes; default reasoning/thinking; prompt-length tiers; /v1/chat/completions only.</td>
-                  <td><a href="https://infronai.github.io/prompt-cache-bench/experiments/qwen/qwen3.7-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-08-06/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-7-flash__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-08-06.en.html">EN HTML</a> · <a href="https://infronai.github.io/prompt-cache-bench/experiments/qwen/qwen3.7-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-08-06/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-7-flash__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-08-06.zh.html">ZH HTML</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/qwen/qwen3.7-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-08-06/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-7-flash__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-08-06.en.md">EN MD</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/qwen/qwen3.7-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-08-06/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-7-flash__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-08-06.zh.md">ZH MD</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/qwen/qwen3.7-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-08-06/reports">Reports</a></td>
+                  <td><a href="https://infronai.github.io/prompt-cache-bench/experiments/qwen/qwen3.7-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-08-06/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-7-flash__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-08-06.en.html">EN HTML</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/qwen/qwen3.7-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-08-06/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-7-flash__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-08-06.en.md">EN MD</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/qwen/qwen3.7-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-08-06/reports">Reports</a></td>
                   <td><a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/qwen/qwen3.7-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-08-06/data">Dataset</a></td>
                 </tr>
                 <tr>
@@ -835,7 +880,7 @@
                   <td><code>qwen/qwen3.6-flash</code></td>
                   <td>Infron vs OpenRouter</td>
                   <td>4x50 paired streaming Chat Completions; routing sort modes; default reasoning/thinking; prompt-length tiers; /v1/chat/completions only.</td>
-                  <td><a href="https://infronai.github.io/prompt-cache-bench/experiments/qwen/qwen3.6-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-13/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-6-flash__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-13.en.html">EN HTML</a> · <a href="https://infronai.github.io/prompt-cache-bench/experiments/qwen/qwen3.6-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-13/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-6-flash__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-13.zh.html">ZH HTML</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/qwen/qwen3.6-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-13/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-6-flash__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-13.en.md">EN MD</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/qwen/qwen3.6-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-13/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-6-flash__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-13.zh.md">ZH MD</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/qwen/qwen3.6-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-13/reports">Reports</a></td>
+                  <td><a href="https://infronai.github.io/prompt-cache-bench/experiments/qwen/qwen3.6-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-13/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-6-flash__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-13.en.html">EN HTML</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/qwen/qwen3.6-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-13/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-6-flash__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-13.en.md">EN MD</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/qwen/qwen3.6-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-13/reports">Reports</a></td>
                   <td><a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/qwen/qwen3.6-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-13/data">Dataset</a></td>
                 </tr>
                 <tr>
@@ -843,7 +888,7 @@
                   <td><code>qwen/qwen3.6-35b-a3b</code></td>
                   <td>Infron vs OpenRouter</td>
                   <td>4x50 paired streaming Chat Completions; routing sort modes; default reasoning/thinking; prompt-length tiers; /v1/chat/completions only.</td>
-                  <td><a href="https://infronai.github.io/prompt-cache-bench/experiments/qwen/qwen3.6-35b-a3b/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-13/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-6-35b-a3b__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-13.en.html">EN HTML</a> · <a href="https://infronai.github.io/prompt-cache-bench/experiments/qwen/qwen3.6-35b-a3b/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-13/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-6-35b-a3b__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-13.zh.html">ZH HTML</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/qwen/qwen3.6-35b-a3b/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-13/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-6-35b-a3b__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-13.en.md">EN MD</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/qwen/qwen3.6-35b-a3b/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-13/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-6-35b-a3b__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-13.zh.md">ZH MD</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/qwen/qwen3.6-35b-a3b/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-13/reports">Reports</a></td>
+                  <td><a href="https://infronai.github.io/prompt-cache-bench/experiments/qwen/qwen3.6-35b-a3b/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-13/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-6-35b-a3b__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-13.en.html">EN HTML</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/qwen/qwen3.6-35b-a3b/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-13/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-6-35b-a3b__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-13.en.md">EN MD</a> · <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/qwen/qwen3.6-35b-a3b/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-13/reports">Reports</a></td>
                   <td><a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/qwen/qwen3.6-35b-a3b/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-13/data">Dataset</a></td>
                 </tr>
                 <tr>
@@ -853,9 +898,7 @@
                   <td>4x50 paired streaming Chat Completions; routing sort modes; default reasoning/thinking; prompt-length tiers; /v1/chat/completions only; OpenRouter alias google/gemma-4-26b-a4b-it.</td>
                   <td>
                     <a href="https://infronai.github.io/prompt-cache-bench/experiments/google/gemma-4-26b-a4b/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-openrouter-alias-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__gemma-4-26b-a4b__infron-vs-openrouter-alias__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.en.html">EN HTML</a>
-                    <a href="https://infronai.github.io/prompt-cache-bench/experiments/google/gemma-4-26b-a4b/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-openrouter-alias-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__gemma-4-26b-a4b__infron-vs-openrouter-alias__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.zh.html">ZH HTML</a>
                     <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/google/gemma-4-26b-a4b/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-openrouter-alias-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__gemma-4-26b-a4b__infron-vs-openrouter-alias__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.en.md">EN MD</a>
-                    <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/google/gemma-4-26b-a4b/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-openrouter-alias-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__gemma-4-26b-a4b__infron-vs-openrouter-alias__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.zh.md">ZH MD</a>
                     <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/google/gemma-4-26b-a4b/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-openrouter-alias-2026-07-07/reports">Reports</a>
                   </td>
                   <td><a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/google/gemma-4-26b-a4b/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-openrouter-alias-2026-07-07/data">Dataset</a></td>
@@ -868,11 +911,7 @@
                   <td>
                     <a href="https://infronai.github.io/prompt-cache-bench/experiments/minimax/minimax-m3/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__minimax-m3__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.en.html">EN HTML</a>
                     ·
-                    <a href="https://infronai.github.io/prompt-cache-bench/experiments/minimax/minimax-m3/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__minimax-m3__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.zh.html">ZH HTML</a>
-                    ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/minimax/minimax-m3/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__minimax-m3__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.en.md">EN MD</a>
-                    ·
-                    <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/minimax/minimax-m3/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__minimax-m3__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.zh.md">ZH MD</a>
                     ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/minimax/minimax-m3/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports">Reports</a>
                   </td>
@@ -886,11 +925,7 @@
                   <td>
                     <a href="https://infronai.github.io/prompt-cache-bench/experiments/minimax/minimax-m2.7/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__minimax-m2-7__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.en.html">EN HTML</a>
                     ·
-                    <a href="https://infronai.github.io/prompt-cache-bench/experiments/minimax/minimax-m2.7/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__minimax-m2-7__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.zh.html">ZH HTML</a>
-                    ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/minimax/minimax-m2.7/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__minimax-m2-7__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.en.md">EN MD</a>
-                    ·
-                    <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/minimax/minimax-m2.7/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__minimax-m2-7__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.zh.md">ZH MD</a>
                     ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/minimax/minimax-m2.7/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports">Reports</a>
                   </td>
@@ -904,11 +939,7 @@
                   <td>
                     <a href="https://infronai.github.io/prompt-cache-bench/experiments/minimax/minimax-m2.5/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__minimax-m2-5__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.en.html">EN HTML</a>
                     ·
-                    <a href="https://infronai.github.io/prompt-cache-bench/experiments/minimax/minimax-m2.5/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__minimax-m2-5__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.zh.html">ZH HTML</a>
-                    ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/minimax/minimax-m2.5/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__minimax-m2-5__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.en.md">EN MD</a>
-                    ·
-                    <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/minimax/minimax-m2.5/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__minimax-m2-5__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.zh.md">ZH MD</a>
                     ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/minimax/minimax-m2.5/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports">Reports</a>
                   </td>
@@ -922,11 +953,7 @@
                   <td>
                     <a href="https://infronai.github.io/prompt-cache-bench/experiments/google/gemma-4-26b-a4b/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-openrouter-alias-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__gemma-4-26b-a4b__infron-vs-openrouter-alias__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.en.html">EN HTML</a>
                     ·
-                    <a href="https://infronai.github.io/prompt-cache-bench/experiments/minimax/minimax-m2.5/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__minimax-m2-5__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.zh.html">ZH HTML</a>
-                    ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/xiaomi/mimo-v2.5/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__mimo-v2-5__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.en.md">EN MD</a>
-                    ·
-                    <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/xiaomi/mimo-v2.5/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__mimo-v2-5__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.zh.md">ZH MD</a>
                     ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/xiaomi/mimo-v2.5/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports">Reports</a>
                   </td>
@@ -939,9 +966,7 @@
                   <td>4x50 paired streaming Chat Completions; routing sort modes; default reasoning/thinking; prompt-length tiers; /v1/chat/completions only.</td>
                   <td>
                     <a href="https://infronai.github.io/prompt-cache-bench/experiments/moonshotai/kimi-k2.7-code/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-10/reports/routing-cache-cost-streaming-performance-ab-study__kimi-k2-7-code__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-10.en.html">EN HTML</a>
-                    <a href="https://infronai.github.io/prompt-cache-bench/experiments/moonshotai/kimi-k2.7-code/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-10/reports/routing-cache-cost-streaming-performance-ab-study__kimi-k2-7-code__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-10.zh.html">ZH HTML</a>
                     <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/moonshotai/kimi-k2.7-code/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-10/reports/routing-cache-cost-streaming-performance-ab-study__kimi-k2-7-code__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-10.en.md">EN MD</a>
-                    <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/moonshotai/kimi-k2.7-code/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-10/reports/routing-cache-cost-streaming-performance-ab-study__kimi-k2-7-code__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-10.zh.md">ZH MD</a>
                     <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/moonshotai/kimi-k2.7-code/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-10/reports">Reports</a>
                   </td>
                   <td><a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/moonshotai/kimi-k2.7-code/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-10/data">Dataset</a></td>
@@ -954,9 +979,7 @@
                   <td>4x50 paired streaming Chat Completions; routing sort modes; default reasoning/thinking; prompt-length tiers; /v1/chat/completions only.</td>
                   <td>
                     <a href="https://infronai.github.io/prompt-cache-bench/experiments/moonshotai/kimi-k2.6/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__kimi-k2-6__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.en.html">EN HTML</a>
-                    <a href="https://infronai.github.io/prompt-cache-bench/experiments/moonshotai/kimi-k2.6/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__kimi-k2-6__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.zh.html">ZH HTML</a>
                     <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/moonshotai/kimi-k2.6/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__kimi-k2-6__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.en.md">EN MD</a>
-                    <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/moonshotai/kimi-k2.6/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__kimi-k2-6__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.zh.md">ZH MD</a>
                     <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/moonshotai/kimi-k2.6/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports">Reports</a>
                   </td>
                   <td><a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/moonshotai/kimi-k2.6/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/data">Dataset</a></td>
@@ -969,11 +992,7 @@
                   <td>
                     <a href="https://infronai.github.io/prompt-cache-bench/experiments/moonshotai/kimi-k2.5/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__kimi-k2-5__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.en.html">EN HTML</a>
                     ·
-                    <a href="https://infronai.github.io/prompt-cache-bench/experiments/moonshotai/kimi-k2.5/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__kimi-k2-5__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.zh.html">ZH HTML</a>
-                    ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/moonshotai/kimi-k2.5/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__kimi-k2-5__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.en.md">EN MD</a>
-                    ·
-                    <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/moonshotai/kimi-k2.5/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__kimi-k2-5__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.zh.md">ZH MD</a>
                     ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/moonshotai/kimi-k2.5/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports">Reports</a>
                   </td>
@@ -988,11 +1007,7 @@
                   <td>
                     <a href="https://infronai.github.io/prompt-cache-bench/experiments/z-ai/glm-4.7/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__glm-4-7__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.en.html">EN HTML</a>
                     ·
-                    <a href="https://infronai.github.io/prompt-cache-bench/experiments/z-ai/glm-4.7/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__glm-4-7__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.zh.html">ZH HTML</a>
-                    ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/z-ai/glm-4.7/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__glm-4-7__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.en.md">EN MD</a>
-                    ·
-                    <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/z-ai/glm-4.7/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports/routing-cache-cost-streaming-performance-ab-study__glm-4-7__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-07.zh.md">ZH MD</a>
                     ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/z-ai/glm-4.7/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-07/reports">Reports</a>
                   </td>
@@ -1006,11 +1021,7 @@
                   <td>
                     <a href="https://infronai.github.io/prompt-cache-bench/experiments/z-ai/glm-5.1/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__glm-5-1__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.en.html">EN HTML</a>
                     ·
-                    <a href="https://infronai.github.io/prompt-cache-bench/experiments/z-ai/glm-5.1/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__glm-5-1__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.zh.html">ZH HTML</a>
-                    ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/z-ai/glm-5.1/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__glm-5-1__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.en.md">EN MD</a>
-                    ·
-                    <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/z-ai/glm-5.1/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__glm-5-1__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.zh.md">ZH MD</a>
                     ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/z-ai/glm-5.1/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports">Reports</a>
                   </td>
@@ -1024,11 +1035,7 @@
                   <td>
                     <a href="https://infronai.github.io/prompt-cache-bench/experiments/z-ai/glm-5/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__glm-5__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.en.html">EN HTML</a>
                     ·
-                    <a href="https://infronai.github.io/prompt-cache-bench/experiments/z-ai/glm-5/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__glm-5__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.zh.html">ZH HTML</a>
-                    ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/z-ai/glm-5/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__glm-5__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.en.md">EN MD</a>
-                    ·
-                    <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/z-ai/glm-5/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__glm-5__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.zh.md">ZH MD</a>
                     ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/z-ai/glm-5/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports">Reports</a>
                   </td>
@@ -1041,9 +1048,7 @@
                   <td>4x50 paired streaming Chat Completions; routing sort modes; default reasoning/thinking; prompt-length tiers; /v1/chat/completions only.</td>
                   <td>
                     <a href="https://infronai.github.io/prompt-cache-bench/experiments/qwen/qwen3.5-27b/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-13/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-5-27b__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-13.en.html">EN HTML</a>
-                    <a href="https://infronai.github.io/prompt-cache-bench/experiments/qwen/qwen3.5-27b/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-13/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-5-27b__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-13.zh.html">ZH HTML</a>
                     <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/qwen/qwen3.5-27b/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-13/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-5-27b__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-13.en.md">EN MD</a>
-                    <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/qwen/qwen3.5-27b/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-13/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-5-27b__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-13.zh.md">ZH MD</a>
                     <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/qwen/qwen3.5-27b/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-13/reports">Reports</a>
                   </td>
                   <td><a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/qwen/qwen3.5-27b/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-13/data">Dataset</a></td>
@@ -1056,11 +1061,7 @@
                   <td>
                     <a href="https://infronai.github.io/prompt-cache-bench/experiments/openai/gpt-5.4-nano/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-nano__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.en.html">EN HTML</a>
                     ·
-                    <a href="https://infronai.github.io/prompt-cache-bench/experiments/openai/gpt-5.4-nano/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-nano__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.zh.html">ZH HTML</a>
-                    ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/openai/gpt-5.4-nano/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-nano__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.en.md">EN MD</a>
-                    ·
-                    <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/openai/gpt-5.4-nano/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-nano__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.zh.md">ZH MD</a>
                     ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/openai/gpt-5.4-nano/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports">Reports</a>
                   </td>
@@ -1074,11 +1075,7 @@
                   <td>
                     <a href="https://infronai.github.io/prompt-cache-bench/experiments/openai/gpt-4o-mini/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__gpt-4o-mini__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.en.html">EN HTML</a>
                     ·
-                    <a href="https://infronai.github.io/prompt-cache-bench/experiments/openai/gpt-4o-mini/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__gpt-4o-mini__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.zh.html">ZH HTML</a>
-                    ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/openai/gpt-4o-mini/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__gpt-4o-mini__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.en.md">EN MD</a>
-                    ·
-                    <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/openai/gpt-4o-mini/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__gpt-4o-mini__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.zh.md">ZH MD</a>
                     ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/openai/gpt-4o-mini/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports">Reports</a>
                   </td>
@@ -1092,11 +1089,7 @@
                   <td>
                     <a href="https://infronai.github.io/prompt-cache-bench/experiments/qwen/qwen3-next-80b-a3b-instruct/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-next-80b-a3b-instruct__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.en.html">EN HTML</a>
                     ·
-                    <a href="https://infronai.github.io/prompt-cache-bench/experiments/qwen/qwen3-next-80b-a3b-instruct/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-next-80b-a3b-instruct__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.zh.html">ZH HTML</a>
-                    ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/qwen/qwen3-next-80b-a3b-instruct/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-next-80b-a3b-instruct__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.en.md">EN MD</a>
-                    ·
-                    <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/qwen/qwen3-next-80b-a3b-instruct/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-next-80b-a3b-instruct__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.zh.md">ZH MD</a>
                     ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/qwen/qwen3-next-80b-a3b-instruct/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports">Reports</a>
                   </td>
@@ -1110,11 +1103,7 @@
                   <td>
                     <a href="https://infronai.github.io/prompt-cache-bench/experiments/qwen/qwen3.5-plus/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-5-plus__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.en.html">EN HTML</a>
                     ·
-                    <a href="https://infronai.github.io/prompt-cache-bench/experiments/qwen/qwen3.5-plus/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-5-plus__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.zh.html">ZH HTML</a>
-                    ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/qwen/qwen3.5-plus/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-5-plus__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.en.md">EN MD</a>
-                    ·
-                    <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/qwen/qwen3.5-plus/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports/routing-cache-cost-streaming-performance-ab-study__qwen3-5-plus__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.zh.md">ZH MD</a>
                     ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/qwen/qwen3.5-plus/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-06/reports">Reports</a>
                   </td>
@@ -1128,11 +1117,7 @@
                   <td>
                     <a href="https://infronai.github.io/prompt-cache-bench/experiments/openai/gpt-5.4-mini/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-04/reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-mini__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.en.html">EN HTML</a>
                     ·
-                    <a href="https://infronai.github.io/prompt-cache-bench/experiments/openai/gpt-5.4-mini/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-04/reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-mini__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.zh.html">ZH HTML</a>
-                    ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/openai/gpt-5.4-mini/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-04/reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-mini__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.en.md">EN MD</a>
-                    ·
-                    <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/openai/gpt-5.4-mini/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-04/reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-mini__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.zh.md">ZH MD</a>
                     ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/openai/gpt-5.4-mini/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-04/reports">Reports</a>
                   </td>
@@ -1146,11 +1131,7 @@
                   <td>
                     <a href="https://infronai.github.io/prompt-cache-bench/experiments/deepseek/deepseek-v4-pro/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-04/reports/routing-cache-cost-streaming-performance-ab-study__deepseek-v4-pro__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.en.html">EN HTML</a>
                     ·
-                    <a href="https://infronai.github.io/prompt-cache-bench/experiments/deepseek/deepseek-v4-pro/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-04/reports/routing-cache-cost-streaming-performance-ab-study__deepseek-v4-pro__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.zh.html">ZH HTML</a>
-                    ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-pro/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-04/reports/routing-cache-cost-streaming-performance-ab-study__deepseek-v4-pro__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.en.md">EN MD</a>
-                    ·
-                    <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-pro/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-04/reports/routing-cache-cost-streaming-performance-ab-study__deepseek-v4-pro__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.zh.md">ZH MD</a>
                     ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/deepseek/deepseek-v4-pro/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-04/reports">Reports</a>
                   </td>
@@ -1164,11 +1145,7 @@
                   <td>
                     <a href="https://infronai.github.io/prompt-cache-bench/experiments/z-ai/glm-5.2/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-2026-07-04/reports/routing-cache-cost-streaming-performance-ab-study__glm-5-2__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers__2026-07-04.en.html">EN HTML</a>
                     ·
-                    <a href="https://infronai.github.io/prompt-cache-bench/experiments/z-ai/glm-5.2/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-2026-07-04/reports/routing-cache-cost-streaming-performance-ab-study__glm-5-2__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers__2026-07-04.zh.html">ZH HTML</a>
-                    ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/z-ai/glm-5.2/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-2026-07-04/reports/routing-cache-cost-streaming-performance-ab-study__glm-5-2__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers__2026-07-04.en.md">EN MD</a>
-                    ·
-                    <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/z-ai/glm-5.2/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-2026-07-04/reports/routing-cache-cost-streaming-performance-ab-study__glm-5-2__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers__2026-07-04.zh.md">ZH MD</a>
                     ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/z-ai/glm-5.2/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-2026-07-04/reports">Reports</a>
                   </td>
@@ -1182,11 +1159,7 @@
                   <td>
                     <a href="https://infronai.github.io/prompt-cache-bench/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-04/reports/routing-cache-cost-streaming-performance-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.en.html">EN HTML</a>
                     ·
-                    <a href="https://infronai.github.io/prompt-cache-bench/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-04/reports/routing-cache-cost-streaming-performance-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.zh.html">ZH HTML</a>
-                    ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-04/reports/routing-cache-cost-streaming-performance-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.en.md">EN MD</a>
-                    ·
-                    <a href="https://github.com/InfronAI/prompt-cache-bench/blob/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-04/reports/routing-cache-cost-streaming-performance-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-04.zh.md">ZH MD</a>
                     ·
                     <a href="https://github.com/InfronAI/prompt-cache-bench/tree/main/experiments/deepseek/deepseek-v4-flash/infron-vs-openrouter-routing-sort-cache-cost-4x50-stream-ttft-reasoning-default-length-tiers-chat-completions-2026-07-04/reports">Reports</a>
                   </td>
@@ -1281,7 +1254,7 @@
         <section class="hero" aria-labelledby="title-zh">
           <div>
             <p class="kicker">长期开放 Benchmark Registry</p>
-            <h1 id="title-zh">持续追踪模型、Provider 与时间维度下的 Prompt Caching 和路由表现。</h1>
+            <h1 id="title-zh">持续追踪模型、Provider 与时间维度下的 Prompt Caching 和<em>路由表现</em>。</h1>
             <p class="lead">
               prompt-cache-bench 是一个长期、可复现的 LLM 推理系统 benchmark registry。它会持续沉淀数百个模型与 provider 之间的 A/B 对比，统一保存原始数据、报告、图表、实验代码与校验清单。
             </p>
@@ -1813,10 +1786,8 @@
       tab.addEventListener("click", () => setLanguage(tab.dataset.langTab, { updateUrl: true }));
     });
 
-    const params = new URLSearchParams(window.location.search);
-    const requested = params.get("lang");
-    const initial = requested === "zh" ? "zh" : "en";
-    setLanguage(initial);
+    // ZH temporarily unlisted: force English regardless of ?lang.
+    setLanguage("en");
   </script>
 </body>
 </html>

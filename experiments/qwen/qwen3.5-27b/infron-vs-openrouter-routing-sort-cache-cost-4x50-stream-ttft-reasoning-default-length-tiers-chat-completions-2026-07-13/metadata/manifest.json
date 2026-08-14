@@ -10,8 +10,8 @@
     },
     {
       "path": "reports/routing-cache-cost-streaming-performance-ab-study__qwen3-5-27b__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-13.en.html",
-      "sha256": "a7157eba4c79db262757b54bac56e68fa427605a05e44830b932bf0a45e86d24",
-      "size_bytes": 1113809
+      "sha256": "c5115bbf66d94d877e06d70b1181217512f6dbe3203eb7f653799d8fb1372d7e",
+      "size_bytes": 1115486
     },
     {
       "path": "reports/routing-cache-cost-streaming-performance-ab-study__qwen3-5-27b__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-13.en.md",
