@@ -2,20 +2,23 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <link href="https://framerusercontent.com/images/jYZGKXX6mcMkU1qAXZQeevZRY.png" rel="icon" media="(prefers-color-scheme: light)">
-  <link href="https://framerusercontent.com/images/jYZGKXX6mcMkU1qAXZQeevZRY.png" rel="icon" media="(prefers-color-scheme: dark)">
-  <link rel="apple-touch-icon" href="https://framerusercontent.com/images/jYZGKXX6mcMkU1qAXZQeevZRY.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../../../assets/brand/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../../../assets/brand/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../../../../../assets/brand/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     @page { size: A4; margin: 18mm 14mm; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans CJK SC", "PingFang SC", sans-serif; color: #111827; font-size: 10.5pt; line-height: 1.55; }
-    h1 { font-size: 22pt; margin: 0 0 14pt; border-bottom: 2px solid #111827; padding-bottom: 8pt; }
+    body { font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans CJK SC", "PingFang SC", sans-serif; color: #111827; font-size: 10.5pt; line-height: 1.55; }
+    h1 { font-size: 22pt; margin: 0 0 14pt; border-bottom: 1px solid #E5E5E5; padding-bottom: 8pt; }
     h2 { font-size: 16pt; margin: 22pt 0 8pt; page-break-after: avoid; }
     h3 { font-size: 12.5pt; margin: 16pt 0 8pt; page-break-after: avoid; }
     p { margin: 7pt 0; }
-    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: #f3f4f6; padding: 1px 4px; border-radius: 3px; font-size: 9pt; }
+    code { font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: #F5F5F5; padding: 1px 4px; border-radius: 3px; font-size: 9pt; }
     table { width: 100%; border-collapse: collapse; margin: 8pt 0 13pt; font-size: 8.3pt; page-break-inside: auto; }
-    th, td { border: 1px solid #d1d5db; padding: 4pt 5pt; vertical-align: top; }
-    th { background: #f3f4f6; font-weight: 700; }
+    th, td { border: 1px solid #E5E5E5; padding: 4pt 5pt; vertical-align: top; }
+    th { background: #F5F5F5; font-weight: 700; }
     tr { page-break-inside: avoid; }
     .provider-label { display: inline-block; width: 58pt; font-weight: 800; color: #374151; }
     ul { margin: 7pt 0 10pt 15pt; padding: 0; }
@@ -25,13 +28,13 @@
     pre.code code { background: transparent; color: inherit; padding: 0; font-size: inherit; }
     strong { font-weight: 800; }
 
-    .echarts-academic-panel { margin: 12pt 0 18pt; padding: 12pt; border: 1px solid #d8d3c7; background: #fffefa; page-break-inside: avoid; }
-    .echarts-academic-note { margin: 0 0 10pt; color: #4b5563; font-size: 9pt; }
+    .echarts-academic-panel { margin: 12pt 0 18pt; padding: 12pt; border: 1px solid #E5E5E5; background: #FFFFFF; page-break-inside: avoid; }
+    .echarts-academic-note { margin: 0 0 10pt; color: #737373; font-size: 9pt; }
     .echarts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; }
-    .echarts-figure { border: 1px solid #e2ded4; background: #fffefa; padding: 10pt; page-break-inside: avoid; }
+    .echarts-figure { border: 1px solid #E5E5E5; background: #FFFFFF; padding: 10pt; page-break-inside: avoid; }
     .echarts-figure.wide { grid-column: 1 / -1; }
     .echarts-title { margin: 0 0 3pt; font-size: 10.5pt; font-weight: 800; color: #111827; }
-    .echarts-caption { margin: 0 0 7pt; font-size: 8.5pt; color: #5f6368; }
+    .echarts-caption { margin: 0 0 7pt; font-size: 8.5pt; color: #737373; }
     .echarts-chart { width: 100%; height: 300pt; }
     .echarts-figure.wide .echarts-chart { height: 360pt; }
     .route-detail-panel { margin-top: 10pt; }
@@ -45,70 +48,90 @@
     .impossible-panel { margin-top: 10pt; }
     .impossible-chart { height: 520pt; }
 
-    .conclusion-overview { margin: 12pt 0 16pt; padding: 12pt; border: 1px solid #d8d3c7; background: #fffefa; page-break-inside: avoid; }
+    .conclusion-overview { margin: 12pt 0 16pt; padding: 12pt; border: 1px solid #E5E5E5; background: #FFFFFF; page-break-inside: avoid; }
     .conclusion-overview-title { margin: 0 0 4pt; font-size: 12pt; font-weight: 800; color: #111827; }
-    .conclusion-overview-note { margin: 0 0 10pt; color: #5f6368; font-size: 8.7pt; }
+    .conclusion-overview-note { margin: 0 0 10pt; color: #737373; font-size: 8.7pt; }
     .metric-card-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 7pt; margin-bottom: 10pt; }
-    .metric-card { border: 1px solid #e2ded4; background: #ffffff; padding: 8pt; min-height: 58pt; }
+    .metric-card { border: 1px solid #E5E5E5; background: #ffffff; padding: 8pt; min-height: 58pt; }
     .metric-card strong { display: block; font-size: 8.8pt; margin-bottom: 4pt; color: #111827; }
-    .metric-card .winner-infron { color: #2468d8; font-weight: 800; }
-    .metric-card .winner-openrouter { color: #d9822b; font-weight: 800; }
-    .metric-card span { display: block; font-size: 7.6pt; line-height: 1.35; color: #5f6368; }
+    .metric-card .winner-infron { color: #403AD4; font-weight: 800; }
+    .metric-card .winner-openrouter { color: #B45309; font-weight: 800; }
+    .metric-card span { display: block; font-size: 7.6pt; line-height: 1.35; color: #737373; }
     .winner-matrix { width: 100%; border-collapse: collapse; margin: 0; font-size: 7.9pt; }
-    .winner-matrix th, .winner-matrix td { border: 1px solid #d8d3c7; padding: 5pt 4pt; vertical-align: middle; text-align: center; }
-    .winner-matrix th { background: #f5f1e8; font-weight: 800; color: #111827; }
+    .winner-matrix th, .winner-matrix td { border: 1px solid #E5E5E5; padding: 5pt 4pt; vertical-align: middle; text-align: center; }
+    .winner-matrix th { background: #FAFAFA; font-weight: 800; color: #111827; }
     .winner-matrix td:first-child, .winner-matrix th:first-child { text-align: left; width: 15%; }
     .winner-cell { background: #ffffff; }
-    .winner-cell.goal-cell.goal-infron { background: #eef6ff; box-shadow: inset 0 0 0 1.5px #93c5fd; }
-    .winner-cell.goal-cell.goal-openrouter { background: #fff4cc; box-shadow: inset 0 0 0 1.5px #d9a300; }
+    .winner-cell.goal-cell.goal-infron { background: #EEF2FF; box-shadow: inset 0 0 0 1.5px #A5B4FC; }
+    .winner-cell.goal-cell.goal-openrouter { background: #FEF3C7; box-shadow: inset 0 0 0 1.5px #D97706; }
     .winner-cell .name { display: block; font-weight: 900; }
-    .winner-cell .name.infron { color: #2468d8; }
-    .winner-cell .name.openrouter { color: #d9822b; }
-    .winner-cell .delta { display: block; margin-top: 2pt; color: #5f6368; font-size: 7.2pt; }
+    .winner-cell .name.infron { color: #403AD4; }
+    .winner-cell .name.openrouter { color: #B45309; }
+    .winner-cell .delta { display: block; margin-top: 2pt; color: #737373; font-size: 7.2pt; }
     .route-conclusion-table { table-layout: fixed; width: 100%; }
     .route-conclusion-table th:nth-child(1), .route-conclusion-table td:nth-child(1) { width: 18%; }
     .route-conclusion-table th:nth-child(2), .route-conclusion-table td:nth-child(2) { width: 57%; }
     .route-conclusion-table th:nth-child(3), .route-conclusion-table td:nth-child(3) { width: 25%; }
-    .route-conclusion-table td:nth-child(2) { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; line-height: 1.65; }
+    .route-conclusion-table td:nth-child(2) { font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; line-height: 1.65; }
     @media (max-width: 900px) { .metric-card-grid { grid-template-columns: 1fr; } .winner-matrix { font-size: 7.2pt; } }
 
-    .method-diagram { margin: 10pt 0 14pt; padding: 12pt; border: 1px solid #d8d3c7; background: #fffefa; page-break-inside: avoid; }
-    .architecture-diagram { margin: 10pt 0 14pt; padding: 12pt; border: 1px solid #d8d3c7; background: #fffefa; page-break-inside: avoid; }
+    .method-diagram { margin: 10pt 0 14pt; padding: 12pt; border: 1px solid #E5E5E5; background: #FFFFFF; page-break-inside: avoid; }
+    .architecture-diagram { margin: 10pt 0 14pt; padding: 12pt; border: 1px solid #E5E5E5; background: #FFFFFF; page-break-inside: avoid; }
     .architecture-title { margin: 0 0 8pt; font-size: 10.5pt; font-weight: 800; color: #111827; }
     .architecture-flow { display: grid; grid-template-columns: 1fr 24pt 1.1fr 24pt 1.2fr 24pt 1fr; gap: 8pt; align-items: center; }
     .architecture-stack { display: grid; gap: 7pt; }
-    .architecture-node { min-height: 42pt; padding: 8pt 9pt; border: 1px solid #d8d3c7; background: #ffffff; display: flex; flex-direction: column; justify-content: center; }
-    .architecture-node.primary { border-color: #8bb6f1; background: #eef6ff; }
+    .architecture-node { min-height: 42pt; padding: 8pt 9pt; border: 1px solid #E5E5E5; background: #ffffff; display: flex; flex-direction: column; justify-content: center; }
+    .architecture-node.primary { border-color: #A5B4FC; background: #EEF2FF; }
     .architecture-node.policy { border-color: #efb26d; background: #fff7ed; }
     .architecture-node.cache { border-color: #f2cc60; background: #fff9db; }
     .architecture-node.provider { border-color: #93d8aa; background: #f0fdf4; }
     .architecture-node.telemetry { border-color: #c4b5fd; background: #f5f3ff; }
     .architecture-node strong { display: block; font-size: 9pt; color: #111827; }
-    .architecture-node span { display: block; margin-top: 2pt; font-size: 7.7pt; color: #5f6368; line-height: 1.35; }
-    .architecture-arrow { text-align: center; color: #6b7280; font-size: 15pt; font-weight: 800; }
+    .architecture-node span { display: block; margin-top: 2pt; font-size: 7.7pt; color: #737373; line-height: 1.35; }
+    .architecture-arrow { text-align: center; color: #A1A1AA; font-size: 15pt; font-weight: 800; }
     .architecture-note-row { margin-top: 9pt; display: grid; grid-template-columns: repeat(3, 1fr); gap: 7pt; }
-    .architecture-note { padding: 7pt; border: 1px solid #e2ded4; background: #ffffff; font-size: 7.7pt; color: #374151; line-height: 1.35; }
+    .architecture-note { padding: 7pt; border: 1px solid #E5E5E5; background: #ffffff; font-size: 7.7pt; color: #374151; line-height: 1.35; }
     @media (max-width: 900px) { .architecture-flow, .architecture-note-row { grid-template-columns: 1fr; } .architecture-arrow { transform: rotate(90deg); } }
 
     .method-diagram-title { margin: 0 0 8pt; font-size: 10.5pt; font-weight: 800; color: #111827; }
     .method-flow { display: grid; grid-template-columns: 1fr 28pt 1.15fr 28pt 1fr 28pt 1.05fr; align-items: center; gap: 8pt; }
     .method-stack { display: grid; gap: 7pt; }
-    .method-node { min-height: 40pt; padding: 8pt 9pt; border: 1px solid #d8d3c7; background: #ffffff; display: flex; flex-direction: column; justify-content: center; }
-    .method-node.primary { border-color: #8bb6f1; background: #eef6ff; }
+    .method-node { min-height: 40pt; padding: 8pt 9pt; border: 1px solid #E5E5E5; background: #ffffff; display: flex; flex-direction: column; justify-content: center; }
+    .method-node.primary { border-color: #A5B4FC; background: #EEF2FF; }
     .method-node.accent { border-color: #efb26d; background: #fff7ed; }
     .method-node.good { border-color: #93d8aa; background: #f0fdf4; }
     .method-node.warn { border-color: #f2cc60; background: #fff9db; }
     .method-node strong { display: block; font-size: 9.2pt; color: #111827; }
-    .method-node span { display: block; margin-top: 2pt; font-size: 7.8pt; color: #5f6368; line-height: 1.35; }
-    .method-arrow { text-align: center; color: #6b7280; font-size: 16pt; font-weight: 700; }
+    .method-node span { display: block; margin-top: 2pt; font-size: 7.8pt; color: #737373; line-height: 1.35; }
+    .method-arrow { text-align: center; color: #A1A1AA; font-size: 16pt; font-weight: 700; }
     .method-filter { display: grid; grid-template-columns: 1fr 22pt 1fr 22pt 1fr; gap: 8pt; align-items: stretch; }
     .method-rule-list { margin-top: 10pt; display: grid; grid-template-columns: repeat(4, 1fr); gap: 7pt; }
-    .method-rule { padding: 7pt; border: 1px solid #e2ded4; background: #ffffff; font-size: 7.8pt; color: #374151; }
+    .method-rule { padding: 7pt; border: 1px solid #E5E5E5; background: #ffffff; font-size: 7.8pt; color: #374151; }
     @media (max-width: 900px) { .method-flow, .method-filter, .method-rule-list { grid-template-columns: 1fr; } .method-arrow { transform: rotate(90deg); } }
 
+  
+    /* ---- Infron benchmark layer (aligned with infron.ai/models) ---- */
+    .echarts-academic-panel, .conclusion-overview, .method-diagram, .architecture-diagram { border-radius: 12pt; background: #FAFAFA; }
+    .echarts-figure, .metric-card, .architecture-node, .method-node, .architecture-note, .method-rule { border-radius: 6pt; }
+    pre.code { border-radius: 6pt; }
+    a { color: #403AD4; }
+    .report-brand { display: flex; justify-content: space-between; align-items: center; gap: 12pt; margin: 0 0 16pt; padding-bottom: 9pt; border-bottom: 1px solid #E5E5E5; }
+    .report-brand-home { display: inline-flex; align-items: center; gap: 8pt; color: #0F172A; text-decoration: none; }
+    .report-brand-home img { display: block; height: 13pt; width: auto; margin: 0; }
+    .report-brand-home .brand-sep { color: #D4D4D8; font-weight: 300; font-size: 13pt; }
+    .report-brand-home span.report-brand-name { font-size: 11pt; font-weight: 600; letter-spacing: -0.1pt; }
+    .report-brand-note { color: #737373; font-size: 9pt; }
   </style>
 </head>
 <body>
+<div class="report-brand">
+  <a class="report-brand-home" href="../../../../../index.html">
+    <img src="../../../../../assets/brand/infron-logo.png" alt="Infron">
+    <span class="brand-sep">|</span>
+    <span class="report-brand-name">Benchmark</span>
+  </a>
+  <span class="report-brand-note">prompt-cache-bench &middot; open longitudinal A/B artifacts</span>
+</div>
 <h1>Infron vs OpenRouter Routing, Cache, Cost, and Streaming Performance A/B Test Report</h1>
 <h2>Abstract and Executive Outline</h2>
 <p><strong>Keywords</strong>: Prompt Caching; A/B Testing; Provider Routing; Cache Affinity; Latency; Throughput; Cost Attribution; gpt-4o-mini</p>
@@ -290,9 +313,9 @@ var Fr={},Gr={};var Wr,Hr=function(){function t(t,e,n){var i=this;this._sleepAft
 <script>
 (function(){
   const chartData = {"sorts":["throughput","price","latency","ttft"],"labels":["Throughput First","Price First","Latency First","TTFT First"],"metrics":{"infron":{"cache":[97.2296,98.2065,97.4509,98.2065],"cost":[0.706935,0.706946,0.644976,0.942753],"throughput":[4.955,4.737,4.932,4.666],"latency":[2664.966,2799.509,2687.855,2953.818],"ttft":[2282.736,2424.802,2318.863,2613.212],"p95_latency":[4167.368,4278.141,3847.75,4988.925],"p99_latency":[5434.676,5698.595,6411.372,7625.37],"p95_ttft":[3932.181,3909.231,3286.717,4438.472],"p99_ttft":[5177.676,5224.944,5658.625,7033.97]},"openrouter":{"cache":[98.1534,98.2597,98.9249,99.4164],"cost":[0.4999086,0.478743,0.4359537,0.4784982],"throughput":[4.592,4.995,4.718,4.96],"latency":[2898.556,2658.691,2826.348,2673.449],"ttft":[2626.912,2379.535,2574.864,2428.646],"p95_latency":[5435.189,5002.429,4092.669,4203.692],"p99_latency":[9738.892,9347.084,12208.702,10554.805],"p95_ttft":[5156.105,4297.252,3902.628,3770.166],"p99_ttft":[9322.694,9229.513,11948.583,10363.932]}},"providerDistribution":{"infron":[[{"name":"azure","value":100.0}],[{"name":"azure","value":100.0}],[{"name":"azure","value":100.0}],[{"name":"openai","value":100.0}]],"openrouter":[[{"name":"OpenAI","value":99.5},{"name":"Azure","value":0.5}],[{"name":"OpenAI","value":99.75},{"name":"Azure","value":0.25}],[{"name":"OpenAI","value":91.2568},{"name":"Azure","value":8.7432}],[{"name":"OpenAI","value":91.0},{"name":"Azure","value":9.0}]]},"meta":{"validPairs":783,"requestRows":3132,"generatedAt":"2026-07-06T04:04:26.445990+00:00"}};
-  const C = {infron:'#2468d8', openrouter:'#d9822b', grid:'#e6e0d4', text:'#171717', muted:'#5f6368'};
-  const baseTextStyle = {fontFamily:'-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC","PingFang SC",sans-serif', color:C.text};
-  const axisCommon = {axisLine:{lineStyle:{color:'#b9b2a6'}},axisTick:{lineStyle:{color:'#b9b2a6'}},axisLabel:{color:C.muted},splitLine:{lineStyle:{color:C.grid}}};
+  const C = {infron:'#403AD4', openrouter:'#D97706', grid:'#E5E7EB', text:'#18181B', muted:'#737373'};
+  const baseTextStyle = {fontFamily:'"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC","PingFang SC",sans-serif', color:C.text};
+  const axisCommon = {axisLine:{lineStyle:{color:'#D4D4D8'}},axisTick:{lineStyle:{color:'#D4D4D8'}},axisLabel:{color:C.muted},splitLine:{lineStyle:{color:C.grid}}};
   const categories = chartData.labels;
   const metrics = chartData.metrics;
 
@@ -323,12 +346,12 @@ var Fr={},Gr={};var Wr,Hr=function(){function t(t,e,n){var i=this;this._sleepAft
       series.push({name:`OpenRouter ${sortAbbrev[sort]}`,type:'radar',symbol:'circle',symbolSize:7,lineStyle:{width:1.5,type:'dashed',opacity:.58},areaStyle:{opacity:.025},data:[{value:scores[sort].openrouter,name:`OpenRouter ${sortAbbrev[sort]}`}],z:2});
     });
     chart.setOption({
-      textStyle:{fontFamily:'-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC","PingFang SC",sans-serif',color:C.text},
-      color:[C.infron,C.openrouter,'#6d91dc','#e2a869','#6d91dc','#e2a869','#6d91dc','#e2a869','#6d91dc','#e2a869'],
+      textStyle:{fontFamily:'"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC","PingFang SC",sans-serif',color:C.text},
+      color:[C.infron,C.openrouter,'#818CF8','#FBBF24','#818CF8','#FBBF24','#818CF8','#FBBF24','#818CF8','#FBBF24'],
       legend:{type:'plain',orient:'vertical',right:56,top:326,width:236,itemWidth:11,itemHeight:7,itemGap:1,formatter:name=>name.replace('Infron','INF').replace('OpenRouter','OR').replace('Average','AVG'),textStyle:{fontSize:8.6,color:C.muted,lineHeight:9}},
       tooltip:{trigger:'item',valueFormatter:v=>Number(v).toFixed(2)},
-      radar:{center:['38%','50%'],radius:'68%',splitNumber:5,indicator:[{name:'Throughput\nhigher is better',max:100},{name:'Price\nlower is better',max:100},{name:'E2E Latency\nlower is better',max:100},{name:'Streaming TTFT\nlower is better',max:100},{name:'Cache hit rate\nhigher is better',max:100}],axisName:{color:C.text,fontWeight:800,fontSize:16,lineHeight:20},splitLine:{lineStyle:{color:C.grid}},splitArea:{areaStyle:{color:['rgba(255,255,255,.6)','rgba(241,238,231,.55)']}},axisLine:{lineStyle:{color:'#b9b2a6'}}},
-      graphic:[{type:'group',right:18,top:54,children:[{type:'rect',shape:{width:294,height:500,r:8},style:{fill:'#fffefa',stroke:'#d8d3c7'}},{type:'text',left:18,top:20,style:{text:'Routing Modes and Filters',font:'700 15px sans-serif',fill:'#171717'}},{type:'rect',left:18,top:48,shape:{width:258,height:116,r:6},style:{fill:'#ffffff',stroke:'#e2ded4'}},{type:'text',left:32,top:68,style:{text:'THR   Throughput First',font:'13px sans-serif',fill:'#374151'}},{type:'text',left:32,top:92,style:{text:'PRI   Price First',font:'13px sans-serif',fill:'#374151'}},{type:'text',left:32,top:116,style:{text:'LAT   E2E Latency First',font:'13px sans-serif',fill:'#374151'}},{type:'text',left:32,top:140,style:{text:'TTFT  Streaming TTFT First',font:'13px sans-serif',fill:'#374151'}},{type:'line',shape:{x1:18,y1:190,x2:276,y2:190},style:{stroke:'#d8d3c7'}},{type:'text',left:18,top:216,style:{text:'Legend / Filter',font:'700 13px sans-serif',fill:'#171717'}},{type:'text',left:18,top:240,style:{text:'Click legend items to show or hide profiles',font:'12px sans-serif',fill:'#5f6368'}},{type:'rect',left:18,top:268,shape:{width:258,height:226,r:6},style:{fill:'#ffffff',stroke:'#e2ded4'}}]}],
+      radar:{center:['38%','50%'],radius:'68%',splitNumber:5,indicator:[{name:'Throughput\nhigher is better',max:100},{name:'Price\nlower is better',max:100},{name:'E2E Latency\nlower is better',max:100},{name:'Streaming TTFT\nlower is better',max:100},{name:'Cache hit rate\nhigher is better',max:100}],axisName:{color:C.text,fontWeight:800,fontSize:16,lineHeight:20},splitLine:{lineStyle:{color:C.grid}},splitArea:{areaStyle:{color:['rgba(255,255,255,.6)','rgba(245,245,245,.55)']}},axisLine:{lineStyle:{color:'#D4D4D8'}}},
+      graphic:[{type:'group',right:18,top:54,children:[{type:'rect',shape:{width:294,height:500,r:8},style:{fill:'#FFFFFF',stroke:'#E5E5E5'}},{type:'text',left:18,top:20,style:{text:'Routing Modes and Filters',font:'700 15px sans-serif',fill:'#18181B'}},{type:'rect',left:18,top:48,shape:{width:258,height:116,r:6},style:{fill:'#ffffff',stroke:'#E5E7EB'}},{type:'text',left:32,top:68,style:{text:'THR   Throughput First',font:'13px sans-serif',fill:'#3F3F46'}},{type:'text',left:32,top:92,style:{text:'PRI   Price First',font:'13px sans-serif',fill:'#3F3F46'}},{type:'text',left:32,top:116,style:{text:'LAT   E2E Latency First',font:'13px sans-serif',fill:'#3F3F46'}},{type:'text',left:32,top:140,style:{text:'TTFT  Streaming TTFT First',font:'13px sans-serif',fill:'#3F3F46'}},{type:'line',shape:{x1:18,y1:190,x2:276,y2:190},style:{stroke:'#E5E5E5'}},{type:'text',left:18,top:216,style:{text:'Legend / Filter',font:'700 13px sans-serif',fill:'#18181B'}},{type:'text',left:18,top:240,style:{text:'Click legend items to show or hide profiles',font:'12px sans-serif',fill:'#5f6368'}},{type:'rect',left:18,top:268,shape:{width:258,height:226,r:6},style:{fill:'#ffffff',stroke:'#E5E7EB'}}]}],
       series
     });
     window.addEventListener('resize',()=>chart.resize());
@@ -340,7 +363,7 @@ var Fr={},Gr={};var Wr,Hr=function(){function t(t,e,n){var i=this;this._sleepAft
   init('echarts-mode-metric', {textStyle:baseTextStyle,color:[C.infron,C.openrouter],legend:{top:4,right:12,itemWidth:18,itemHeight:10},tooltip:{trigger:'axis',axisPointer:{type:'shadow'},valueFormatter:v=>fmt(v,3)},grid:[{left:82,right:'54%',top:74,height:112},{left:'58%',right:36,top:74,height:112},{left:82,right:'54%',top:268,height:112},{left:'58%',right:36,top:268,height:112}],xAxis:[0,1,2,3].map(i=>({type:'category',gridIndex:i,data:categories,...axisCommon,axisLabel:{...axisCommon.axisLabel,interval:0,rotate:16}})),yAxis:[{type:'value',gridIndex:0,name:'Throughput tok/s',nameGap:34,nameLocation:'middle',...axisCommon},{type:'value',gridIndex:1,name:'Cost USD',nameGap:34,nameLocation:'middle',...axisCommon},{type:'value',gridIndex:2,name:'End-to-end E2E Latency ms',nameGap:46,nameLocation:'middle',...axisCommon},{type:'value',gridIndex:3,name:'Streaming TTFT ms',nameGap:40,nameLocation:'middle',...axisCommon}],title:[{text:'Throughput',left:82,top:28,textStyle:{fontSize:13,fontWeight:700}},{text:'Observed Cost',left:'58%',top:28,textStyle:{fontSize:13,fontWeight:700}},{text:'End-to-end E2E Latency',left:82,top:222,textStyle:{fontSize:13,fontWeight:700}},{text:'Streaming TTFT',left:'58%',top:222,textStyle:{fontSize:13,fontWeight:700}}],series:[{name:'Infron',type:'bar',xAxisIndex:0,yAxisIndex:0,data:metrics.infron.throughput,barMaxWidth:18},{name:'OpenRouter',type:'bar',xAxisIndex:0,yAxisIndex:0,data:metrics.openrouter.throughput,barMaxWidth:18},{name:'Infron',type:'bar',xAxisIndex:1,yAxisIndex:1,data:metrics.infron.cost,barMaxWidth:18},{name:'OpenRouter',type:'bar',xAxisIndex:1,yAxisIndex:1,data:metrics.openrouter.cost,barMaxWidth:18},{name:'Infron',type:'bar',xAxisIndex:2,yAxisIndex:2,data:metrics.infron.latency,barMaxWidth:18},{name:'OpenRouter',type:'bar',xAxisIndex:2,yAxisIndex:2,data:metrics.openrouter.latency,barMaxWidth:18},{name:'Infron',type:'bar',xAxisIndex:3,yAxisIndex:3,data:metrics.infron.ttft,barMaxWidth:18},{name:'OpenRouter',type:'bar',xAxisIndex:3,yAxisIndex:3,data:metrics.openrouter.ttft,barMaxWidth:18}]});
   function avg(a){ return a.reduce((x,y)=>x+Number(y||0),0)/a.length; }
   function scores(provider){ const p=metrics[provider], o=provider==='infron'?metrics.openrouter:metrics.infron; const higher=(a,b)=>{const aa=avg(a),bb=avg(b),m=Math.max(aa,bb); return m>0?100*aa/m:0}; const lower=(a,b)=>{const aa=avg(a),bb=avg(b),m=Math.min(aa,bb); return aa>0&&m>0?100*m/aa:0}; return [higher(p.throughput,o.throughput),lower(p.cost,o.cost),lower(p.latency,o.latency),lower(p.ttft,o.ttft),higher(p.cache,o.cache)].map(v=>Number(v.toFixed(2))); }
-  init('echarts-radar', {textStyle:baseTextStyle,color:[C.infron,C.openrouter],legend:{bottom:0},tooltip:{},radar:{radius:'66%',splitNumber:4,axisName:{color:C.text,fontWeight:600},splitLine:{lineStyle:{color:C.grid}},splitArea:{areaStyle:{color:['rgba(255,255,255,.35)','rgba(241,238,231,.45)']}},axisLine:{lineStyle:{color:'#b9b2a6'}},indicator:[{name:'Throughput',max:100},{name:'Price',max:100},{name:'End-to-end E2E Latency',max:100},{name:'Streaming TTFT',max:100},{name:'Cache Hit Rate',max:100}]},series:[{type:'radar',symbolSize:5,lineStyle:{width:2},areaStyle:{opacity:.12},data:[{name:'Infron',value:scores('infron')},{name:'OpenRouter',value:scores('openrouter')}]}]});
+  init('echarts-radar', {textStyle:baseTextStyle,color:[C.infron,C.openrouter],legend:{bottom:0},tooltip:{},radar:{radius:'66%',splitNumber:4,axisName:{color:C.text,fontWeight:600},splitLine:{lineStyle:{color:C.grid}},splitArea:{areaStyle:{color:['rgba(255,255,255,.35)','rgba(245,245,245,.45)']}},axisLine:{lineStyle:{color:'#D4D4D8'}},indicator:[{name:'Throughput',max:100},{name:'Price',max:100},{name:'End-to-end E2E Latency',max:100},{name:'Streaming TTFT',max:100},{name:'Cache Hit Rate',max:100}]},series:[{type:'radar',symbolSize:5,lineStyle:{width:2},areaStyle:{opacity:.12},data:[{name:'Infron',value:scores('infron')},{name:'OpenRouter',value:scores('openrouter')}]}]});
   const scatter=[]; chartData.sorts.forEach((m,i)=>{scatter.push({name:`Infron · ${categories[i]}`,value:[metrics.infron.cache[i],metrics.infron.cost[i],metrics.infron.throughput[i]],provider:'Infron'}); scatter.push({name:`OpenRouter · ${categories[i]}`,value:[metrics.openrouter.cache[i],metrics.openrouter.cost[i],metrics.openrouter.throughput[i]],provider:'OpenRouter'});});
   init('echarts-cost-cache', {textStyle:baseTextStyle,color:[C.infron,C.openrouter],tooltip:{formatter:p=>`${p.data.name}<br/>Cache Hit Rate:${fmt(p.value[0])}%<br/>Observed Cost:$${fmt(p.value[1],5)}<br/>Throughput:${fmt(p.value[2],2)} tok/s`},grid:{left:64,right:28,top:28,bottom:78},xAxis:{name:'Cache Hit Rate %',nameLocation:'middle',nameGap:42,min:60,max:100,...axisCommon},yAxis:{name:'Total Observed Cost USD',nameLocation:'middle',nameGap:48,...axisCommon},series:[{name:'Infron',type:'scatter',symbolSize:d=>10+d[2]*4,data:scatter.filter(d=>d.provider==='Infron')},{name:'OpenRouter',type:'scatter',symbolSize:d=>10+d[2]*4,data:scatter.filter(d=>d.provider==='OpenRouter')}]});
   init('echarts-latency-ttft', {textStyle:baseTextStyle,color:[C.infron,C.openrouter],legend:{top:2},tooltip:{trigger:'axis',valueFormatter:v=>`${fmt(v)} ms`},grid:{left:72,right:28,top:52,bottom:68},xAxis:{type:'category',data:categories,...axisCommon,axisLabel:{...axisCommon.axisLabel,interval:0,rotate:0,margin:12}},yAxis:{type:'value',name:'ms',nameLocation:'middle',nameGap:48,...axisCommon},series:[{name:'Infron E2E',type:'line',data:metrics.infron.latency,symbol:'circle',symbolSize:8,lineStyle:{width:2.4}},{name:'OpenRouter E2E',type:'line',data:metrics.openrouter.latency,symbol:'circle',symbolSize:8,lineStyle:{width:2.4}},{name:'Infron TTFT',type:'line',data:metrics.infron.ttft,symbol:'diamond',symbolSize:8,lineStyle:{width:1.8,type:'dashed'}},{name:'OpenRouter TTFT',type:'line',data:metrics.openrouter.ttft,symbol:'diamond',symbolSize:8,lineStyle:{width:1.8,type:'dashed'}}]});
@@ -389,17 +412,17 @@ var Fr={},Gr={};var Wr,Hr=function(){function t(t,e,n){var i=this;this._sleepAft
         }
       },
       xAxis:{type:'value',min:-axisMax,max:axisMax,name:'Relative advantage percentage (right: Infron, left: OpenRouter)',nameLocation:'middle',nameGap:28,...axisCommon,axisLabel:{...axisCommon.axisLabel,formatter:v=>`${Math.abs(v)}%`},splitLine:{lineStyle:{color:C.grid}}},
-      yAxis:{type:'category',data:names,axisLabel:{color:C.muted,fontSize:11,margin:12},axisLine:{lineStyle:{color:'#b9b2a6'}},axisTick:{show:false}},
+      yAxis:{type:'category',data:names,axisLabel:{color:C.muted,fontSize:11,margin:12},axisLine:{lineStyle:{color:'#D4D4D8'}},axisTick:{show:false}},
       series:[{
         name:'Relative Advantage',
         type:'bar',
         barMaxWidth:18,
         data:rows.map(r=>({
           value:r.delta,
-          itemStyle:{color:r.delta >= 0 ? C.infron : C.openrouter, opacity:0.92, borderColor:'#111827', borderWidth:0.6}
+          itemStyle:{color:r.delta >= 0 ? C.infron : C.openrouter, opacity:0.92, borderColor:'#18181B', borderWidth:0.6}
         })),
         label:{show:true,position:p=>p.value >= 0 ? 'right' : 'left',distance:8,formatter:p=>`${p.value >= 0 ? 'Infron' : 'OpenRouter'}
-${fmt(Math.abs(p.value))}%`,fontSize:10,lineHeight:14,color:'#111827',backgroundColor:'rgba(255,254,250,0.92)',borderColor:'#e2ded4',borderWidth:1,padding:[2,4],borderRadius:2}
+${fmt(Math.abs(p.value))}%`,fontSize:10,lineHeight:14,color:'#18181B',backgroundColor:'rgba(255,255,255,0.92)',borderColor:'#E5E7EB',borderWidth:1,padding:[2,4],borderRadius:2}
       }],
       graphic:[
         {type:'text',left:'52%',top:8,style:{text:'Infron advantage →',fill:C.infron,fontSize:11,fontWeight:700}},
@@ -409,7 +432,7 @@ ${fmt(Math.abs(p.value))}%`,fontSize:10,lineHeight:14,color:'#111827',background
   }
   chartData.sorts.forEach((sort, idx)=>initRouteModeChart(sort, idx));
 
-  init('echarts-provider', {textStyle:baseTextStyle,tooltip:{trigger:'item',formatter:p=>`${p.seriesName}<br/>${p.name}: ${fmt(p.value)}%`},legend:{type:'scroll',bottom:0},grid:{left:138,right:22,top:28,bottom:74},xAxis:{type:'value',max:100,name:'%',nameLocation:'middle',nameGap:32,...axisCommon},yAxis:{type:'category',data:categories.flatMap(x=>[`Infron\n${x}`,`OpenRouter\n${x}`]),axisLabel:{color:C.muted,fontSize:10,lineHeight:14,margin:12},axisLine:{lineStyle:{color:'#b9b2a6'}},axisTick:{show:false}},series:Array.from(new Set(providerRows.map(r=>r.provider))).map(provider=>({name:provider,type:'bar',stack:'provider',barMaxWidth:16,itemStyle:{borderColor:'#fffefa',borderWidth:1},data:categories.flatMap(mode=>{const a=providerRows.find(r=>r.platform==='Infron'&&r.mode===mode&&r.provider===provider); const b=providerRows.find(r=>r.platform==='OpenRouter'&&r.mode===mode&&r.provider===provider); return [a?.value||0,b?.value||0];})}))});
+  init('echarts-provider', {textStyle:baseTextStyle,tooltip:{trigger:'item',formatter:p=>`${p.seriesName}<br/>${p.name}: ${fmt(p.value)}%`},legend:{type:'scroll',bottom:0},grid:{left:138,right:22,top:28,bottom:74},xAxis:{type:'value',max:100,name:'%',nameLocation:'middle',nameGap:32,...axisCommon},yAxis:{type:'category',data:categories.flatMap(x=>[`Infron\n${x}`,`OpenRouter\n${x}`]),axisLabel:{color:C.muted,fontSize:10,lineHeight:14,margin:12},axisLine:{lineStyle:{color:'#D4D4D8'}},axisTick:{show:false}},series:Array.from(new Set(providerRows.map(r=>r.provider))).map(provider=>({name:provider,type:'bar',stack:'provider',barMaxWidth:16,itemStyle:{borderColor:'#FFFFFF',borderWidth:1},data:categories.flatMap(mode=>{const a=providerRows.find(r=>r.platform==='Infron'&&r.mode===mode&&r.provider===provider); const b=providerRows.find(r=>r.platform==='OpenRouter'&&r.mode===mode&&r.provider===provider); return [a?.value||0,b?.value||0];})}))});
 })();
 </script>
 

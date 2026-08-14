@@ -328,8 +328,8 @@
     },
     {
       "path": "reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft__2026-06-27.en.html",
-      "size_bytes": 399497,
-      "sha256": "2815f9ee9d4398a458b8a0f70b445cee3ef1047a6df0b676ed41ea93f4771459"
+      "size_bytes": 401143,
+      "sha256": "145ceac96ee158a572f812ff76846f6cd51b3cbb0a2df1d20005826eabc9a8cc"
     },
     {
       "path": "reports/prompt-cache-routing-ab-study__deepseek-v4-flash__infron-vs-openrouter__4x50-stream-ttft__2026-06-27.en.md",

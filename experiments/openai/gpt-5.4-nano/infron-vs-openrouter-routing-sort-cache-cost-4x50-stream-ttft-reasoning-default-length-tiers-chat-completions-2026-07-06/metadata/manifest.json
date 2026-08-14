@@ -14,7 +14,8 @@
     {
       "path": "reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-nano__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.en.html",
       "bytes": 1112434,
-      "sha256": "67b01488df331505eb8cd2d3ad9ba23426b8f852738e5d4582c969f1983d7041"
+      "sha256": "b779a9347d89b67ae55bd0390812ff883d545e8a04785e2e3d3e302b139d7d5e",
+      "size_bytes": 1114111
     },
     {
       "path": "reports/routing-cache-cost-streaming-performance-ab-study__gpt-5-4-nano__infron-vs-openrouter__4x50-stream-ttft-reasoning-default-length-tiers-chat-completions__2026-07-06.en.md",
